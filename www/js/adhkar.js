@@ -57,55 +57,10 @@ export default async () => {
         prayers.addEventListener('click', e => window.location.href = '/pages/adhkar/prayer.html');
         tasbih.addEventListener('click', e => window.location.href = '/pages/adhkar/tasbih.html');
 
-    }
 
-    if (window.location.pathname === '/pages/adhkar/morning.html') {
+        // حدث زر الرجوع للخلف 
 
-        let back = document.getElementById('back');
-        back.addEventListener('click', e => {
-            window.location.href = '/adhkar.html'
-        });
-
-    }
-
-    if (document.getElementsByClassName("adhkar")[0]) {
-
-        let adhkar = Array.from(document.getElementsByClassName("adhkar"));
-        let numbers = [];
-
-        for (let item of adhkar) {
-
-            let adhkarEl = document.getElementById(item.id);
-            let numEl = document.querySelector(`[id='${item.id}'] > .copy_and_paste > .repetition > .repetition_number`).textContent
-            
-            numbers.push(numEl);
-
-            adhkarEl.addEventListener("click", (e) => {
-
-                let numberEl = document.querySelector(`[id='${item.id}'] > .copy_and_paste > .repetition > .repetition_number`)
-
-                if (Number(numberEl.textContent) > 0) {
-
-                    numberEl.innerText = Number(numberEl.textContent) - 1
-
-                }
-
-                else {
-                    numberEl.innerText = numbers[Number(item.id - 1)]
-                }
-            });
-
-        }
-    }
-
-
-
-    // حدث زر الرجوع للخلف 
-
-    document.addEventListener("backbutton", function (e) {
-
-        // اذا كانت الصفحة هي الصفحة الرئيسية اطلع من التطبيق 
-        if (window.location.pathname === '/adhkar.html') {
+        document.addEventListener("backbutton", function (e) {
 
             if (navigator.app) {
                 navigator.app.exitApp();
@@ -118,8 +73,49 @@ export default async () => {
             else {
                 window.close();
             }
-        }
 
-    }, false);
+        }, false);
+    }
+
+    // Return to the Adhkar page
+
+    if (
+        window.location.pathname === '/pages/adhkar/morning.html' ||
+        window.location.pathname === '/pages/adhkar/evening.html' ||
+        window.location.pathname === '/pages/adhkar/food.html' || 
+        window.location.pathname === '/pages/adhkar/prayer.html' ||
+        window.location.pathname === '/pages/adhkar/sleeping.html' ||
+        window.location.pathname === '/pages/adhkar/tasbih.html'
+    ) {
+
+        let back = document.getElementById('back');
+        back.addEventListener('click', e => {
+            window.location.href = '/adhkar.html'
+        });
+
+    }
+
+
+    // حدث عدد تكرار الذكر
+
+    if (document.getElementsByClassName("adhkar")[0]) {
+        let adhkar = Array.from(document.getElementsByClassName("adhkar"));
+        let numbers = [];
+
+        for (let item of adhkar) {
+            let adhkarEl = document.getElementById(item.id);
+            let numEl = document.querySelector(`[id='${item.id}'] > .copy_and_paste > .repetition > .repetition_number`).textContent
+            numbers.push(numEl);
+            adhkarEl.addEventListener("click", (e) => {
+                let numberEl = document.querySelector(`[id='${item.id}'] > .copy_and_paste > .repetition > .repetition_number`)
+                if (Number(numberEl.textContent) > 0) {
+                    numberEl.innerText = Number(numberEl.textContent) - 1
+                }
+                else {
+                    numberEl.innerText = numbers[Number(item.id - 1)]
+                }
+            });
+        }
+    }
 
 }
