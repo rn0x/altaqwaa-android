@@ -1,0 +1,20 @@
+{
+    "android": {
+        "debug": {
+            "keystore": "./debug.keystore",
+            "storePassword": "11223344",
+            "alias": "rn0x",
+            "password" : "11223344",
+            "keystoreType": "",
+            "packageType": "apk"
+        },
+        "release": {
+            "keystore": "./debug.keystore",
+            "storePassword": "11223344",
+            "alias": "rn0x",
+            "password" : "11223344",
+            "keystoreType": "",
+            "packageType": "apk"
+        }
+    }
+}

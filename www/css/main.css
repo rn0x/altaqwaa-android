@@ -1,0 +1,67 @@
+@font-face {
+    font-family: "NotoSansArabic";
+    src: url(../font/NotoSansArabic.woff2) format("woff2-variations")
+}
+
+@font-face {
+    font-family: 'Amiri';
+    font-style: normal;
+    font-weight: 400;
+    src: url(../font/Amiri.woff2) format('woff2');
+    unicode-range: U+0600-06FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE80-FEFC;
+}
+
+
+body,
+html {
+    -webkit-touch-callout: none;
+    /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;
+    /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;
+    /* prevent copy paste, to allow, change 'none' to 'text' */
+    user-select: none;
+    background-color: #2e3338;
+    font-size: 12px;
+    padding: 0px;
+    margin: 0 0 0 0;
+    direction: rtl;
+}
+
+#content {
+    display: block;
+    margin-top: 40px;
+    margin-bottom: 110px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.alert {
+    display: none;
+    background-color: #ffffff00;
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+}
+
+.text_alert {
+    display: block;
+    background-color: #ffffff;
+    color: #232527;
+    width: 80%;
+    margin-top: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+
+@media (min-width: 500px) {
+    .text_alert {
+        margin-top: 30% !important;
+    }
+}

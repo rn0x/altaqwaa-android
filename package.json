@@ -1,0 +1,47 @@
+{
+  "name": "altaqwaa_android",
+  "displayName": "التقوى",
+  "version": "1.0.0",
+  "description": "تطبيق إسلامي سهل الإستخدام و جامع للكثير من الميزات التي يحتاجها المسلم في يومه",
+  "main": "index.js",
+  "scripts": {
+    "dev": "browser-sync start -s www/ --watch --port 8080 --ui-port 8081",
+    "device": "cordova run android --device",
+    "build": "cordova build android --release",
+    "plugin": "cordova plugin add",
+    "android": "cordova platform add android",
+    "ios": "cordova platform add ios",
+    "clear": "cordova platforms rm android && cordova platforms add android",
+    "keytool": "keytool -genkey -v -keystore ./debug.keystore -alias 'rn0x' -storepass '11223344' -keypass '11223344' -keyalg RSA -keysize 2048 -dname 'CN=rn0x, OU=altaqwaa, O=altaqwaa, L=makkah, ST=makkah, C=sa'"
+  },
+  "author": {
+    "name": "Ryan Almalki",
+    "email": "ry2n711@gmail.com",
+    "url": "https://www.altaqwaa.org"
+  },
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "browser-sync": "^2.28.3",
+    "cordova": "^11.1.0",
+    "cordova-android": "^10.1.2",
+    "cordova-plugin-device": "^2.1.0"
+  },
+  "dependencies": {
+    "cordova-clipboard": "^1.3.0",
+    "cordova-plugin-navigationbar-color": "^0.1.0",
+    "cordova-plugin-splashscreen": "6.0.2",
+    "cordova-plugin-statusbar": "^3.0.0"
+  },
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-splashscreen": {},
+      "cordova-plugin-statusbar": {},
+      "cordova-plugin-navigationbar-color": {},
+      "cordova-clipboard": {},
+      "cordova-plugin-device": {}
+    },
+    "platforms": [
+      "android"
+    ]
+  }
+}
