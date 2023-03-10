@@ -17,12 +17,12 @@
 }
 
 #adhkar_ul li {
-    width: 100px;
+    width: 85%;
     background-color: #232527;
     padding: 10px;
     border-radius: 10px;
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 5px;
     margin-bottom: 5px;
     text-align: center;
@@ -242,3 +242,11 @@
     position: absolute;
     margin-right: 15px;
 }
+
+/* @media (max-width: 330px) {
+    #adhkar_ul li {
+        width: 85%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+} */
