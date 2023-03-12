@@ -5,7 +5,7 @@
     <author email="rn0x.me@gmail.com" href="https://altaqwaa.org">
         Altaqwaa
     </author>
-    <content src="adhkar.html" />
+    <content src="index.html" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <preference name="KeepRunning" value="true" />

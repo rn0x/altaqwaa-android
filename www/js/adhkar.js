@@ -2,7 +2,7 @@ import loadJson from './modules/loadJson.js';
 
 export default async () => {
 
-    if (window.location.pathname === '/adhkar.html') {
+    if (window.location.pathname === '/index.html') {
 
 
         let adhkarJson = await loadJson('/data/adhkar.json');
@@ -76,25 +76,6 @@ export default async () => {
 
         }, false);
     }
-
-    // Return to the Adhkar page
-
-    if (
-        window.location.pathname === '/pages/adhkar/morning.html' ||
-        window.location.pathname === '/pages/adhkar/evening.html' ||
-        window.location.pathname === '/pages/adhkar/food.html' || 
-        window.location.pathname === '/pages/adhkar/prayer.html' ||
-        window.location.pathname === '/pages/adhkar/sleeping.html' ||
-        window.location.pathname === '/pages/adhkar/tasbih.html'
-    ) {
-
-        let back = document.getElementById('back');
-        back.addEventListener('click', e => {
-            window.location.href = '/adhkar.html'
-        });
-
-    }
-
 
     // حدث عدد تكرار الذكر
 

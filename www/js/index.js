@@ -1,7 +1,8 @@
 import footer from './footer.js';
 import adhkar from './adhkar.js';
+import prayer from './prayer.js';
 
-document.addEventListener('deviceready',async (e) => {
+document.addEventListener('deviceready', async (e) => {
 
     document.getElementById("platform").innerHTML = device.platform;
     document.getElementById("manufacturer").innerHTML = device.manufacturer;
@@ -18,6 +19,25 @@ document.addEventListener('deviceready',async (e) => {
 
 }, false);
 
-await adhkar();   
-
 await footer();
+await adhkar();
+await prayer()
+
+
+// Return to the Adhkar page
+
+if (
+    window.location.pathname === '/pages/adhkar/morning.html' ||
+    window.location.pathname === '/pages/adhkar/evening.html' ||
+    window.location.pathname === '/pages/adhkar/food.html' ||
+    window.location.pathname === '/pages/adhkar/prayer.html' ||
+    window.location.pathname === '/pages/adhkar/sleeping.html' ||
+    window.location.pathname === '/pages/adhkar/tasbih.html'
+) {
+
+    let back = document.getElementById('back');
+    back.addEventListener('click', e => {
+        window.location.href = '/index.html'
+    });
+
+}

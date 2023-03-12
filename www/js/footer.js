@@ -16,7 +16,7 @@ export default async () => {
     let more = document.getElementById('more');
 
     adhkar.onclick = () => {
-        window.location.href = '/adhkar.html'
+        window.location.href = '/index.html'
     }
 
     prayer.onclick = () => {

@@ -3,3 +3,152 @@
     transition: 0.5s ease-in-out;
     box-shadow: 5px 0px 15px 0px #00000048;
 }
+
+#content {
+    margin-top: 5px;
+}
+#prayer_time {
+    display: block;
+    width: 100%;
+    direction: rtl;
+    font-family: 'NotoSansArabic';
+    font-weight: 700;
+    user-select: text;
+}
+
+#time {
+    display: flex;
+    direction: ltr;
+    justify-content: center;
+    align-items: center;
+}
+
+#hour_minutes {
+    color: #ffffff;
+    font-size: 58px;
+    margin-right: 7px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+#seconds {
+    color: #6d7275;
+    font-size: 28px;
+}
+
+#country {
+    display: flex;
+    justify-content: center;
+    color: #6d7275;
+    font-size: 13px;
+    font-weight: 300;
+    text-align: center;
+    width: 90%;
+    margin: auto;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+#city {
+    color: #6bc077;
+    margin-right: 10px;
+}
+
+#data {
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+}
+
+#data_hijri {
+    color: #6d7275;
+    font-size: 13px;
+    
+}
+
+#data_Gregorian {
+    color: #6d7275;
+    font-size: 13px;
+}
+
+#datoday {
+    color: #ffffff;
+    font-size: 25px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#prayer_ul {
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-evenly; */
+    padding: 0px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#prayer_ul li {
+    display: block;
+    list-style: none;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    background-color: #232527;
+    width: calc(45% - 5px);
+    border-radius: 8px;
+    text-align: center;
+    direction: ltr;
+    box-shadow: 5px 15px 15px 0px #0000001c;
+    transition: 0.5s ease-in-out;
+}
+
+#prayer_ul li:hover {
+    background-color: #6bc077;
+    padding: 5px;
+    transition: 0.5s ease-in-out;
+    box-shadow: 5px 15px 15px 0px #00000048;
+}
+
+#remaining {
+    display: none;
+    color: #6d7275;
+    font-size: 15px;
+    text-align: center;
+}
+
+#remaining_name {
+    color: #6bc077;
+    text-align: center;
+}
+
+#remaining_time {
+    display: none;
+    color: #ffffff;
+    font-size: 20px;
+    text-align: center;
+    background-color: #6bc077;
+    width: 60%;
+    border-radius: 8px;
+    margin-bottom: auto;
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 5px 15px 15px 0px #0000001c;
+    transition: 0.5s ease-in-out;
+}
+
+.slah {
+    color: #6d7275;
+    font-size: 17px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.time_prayer {
+    font-size: 14px ;
+    color: #ffffff;
+    margin: 0 0 0 0;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}

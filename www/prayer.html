@@ -1,37 +1,89 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
-        <meta name="color-scheme" content="light dark">
-        <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="css/prayer.css">
-        <link rel="stylesheet" href="css/footer.css">
-        <title>التقوى</title>
-    </head>
-    <body>
 
-        <div id="content">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+    <meta name="color-scheme" content="light dark">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/prayer.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <title>التقوى</title>
+</head>
 
-            <!-- ================ ضع هنا محتوى الصفحة =============== -->
-    
-            <h2 id="kk">
-                prayer
-            </h2>
+<body>
 
-            <!-- ================ ضع هنا محتوى الصفحة =============== -->
-    
+    <div id="content">
+
+        <!-- ================ ضع هنا محتوى الصفحة =============== -->
+
+
+
+
+        <div id="prayer_time">
+
+            <div id="time">
+                <p id="hour_minutes"></p>
+                <p id="seconds"></p>
+            </div>
+
+            <div id="data">
+                <p id="data_hijri"></p>
+                <p id="datoday">السبت</p>
+                <p id="data_Gregorian"></p>
+            </div>
+
+            <p id="country"></p>
+
+            <ul id="prayer_ul">
+
+                <li id="fajr_li">
+                    <p id="fajr" class="slah">الفجر</p>
+                    <p id="time_fajr" class="time_prayer"></p>
+                </li>
+
+                <li id="dhuhr_li">
+                    <p id="dhuhr" class="slah">الظهر</p>
+                    <p id="time_dhuhr" class="time_prayer"></p>
+                </li>
+
+                <li id="asr_li">
+                    <p id="asr" class="slah">العصر</p>
+                    <p id="time_asr" class="time_prayer"></p>
+                </li>
+
+                <li id="maghrib_li">
+                    <p id="maghrib" class="slah">المغرب</p>
+                    <p id="time_maghrib" class="time_prayer"></p>
+                </li>
+
+                <li id="isha_li">
+                    <p id="isha" class="slah">العشاء</p>
+                    <p id="time_isha" class="time_prayer"></p>
+                </li>
+
+            </ul>
+
+            <p id="remaining">الوقت المتبقي لرفع الأذان لصلاة <span id="remaining_name"></span></p>
+            <p id="remaining_time"></p>
+
         </div>
-    
-    
-        <footer id="footer">
-            <!-- الفوتر مربوط بالجافاسكربت -->
-        </footer>
 
-        <script src="cordova.js"></script>
-        <script src="/js/index.js" type="module"></script>
-    </body>
+
+        <!-- ================ ضع هنا محتوى الصفحة =============== -->
+
+    </div>
+
+
+    <footer id="footer">
+        <!-- الفوتر مربوط بالجافاسكربت -->
+    </footer>
+    <script src="cordova.js"></script>
+    <script src="/js/index.js" type="module"></script>
+</body>
+
 </html>
