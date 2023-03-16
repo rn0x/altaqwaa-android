@@ -38,7 +38,7 @@ html {
 
 .alert {
     display: none;
-    background-color: #ffffff00;
+    background-color: #00000000;
     backdrop-filter: blur(10px);
     position: fixed;
     width: 100%;
@@ -49,7 +49,7 @@ html {
 .text_alert {
     display: block;
     background-color: #ffffff;
-    color: #232527;
+    color: var(--color_font_grey);
     width: 80%;
     margin-top: 50%;
     margin-left: auto;

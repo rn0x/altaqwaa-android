@@ -5,7 +5,7 @@
     bottom: 0;
     position: fixed;
     z-index: 1;
-    background-color: #232527;
+    background-color: var(--background_div);
     box-shadow: #0000001a 0px -10px 15px -3px, #0000000d 0px -4px 6px -2px;
 }
 
@@ -24,7 +24,7 @@
     align-items: center;
     width: 100%;
     height: 50px;
-    background-color: #1b1d1f;
+    background-color: var(--background_menu);
     padding: 7px;
     border-radius: 10px;
     margin-left: 5px;
@@ -36,7 +36,7 @@
 
 #menu_footer li:hover {
 
-    background-color: #6bc077;
+    background-color: var(--background_div_hover);
     transition: 0.5s ease-in-out;
     box-shadow: 5px 0px 15px 0px #00000048;
 }

@@ -1,5 +1,5 @@
 #prayer {
-    background-color: #6bc077 !important;
+    background-color: var(--background_div_hover) !important;
     transition: 0.5s ease-in-out;
     box-shadow: 5px 0px 15px 0px #00000048;
 }
@@ -11,7 +11,7 @@
     display: block;
     width: 100%;
     direction: rtl;
-    font-family: 'NotoSansArabic';
+    font-family: var(--NotoSansArabic);
     font-weight: 700;
     user-select: text;
 }
@@ -24,7 +24,7 @@
 }
 
 #hour_minutes {
-    color: #ffffff;
+    color: var(--white);
     font-size: 58px;
     margin-right: 7px;
     margin-bottom: 0px;
@@ -32,14 +32,14 @@
 }
 
 #seconds {
-    color: #6d7275;
+    color: var(--color_font_grey);
     font-size: 28px;
 }
 
 #country {
     display: flex;
     justify-content: center;
-    color: #6d7275;
+    color: var(--color_font_grey);
     font-size: 13px;
     font-weight: 300;
     text-align: center;
@@ -50,7 +50,7 @@
 }
 
 #city {
-    color: #6bc077;
+    color: var(--background_div_hover);
     margin-right: 10px;
 }
 
@@ -61,18 +61,18 @@
 }
 
 #data_hijri {
-    color: #6d7275;
+    color: var(--color_font_grey);
     font-size: 13px;
     
 }
 
 #data_Gregorian {
-    color: #6d7275;
+    color: var(--color_font_grey);
     font-size: 13px;
 }
 
 #datoday {
-    color: #ffffff;
+    color: var(--white);
     font-size: 25px;
     margin-top: 5px;
     margin-bottom: 5px;
@@ -94,7 +94,7 @@
     margin-right: auto;
     margin-top: 5px;
     margin-bottom: 10px;
-    background-color: #232527;
+    background-color: var(--background_div);
     width: calc(45% - 5px);
     border-radius: 8px;
     text-align: center;
@@ -104,7 +104,7 @@
 }
 
 #prayer_ul li:hover {
-    background-color: #6bc077;
+    background-color: var(--background_div_hover);
     padding: 5px;
     transition: 0.5s ease-in-out;
     box-shadow: 5px 15px 15px 0px #00000048;
@@ -112,22 +112,22 @@
 
 #remaining {
     display: none;
-    color: #6d7275;
+    color: var(--color_font_grey);
     font-size: 15px;
     text-align: center;
 }
 
 #remaining_name {
-    color: #6bc077;
+    color: var(--background_div_hover);
     text-align: center;
 }
 
 #remaining_time {
     display: none;
-    color: #ffffff;
+    color: var(--white-div);
     font-size: 20px;
     text-align: center;
-    background-color: #6bc077;
+    background-color: var(--background_div_hover);
     width: 60%;
     border-radius: 8px;
     margin-bottom: auto;
@@ -139,7 +139,7 @@
 }
 
 .slah {
-    color: #6d7275;
+    color: var(--color_font_grey);
     font-size: 17px;
     margin-top: 5px;
     margin-bottom: 5px;
@@ -147,7 +147,7 @@
 
 .time_prayer {
     font-size: 14px ;
-    color: #ffffff;
+    color: var(--white-div);
     margin: 0 0 0 0;
     margin-top: 5px;
     margin-bottom: 5px;
