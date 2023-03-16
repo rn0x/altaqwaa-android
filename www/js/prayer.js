@@ -8,14 +8,14 @@ export default async () => {
         let GPS = await getGPS();
         let latitude = GPS.latitude
         let longitude = GPS.longitude
-        /*
-        ( storage )
+        
+        // LocalStorage 
 
         let storage = window.localStorage;
-        storage.setItem('Calculation', 'UmmAlQura')
-        let value = storage.getItem('Calculation');
+        // storage.setItem('Calculation', 'UmmAlQura')
+        let Calculation = storage.getItem('Calculation');
         
-        */
+        
 
         let adhan = adhanModule("UmmAlQura", latitude, longitude);
         let data_hijri = document.getElementById('data_hijri');
@@ -53,7 +53,7 @@ export default async () => {
 
 
         setInterval(() => {
-            let adhan = adhanModule("UmmAlQura", latitude, longitude);
+            let adhan = adhanModule(Calculation ? Calculation : "UmmAlQura", latitude, longitude);
             data_hijri.innerText = adhan.data_hijri;
             data_Gregorian.innerText = adhan.data_Gregorian;
             datoday.innerText = adhan.today;
