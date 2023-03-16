@@ -24,8 +24,8 @@ export default (Calculation, latitude, longitude) => {
     let now = moment();
     let end = moment(prayerTimes.timeForPrayer(nextPrayer));
     let duration = moment.duration(end.diff(now));
-    //let remaining = duration.format('hh:mm:ss');
-    let remaining = `${convertTo12HourFormat(duration.hours()).hours}:${duration.minutes()}:${duration.seconds()}`
+    let remaining = duration.format('hh:mm:ss');
+    // let remaining = `${convertTo12HourFormat(duration.hours()).hours}:${duration.minutes()}:${duration.seconds()}`
     let dayNamesArabic = ['الأحد', 'الاثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'];
     let day = date.getDay(); // 0 for Sunday, 1 for Monday, etc.
     let dayNameArabic = dayNamesArabic[day]; // get the corresponding Arabic day name from the array
@@ -49,12 +49,12 @@ export default (Calculation, latitude, longitude) => {
 
 }
 
-function convertTo12HourFormat(hours) {
-    let suffix = hours >= 12 ? 'pm' : 'am';
-    hours = hours % 12;
-    hours = hours ? hours : 12; // the hour '0' should be '12'
-    return {
-        hours: hours,
-        suffix: suffix
-    }
-}
+// function convertTo12HourFormat(hours) {
+//     let suffix = hours >= 12 ? 'pm' : 'am';
+//     hours = hours % 12;
+//     hours = hours ? hours : 12; // the hour '0' should be '12'
+//     return {
+//         hours: hours,
+//         suffix: suffix
+//     }
+// }
