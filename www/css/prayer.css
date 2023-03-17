@@ -111,7 +111,7 @@
 }
 
 #prayer_ul li:hover .slah{
-    color: var(--background_div_hover_2);
+    color: var(--white-div);
 }
 
 #remaining {
