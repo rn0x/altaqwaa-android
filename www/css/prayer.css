@@ -110,6 +110,10 @@
     box-shadow: 5px 15px 15px 0px #00000048;
 }
 
+#prayer_ul li:hover .slah{
+    color: var(--background_div_hover_2);
+}
+
 #remaining {
     display: none;
     color: var(--color_font_grey);

@@ -17,7 +17,7 @@ export default async () => {
         
         
 
-        let adhan = adhanModule("UmmAlQura", latitude, longitude);
+        let adhan = adhanModule(Calculation ? Calculation : "UmmAlQura", latitude, longitude);
         let data_hijri = document.getElementById('data_hijri');
         let data_Gregorian = document.getElementById('data_Gregorian');
         let datoday = document.getElementById('datoday');
@@ -37,6 +37,11 @@ export default async () => {
         let remaining_ = document.getElementById('remaining');
         let remaining_time = document.getElementById('remaining_time');
         let remaining_name = document.getElementById('remaining_name');
+        let fajr = document.getElementById('fajr');
+        let dhuhr = document.getElementById('dhuhr');
+        let asr = document.getElementById('asr');
+        let maghrib = document.getElementById('maghrib');
+        let isha = document.getElementById('isha');
 
         data_hijri.innerText = adhan.data_hijri;
         data_Gregorian.innerText = adhan.data_Gregorian;
@@ -78,6 +83,11 @@ export default async () => {
                     asr_li.style.background = null
                     maghrib_li.style.background = null
                     isha_li.style.background = null
+                    fajr.style.color = 'var(--background_div_hover_2)'
+                    dhuhr.style.color = null
+                    asr.style.color = null
+                    maghrib.style.color = null
+                    isha.style.color = null
                     break;
 
                 case "dhuhr":
@@ -89,6 +99,11 @@ export default async () => {
                     asr_li.style.background = null
                     maghrib_li.style.background = null
                     isha_li.style.background = null
+                    fajr.style.color = null
+                    dhuhr.style.color = 'var(--background_div_hover_2)'
+                    asr.style.color = null
+                    maghrib.style.color = null
+                    isha.style.color = null
                     break;
 
                 case "asr":
@@ -100,6 +115,11 @@ export default async () => {
                     asr_li.style.background = '#6bc077'
                     maghrib_li.style.background = null
                     isha_li.style.background = null
+                    fajr.style.color = null
+                    dhuhr.style.color = null
+                    asr.style.color = 'var(--background_div_hover_2)'
+                    maghrib.style.color = null
+                    isha.style.color = null
                     break;
 
                 case "maghrib":
@@ -111,6 +131,11 @@ export default async () => {
                     asr_li.style.background = null
                     maghrib_li.style.background = '#6bc077'
                     isha_li.style.background = null
+                    fajr.style.color = null
+                    dhuhr.style.color = null
+                    asr.style.color = null
+                    maghrib.style.color = 'var(--background_div_hover_2)'
+                    isha.style.color = null
                     break;
 
                 case "isha":
@@ -122,6 +147,11 @@ export default async () => {
                     asr_li.style.background = null
                     maghrib_li.style.background = null
                     isha_li.style.background = '#6bc077'
+                    fajr.style.color = null
+                    dhuhr.style.color = null
+                    asr.style.color = null
+                    maghrib.style.color = null
+                    isha.style.color = 'var(--background_div_hover_2)'
                     break;
 
                 default:
@@ -133,6 +163,11 @@ export default async () => {
                     asr_li.style.background = null
                     maghrib_li.style.background = null
                     isha_li.style.background = null
+                    fajr.style.color = null
+                    dhuhr.style.color = null
+                    asr.style.color = null
+                    maghrib.style.color = null
+                    isha.style.color = null
                     break;
             }
 

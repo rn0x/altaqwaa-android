@@ -21,10 +21,10 @@ document.addEventListener('deviceready', async (e) => {
 
 await footer();
 await adhkar();
-await prayer()
+await prayer();
 
 
-// Return to the Adhkar page
+// Return to the Adhkar page (index.html) ;
 
 if (
     window.location.pathname === '/pages/adhkar/morning.html' ||

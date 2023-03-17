@@ -9,7 +9,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     padding: 0;
     margin-left: 5px;
     margin-right: 5px;
@@ -17,7 +17,7 @@
 }
 
 #adhkar_ul li {
-    width: 85%;
+    width: calc(80% / 2);
     background-color: var(--background_div);
     padding: 10px;
     border-radius: 10px;
