@@ -12,7 +12,7 @@ export default async () => {
 
     let adhkar = document.getElementById('adhkar');
     let prayer = document.getElementById('prayer');
-    let media = document.getElementById('media');
+    let quran = document.getElementById('quran');
     let more = document.getElementById('more');
 
     adhkar.onclick = () => {
@@ -23,8 +23,8 @@ export default async () => {
         window.location.href = '/prayer.html'
     }
 
-    media.onclick = () => {
-        window.location.href = '/media.html'
+    quran.onclick = () => {
+        window.location.href = '/quran.html'
     }
 
     more.onclick = () => {

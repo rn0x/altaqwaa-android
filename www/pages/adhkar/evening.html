@@ -3,8 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="viewport" content="initial-scale=1.0, width=device-width, viewport-fit=cover,">
@@ -18,7 +17,7 @@
 
 <body>
 
-    <header id="header">
+    <div id="header">
 
         <img src="/img/back.png" id="back">
 
@@ -26,7 +25,7 @@
             أذكار المساء
         </p>
 
-    </header>
+    </div>
 
     <div id="content">
 
@@ -488,8 +487,13 @@
         <!-- الفوتر مربوط بالجافاسكربت -->
     </footer>
 
-    <script src="cordova.js"></script>
     <script src="/js/index.js" type="module"></script>
+    <script type="module">
+        let back = document.getElementById('back');
+        back.addEventListener("click", e => {
+            window.location.href = "/index.html";
+        });
+    </script>
 </body>
 
 </html>

@@ -1,5 +1,0 @@
-#media {
-    background-color: var(--background_div_hover) !important;
-    transition: 0.5s ease-in-out;
-    box-shadow: 5px 0px 15px 0px #00000048;
-}

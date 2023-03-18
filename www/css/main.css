@@ -26,6 +26,7 @@ html {
     padding: 0px;
     margin: 0 0 0 0;
     direction: rtl;
+    font-family: var(--NotoSansArabic);
 }
 
 #content {

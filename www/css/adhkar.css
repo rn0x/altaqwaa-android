@@ -103,15 +103,15 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-around;
     list-style: none;
     align-items: center;
+    padding: 0px;
 }
 
 
 .copy_and_paste li {
     height: 30px;
-    margin-left: 50px;
 }
 
 .icon_c_p {
@@ -153,12 +153,12 @@
 }
 
 .adhkar:hover .repetition {
-    background-color: var(--background_div_hover);
+    /* background-color: var(--background_div_hover); */
     color: var(--white-div);
 }
 
 .adhkar:hover .repetition_number {
-    color: var(--white-div);
+    color: var(--background_div_hover);
 }
 
 .adhkar:hover .text_bottom {
@@ -191,10 +191,8 @@
     font-weight: 500;
     color: var(--white-div);
     font-size: 14px;
-    background-color: var(--background_div);
     border-radius: 10px;
-    width: 90px;
-    height: 10px;
+    width: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -235,11 +233,13 @@
 }
 
 #header img {
+    /* cursor: pointer; */
     width: 20px;
     right: 0px;
     margin: 0 0 0 0;
     position: absolute;
     margin-right: 15px;
+    z-index: -1;
 }
 
 /* @media (max-width: 330px) {
