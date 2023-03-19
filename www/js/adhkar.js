@@ -62,17 +62,35 @@ export default async () => {
 
         document.addEventListener("backbutton", function (e) {
 
-            if (navigator.app) {
-                navigator.app.exitApp();
-            }
+            navigator.notification.confirm(
+                'هل بالفعل تريد الخروج من التطبيق ؟',  // message
+                (e) => {
 
-            else if (navigator.device) {
-                navigator.device.exitApp();
-            }
+                    if (e === 2 || e === 0) {
 
-            else {
-                window.close();
-            }
+                        if (navigator.app) {
+                            navigator.app.exitApp();
+                        }
+            
+                        else if (navigator.device) {
+                            navigator.device.exitApp();
+                        }
+            
+                        else {
+                            window.close();
+                        }
+
+                    }
+
+                    else {
+                        window.open("https://github.com/rn0x", "_blank");
+                    }
+                },         // callback
+                'خروج',            // title
+                ['تقييم التطبيق', 'خروج']                 // buttonName
+            );
+
+
 
         }, false);
     }

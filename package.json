@@ -32,7 +32,8 @@
     "cordova-plugin-geolocation": "^4.1.0",
     "cordova-plugin-navigationbar-color": "^0.1.0",
     "cordova-plugin-splashscreen": "6.0.2",
-    "cordova-plugin-statusbar": "^3.0.0"
+    "cordova-plugin-statusbar": "^3.0.0",
+    "cordova-plugin-dialogs": "^2.0.2"
   },
   "cordova": {
     "plugins": {
@@ -43,7 +44,8 @@
       "cordova-plugin-device": {},
       "cordova-plugin-geolocation": {
         "GPS_REQUIRED": "true"
-      }
+      },
+      "cordova-plugin-dialogs": {}
     },
     "platforms": [
       "android"
