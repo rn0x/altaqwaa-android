@@ -53,7 +53,7 @@
 
 #adhkar_random {
     display: block;
-    width: 85%;
+    width: 90%;
     margin-top: 20px;
     background-color: var(--background_div);
     padding: 10px;
@@ -128,7 +128,7 @@
 
 .adhkar {
     display: block;
-    width: 85%;
+    width: 90%;
     margin-top: 15px;
     margin-bottom: 15px;
     background-color: var(--background_div);
