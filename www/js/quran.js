@@ -108,35 +108,37 @@ export default async () => {
                             let oldPlaying = document.getElementById(audioPlayingId);
                             let oldIconPlay = document.getElementById(icon_audio);
 
-                            audioPlaying = false;
                             oldPlaying.pause();
                             oldIconPlay.src = "/img/play.png";
+                            audioPlaying = false;
                             audioStart = true;
 
                         }
 
                         if (audioStart && audioPlaying === false) {
 
+                            audioPlaying = true;
+                            audioStart = false;
+
+                            storage.setItem('audioPlayingId', `quran_reader_audio_id_${iterator?.id}`);
+                            storage.setItem('icon_audio', `quran_reader_surah_img_play_${iterator?.id}`);
+
                             if (audio.buffered.length === 0) {
 
                                 quran_reader_surah_img_play.src = "/img/loading.svg";
                             }
 
-                            audioPlaying = true;
-                            audioStart = false;
                             await audio.play();
                             quran_reader_surah_img_play.src = "/img/stop.png";
                         }
 
                         else {
-                            audioStart === false && audioPlaying ? audioPlaying = false : false;
+
+                            audioPlaying = false;
+                            audioStart = true;
                             audio.pause();
                             quran_reader_surah_img_play.src = "/img/play.png";
-                            audioStart = true;
                         }
-
-                        storage.setItem('audioPlayingId', `quran_reader_audio_id_${iterator?.id}`);
-                        storage.setItem('icon_audio', `quran_reader_surah_img_play_${iterator?.id}`);
 
 
                     });

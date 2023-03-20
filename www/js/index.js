@@ -2,6 +2,7 @@ import footer from './footer.js';
 import adhkar from './adhkar.js';
 import prayer from './prayer.js';
 import quran from './quran.js';
+import notification from './notification.js';
 
 document.addEventListener('deviceready', async (e) => {
 
@@ -24,15 +25,4 @@ await footer();
 await adhkar();
 await prayer();
 await quran();
-
-function onPrompt(results) {
-    alert("You selected button number " + results.buttonIndex + " and entered " + results.input1);
-}
-
-navigator.notification.prompt(
-    'Please enter your name',  // message
-    onPrompt,                  // callback to invoke
-    'Registration',            // title
-    ['Ok','Exit'],             // buttonLabels
-    'Jane Doe'                 // defaultText
-);
+await notification();

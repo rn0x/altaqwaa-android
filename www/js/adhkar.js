@@ -62,6 +62,11 @@ export default async () => {
 
         document.addEventListener("backbutton", function (e) {
 
+            let storage = window.localStorage;
+            storage.setItem('audioPlayingId', null);
+            storage.setItem('icon_audio', null);
+            storage.setItem('AdhanPlaying', "false");
+
             navigator.notification.confirm(
                 'هل بالفعل تريد الخروج من التطبيق ؟',  // message
                 (e) => {
@@ -71,11 +76,11 @@ export default async () => {
                         if (navigator.app) {
                             navigator.app.exitApp();
                         }
-            
+
                         else if (navigator.device) {
                             navigator.device.exitApp();
                         }
-            
+
                         else {
                             window.close();
                         }
