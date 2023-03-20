@@ -63,9 +63,9 @@ export default async () => {
         document.addEventListener("backbutton", function (e) {
 
             let storage = window.localStorage;
-            storage.setItem('audioPlayingId', null);
-            storage.setItem('icon_audio', null);
-            storage.setItem('AdhanPlaying', "false");
+            storage.removeItem('audioPlayingId');
+            storage.removeItem('icon_audio');
+            storage.removeItem('AdhanPlaying');
 
             navigator.notification.confirm(
                 'هل بالفعل تريد الخروج من التطبيق ؟',  // message

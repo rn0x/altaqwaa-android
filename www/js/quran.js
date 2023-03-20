@@ -2,7 +2,7 @@ import loadJson from './modules/loadJson.js';
 
 export default async () => {
 
-    if (window.location.pathname === '/quran.html') {
+    if (window.location.pathname === '/quran.html') {        
 
         let mp3quran = await loadJson('/data/mp3quran.json');
         let quran_reader = document.getElementById("quran_reader");
@@ -102,8 +102,8 @@ export default async () => {
                         let storage = window.localStorage;
                         let audioPlayingId = storage.getItem('audioPlayingId');
                         let icon_audio = storage.getItem('icon_audio');
-                        
-                        if (audioPlayingId && icon_audio !== `quran_reader_surah_img_play_${iterator?.id}` && icon_audio !== "null") {
+
+                        if (icon_audio && icon_audio !== `quran_reader_surah_img_play_${iterator?.id}`) {
 
                             let oldPlaying = document.getElementById(audioPlayingId);
                             let oldIconPlay = document.getElementById(icon_audio);
