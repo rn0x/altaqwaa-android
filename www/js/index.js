@@ -5,6 +5,7 @@ import quran from './quran.js';
 import notification from './notification.js';
 import more from './more.js';
 import albitaqat from './albitaqat.js';
+import hisnmuslim from './hisnmuslim.js';
 
 document.addEventListener('deviceready', async (e) => {
 
@@ -29,4 +30,5 @@ await prayer();
 await quran();
 await more();
 await albitaqat();
+await hisnmuslim();
 await notification();
