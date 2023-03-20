@@ -10,7 +10,7 @@ export default (text) => {
         ?.split('رضي الله عنه')?.join('<span style="color: #b62b2b;">رضي الله عنه</span>')
         ?.split('(')?.join('<span style="color: #797979;">(')?.split(')')?.join(')</span>')
         ?.split('﴿')?.join(' <span style="color: #7f8862;">﴿')?.split('﴾')?.join('﴾</span>')
-        ?.split('«')?.join('<span style="color: #464970;">«')?.split('»')?.join('»</span>');
+        ?.split('«')?.join('<span style="color: #6bc077;">«')?.split('»')?.join('»</span>');
 
     return span
 }
