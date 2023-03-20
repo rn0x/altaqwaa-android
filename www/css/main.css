@@ -60,6 +60,49 @@ html {
     text-align: center;
 }
 
+#more_header {
+    width: 100%;
+    display: flex;
+    background-color: var(--background_body);
+    justify-content: center;
+    align-items: center;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 1px;
+    border-style: solid;
+    border-color: var(--background_div);
+    padding: 10px;
+    box-shadow: #0000001a 0px 10px 15px -3px, #0000000d 0px 4px 6px -2px;
+    position: fixed;
+    top: 0px;
+    margin-bottom: 20px;
+    z-index: 1;
+}
+
+#more_header p {
+    font-family: 'NotoSansArabic';
+    font-weight: 700;
+    color: var(--white-div);
+    text-align: center;
+    margin: 0 0 0 0;
+}
+
+#more_header img {
+    /* cursor: pointer; */
+    width: 20px;
+    right: 0px;
+    margin: 0 0 0 0;
+    position: absolute;
+    margin-right: 15px;
+    z-index: -1;
+}
+
+::-webkit-media-controls-enclosure {
+    background-color: var(--background_div_hover);
+    border-radius: 5px;
+    height: 20px;
+}
 
 @media (min-width: 500px) {
     .text_alert {
