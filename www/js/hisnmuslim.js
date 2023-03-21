@@ -71,7 +71,7 @@ export default async () => {
                     hisnmuslim_ul_tkrar.className = "hisnmuslim_ul_tkrar";
                     hisnmuslim_ul_tkrar.innerHTML = `التكرار : <span class="hisnmuslim_ul_count">${iterator?.count}</span>`
 
-                }ي
+                }
 
             });
 

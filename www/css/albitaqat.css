@@ -55,10 +55,12 @@
     margin: 7px 7px 7px 7px;
     border-radius: 12px;
     box-shadow: 0px 0px 10px 0px #00000027;
+    transition: 0.5s ease-in-out;
 }
 
 #albitaqat_index li:hover {
     background-color: var(--background_div_hover);
+    transition: 0.5s ease-in-out;
 }
 
 #albitaqat_index h3 {

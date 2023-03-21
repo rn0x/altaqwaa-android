@@ -1,0 +1,125 @@
+#content {
+    margin-top: 60px !important;
+}
+
+
+#tfs_part1 {
+    display: block;
+}
+
+#tfs_part2 {
+    display: none;
+}
+
+#tfs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0px;
+    list-style: none;
+}
+
+#tfs li {
+    display: block;
+    width: calc(75% / 2);
+    background-color: var(--background_div);
+    word-break: break-all;
+    padding: 10px;
+    margin: 7px 7px 7px 7px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 10px 0px #00000027;
+    transition: 0.5s ease-in-out;
+}
+
+#tfs li:hover {
+    transition: 0.5s ease-in-out;
+    background-color: var(--background_div_hover);
+}
+
+#tfs li:hover p{
+    transition: 0.5s ease-in-out;
+    background-color: var(--background_div);
+}
+
+#tfs h3 {
+    margin: 0px 0px 0px 0px;
+    color: var(--white-div);
+}
+
+#tfs p {
+    position: absolute;
+    margin-top: 0px;
+    background-color: var(--background_div_hover);
+    border-radius: 50%;
+    width: 25px;
+    padding: 3px;
+    color: var(--white-div);
+    transition: 0.5s ease-in-out; 
+}
+
+/* تفسير الايات */
+
+#tfs_ayat {
+    display: block;
+    padding: 0px;
+    list-style: none;
+}
+
+#tfs_ayat li {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    padding: 10px;
+    border-radius: 10px;
+    width: 90%;
+    background-color: var(--background_div);
+    transition: 0.5s ease-in-out;
+}
+
+#tfs_ayat li:hover {
+    transition: 0.5s ease-in-out;
+    background-color: var(--background_div_hover);
+    box-shadow: 0px 6px 10px 0px #00000063;
+}
+
+#tfs_ayat li:hover .tfs_id{
+    transition: 0.5s ease-in-out;
+    background-color: var(--background_div);
+    box-shadow: 0px 6px 10px 0px #0000003b;
+}
+
+#tfs_ayat li:hover .ayaat{
+    transition: 0.5s ease-in-out;
+    color: var(--background_div);
+}
+
+#tfs_ayat li:hover .tafseer{
+    transition: 0.5s ease-in-out;
+    color: var(--green);
+}
+
+.tfs_id {
+    background-color: var(--background_div_hover);
+    padding: 3px;
+    border-radius: 50%;
+    color: var(--white-div);
+    width: 25px;
+    position: absolute;
+    margin-top: -20px;
+    transition: 0.5s ease-in-out;
+}
+
+.ayaat {
+    margin-top: 25px;
+    margin-bottom: 20px;
+    color: var(--background_div_hover);
+    font-family: var(--Amiri);
+    font-size: 16px;
+}
+
+.tafseer {
+    color: var(--white-div);
+    font-weight: 600;
+}
