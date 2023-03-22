@@ -8,6 +8,8 @@ import albitaqat from './albitaqat.js';
 import hisnmuslim from './hisnmuslim.js';
 import radio from './radio.js';
 import tfs from './tfs.js';
+import images from './images.js';
+import allah from './allah.js';
 
 document.addEventListener('deviceready', async (e) => {
 
@@ -24,4 +26,6 @@ await albitaqat();
 await hisnmuslim();
 await radio();
 await tfs();
+await images();
+await allah();
 await notification();

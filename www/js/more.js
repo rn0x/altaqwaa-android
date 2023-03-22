@@ -6,7 +6,7 @@ export default async () => {
         let more_hisnmuslim = document.getElementById("more_hisnmuslim");
         let more_tfs = document.getElementById("more_tfs");
         let more_radio = document.getElementById("more_radio");
-        let more_videos = document.getElementById("more_videos");
+        let more_allah = document.getElementById("more_allah");
         let more_images = document.getElementById("more_images");
         let more_settings = document.getElementById("more_settings");
         let more_info = document.getElementById("more_info");
@@ -32,9 +32,9 @@ export default async () => {
             window.location.href = "/pages/radio.html"
         });
 
-        more_videos.addEventListener("click", e => {
+        more_allah.addEventListener("click", e => {
 
-            window.location.href = "/pages/videos.html"
+            window.location.href = "/pages/allah.html"
         });
 
         more_images.addEventListener("click", e => {

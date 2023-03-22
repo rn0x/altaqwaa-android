@@ -1,0 +1,54 @@
+#content {
+    margin-top: 60px !important;
+}
+
+#allah_names {
+    display: block;
+    list-style: none;
+    padding: 0px;
+}
+
+#allah_names li {
+    width: 88%;
+    background-color: var(--background_div);
+    border-radius: 10px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: 0.5s ease-in-out;
+    padding: 10px;
+}
+
+#allah_names li:hover {
+    background-color: var(--background_div_hover);
+    transition: 0.5s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.616) 0px 25px 20px -20px;
+}
+
+#allah_names li:hover h3{
+    background-color: var(--background_div);
+    transition: 0.5s ease-in-out;
+}
+
+#allah_names li:hover p{
+    color: var(--green);
+    transition: 0.5s ease-in-out;
+}
+
+#allah_names h3 {
+    width: 120px;
+    background-color: var(--background_div_hover);
+    border-radius: 15px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: absolute;
+    margin-top: -40px;
+    color: var(--white-div);
+}
+
+#allah_names p {
+    color: var(--color_font_grey);
+    font-weight: 700;
+}
