@@ -1,3 +1,4 @@
+import Downloader from './modules/Downloader.js';
 import loadJson from './modules/loadJson.js';
 
 export default async () => {
@@ -150,11 +151,13 @@ export default async () => {
 
                     quran_reader_surah_img_download.addEventListener("click", async e => {
 
-                        let link = document.createElement('a');
-                        link.href = iterator?.link;
-                        link.download = `${iterator?.name}-${item?.name}`;
-                        link.hidden = true
-                        link.click();
+                        Downloader(iterator?.link, `${iterator?.name} - ${mp3quran?.name}.mp3`);
+
+                        // let link = document.createElement('a');
+                        // link.href = iterator?.link;
+                        // link.download = `${iterator?.name}-${item?.name}.mp3`;
+                        // link.hidden = true
+                        // link.click();
 
                     });
                 }

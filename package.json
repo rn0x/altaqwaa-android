@@ -27,6 +27,7 @@
     "cordova-plugin-androidx-adapter": "^1.1.3",
     "cordova-plugin-badge": "^0.8.8",
     "cordova-plugin-device": "^2.1.0",
+    "cordova-plugin-downloader": "github:asadaries/cordova-plugin-downloader",
     "cordova-plugin-local-notification": "github:katzer/cordova-plugin-local-notifications",
     "jetifier": "^2.0.0"
   },
@@ -53,7 +54,9 @@
       "cordova-plugin-dialogs": {},
       "cordova-plugin-local-notification": {
         "ANDROID_SUPPORT_V4_VERSION": "26.+"
-      }
+      },
+      "cordova-plugin-badge": {},
+      "cordova-plugin-downloader": {}
     },
     "platforms": [
       "android"
