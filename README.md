@@ -1,5 +1,3 @@
-![preview](https://raw.githubusercontent.com/rn0x/Altaqwaa-Islamic-Desktop-Application/main/screenshots/Featured_banner.png)
-
 
 **تطبيق إسلامي مفتوح المصدر يعمل على أجهزة اندرويد سهل الإستخدام و جامع للكثير من الميزات التي يحتاجها المسلم في يومه**
 
