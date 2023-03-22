@@ -10,12 +10,9 @@ import radio from './radio.js';
 import tfs from './tfs.js';
 import images from './images.js';
 import allah from './allah.js';
+import settings from './settings.js';
 
-document.addEventListener('deviceready', async (e) => {
-
-
-
-}, false);
+// document.addEventListener('deviceready', async (e) => {}, false);
 
 await footer();
 await adhkar();
@@ -28,4 +25,5 @@ await radio();
 await tfs();
 await images();
 await allah();
+await settings();
 await notification();

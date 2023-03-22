@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/css/var.css"> <!-- المتغيرات -->
     <link rel="stylesheet" href="/css/main.css"> <!-- ملف الإستايل الأساسي -->
     <link rel="stylesheet" href="/css/footer.css"> <!-- ملف css الفوتر -->
+    <link rel="stylesheet" href="/css/settings.css">
     <link rel="stylesheet" href="/css/more.css">
     <title>التقوى</title>
 </head>
@@ -27,9 +28,76 @@
 
     </div>
 
+    <div class="alert" id="alert">
+
+        <p class="text_alert">
+            تم الحفظ
+        </p>
+
+    </div>
+
     <div id="content">
 
         <!-- ================ ضع هنا محتوى الصفحة =============== -->
+
+        <ul class="settings_ul">
+
+            <li>
+
+                <div class="settings_right">
+                    <h3 class="settings_title">
+                        تحديث الموقع
+                    </h3>
+                </div>
+
+                <div class="settings_left">
+                    <img src="../img/refresh.png" id="refresh_location">
+                </div>
+
+            </li>
+
+            <li>
+                <div class="settings_right">
+                    <h3 class="settings_title">
+                        طريقة حساب أوقات الصلاة
+                    </h3>
+                </div>
+
+                <div class="settings_left">
+                    <select id="Calculation_settings" size="1">
+                        <option value="MuslimWorldLeague" id="MuslimWorldLeague">رابطة العالم الإسلامي</option>
+                        <option value="Egyptian" id="Egyptian">الهيئة المصرية العامة للمساحة</option>
+                        <option value="Karachi" id="Karachi">جامعة العلوم الإسلامية بكراتشي</option>
+                        <option value="UmmAlQura" id="UmmAlQura">جامعة أم القرى بمكة المكرمة</option>
+                        <option value="Dubai" id="Dubai">دبي</option>
+                        <option value="Qatar" id="Qatar">قطر</option>
+                        <option value="Kuwait" id="Kuwait">الكويت</option>
+                        <option value="Singapore" id="Singapore">سنغافورة وماليزيا وإندونيسيا</option>
+                        <option value="Turkey" id="Turkey">طريقة ديانت المستخدمة في تركيا</option>
+                        <option value="Tehran" id="Tehran">معهد الجيوفيزياء بجامعة طهران</option>
+                        <option value="NorthAmerica" id="NorthAmerica">يمكن استخدامه لأمريكا الشمالية</option>
+                    </select>
+                </div>
+            </li>
+
+            <li>
+                <div class="settings_right">
+                    <h3 class="settings_title">
+                       إشعار بدخول وقت الصلاة
+                    </h3>
+                </div>
+
+                <div class="settings_left">
+                    <label class="switch" id="label_adhkar">
+                        <input type="checkbox" checked id="notifications_adhan">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </li>
+
+        </ul>
+
+        <button id="settings_save">حفظ</button>
 
         <!-- ================ ضع هنا محتوى الصفحة =============== -->
 

@@ -5,19 +5,27 @@ export default async () => {
 
     if (window.location.pathname === '/prayer.html') {
 
-        let GPS = await getGPS();
-        let latitude = GPS.latitude
-        let longitude = GPS.longitude
-        
+
         // LocalStorage 
 
         let storage = window.localStorage;
-        // storage.setItem('Calculation', 'UmmAlQura')
         let Calculation = storage.getItem('Calculation');
-        
-        
+        let Getlatitude = storage.getItem('latitude');
+        let Getlongitude = storage.getItem('longitude');
 
-        let adhan = adhanModule(Calculation ? Calculation : "UmmAlQura", latitude, longitude);
+        if (Getlongitude === null || Getlatitude === null) {
+
+            let GPS = await getGPS();
+            Getlatitude = GPS.latitude;
+            Getlongitude = GPS.longitude;
+            storage.setItem("latitude", Getlatitude);
+            storage.setItem("longitude", Getlongitude);
+
+        }
+
+
+
+        let adhan = adhanModule(Calculation ? Calculation : "UmmAlQura", Number(Getlatitude), Number(Getlongitude));
         let data_hijri = document.getElementById('data_hijri');
         let data_Gregorian = document.getElementById('data_Gregorian');
         let datoday = document.getElementById('datoday');
@@ -58,7 +66,8 @@ export default async () => {
 
 
         setInterval(() => {
-            let adhan = adhanModule(Calculation ? Calculation : "UmmAlQura", latitude, longitude);
+            
+            let adhan = adhanModule(Calculation ? Calculation : "UmmAlQura", Number(Getlatitude), Number(Getlongitude));
             data_hijri.innerText = adhan.data_hijri;
             data_Gregorian.innerText = adhan.data_Gregorian;
             datoday.innerText = adhan.today;

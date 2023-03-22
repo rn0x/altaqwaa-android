@@ -4,165 +4,182 @@ import moment from './modules/moment/moment.js';
 
 export default async () => {
 
-    let GPS = await getGPS();
-    let latitude = GPS.latitude
-    let longitude = GPS.longitude
-
     // LocalStorage 
 
     let storage = window.localStorage;
     let Calculation = storage.getItem('Calculation');
+    let Getlatitude = storage.getItem('latitude');
+    let Getlongitude = storage.getItem('longitude');
+    let notification = storage.getItem('notification');
 
-    setInterval(async () => {
+    if (Getlongitude === null || Getlatitude === null) {
 
-        let AdhanPlaying = storage.getItem('AdhanPlaying');
-        AdhanPlaying === null ? storage.setItem('AdhanPlaying', "false") : false;
-        let timenow = moment().format('h:mm A');
-        let adhan = adhanModule(Calculation ? Calculation : "UmmAlQura", latitude, longitude);
-        // let slah = adhan.nextPrayer === "fajr" ? "الفجر" : adhan.nextPrayer === "dhuhr" ? "الظهر" : adhan.nextPrayer === "asr" ? "العصر" : adhan.nextPrayer === "maghrib" ? "المغرب" : adhan.nextPrayer === "isha" ? "العشاء" : "لايوجد";
-        let fileAdhan = adhan.nextPrayer === "fajr" ? "/mp3/002.mp3" : "/mp3/001.mp3"
-        let audioAdhan = new Audio(fileAdhan);
-        audioAdhan.id = 'audioAdhan';
-        audioAdhan.preload = 'none';
-        audioAdhan.autoplay = false;
+        let GPS = await getGPS();
+        Getlatitude = GPS.latitude;
+        Getlongitude = GPS.longitude;
+        storage.setItem("latitude", Getlatitude);
+        storage.setItem("longitude", Getlongitude);
 
-        switch (timenow) {
-            case adhan?.fajr:
+    }
 
-                if (AdhanPlaying === "false") {
+    if (notification ? bool(notification) : true) {
 
-                    storage.setItem('AdhanPlaying', "true");
-                    cordova.plugins.notification.local.schedule({
-                        id: 1,
-                        title: `${adhan.today} - ${adhan.data_hijri}`,
-                        text: `حان الآن وقت صلاة الفجر`,
-                        actions: [
-                            { id: 'stop', title: 'إيقاف الأذآن' }
-                        ],
-                    });
+        setInterval(async () => {
 
-                    await audioAdhan.play();
+            let AdhanPlaying = storage.getItem('AdhanPlaying');
+            AdhanPlaying === null ? storage.setItem('AdhanPlaying', "false") : false;
+            let timenow = moment().format('h:mm A');
+            let adhan = adhanModule(Calculation ? Calculation : "UmmAlQura", Number(Getlatitude), Number(Getlongitude));
+            // let slah = adhan.nextPrayer === "fajr" ? "الفجر" : adhan.nextPrayer === "dhuhr" ? "الظهر" : adhan.nextPrayer === "asr" ? "العصر" : adhan.nextPrayer === "maghrib" ? "المغرب" : adhan.nextPrayer === "isha" ? "العشاء" : "لايوجد";
+            let fileAdhan = adhan.nextPrayer === "fajr" ? "/mp3/002.mp3" : "/mp3/001.mp3"
+            let audioAdhan = new Audio(fileAdhan);
+            audioAdhan.id = 'audioAdhan';
+            audioAdhan.preload = 'none';
+            audioAdhan.autoplay = false;
 
-                    cordova.plugins.notification.local.on('stop', function (notification, eopts) {
-                        audioAdhan.pause();
-                        audioAdhan.currentTime = 0;
-                    });
-                }
+            switch (timenow) {
+                case adhan?.fajr:
 
-                break;
+                    if (AdhanPlaying === "false") {
 
-            case adhan?.dhuhr:
+                        storage.setItem('AdhanPlaying', "true");
+                        cordova.plugins.notification.local.schedule({
+                            id: 1,
+                            title: `${adhan.today} - ${adhan.data_hijri}`,
+                            text: `حان الآن وقت صلاة الفجر`,
+                            actions: [
+                                { id: 'stop', title: 'إيقاف الأذآن' }
+                            ],
+                        });
 
-                if (AdhanPlaying === "false") {
+                        await audioAdhan.play();
 
-                    storage.setItem('AdhanPlaying', "true");
-                    cordova.plugins.notification.local.schedule({
-                        id: 1,
-                        title: `${adhan.today} - ${adhan.data_hijri}`,
-                        text: `حان الآن وقت صلاة الظهر`,
-                        actions: [
-                            { id: 'stop', title: 'إيقاف الأذآن' }
-                        ],
-                    });
+                        cordova.plugins.notification.local.on('stop', function (notification, eopts) {
+                            audioAdhan.pause();
+                            audioAdhan.currentTime = 0;
+                        });
+                    }
 
-                    await audioAdhan.play();
+                    break;
 
-                    cordova.plugins.notification.local.on('stop', function (notification, eopts) {
-                        audioAdhan.pause();
-                        audioAdhan.currentTime = 0;
-                    });
-                }
+                case adhan?.dhuhr:
 
-                break;
+                    if (AdhanPlaying === "false") {
 
-            case adhan?.asr:
+                        storage.setItem('AdhanPlaying', "true");
+                        cordova.plugins.notification.local.schedule({
+                            id: 1,
+                            title: `${adhan.today} - ${adhan.data_hijri}`,
+                            text: `حان الآن وقت صلاة الظهر`,
+                            actions: [
+                                { id: 'stop', title: 'إيقاف الأذآن' }
+                            ],
+                        });
 
-                if (AdhanPlaying === "false") {
+                        await audioAdhan.play();
 
-                    storage.setItem('AdhanPlaying', "true");
-                    cordova.plugins.notification.local.schedule({
-                        id: 1,
-                        title: `${adhan.today} - ${adhan.data_hijri}`,
-                        text: `حان الآن وقت صلاة العصر`,
-                        actions: [
-                            { id: 'stop', title: 'إيقاف الأذآن' }
-                        ],
-                    });
+                        cordova.plugins.notification.local.on('stop', function (notification, eopts) {
+                            audioAdhan.pause();
+                            audioAdhan.currentTime = 0;
+                        });
+                    }
 
-                    await audioAdhan.play();
+                    break;
 
-                    cordova.plugins.notification.local.on('stop', function (notification, eopts) {
-                        audioAdhan.pause();
-                        audioAdhan.currentTime = 0;
-                    });
-                }
+                case adhan?.asr:
 
-                break;
+                    if (AdhanPlaying === "false") {
 
-            case adhan?.maghrib:
+                        storage.setItem('AdhanPlaying', "true");
+                        cordova.plugins.notification.local.schedule({
+                            id: 1,
+                            title: `${adhan.today} - ${adhan.data_hijri}`,
+                            text: `حان الآن وقت صلاة العصر`,
+                            actions: [
+                                { id: 'stop', title: 'إيقاف الأذآن' }
+                            ],
+                        });
 
-                if (AdhanPlaying === "false") {
+                        await audioAdhan.play();
 
-                    storage.setItem('AdhanPlaying', "true");
-                    cordova.plugins.notification.local.schedule({
-                        id: 1,
-                        title: `${adhan.today} - ${adhan.data_hijri}`,
-                        text: `حان الآن وقت صلاة المغرب`,
-                        actions: [
-                            { id: 'stop', title: 'إيقاف الأذآن' }
-                        ],
-                    });
+                        cordova.plugins.notification.local.on('stop', function (notification, eopts) {
+                            audioAdhan.pause();
+                            audioAdhan.currentTime = 0;
+                        });
+                    }
 
-                    await audioAdhan.play();
+                    break;
 
-                    cordova.plugins.notification.local.on('stop', function (notification, eopts) {
-                        audioAdhan.pause();
-                        audioAdhan.currentTime = 0;
-                    });
-                }
+                case adhan?.maghrib:
 
-                break;
+                    if (AdhanPlaying === "false") {
 
-            case adhan?.isha:
+                        storage.setItem('AdhanPlaying', "true");
+                        cordova.plugins.notification.local.schedule({
+                            id: 1,
+                            title: `${adhan.today} - ${adhan.data_hijri}`,
+                            text: `حان الآن وقت صلاة المغرب`,
+                            actions: [
+                                { id: 'stop', title: 'إيقاف الأذآن' }
+                            ],
+                        });
 
-                if (AdhanPlaying === "false") {
+                        await audioAdhan.play();
 
-                    storage.setItem('AdhanPlaying', "true");
-                    cordova.plugins.notification.local.schedule({
-                        id: 1,
-                        title: `${adhan.today} - ${adhan.data_hijri}`,
-                        text: `حان الآن وقت صلاة العشاء`,
-                        actions: [
-                            { id: 'stop', title: 'إيقاف الأذآن' }
-                        ],
-                    });
+                        cordova.plugins.notification.local.on('stop', function (notification, eopts) {
+                            audioAdhan.pause();
+                            audioAdhan.currentTime = 0;
+                        });
+                    }
 
-                    await audioAdhan.play();
+                    break;
 
-                    cordova.plugins.notification.local.on('stop', function (notification, eopts) {
-                        audioAdhan.pause();
-                        audioAdhan.currentTime = 0;
-                    });
-                }
+                case adhan?.isha:
 
-                break;
+                    if (AdhanPlaying === "false") {
 
-            default:
-                break;
-        }
+                        storage.setItem('AdhanPlaying', "true");
+                        cordova.plugins.notification.local.schedule({
+                            id: 1,
+                            title: `${adhan.today} - ${adhan.data_hijri}`,
+                            text: `حان الآن وقت صلاة العشاء`,
+                            actions: [
+                                { id: 'stop', title: 'إيقاف الأذآن' }
+                            ],
+                        });
 
-    }, 5000);
+                        await audioAdhan.play();
 
-    setInterval(() => {
+                        cordova.plugins.notification.local.on('stop', function (notification, eopts) {
+                            audioAdhan.pause();
+                            audioAdhan.currentTime = 0;
+                        });
+                    }
 
-        let AdhanPlaying = storage.getItem('AdhanPlaying');
-        AdhanPlaying === null ? storage.setItem('AdhanPlaying', "true") : false;
+                    break;
 
-        if (AdhanPlaying === "true") {
+                default:
+                    break;
+            }
 
-            storage.setItem('AdhanPlaying', "false");
-        }
+        }, 5000);
 
-    }, 60000);
+        setInterval(() => {
 
+            let AdhanPlaying = storage.getItem('AdhanPlaying');
+            AdhanPlaying === null ? storage.setItem('AdhanPlaying', "true") : false;
+
+            if (AdhanPlaying === "true") {
+
+                storage.setItem('AdhanPlaying', "false");
+            }
+
+        }, 60000);
+
+    }
+
+}
+
+function bool(v) {
+    return v === "false" || v === "null" || v === "NaN" || v === "undefined" || v === "0" ? false : !!v;
 }
