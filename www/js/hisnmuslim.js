@@ -62,8 +62,8 @@ export default async () => {
                     hisnmuslim_ul_audio.className = "hisnmuslim_ul_audio";
                     hisnmuslim_ul_audio.src = iterator?.audio;
                     hisnmuslim_ul_audio.controls = true;
-                    hisnmuslim_ul_audio.disablepictureinpicture = true;
-                    hisnmuslim_ul_audio.controlslist = "nodownload noplaybackrate";
+                    hisnmuslim_ul_audio.disablePictureInPicture = true;
+                    hisnmuslim_ul_audio.controlsList = "noplaybackrate nodownload novolume";
                     li.appendChild(hisnmuslim_ul_text);
                     hisnmuslim_ul_text.className = "hisnmuslim_ul_text";
                     hisnmuslim_ul_text.innerHTML = filterSpan(iterator?.text);

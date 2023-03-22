@@ -104,6 +104,14 @@ html {
     height: 20px;
 }
 
+::-webkit-media-controls-volume-slider {
+    display: none;
+}
+
+::-webkit-media-controls-mute-button {
+    display: none;
+}
+
 @media (min-width: 500px) {
     .text_alert {
         margin-top: 30% !important;
