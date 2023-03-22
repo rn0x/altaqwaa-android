@@ -58,6 +58,8 @@
     margin-left: auto;
     margin-right: auto;
     font-size: 14px;
+    font-weight: 700;
+    font-family: var(--NotoSansArabic);
     color: var(--white-div);
     background-color: var(--background_div);
     transition: 0.5s ease-in-out;

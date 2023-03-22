@@ -22,7 +22,8 @@ html {
     /* prevent copy paste, to allow, change 'none' to 'text' */
     user-select: none;
     background-color: #2e3338;
-    font-size: 12px;
+    font-size: 13px;
+    font-weight: 400;
     padding: 0px;
     margin: 0 0 0 0;
     direction: rtl;

@@ -116,10 +116,11 @@
     margin-bottom: 20px;
     color: var(--background_div_hover);
     font-family: var(--Amiri);
-    font-size: 16px;
+    font-size: 23px;
 }
 
 .tafseer {
     color: var(--white-div);
     font-weight: 600;
+    font-size: 15px;
 }

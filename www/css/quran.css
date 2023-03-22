@@ -43,7 +43,7 @@
 }
 
 .quran_reader li {
-    width: calc(80% / 2);
+    width: calc(78% / 2);
     background-color: var(--background_div);
     word-break: break-all;
     padding: 10px;
@@ -177,4 +177,10 @@
     width: 30px;
     margin-left: 10px;
     /* cursor: pointer; */
+}
+
+@media (max-width: 320px) {
+    .quran_reader li {
+        width: calc(70% / 2);
+    }
 }
