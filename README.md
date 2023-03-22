@@ -23,13 +23,13 @@
 
 <br>
 
-|  ![altaqwaa](/screenshots/1.png)   |  ![altaqwaa](/screenshots/2.png)   |
+|  ![altaqwaa](/screenshots/1.jpg)   |  ![altaqwaa](/screenshots/2.jpg)   |
 |  :-------------------------------- |  --------------------------------  |
-|  ![altaqwaa](/screenshots/3.png)   |  ![altaqwaa](/screenshots/4.png)   |
-|  ![altaqwaa](/screenshots/5.png)   |  ![altaqwaa](/screenshots/6.png)   |
-|  ![altaqwaa](/screenshots/7.png)   |  ![altaqwaa](/screenshots/8.png)   |
-|  ![altaqwaa](/screenshots/9.png)   |  ![altaqwaa](/screenshots/10.png)  |
-|  ![altaqwaa](/screenshots/11.png)  |  ![altaqwaa](/screenshots/12.png)  |
+|  ![altaqwaa](/screenshots/3.jpg)   |  ![altaqwaa](/screenshots/4.jpg)   |
+|  ![altaqwaa](/screenshots/5.jpg)   |  ![altaqwaa](/screenshots/6.jpg)   |
+|  ![altaqwaa](/screenshots/7.jpg)   |  ![altaqwaa](/screenshots/8.jpg)   |
+|  ![altaqwaa](/screenshots/9.jpg)   |  ![altaqwaa](/screenshots/10.jpg)  |
+|  ![altaqwaa](/screenshots/11.jpg)  |  ![altaqwaa](/screenshots/12.jpg)  |
 
 <br>
 
@@ -117,7 +117,5 @@ npm run build
 <br>
 
 **لا تنسنا من دعوة صالحة بظهر الغيب**
-
-<br>
 
 **سبحانك اللهم وبحمدك أشهد أن لا إله إلا أنت أستغفرك وأتوب إليك**
