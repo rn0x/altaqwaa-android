@@ -1,0 +1,62 @@
+#content {
+    margin-top: 60px !important;
+}
+
+#logo_altaqwaa {
+    margin-top: 30px;
+    max-width: 70%;
+}
+
+#app_name {
+    font-size: 18px;
+    margin: 0 auto;
+    color: var(--white);
+}
+
+#app_version {
+    margin: 0 auto;
+    color: var(--white);
+}
+
+#app_version span {
+    color: var(--color_font_grey);
+    margin-right: 5px;
+}
+
+#url_altaqwaa {
+    margin-top: 3px;
+    margin-bottom: 20px;
+    color: var(--color_font_grey);
+}
+
+#Do_not_forget {
+    margin-top: 5px;
+    margin-bottom: 20px;
+    color: var(--color_font_grey);
+}
+
+#altaqwaa_ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    list-style: none;
+    text-align: center;
+}
+
+#altaqwaa_ul li {
+    display: block;
+    padding: 10px;
+}
+
+#altaqwaa_ul li a {
+    margin-left: 20px;
+    margin-right: 20px;
+    text-decoration: none;
+}
+
+.icon_tqw {
+    width: 50px;
+
+}

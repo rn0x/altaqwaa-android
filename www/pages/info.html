@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/css/var.css"> <!-- المتغيرات -->
     <link rel="stylesheet" href="/css/main.css"> <!-- ملف الإستايل الأساسي -->
     <link rel="stylesheet" href="/css/footer.css"> <!-- ملف css الفوتر -->
+    <link rel="stylesheet" href="/css/info.css">
     <link rel="stylesheet" href="/css/more.css">
     <title>التقوى</title>
 </head>
@@ -31,6 +32,34 @@
 
         <!-- ================ ضع هنا محتوى الصفحة =============== -->
 
+        <img src="../img/altaqwaa.png" id="logo_altaqwaa">
+
+        <h3 id="app_name">
+            تطبيق التقوى
+        </h3>
+
+        <p id="app_version">الإصدار: <span>v1.0.0</span></p>
+
+        <p id="url_altaqwaa">
+            www.altaqwaa.org
+        </p>
+
+        <h3 id="Do_not_forget">
+            لا تنسنا من دعوة صالحة بظهر الغيب
+        </h3>
+
+        <ul id="altaqwaa_ul">
+
+            <li>
+
+                <a href="https://github.com/Alsarmad/altaqwaa_android" target="_blank" rel="noopener noreferrer">
+                    <img src="/img/github.svg" class="icon_tqw">
+                </a>
+
+            </li>
+
+        </ul>
+
         <!-- ================ ضع هنا محتوى الصفحة =============== -->
 
     </div>
@@ -40,6 +69,17 @@
         <!-- الفوتر مربوط بالجافاسكربت -->
     </footer>
 
+    <script>
+
+        
+
+        let back = document.getElementById('back');
+
+        back.addEventListener("click", e => {
+            window.location.href = "/more.html";
+        });
+
+    </script>
     <script src="/cordova.js"></script>
     <script src="/js/index.js" type="module"></script>
 </body>

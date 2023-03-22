@@ -112,6 +112,12 @@ html {
     display: none;
 }
 
+* {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+    /* For some Androids */
+}
+
 @media (min-width: 500px) {
     .text_alert {
         margin-top: 30% !important;
