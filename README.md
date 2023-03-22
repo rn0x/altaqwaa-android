@@ -93,6 +93,9 @@ npm run device
 
 # لبناء نسخة من التطبيق apk
 npm run build
+
+# لتأكد من تثبيت متطلبات التشغيل 
+cordova requirements
 ```
 
 
