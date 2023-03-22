@@ -8,8 +8,7 @@
     "dev": "browser-sync start -s www/ --watch --port 8080 --ui-port 8081",
     "device": "cordova run android --device",
     "build": "cordova build android --release",
-    "android": "cordova platform add android@10",
-    "jetifier": "npx jetifier",
+    "android": "cordova platform add android@10 && npx jetifier",
     "clear": "cordova platforms rm android && cordova platforms add android@10 && npx jetifier",
     "keytool": "keytool -genkey -v -keystore ./debug.keystore -alias 'rn0x' -storepass '11223344' -keypass '11223344' -keyalg RSA -keysize 2048 -dname 'CN=rn0x, OU=altaqwaa, O=altaqwaa, L=makkah, ST=makkah, C=sa'"
   },

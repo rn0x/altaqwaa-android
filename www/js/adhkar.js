@@ -88,7 +88,7 @@ export default async () => {
                     }
 
                     else {
-                        window.open("https://github.com/rn0x", "_blank");
+                        window.open("https://github.com/Alsarmad/altaqwaa_android", "_blank");
                     }
                 },         // callback
                 'خروج',            // title
