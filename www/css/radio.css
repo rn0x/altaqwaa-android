@@ -1,0 +1,64 @@
+#content {
+    margin-top: 60px !important;
+}
+
+#radio_quran {
+    display: block;
+    padding: 0px;
+    list-style: none;
+    margin-top: 40px;
+}
+
+#radio_quran li {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    background-color: var(--background_div);
+    transition: 0.5s ease-in-out;
+    box-shadow: 5px 7px 5px 0px #0000001a;
+}
+
+#radio_quran li:hover {
+    transition: 0.5s ease-in-out;
+    background-color: var(--background_div_hover);
+}
+#radio_quran li:hover .radio_quran_number{
+    transition: 0.5s ease-in-out;
+    background-color: var(--background_div);
+}
+
+.radio_quran_number {
+    color: var(--white-div);
+    font-size: 16px;
+    position: absolute;
+    margin-top: -60px;
+    background-color: var(--background_div_hover);
+    width: 35px;
+    border-radius: 50%;
+    transition: 0.5s ease-in-out;
+    font-weight: 600;
+    box-shadow: 0px 3px 10px 0px #0000002f;
+}
+
+.radio_quran_title {
+    color: var(--white-div);
+}
+
+.radio_quran_play {
+    width: 30px;
+    margin-left: 10px;
+}
+
+@media (max-width: 350px) {
+    .radio_quran_title {
+        font-size: 11px;
+    }
+}

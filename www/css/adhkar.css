@@ -1,5 +1,5 @@
 #adhkar {
-    background-color: #6bc077 !important;
+    background-color: var(--background_div_hover) !important;
     transition: 0.5s ease-in-out;
     box-shadow: 5px 0px 15px 0px #00000048;
 }
@@ -9,7 +9,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     padding: 0;
     margin-left: 5px;
     margin-right: 5px;
@@ -17,8 +17,8 @@
 }
 
 #adhkar_ul li {
-    width: 85%;
-    background-color: #232527;
+    width: calc(80% / 2);
+    background-color: var(--background_div);
     padding: 10px;
     border-radius: 10px;
     margin-left: auto;
@@ -31,21 +31,21 @@
 
 #adhkar_ul li:hover {
     /* width: 110px; */
-    background-color: #6bc077;
+    background-color: var(--background_div_hover);
     transition: 0.5s ease-in-out;
     box-shadow: 5px 0px 15px 0px #00000048;
 }
 
 #adhkar_ul img {
-    width: 30px;
+    width: 40px;
     margin-bottom: 0px;
     margin-top: 0px;
 }
 
 #adhkar_ul p {
-    font-family: "NotoSansArabic";
+    font-family: var(--NotoSansArabic);
     font-weight: 600;
-    color: #ffffff;
+    color: var(--white-div);
     margin-bottom: 0px;
     margin-top: 5px;
 }
@@ -53,15 +53,14 @@
 
 #adhkar_random {
     display: block;
-    width: 85%;
+    width: 90%;
     margin-top: 20px;
-    background-color: #232527;
+    background-color: var(--background_div);
     padding: 10px;
     border-radius: 15px;
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 20px;
-    box-shadow: 5px 5px 15px 0px #00000034;
     /* user-select: text; */
     box-shadow: #32325d40 0px 6px 12px -2px, #0000004d 0px 3px 7px -3px;
 }
@@ -69,25 +68,26 @@
 #adhkar_random_title {
     margin-bottom: 8px;
     margin-top: 0px;
-    font-family: "NotoSansArabic";
+    font-family: var(--NotoSansArabic);
     font-weight: 600;
-    color: #585858;
+    color: var(--color_font_grey);
     font-size: 16px;
     text-align: center;
 }
 
 #adhkar_random_text {
-    font-family: 'Amiri';
-    color: #ffffff;
-    font-size: 19px;
+    font-family: var(--Amiri);
+    color: var(--white);
+    font-size: var(--font_size_adhkar);
     text-align: center;
     margin-bottom: 0px;
+    font-size: 23px;
 }
 
 .adhkar_random_font {
     font-family: 'NotoSansArabic';
     font-weight: 400;
-    color: #585858;
+    color: var(--color_font_grey);
     font-size: 14px;
     text-align: center;
 }
@@ -99,20 +99,20 @@
 .copy_and_paste {
     margin-top: 15px;
     margin-bottom: 0px;
-    background-color: #2e3338;
+    background-color: var(--background_body);
     border-radius: 15px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-around;
     list-style: none;
     align-items: center;
+    padding: 0px;
 }
 
 
 .copy_and_paste li {
     height: 30px;
-    margin-left: 50px;
 }
 
 .icon_c_p {
@@ -129,10 +129,10 @@
 
 .adhkar {
     display: block;
-    width: 85%;
+    width: 90%;
     margin-top: 15px;
     margin-bottom: 15px;
-    background-color: #232527;
+    background-color: var(--background_div);
     padding: 10px;
     border-radius: 15px;
     margin-right: auto;
@@ -145,57 +145,56 @@
 }
 
 .adhkar:hover {
-    background-color: #6bc077;
+    background-color: var(--background_div_hover);
 }
 
 
 .adhkar:hover .copy_and_paste {
-    background-color: #53925b;
+    background-color: var(--background_div_hover_2);
 }
 
 .adhkar:hover .repetition {
-    background-color: #6bc077;
-    color: #3c6e43;
+    /* background-color: var(--background_div_hover); */
+    color: var(--white-div);
 }
 
 .adhkar:hover .repetition_number {
-    color: #3c6e43;
+    color: var(--green);
 }
 
 .adhkar:hover .text_bottom {
-    color: #3c6e43;
+    color: var(--white-div);
 }
 
 .text_bottom {
     margin-bottom: 8px;
     margin-top: 10px;
-    font-family: 'NotoSansArabic';
+    font-family: var(--NotoSansArabic);
     font-weight: 500;
-    color: #585858;
-    font-size: 12px;
+    color: var(--color_font_grey);
+    font-size: 14px;
     text-align: center;
 
 
 }
 
 .text {
-    font-family: 'Amiri';
-    color: #fff;
-    font-size: 19px;
+    font-family: var(--Amiri);
+    color: var(--white);
+    font-size: var(--font_size_adhkar);
     text-align: center;
     margin-bottom: 0px;
+    font-size: 23px;
 }
 
 .repetition {
     text-align: center;
-    font-family: 'NotoSansArabic';
+    font-family: var(--NotoSansArabic);
     font-weight: 500;
-    color: #fff;
+    color: var(--white-div);
     font-size: 14px;
-    background-color: #232527;
     border-radius: 10px;
-    width: 90px;
-    height: 10px;
+    width: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -204,14 +203,14 @@
 }
 
 .repetition_number {
-    color: #4e5458;
+    color: var(--color_font_grey);
     margin-right: 10px;
 }
 
 #header {
     width: 100%;
     display: flex;
-    background-color: #2e3338;
+    background-color: var(--background_body);
     justify-content: center;
     align-items: center;
     border-top: 0px;
@@ -219,7 +218,7 @@
     border-right: 0px;
     border-bottom: 1px;
     border-style: solid;
-    border-color: #232527;
+    border-color: var(--background_div);
     padding: 10px;
     box-shadow: #0000001a 0px 10px 15px -3px, #0000000d 0px 4px 6px -2px;
     position: fixed;
@@ -230,17 +229,19 @@
 #header p {
     font-family: 'NotoSansArabic';
     font-weight: 700;
-    color: #ffffff;
+    color: var(--white-div);
     text-align: center;
     margin: 0 0 0 0;
 }
 
 #header img {
+    /* cursor: pointer; */
     width: 20px;
     right: 0px;
     margin: 0 0 0 0;
     position: absolute;
     margin-right: 15px;
+    z-index: -1;
 }
 
 /* @media (max-width: 330px) {

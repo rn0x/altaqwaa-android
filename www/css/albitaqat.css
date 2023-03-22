@@ -1,0 +1,125 @@
+#content {
+    margin-top: 60px !important;
+}
+
+#albitaqat_part1 {
+    display: block;
+}
+
+#albitaqat_part2 {
+    display: none;
+}
+
+#albitaqat {
+    display: block;
+    background-color: var(--background_div);
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    border-radius: 10px;
+    color: var(--color_font_grey);
+    box-shadow: #32325d40 0px 6px 12px -2px, #0000004d 0px 3px 7px -3px;
+}
+
+#albitaqat img {
+    margin-top: 10px;
+    width: 200px;
+}
+
+#albitaqat p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-weight: 500;
+}
+
+
+/* index albitaqat */
+
+#albitaqat_index {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0px;
+    list-style: none;
+}
+
+#albitaqat_index li {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: calc(75% / 2);
+    background-color: var(--background_div);
+    word-break: break-all;
+    padding: 10px;
+    margin: 7px 7px 7px 7px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 10px 0px #00000027;
+    transition: 0.5s ease-in-out;
+}
+
+#albitaqat_index li:hover {
+    background-color: var(--background_div_hover);
+    transition: 0.5s ease-in-out;
+}
+
+#albitaqat_index h3 {
+    margin: 0px 0px 0px 0px;
+    color: var(--white-div);
+}
+
+#albitaqat_index p {
+    margin: 0px 0px 0px 0px;
+    color: var(--color_font_grey);
+}
+
+
+/* albitaqat data */
+
+#albitaqat_data {
+    display: block;
+    padding: 0px;
+    list-style: none;
+    margin-top: 30px;
+}
+
+#albitaqat_data li {
+    display: block;
+    width: 90%;
+    background-color: var(--background_div);
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: 20px;
+    padding: 10px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+}
+
+.albitaqat_data_title {
+    width: 120px;
+    margin-top: -25px;
+    margin-bottom: 0px;
+    position: absolute;
+    background-color: var(--background_div_hover);
+    color: var(--green);
+    border-radius: 10px;
+}
+
+.albitaqat_data_text {
+    text-align: center;
+    color: var(--white-div);
+    font-weight: 800;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: var(--Amiri);
+    font-size: 23px;
+}
+
+#albitaqat_audio {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 90%;
+}

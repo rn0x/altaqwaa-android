@@ -5,9 +5,10 @@
     <author email="rn0x.me@gmail.com" href="https://altaqwaa.org">
         Altaqwaa
     </author>
-    <content src="adhkar.html" />
+    <content src="index.html" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
+    <preference name="AndroidXEnabled" value="true" />
     <preference name="KeepRunning" value="true" />
     <preference name="loglevel" value="DEBUG" />
     <preference kk="add myErrorPage.html" name="ErrorUrl" value="" />
@@ -51,5 +52,12 @@
     <plugin name="cordova-plugin-navigationbar-color" spec="^0.1.0" />
     <plugin name="cordova-plugin-splashscreen" spec="^6.0.2" />
     <plugin name="cordova-clipboard" spec="^1.3.0" />
+    <plugin name="cordova-plugin-geolocation" spec="^4.1.0" />
     <plugin name="cordova-plugin-device" spec="^2.1.0" />
+    <plugin name="cordova-plugin-dialogs" spec="^2.0.2" />
+    <plugin name="cordova-plugin-androidx-adapter" spec="^1.1.3" />
+    <plugin name="cordova-plugin-androidx" spec="^3.0.0" />
+    <plugin name="cordova-plugin-badge" spec="^0.8.8" />
+    <plugin name="cordova-plugin-local-notification" spec="github:katzer/cordova-plugin-local-notifications" />
+    <plugin name="cordova-plugin-downloader" spec="github:asadaries/cordova-plugin-downloader" />
 </widget>

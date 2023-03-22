@@ -1,0 +1,67 @@
+[
+    {
+        "id": 1,
+        "name": "إذاعة تفسير القران الكريم",
+        "link": "https://qurango.net/radio/tafseer"
+    },
+    {
+        "id": 2,
+        "name": "إذاعة الرقية الشرعية",
+        "link": "https://qurango.net/radio/roqiah"
+    },
+    {
+        "id": 3,
+        "name": "إذاعة الفتاوى العامة",
+        "link": "https://qurango.net/radio/fatwa"
+    },
+    {
+        "id": 4,
+        "name": "إذاعة عبدالله الموسى",
+        "link": "https://Qurango.net/radio/abdullah_almousa"
+    },
+    {
+        "id": 5,
+        "name": "إذاعة القرآن الكريم من الجزائر",
+        "link": "https://webradio.tda.dz/Coran_64K.mp3"
+    },
+    {
+        "id": 6,
+        "name": "إذاعة سعود الشريم",
+        "link": "https://Qurango.net/radio/saud_alshuraim"
+    },
+    {
+        "id": 7,
+        "name": "إذاعة إدريس أبكر",
+        "link": "https://Qurango.net/radio/idrees_abkr"
+    },
+    {
+        "id": 8,
+        "name": "إذاعة سورة البقرة - لعدد من القراء",
+        "link": "https://qurango.net/radio/albaqarah"
+    },
+    {
+        "id": 9,
+        "name": "اذاعة متنوعة لمختلف القراء",
+        "link": "https://Qurango.net/radio/mix"
+    },
+    {
+        "id": 10,
+        "name": "المختصر في تفسير القرآن الكريم",
+        "link": "https://qurango.net/radio/mukhtasartafsir"
+    },
+    {
+        "id": 11,
+        "name": "سيرة نبينا محمد صلى الله عليه وسلم",
+        "link": "https://Qurango.net/radio/fi_zilal_alsiyra"
+    },
+    {
+        "id": 12,
+        "name": "صور من حياة الصحابة رضوان الله عليهم",
+        "link": "https://qurango.net/radio/sahabah"
+    },
+    {
+        "id": 13,
+        "name": "إذاعة آيات السكينة",
+        "link": "https://qurango.net/radio/sakeenah"
+    }
+]

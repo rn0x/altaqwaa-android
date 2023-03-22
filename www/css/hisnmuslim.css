@@ -1,0 +1,133 @@
+#content {
+    margin-top: 60px !important;
+}
+
+#hisnmuslim_part1 {
+    display: block;
+}
+
+#hisnmuslim_part2 {
+    display: none;
+}
+
+#hisnmuslim_info {
+    width: 90%;
+    background-color: var(--background_div);
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    direction: rtl;
+}
+
+#hisnmuslim_info_book {
+    width: 80px;
+}
+
+#hisnmuslim_info_text {
+    margin-right: 10px;
+    font-size: 13px;
+    color: var(--color_font_grey);
+}
+
+#Search_hisnmuslim {
+    display: block;
+    background-image: url(/img/searchicon.png);
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    width: 60%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    background-color: #ffffff;
+    color: var(--color_font_grey);
+    border: 1px solid var(--background_menu);
+    margin-bottom: 18px;
+    margin-left: auto;
+    margin-right: auto;
+    direction: rtl;
+}
+
+#hisnmuslim_index {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+    border-collapse: collapse;
+    text-align: center;
+    direction: rtl;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#hisnmuslim_index th,
+#hisnmuslim_index td {
+    padding: 5px;
+    border: 1px solid var(--background_menu);
+    color: var(--white-div);
+    align-items: center;
+}
+
+#hisnmuslim_index th {
+    color: var(--color_font_grey);
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    background-color: var(--background_div);
+    border-bottom: 4px solid var(--background_menu);
+}
+
+#hisnmuslim_index tr:nth-child(even) {
+    background-color: var(--background_div_2) !important;
+}
+
+
+/* category */
+
+
+#hisnmuslim_ul_category {
+    display: block;
+    padding: 0px;
+    list-style: none;
+}
+
+#hisnmuslim_ul_category li {
+    width: 90%;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background-color: var(--background_div);
+}
+
+.hisnmuslim_ul_audio {
+    display: block;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 80%;
+}
+
+.hisnmuslim_ul_text {
+    color: var(--white-div);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.hisnmuslim_ul_tkrar {
+    width: 80px;
+    position: absolute;
+    background-color: var(--background_div_hover);
+    left: 0px;
+    margin-top: -10px;
+    margin-left: 20px;
+    border-radius: 7px;
+    color: var(--green);
+
+}
