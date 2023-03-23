@@ -29,6 +29,12 @@ document.addEventListener('deviceready', async (e) => {
 
     });
 
+    // ignore the system font preferences
+    
+    if(window.MobileAccessibility){
+        window.MobileAccessibility.usePreferredTextZoom(false);
+    }
+
 }, false);
 
 await footer();
