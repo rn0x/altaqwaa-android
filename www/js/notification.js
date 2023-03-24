@@ -43,21 +43,19 @@ export default async () => {
                     if (AdhanPlaying === "false") {
 
                         storage.setItem('AdhanPlaying', "true");
-                        cordova.plugins.notification.local.schedule({
-                            id: 1,
-                            title: `${adhan.today} - ${adhan.data_hijri}`,
-                            text: `حان الآن وقت صلاة الفجر`,
-                            actions: [
-                                { id: 'stop', title: 'إيقاف الأذآن' }
-                            ],
-                        });
 
                         await audioAdhan.play();
-
-                        cordova.plugins.notification.local.on('stop', function (notification, eopts) {
-                            audioAdhan.pause();
-                            audioAdhan.currentTime = 0;
-                        });
+                        navigator.notification.confirm(
+                            'حان الآن وقت صلاة الفجر',
+                            (e) => {
+                                if (e === 1) {
+                                    audioAdhan.pause();
+                                    audioAdhan.currentTime = 0;
+                                }
+                            },
+                            'تنبيه بوقت الصلاة',
+                            ['إيقاف الأذان', 'خروج']
+                        );
                     }
 
                     break;
@@ -67,21 +65,19 @@ export default async () => {
                     if (AdhanPlaying === "false") {
 
                         storage.setItem('AdhanPlaying', "true");
-                        cordova.plugins.notification.local.schedule({
-                            id: 1,
-                            title: `${adhan.today} - ${adhan.data_hijri}`,
-                            text: `حان الآن وقت صلاة الظهر`,
-                            actions: [
-                                { id: 'stop', title: 'إيقاف الأذآن' }
-                            ],
-                        });
-
                         await audioAdhan.play();
 
-                        cordova.plugins.notification.local.on('stop', function (notification, eopts) {
-                            audioAdhan.pause();
-                            audioAdhan.currentTime = 0;
-                        });
+                        navigator.notification.confirm(
+                            'حان الآن وقت صلاة الظهر',
+                            (e) => {
+                                if (e === 1) {
+                                    audioAdhan.pause();
+                                    audioAdhan.currentTime = 0;
+                                }
+                            },
+                            'تنبيه بوقت الصلاة',
+                            ['إيقاف الأذان', 'خروج']
+                        );
                     }
 
                     break;
@@ -91,21 +87,19 @@ export default async () => {
                     if (AdhanPlaying === "false") {
 
                         storage.setItem('AdhanPlaying', "true");
-                        cordova.plugins.notification.local.schedule({
-                            id: 1,
-                            title: `${adhan.today} - ${adhan.data_hijri}`,
-                            text: `حان الآن وقت صلاة العصر`,
-                            actions: [
-                                { id: 'stop', title: 'إيقاف الأذآن' }
-                            ],
-                        });
-
                         await audioAdhan.play();
 
-                        cordova.plugins.notification.local.on('stop', function (notification, eopts) {
-                            audioAdhan.pause();
-                            audioAdhan.currentTime = 0;
-                        });
+                        navigator.notification.confirm(
+                            'حان الآن وقت صلاة العصر',
+                            (e) => {
+                                if (e === 1) {
+                                    audioAdhan.pause();
+                                    audioAdhan.currentTime = 0;
+                                }
+                            },
+                            'تنبيه بوقت الصلاة',
+                            ['إيقاف الأذان', 'خروج']
+                        );
                     }
 
                     break;
@@ -115,21 +109,19 @@ export default async () => {
                     if (AdhanPlaying === "false") {
 
                         storage.setItem('AdhanPlaying', "true");
-                        cordova.plugins.notification.local.schedule({
-                            id: 1,
-                            title: `${adhan.today} - ${adhan.data_hijri}`,
-                            text: `حان الآن وقت صلاة المغرب`,
-                            actions: [
-                                { id: 'stop', title: 'إيقاف الأذآن' }
-                            ],
-                        });
-
                         await audioAdhan.play();
 
-                        cordova.plugins.notification.local.on('stop', function (notification, eopts) {
-                            audioAdhan.pause();
-                            audioAdhan.currentTime = 0;
-                        });
+                        navigator.notification.confirm(
+                            'حان الآن وقت صلاة المغرب',
+                            (e) => {
+                                if (e === 1) {
+                                    audioAdhan.pause();
+                                    audioAdhan.currentTime = 0;
+                                }
+                            },
+                            'تنبيه بوقت الصلاة',
+                            ['إيقاف الأذان', 'خروج']
+                        );
                     }
 
                     break;
@@ -139,21 +131,19 @@ export default async () => {
                     if (AdhanPlaying === "false") {
 
                         storage.setItem('AdhanPlaying', "true");
-                        cordova.plugins.notification.local.schedule({
-                            id: 1,
-                            title: `${adhan.today} - ${adhan.data_hijri}`,
-                            text: `حان الآن وقت صلاة العشاء`,
-                            actions: [
-                                { id: 'stop', title: 'إيقاف الأذآن' }
-                            ],
-                        });
-
                         await audioAdhan.play();
 
-                        cordova.plugins.notification.local.on('stop', function (notification, eopts) {
-                            audioAdhan.pause();
-                            audioAdhan.currentTime = 0;
-                        });
+                        navigator.notification.confirm(
+                            'حان الآن وقت صلاة العشاء',
+                            (e) => {
+                                if (e === 1) {
+                                    audioAdhan.pause();
+                                    audioAdhan.currentTime = 0;
+                                }
+                            },
+                            'تنبيه بوقت الصلاة',
+                            ['إيقاف الأذان', 'خروج']
+                        );
                     }
 
                     break;

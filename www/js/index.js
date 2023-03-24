@@ -10,10 +10,13 @@ import tfs from './tfs.js';
 import images from './images.js';
 import allah from './allah.js';
 import settings from './settings.js';
+import notification from './notification.js';
 
 document.addEventListener('deviceready', async (e) => {
 
     let permissions = cordova.plugins.permissions;
+
+    // الصلاحيات
 
     let list = [
         permissions.ACCESS_COARSE_LOCATION,
@@ -30,8 +33,8 @@ document.addEventListener('deviceready', async (e) => {
     });
 
     // ignore the system font preferences
-    
-    if(window.MobileAccessibility){
+
+    if (window.MobileAccessibility) {
         window.MobileAccessibility.usePreferredTextZoom(false);
     }
 
@@ -49,13 +52,4 @@ await tfs();
 await images();
 await allah();
 await settings();
-
-
-
-/**
- * يسبب مشاكل عند البناء سيتم تعديله في وقت لاحق
- * 
- * import notification from './notification.js';
- * await notification();
- * 
- */
+await notification();
