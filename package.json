@@ -1,7 +1,7 @@
 {
   "name": "com.rn0x.altaqwaa",
   "displayName": "التقوى",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "تطبيق إسلامي سهل الإستخدام و جامع للكثير من الميزات التي يحتاجها المسلم في يومه",
   "main": "index.js",
   "scripts": {
