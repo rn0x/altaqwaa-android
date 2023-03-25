@@ -155,15 +155,15 @@
 
 .adhkar:hover .repetition {
     /* background-color: var(--background_div_hover); */
-    color: var(--white-div);
-}
-
-.adhkar:hover .repetition_number {
     color: var(--green);
 }
 
-.adhkar:hover .text_bottom {
+.adhkar:hover .repetition_number {
     color: var(--white-div);
+}
+
+.adhkar:hover .text_bottom {
+    color: var(--green);
 }
 
 .text_bottom {
