@@ -63,6 +63,11 @@
     transition: 0.5s ease-in-out;
 }
 
+#albitaqat_index li:hover p{
+    color: var(--green);
+    transition: 0.5s ease-in-out;
+}
+
 #albitaqat_index h3 {
     margin: 0px 0px 0px 0px;
     color: var(--white-div);
@@ -71,6 +76,7 @@
 #albitaqat_index p {
     margin: 0px 0px 0px 0px;
     color: var(--color_font_grey);
+    transition: 0.5s ease-in-out;
 }
 
 
