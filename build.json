@@ -1,18 +1,18 @@
 {
     "android": {
         "debug": {
-            "keystore": "./tqw.keystore",
-            "storePassword": "Altaqwaa11223344",
-            "alias": "altaqwaa",
-            "password" : "Altaqwaa11223344",
+            "keystore": "./debug.keystore",
+            "storePassword": "11223344",
+            "alias": "rn0x",
+            "password" : "11223344",
             "keystoreType": "",
             "packageType": "apk"
         },
         "release": {
-            "keystore": "./tqw.keystore",
-            "storePassword": "Altaqwaa11223344",
-            "alias": "altaqwaa",
-            "password" : "Altaqwaa11223344",
+            "keystore": "./debug.keystore",
+            "storePassword": "11223344",
+            "alias": "rn0x",
+            "password" : "11223344",
             "keystoreType": "",
             "packageType": "apk"
         }
