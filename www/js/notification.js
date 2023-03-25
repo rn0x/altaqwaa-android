@@ -74,6 +74,12 @@ export default async () => {
                             'تنبيه بوقت الصلاة',
                             ['إيقاف الأذان', 'خروج']
                         );
+
+                        audioAdhan.addEventListener("pause",async (event) => {
+                            if (audioAdhan.currentTime !== 0) {
+                                await audioAdhan.play();
+                            }
+                        });
                     }
 
                     break;
@@ -96,6 +102,12 @@ export default async () => {
                             'تنبيه بوقت الصلاة',
                             ['إيقاف الأذان', 'خروج']
                         );
+
+                        audioAdhan.addEventListener("pause",async (event) => {
+                            if (audioAdhan.currentTime !== 0) {
+                                await audioAdhan.play();
+                            }
+                        });
                     }
 
                     break;
@@ -118,6 +130,12 @@ export default async () => {
                             'تنبيه بوقت الصلاة',
                             ['إيقاف الأذان', 'خروج']
                         );
+
+                        audioAdhan.addEventListener("pause",async (event) => {
+                            if (audioAdhan.currentTime !== 0) {
+                                await audioAdhan.play();
+                            }
+                        });
                     }
 
                     break;
@@ -140,6 +158,12 @@ export default async () => {
                             'تنبيه بوقت الصلاة',
                             ['إيقاف الأذان', 'خروج']
                         );
+
+                        audioAdhan.addEventListener("pause",async (event) => {
+                            if (audioAdhan.currentTime !== 0) {
+                                await audioAdhan.play();
+                            }
+                        });
                     }
 
                     break;
@@ -162,6 +186,12 @@ export default async () => {
                             'تنبيه بوقت الصلاة',
                             ['إيقاف الأذان', 'خروج']
                         );
+
+                        audioAdhan.addEventListener("pause",async (event) => {
+                            if (audioAdhan.currentTime !== 0) {
+                                await audioAdhan.play();
+                            }
+                        });
                     }
 
                     break;
