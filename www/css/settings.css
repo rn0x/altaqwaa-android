@@ -5,7 +5,7 @@
 
 .settings_ul {
     display: block;
-    width: 92%;
+    width: 95%;
     margin-left: auto;
     margin-right: auto;
     list-style: none;
@@ -30,11 +30,10 @@
 .settings_title {
     color: var(--white-div);
     margin-left: 10px;
-    font-size: 12px;
+    font-size: 11px;
 }
 
-
-#Calculation_settings {
+.select_sesettings {
     width: 140px;
     height: 30px;
     text-align: right;
@@ -44,7 +43,18 @@
     background-color: #eceff1;
     border: none;
     color: var(--color_font_grey);
+}
 
+.inp_number_settings {
+    width: 140px;
+    height: 30px;
+    text-align: right;
+    border-radius: 10px;
+    font-size: 11px;
+    text-indent: 4px;
+    background-color: #eceff1;
+    border: none;
+    color: var(--color_font_grey);
 }
 
 #settings_save {

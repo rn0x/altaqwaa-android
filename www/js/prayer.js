@@ -10,6 +10,13 @@ export default async () => {
 
         let storage = window.localStorage;
         let Calculation = storage.getItem('Calculation');
+        let Madhab = storage.getItem('Madhab');
+        let Shafaq = storage.getItem('Shafaq');
+        let Setfajr = storage.getItem('fajr');
+        let Setdhuhr = storage.getItem('dhuhr');
+        let Setasr = storage.getItem('asr');
+        let Setmaghrib = storage.getItem('maghrib');
+        let Setisha = storage.getItem('isha');
         let Getlatitude = storage.getItem('latitude');
         let Getlongitude = storage.getItem('longitude');
 
@@ -24,8 +31,18 @@ export default async () => {
         }
 
 
-
-        let adhan = adhanModule(Calculation ? Calculation : "UmmAlQura", Number(Getlatitude), Number(Getlongitude));
+        let adhan = adhanModule({
+            Calculation: Calculation ? Calculation : "UmmAlQura",
+            latitude: Number(Getlatitude),
+            longitude: Number(Getlongitude),
+            Madhab: Madhab ? Madhab : "Shafi",
+            Shafaq: Shafaq ? Shafaq : "General",
+            fajr: Setfajr ? Number(Setfajr) : 0,
+            dhuhr: Setdhuhr ? Number(Setdhuhr) : 0,
+            asr: Setasr ? Number(Setasr) : 0,
+            maghrib: Setmaghrib ? Number(Setmaghrib) : 0,
+            isha: Setisha ? Number(Setisha) : 0,
+        });
         let data_hijri = document.getElementById('data_hijri');
         let data_Gregorian = document.getElementById('data_Gregorian');
         let datoday = document.getElementById('datoday');
@@ -66,8 +83,19 @@ export default async () => {
 
 
         setInterval(() => {
-            
-            let adhan = adhanModule(Calculation ? Calculation : "UmmAlQura", Number(Getlatitude), Number(Getlongitude));
+
+            let adhan = adhanModule({
+                Calculation: Calculation ? Calculation : "UmmAlQura",
+                latitude: Number(Getlatitude),
+                longitude: Number(Getlongitude),
+                Madhab: Madhab ? Madhab : "Shafi",
+                Shafaq: Shafaq ? Shafaq : "General",
+                fajr: Setfajr ? Number(Setfajr) : 0,
+                dhuhr: Setdhuhr ? Number(Setdhuhr) : 0,
+                asr: Setasr ? Number(Setasr) : 0,
+                maghrib: Setmaghrib ? Number(Setmaghrib) : 0,
+                isha: Setisha ? Number(Setisha) : 0,
+            });
             data_hijri.innerText = adhan.data_hijri;
             data_Gregorian.innerText = adhan.data_Gregorian;
             datoday.innerText = adhan.today;

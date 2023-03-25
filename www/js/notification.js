@@ -8,6 +8,13 @@ export default async () => {
 
     let storage = window.localStorage;
     let Calculation = storage.getItem('Calculation');
+    let Madhab = storage.getItem('Madhab');
+    let Shafaq = storage.getItem('Shafaq');
+    let Setfajr = storage.getItem('fajr');
+    let Setdhuhr = storage.getItem('dhuhr');
+    let Setasr = storage.getItem('asr');
+    let Setmaghrib = storage.getItem('maghrib');
+    let Setisha = storage.getItem('isha');
     let Getlatitude = storage.getItem('latitude');
     let Getlongitude = storage.getItem('longitude');
     let notification = storage.getItem('notification');
@@ -29,7 +36,18 @@ export default async () => {
             let AdhanPlaying = storage.getItem('AdhanPlaying');
             AdhanPlaying === null ? storage.setItem('AdhanPlaying', "false") : false;
             let timenow = moment().format('h:mm A');
-            let adhan = adhanModule(Calculation ? Calculation : "UmmAlQura", Number(Getlatitude), Number(Getlongitude));
+            let adhan = adhanModule({
+                Calculation: Calculation ? Calculation : "UmmAlQura",
+                latitude: Number(Getlatitude),
+                longitude: Number(Getlongitude),
+                Madhab: Madhab ? Madhab : "Shafi",
+                Shafaq: Shafaq ? Shafaq : "General",
+                fajr: Setfajr ? Number(Setfajr) : 0,
+                dhuhr: Setdhuhr ? Number(Setdhuhr) : 0,
+                asr: Setasr ? Number(Setasr) : 0,
+                maghrib: Setmaghrib ? Number(Setmaghrib) : 0,
+                isha: Setisha ? Number(Setisha) : 0,
+            });
             // let slah = adhan.nextPrayer === "fajr" ? "الفجر" : adhan.nextPrayer === "dhuhr" ? "الظهر" : adhan.nextPrayer === "asr" ? "العصر" : adhan.nextPrayer === "maghrib" ? "المغرب" : adhan.nextPrayer === "isha" ? "العشاء" : "لايوجد";
             let fileAdhan = adhan.nextPrayer === "fajr" ? "/mp3/002.mp3" : "/mp3/001.mp3"
             let audioAdhan = new Audio(fileAdhan);
