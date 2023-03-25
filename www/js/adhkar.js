@@ -116,7 +116,10 @@ export default async () => {
                     numberEl.innerText = Number(numberEl.textContent) - 1
                 }
                 else {
-                    numberEl.innerText = numbers[Number(item.id - 1)]
+
+                    if (Number(numberEl.textContent) > 0) {
+                        numberEl.innerText = numbers[Number(item.id - 1)]
+                    }
                 }
             });
         }
