@@ -25,8 +25,7 @@ document.addEventListener('deviceready', async (e) => {
 
     let list = [
         permissions.ACCESS_COARSE_LOCATION,
-        permissions.WRITE_EXTERNAL_STORAGE,
-        permissions.INTERNET,
+        permissions.WRITE_EXTERNAL_STORAGE
     ];
 
     permissions.hasPermission(list, (status) => {
