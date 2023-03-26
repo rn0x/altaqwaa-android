@@ -56,12 +56,14 @@
     display: table;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 20px;
     width: 95%;
     border-collapse: collapse;
     text-align: center;
     direction: rtl;
     font-size: 14px;
     font-weight: 600;
+    box-shadow: rgba(0, 0, 0, 0.527) 0px 3px 10px 2px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 }
 
 #hisnmuslim_index th,
@@ -78,7 +80,7 @@
     font-weight: bold;
     text-align: center;
     background-color: var(--background_div);
-    border-bottom: 4px solid var(--background_menu);
+    border-bottom: 2px solid var(--background_menu);
 }
 
 #hisnmuslim_index tr:nth-child(even) {
