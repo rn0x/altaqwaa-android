@@ -224,6 +224,7 @@
     position: fixed;
     top: 0px;
     margin-bottom: 20px;
+    z-index: 1;
 }
 
 #header p {
