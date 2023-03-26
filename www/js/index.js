@@ -12,6 +12,8 @@ import allah from './allah.js';
 import settings from './settings.js';
 import notification from './notification.js';
 
+document.documentElement.style.setProperty('--animate-duration', '1.5s');
+
 document.addEventListener('deviceready', async (e) => {
 
     let permissions = cordova.plugins.permissions;
