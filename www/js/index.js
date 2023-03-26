@@ -44,12 +44,6 @@ document.addEventListener('deviceready', async (e) => {
         window.MobileAccessibility.usePreferredTextZoom(false);
     }
 
-    // if (navigator.onLine) {
-    //     alert('online');
-    // } else if (navigator.onLine === false) {
-    //     alert('offline');
-    // }
-
 }, false);
 
 await footer();
