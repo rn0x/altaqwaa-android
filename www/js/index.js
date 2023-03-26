@@ -14,6 +14,9 @@ import notification from './notification.js';
 
 document.documentElement.style.setProperty('--animate-duration', '1.5s');
 
+
+
+
 document.addEventListener('deviceready', async (e) => {
 
     let permissions = cordova.plugins.permissions;
@@ -22,7 +25,8 @@ document.addEventListener('deviceready', async (e) => {
 
     let list = [
         permissions.ACCESS_COARSE_LOCATION,
-        permissions.WRITE_EXTERNAL_STORAGE
+        permissions.WRITE_EXTERNAL_STORAGE,
+        permissions.INTERNET,
     ];
 
     permissions.hasPermission(list, (status) => {
@@ -39,6 +43,12 @@ document.addEventListener('deviceready', async (e) => {
     if (window.MobileAccessibility) {
         window.MobileAccessibility.usePreferredTextZoom(false);
     }
+
+    // if (navigator.onLine) {
+    //     alert('online');
+    // } else if (navigator.onLine === false) {
+    //     alert('offline');
+    // }
 
 }, false);
 

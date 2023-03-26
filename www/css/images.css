@@ -47,7 +47,7 @@
 }
 
 #images_more_button {
-    display: block;
+    display: none;
     align-items: center;
     margin-left: auto;
     margin-right: auto;

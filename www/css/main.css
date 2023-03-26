@@ -100,6 +100,31 @@ html {
     z-index: -1;
 }
 
+
+#alert_offline {
+    display: none;
+    background-color: #00000000;
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    z-index: 1;
+}
+
+#alert_offline_text {
+    display: block;
+    background-color: #ffffff;
+    color: var(--color_font_grey);
+    width: 80%;
+    margin-top: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+}
+
 ::-webkit-media-controls-enclosure {
     background-color: var(--background_div_hover);
     border-radius: 5px;
