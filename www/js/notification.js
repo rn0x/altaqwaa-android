@@ -29,192 +29,191 @@ export default async () => {
 
     }
 
-    if (notification ? bool(notification) : true) {
+    while (notification ? bool(notification) : true) {
 
-        setInterval(async () => {
+        let AdhanPlaying = storage.getItem('AdhanPlaying');
+        AdhanPlaying === null ? storage.setItem('AdhanPlaying', "false") : false;
+        let timenow = moment().format('h:mm A');
+        let adhan = adhanModule({
+            Calculation: Calculation ? Calculation : "UmmAlQura",
+            latitude: Number(Getlatitude),
+            longitude: Number(Getlongitude),
+            Madhab: Madhab ? Madhab : "Shafi",
+            Shafaq: Shafaq ? Shafaq : "General",
+            fajr: Setfajr ? Number(Setfajr) : 0,
+            dhuhr: Setdhuhr ? Number(Setdhuhr) : 0,
+            asr: Setasr ? Number(Setasr) : 0,
+            maghrib: Setmaghrib ? Number(Setmaghrib) : 0,
+            isha: Setisha ? Number(Setisha) : 0,
+        });
+        // let slah = adhan.nextPrayer === "fajr" ? "الفجر" : adhan.nextPrayer === "dhuhr" ? "الظهر" : adhan.nextPrayer === "asr" ? "العصر" : adhan.nextPrayer === "maghrib" ? "المغرب" : adhan.nextPrayer === "isha" ? "العشاء" : "لايوجد";
+        let fileAdhan = adhan.nextPrayer === "fajr" ? "/mp3/002.mp3" : "/mp3/001.mp3"
+        let audioAdhan = new Audio(fileAdhan);
+        audioAdhan.id = 'audioAdhan';
+        audioAdhan.preload = 'none';
+        audioAdhan.autoplay = false;
 
-            let AdhanPlaying = storage.getItem('AdhanPlaying');
-            AdhanPlaying === null ? storage.setItem('AdhanPlaying', "false") : false;
-            let timenow = moment().format('h:mm A');
-            let adhan = adhanModule({
-                Calculation: Calculation ? Calculation : "UmmAlQura",
-                latitude: Number(Getlatitude),
-                longitude: Number(Getlongitude),
-                Madhab: Madhab ? Madhab : "Shafi",
-                Shafaq: Shafaq ? Shafaq : "General",
-                fajr: Setfajr ? Number(Setfajr) : 0,
-                dhuhr: Setdhuhr ? Number(Setdhuhr) : 0,
-                asr: Setasr ? Number(Setasr) : 0,
-                maghrib: Setmaghrib ? Number(Setmaghrib) : 0,
-                isha: Setisha ? Number(Setisha) : 0,
-            });
-            // let slah = adhan.nextPrayer === "fajr" ? "الفجر" : adhan.nextPrayer === "dhuhr" ? "الظهر" : adhan.nextPrayer === "asr" ? "العصر" : adhan.nextPrayer === "maghrib" ? "المغرب" : adhan.nextPrayer === "isha" ? "العشاء" : "لايوجد";
-            let fileAdhan = adhan.nextPrayer === "fajr" ? "/mp3/002.mp3" : "/mp3/001.mp3"
-            let audioAdhan = new Audio(fileAdhan);
-            audioAdhan.id = 'audioAdhan';
-            audioAdhan.preload = 'none';
-            audioAdhan.autoplay = false;
+        switch (timenow) {
+            case adhan?.fajr:
 
-            switch (timenow) {
-                case adhan?.fajr:
+                if (AdhanPlaying === "false") {
 
-                    if (AdhanPlaying === "false") {
+                    storage.setItem('AdhanPlaying', "true");
 
-                        storage.setItem('AdhanPlaying', "true");
-
-                        await audioAdhan.play();
-                        navigator.notification.confirm(
-                            'حان الآن وقت صلاة الفجر',
-                            (e) => {
-                                if (e === 1) {
-                                    audioAdhan.pause();
-                                    audioAdhan.currentTime = 0;
-                                }
-                            },
-                            'تنبيه بوقت الصلاة',
-                            ['إيقاف الأذان', 'خروج']
-                        );
-
-                        audioAdhan.addEventListener("pause",async (event) => {
-                            if (audioAdhan.currentTime !== 0) {
-                                await audioAdhan.play();
+                    await audioAdhan.play();
+                    navigator.notification.confirm(
+                        'حان الآن وقت صلاة الفجر',
+                        (e) => {
+                            if (e === 1) {
+                                audioAdhan.pause();
+                                audioAdhan.currentTime = 0;
                             }
-                        });
-                    }
+                        },
+                        'تنبيه بوقت الصلاة',
+                        ['إيقاف الأذان', 'خروج']
+                    );
 
-                    break;
+                    audioAdhan.addEventListener("pause", async (event) => {
+                        if (audioAdhan.currentTime !== 0) {
+                            await audioAdhan.play();
+                        }
+                    });
+                }
 
-                case adhan?.dhuhr:
+                break;
 
-                    if (AdhanPlaying === "false") {
+            case adhan?.dhuhr:
 
-                        storage.setItem('AdhanPlaying', "true");
-                        await audioAdhan.play();
+                if (AdhanPlaying === "false") {
 
-                        navigator.notification.confirm(
-                            'حان الآن وقت صلاة الظهر',
-                            (e) => {
-                                if (e === 1) {
-                                    audioAdhan.pause();
-                                    audioAdhan.currentTime = 0;
-                                }
-                            },
-                            'تنبيه بوقت الصلاة',
-                            ['إيقاف الأذان', 'خروج']
-                        );
+                    storage.setItem('AdhanPlaying', "true");
+                    await audioAdhan.play();
 
-                        audioAdhan.addEventListener("pause",async (event) => {
-                            if (audioAdhan.currentTime !== 0) {
-                                await audioAdhan.play();
+                    navigator.notification.confirm(
+                        'حان الآن وقت صلاة الظهر',
+                        (e) => {
+                            if (e === 1) {
+                                audioAdhan.pause();
+                                audioAdhan.currentTime = 0;
                             }
-                        });
-                    }
+                        },
+                        'تنبيه بوقت الصلاة',
+                        ['إيقاف الأذان', 'خروج']
+                    );
 
-                    break;
+                    audioAdhan.addEventListener("pause", async (event) => {
+                        if (audioAdhan.currentTime !== 0) {
+                            await audioAdhan.play();
+                        }
+                    });
+                }
 
-                case adhan?.asr:
+                break;
 
-                    if (AdhanPlaying === "false") {
+            case adhan?.asr:
 
-                        storage.setItem('AdhanPlaying', "true");
-                        await audioAdhan.play();
+                if (AdhanPlaying === "false") {
 
-                        navigator.notification.confirm(
-                            'حان الآن وقت صلاة العصر',
-                            (e) => {
-                                if (e === 1) {
-                                    audioAdhan.pause();
-                                    audioAdhan.currentTime = 0;
-                                }
-                            },
-                            'تنبيه بوقت الصلاة',
-                            ['إيقاف الأذان', 'خروج']
-                        );
+                    storage.setItem('AdhanPlaying', "true");
+                    await audioAdhan.play();
 
-                        audioAdhan.addEventListener("pause",async (event) => {
-                            if (audioAdhan.currentTime !== 0) {
-                                await audioAdhan.play();
+                    navigator.notification.confirm(
+                        'حان الآن وقت صلاة العصر',
+                        (e) => {
+                            if (e === 1) {
+                                audioAdhan.pause();
+                                audioAdhan.currentTime = 0;
                             }
-                        });
-                    }
+                        },
+                        'تنبيه بوقت الصلاة',
+                        ['إيقاف الأذان', 'خروج']
+                    );
 
-                    break;
+                    audioAdhan.addEventListener("pause", async (event) => {
+                        if (audioAdhan.currentTime !== 0) {
+                            await audioAdhan.play();
+                        }
+                    });
+                }
 
-                case adhan?.maghrib:
+                break;
 
-                    if (AdhanPlaying === "false") {
+            case adhan?.maghrib:
 
-                        storage.setItem('AdhanPlaying', "true");
-                        await audioAdhan.play();
+                if (AdhanPlaying === "false") {
 
-                        navigator.notification.confirm(
-                            'حان الآن وقت صلاة المغرب',
-                            (e) => {
-                                if (e === 1) {
-                                    audioAdhan.pause();
-                                    audioAdhan.currentTime = 0;
-                                }
-                            },
-                            'تنبيه بوقت الصلاة',
-                            ['إيقاف الأذان', 'خروج']
-                        );
+                    storage.setItem('AdhanPlaying', "true");
+                    await audioAdhan.play();
 
-                        audioAdhan.addEventListener("pause",async (event) => {
-                            if (audioAdhan.currentTime !== 0) {
-                                await audioAdhan.play();
+                    navigator.notification.confirm(
+                        'حان الآن وقت صلاة المغرب',
+                        (e) => {
+                            if (e === 1) {
+                                audioAdhan.pause();
+                                audioAdhan.currentTime = 0;
                             }
-                        });
-                    }
+                        },
+                        'تنبيه بوقت الصلاة',
+                        ['إيقاف الأذان', 'خروج']
+                    );
 
-                    break;
+                    audioAdhan.addEventListener("pause", async (event) => {
+                        if (audioAdhan.currentTime !== 0) {
+                            await audioAdhan.play();
+                        }
+                    });
+                }
 
-                case adhan?.isha:
+                break;
 
-                    if (AdhanPlaying === "false") {
+            case adhan?.isha:
 
-                        storage.setItem('AdhanPlaying', "true");
-                        await audioAdhan.play();
+                if (AdhanPlaying === "false") {
 
-                        navigator.notification.confirm(
-                            'حان الآن وقت صلاة العشاء',
-                            (e) => {
-                                if (e === 1) {
-                                    audioAdhan.pause();
-                                    audioAdhan.currentTime = 0;
-                                }
-                            },
-                            'تنبيه بوقت الصلاة',
-                            ['إيقاف الأذان', 'خروج']
-                        );
+                    storage.setItem('AdhanPlaying', "true");
+                    await audioAdhan.play();
 
-                        audioAdhan.addEventListener("pause",async (event) => {
-                            if (audioAdhan.currentTime !== 0) {
-                                await audioAdhan.play();
+                    navigator.notification.confirm(
+                        'حان الآن وقت صلاة العشاء',
+                        (e) => {
+                            if (e === 1) {
+                                audioAdhan.pause();
+                                audioAdhan.currentTime = 0;
                             }
-                        });
-                    }
+                        },
+                        'تنبيه بوقت الصلاة',
+                        ['إيقاف الأذان', 'خروج']
+                    );
 
-                    break;
+                    audioAdhan.addEventListener("pause", async (event) => {
+                        if (audioAdhan.currentTime !== 0) {
+                            await audioAdhan.play();
+                        }
+                    });
+                }
 
-                default:
-                    break;
-            }
+                break;
 
-        }, 5000);
+            default:
+                break;
+        }
 
-        setInterval(() => {
+        // sleep 
+        await new Promise(r => setTimeout(r, 5000));
 
-            let AdhanPlaying = storage.getItem('AdhanPlaying');
-            AdhanPlaying === null ? storage.setItem('AdhanPlaying', "true") : false;
+    };
 
-            if (AdhanPlaying === "true") {
+    setInterval(() => {
 
-                storage.setItem('AdhanPlaying', "false");
-            }
+        let AdhanPlaying = storage.getItem('AdhanPlaying');
+        AdhanPlaying === null ? storage.setItem('AdhanPlaying', "true") : false;
 
-        }, 60000);
+        if (AdhanPlaying === "true") {
 
-    }
+            storage.setItem('AdhanPlaying', "false");
+        }
+
+    }, 65000);
 
 }
 
