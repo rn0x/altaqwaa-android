@@ -13,12 +13,13 @@
     <link rel="stylesheet" href="/css/footer.css"> <!-- ملف css الفوتر -->
     <link rel="stylesheet" href="/css/settings.css">
     <link rel="stylesheet" href="/css/more.css">
+    <link rel="stylesheet" href="/css/animate.min.css"> <!-- مؤثرات الإنتقال -->
     <title>التقوى</title>
 </head>
 
 <body>
 
-    <div id="more_header">
+    <div id="more_header" class="animate__animated animate__fadeIn">
 
         <img src="/img/back.png" id="back">
 
@@ -30,13 +31,13 @@
 
     <div class="alert" id="alert">
 
-        <p class="text_alert">
+        <p class="text_alert" id="text_alert">
             تم الحفظ
         </p>
 
     </div>
 
-    <div id="content">
+    <div id="content" class="animate__animated animate__fadeIn">
 
         <!-- ================ ضع هنا محتوى الصفحة =============== -->
 
@@ -64,7 +65,7 @@
                 </div>
 
                 <div class="settings_left">
-                    <select id="Calculation_settings" size="1">
+                    <select id="Calculation_settings" size="1" class="select_sesettings">
                         <option value="MuslimWorldLeague" id="MuslimWorldLeague">رابطة العالم الإسلامي</option>
                         <option value="Egyptian" id="Egyptian">الهيئة المصرية العامة للمساحة</option>
                         <option value="Karachi" id="Karachi">جامعة العلوم الإسلامية بكراتشي</option>
@@ -79,7 +80,123 @@
                     </select>
                 </div>
             </li>
-<!-- 
+
+            <li>
+                <div class="settings_right">
+                    <h3 class="settings_title">
+                        حساب أوقات الصلاة - الشفق
+                    </h3>
+                </div>
+
+                <div class="settings_left">
+                    <select id="Shafaq_settings" size="1" class="select_sesettings">
+                        <option value="General" id="General">مزيج بين الأحمر والأبيض</option>
+                        <option value="Ahmer" id="Ahmer">أحمر</option>
+                        <option value="Abyad" id="Abyad">أبيض</option>
+                    </select>
+                </div>
+            </li>
+
+            <li>
+                <div class="settings_right">
+                    <h3 class="settings_title">
+                     حساب أوقات الصلاة - المذهب
+                    </h3>
+                </div>
+
+                <div class="settings_left">
+                    <select id="madhab_settings" size="1" class="select_sesettings">
+                        <option value="Shafi" id="Shafi">الشافعي</option>
+                        <option value="Hanafi" id="Hanafi">الحنفي</option>
+                    </select>
+                </div>
+            </li>
+
+            <li>
+                <div class="settings_right">
+                    <h3 class="settings_title">
+                      إحداثيات خط الطول
+                    </h3>
+                </div>
+
+                <div class="settings_left">
+                    <input type="text" id="settings_longitude" class="inp_number_settings" inputmode="numeric" placeholder="خط الطول (GPS)">
+                </div>
+            </li>
+
+            <li>
+                <div class="settings_right">
+                    <h3 class="settings_title">
+                      إحداثيات خط العرض
+                    </h3>
+                </div>
+
+                <div class="settings_left">
+                    <input type="text" id="settings_latitude" class="inp_number_settings" inputmode="numeric" placeholder="خط العرض (GPS)">
+                </div>
+            </li>
+
+            <li>
+                <div class="settings_right">
+                    <h3 class="settings_title">
+                      تعديل دقائق صلاة الفجر
+                    </h3>
+                </div>
+
+                <div class="settings_left">
+                    <input type="text" id="settings_fajr" class="inp_number_settings" inputmode="numeric">
+                </div>
+            </li>
+
+
+            <li>
+                <div class="settings_right">
+                    <h3 class="settings_title">
+                      تعديل دقائق صلاة الظهر
+                    </h3>
+                </div>
+
+                <div class="settings_left">
+                    <input type="text" id="settings_dhuhr" class="inp_number_settings" inputmode="numeric">
+                </div>
+            </li>
+
+            <li>
+                <div class="settings_right">
+                    <h3 class="settings_title">
+                      تعديل دقائق صلاة العصر
+                    </h3>
+                </div>
+
+                <div class="settings_left">
+                    <input type="text" id="settings_asr" class="inp_number_settings" inputmode="numeric">
+                </div>
+            </li>
+
+            <li>
+                <div class="settings_right">
+                    <h3 class="settings_title">
+                      تعديل دقائق صلاة المغرب
+                    </h3>
+                </div>
+
+                <div class="settings_left">
+                    <input type="text" id="settings_maghrib" class="inp_number_settings" inputmode="numeric">
+                </div>
+            </li>
+
+            <li>
+                <div class="settings_right">
+                    <h3 class="settings_title">
+                      تعديل دقائق صلاة العشاء
+                    </h3>
+                </div>
+
+                <div class="settings_left">
+                    <input type="text" id="settings_isha" class="inp_number_settings" inputmode="numeric">
+                </div>
+            </li>
+
             <li>
                 <div class="settings_right">
                     <h3 class="settings_title">
@@ -94,7 +211,7 @@
                     </label>
                 </div>
             </li> 
--->
+
 
         </ul>
 

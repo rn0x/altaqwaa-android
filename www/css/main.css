@@ -21,7 +21,7 @@ html {
     -webkit-user-select: none;
     /* prevent copy paste, to allow, change 'none' to 'text' */
     user-select: none;
-    background-color: #2e3338;
+    background-color: var(--background_body);
     font-size: 13px;
     font-weight: 400;
     padding: 0px;
@@ -98,6 +98,31 @@ html {
     position: absolute;
     margin-right: 15px;
     z-index: -1;
+}
+
+
+#alert_offline {
+    display: none;
+    background-color: #00000000;
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    z-index: 1;
+}
+
+#alert_offline_text {
+    display: block;
+    background-color: #ffffff;
+    color: var(--color_font_grey);
+    width: 80%;
+    margin-top: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
 }
 
 ::-webkit-media-controls-enclosure {

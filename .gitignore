@@ -1,7 +1,5 @@
 node_modules
 plugins
 platforms
-build#release.json
-tqw.keystore
 .idea
 package-lock.json

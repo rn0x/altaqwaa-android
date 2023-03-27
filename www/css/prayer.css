@@ -7,8 +7,9 @@
 #content {
     margin-top: 5px;
 }
+
 #prayer_time {
-    display: block;
+    display: none;
     width: 100%;
     direction: rtl;
     font-family: var(--NotoSansArabic);
@@ -63,7 +64,7 @@
 #data_hijri {
     color: var(--color_font_grey);
     font-size: 13px;
-    
+
 }
 
 #data_Gregorian {
@@ -110,7 +111,7 @@
     box-shadow: 5px 15px 15px 0px #00000048;
 }
 
-#prayer_ul li:hover .slah{
+#prayer_ul li:hover .slah {
     color: var(--white-div);
 }
 
@@ -150,7 +151,7 @@
 }
 
 .time_prayer {
-    font-size: 14px ;
+    font-size: 14px;
     color: var(--white-div);
     margin: 0 0 0 0;
     margin-top: 5px;

@@ -1,7 +1,7 @@
 {
   "name": "com.rn0x.altaqwaa",
   "displayName": "التقوى",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "تطبيق إسلامي سهل الإستخدام و جامع للكثير من الميزات التي يحتاجها المسلم في يومه",
   "main": "index.js",
   "scripts": {
@@ -30,7 +30,9 @@
     "cordova-plugin-downloader": "github:asadaries/cordova-plugin-downloader",
     "cordova-plugin-geolocation": "^4.1.0",
     "cordova-plugin-navigationbar-color": "^0.1.0",
-    "cordova-plugin-statusbar": "^3.0.0"
+    "cordova-plugin-network-information": "github:apache/cordova-plugin-network-information",
+    "cordova-plugin-statusbar": "^3.0.0",
+    "phonegap-plugin-mobile-accessibility": "github:phonegap/phonegap-mobile-accessibility"
   },
   "cordova": {
     "plugins": {
@@ -43,7 +45,8 @@
       },
       "cordova-plugin-dialogs": {},
       "cordova-plugin-downloader": {},
-      "cordova-plugin-android-permissions": {}
+      "cordova-plugin-android-permissions": {},
+      "phonegap-plugin-mobile-accessibility": {}
     },
     "platforms": [
       "android"
