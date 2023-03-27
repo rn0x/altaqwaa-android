@@ -31,8 +31,7 @@ export default async () => {
 
     while (notification ? bool(notification) : true) {
 
-        let AdhanPlaying = storage.getItem('AdhanPlaying');
-        AdhanPlaying === null ? storage.setItem('AdhanPlaying', "false") : false;
+
         let timenow = moment().format('h:mm A');
         let adhan = adhanModule({
             Calculation: Calculation ? Calculation : "UmmAlQura",
@@ -48,149 +47,35 @@ export default async () => {
         });
         // let slah = adhan.nextPrayer === "fajr" ? "الفجر" : adhan.nextPrayer === "dhuhr" ? "الظهر" : adhan.nextPrayer === "asr" ? "العصر" : adhan.nextPrayer === "maghrib" ? "المغرب" : adhan.nextPrayer === "isha" ? "العشاء" : "لايوجد";
         let fileAdhan = adhan.nextPrayer === "fajr" ? "/mp3/002.mp3" : "/mp3/001.mp3"
-        let audioAdhan = new Audio(fileAdhan);
-        audioAdhan.id = 'audioAdhan';
-        audioAdhan.preload = 'none';
-        audioAdhan.autoplay = false;
 
         switch (timenow) {
             case adhan?.fajr:
 
-                if (AdhanPlaying === "false") {
-
-                    storage.setItem('AdhanPlaying', "true");
-
-                    await audioAdhan.play();
-                    navigator.notification.confirm(
-                        'حان الآن وقت صلاة الفجر',
-                        (e) => {
-                            if (e === 1) {
-                                audioAdhan.pause();
-                                audioAdhan.currentTime = 0;
-                            }
-                        },
-                        'تنبيه بوقت الصلاة',
-                        ['إيقاف الأذان', 'خروج']
-                    );
-
-                    audioAdhan.addEventListener("pause", async (event) => {
-                        if (audioAdhan.currentTime !== 0) {
-                            await audioAdhan.play();
-                        }
-                    });
-                }
+                await notification_adhan("الفجر", fileAdhan, storage);
 
                 break;
 
             case adhan?.dhuhr:
 
-                if (AdhanPlaying === "false") {
-
-                    storage.setItem('AdhanPlaying', "true");
-                    await audioAdhan.play();
-
-                    navigator.notification.confirm(
-                        'حان الآن وقت صلاة الظهر',
-                        (e) => {
-                            if (e === 1) {
-                                audioAdhan.pause();
-                                audioAdhan.currentTime = 0;
-                            }
-                        },
-                        'تنبيه بوقت الصلاة',
-                        ['إيقاف الأذان', 'خروج']
-                    );
-
-                    audioAdhan.addEventListener("pause", async (event) => {
-                        if (audioAdhan.currentTime !== 0) {
-                            await audioAdhan.play();
-                        }
-                    });
-                }
+                await notification_adhan("الظهر", fileAdhan, storage);
 
                 break;
 
             case adhan?.asr:
 
-                if (AdhanPlaying === "false") {
-
-                    storage.setItem('AdhanPlaying', "true");
-                    await audioAdhan.play();
-
-                    navigator.notification.confirm(
-                        'حان الآن وقت صلاة العصر',
-                        (e) => {
-                            if (e === 1) {
-                                audioAdhan.pause();
-                                audioAdhan.currentTime = 0;
-                            }
-                        },
-                        'تنبيه بوقت الصلاة',
-                        ['إيقاف الأذان', 'خروج']
-                    );
-
-                    audioAdhan.addEventListener("pause", async (event) => {
-                        if (audioAdhan.currentTime !== 0) {
-                            await audioAdhan.play();
-                        }
-                    });
-                }
+                await notification_adhan("العصر", fileAdhan, storage);
 
                 break;
 
             case adhan?.maghrib:
 
-                if (AdhanPlaying === "false") {
-
-                    storage.setItem('AdhanPlaying', "true");
-                    await audioAdhan.play();
-
-                    navigator.notification.confirm(
-                        'حان الآن وقت صلاة المغرب',
-                        (e) => {
-                            if (e === 1) {
-                                audioAdhan.pause();
-                                audioAdhan.currentTime = 0;
-                            }
-                        },
-                        'تنبيه بوقت الصلاة',
-                        ['إيقاف الأذان', 'خروج']
-                    );
-
-                    audioAdhan.addEventListener("pause", async (event) => {
-                        if (audioAdhan.currentTime !== 0) {
-                            await audioAdhan.play();
-                        }
-                    });
-                }
+                await notification_adhan("المغرب", fileAdhan, storage);
 
                 break;
 
             case adhan?.isha:
 
-                if (AdhanPlaying === "false") {
-
-                    storage.setItem('AdhanPlaying', "true");
-                    await audioAdhan.play();
-
-                    navigator.notification.confirm(
-                        'حان الآن وقت صلاة العشاء',
-                        (e) => {
-                            if (e === 1) {
-                                audioAdhan.pause();
-                                audioAdhan.currentTime = 0;
-                            }
-                        },
-                        'تنبيه بوقت الصلاة',
-                        ['إيقاف الأذان', 'خروج']
-                    );
-
-                    audioAdhan.addEventListener("pause", async (event) => {
-                        if (audioAdhan.currentTime !== 0) {
-                            await audioAdhan.play();
-                        }
-                    });
-                }
+                await notification_adhan("العشاء", fileAdhan, storage);
 
                 break;
 
@@ -199,24 +84,68 @@ export default async () => {
         }
 
         // sleep 
-        await new Promise(r => setTimeout(r, 5000));
+        await new Promise(r => setTimeout(r, 6000));
 
     };
-
-    setInterval(() => {
-
-        let AdhanPlaying = storage.getItem('AdhanPlaying');
-        AdhanPlaying === null ? storage.setItem('AdhanPlaying', "true") : false;
-
-        if (AdhanPlaying === "true") {
-
-            storage.setItem('AdhanPlaying', "false");
-        }
-
-    }, 65000);
 
 }
 
 function bool(v) {
     return v === "false" || v === "null" || v === "NaN" || v === "undefined" || v === "0" ? false : !!v;
+}
+
+async function notification_adhan(name, fileAdhan, storage) {
+
+    let AdhanPlaying = storage.getItem('AdhanPlaying');
+    AdhanPlaying === null ? storage.setItem('AdhanPlaying', "false") : false;
+
+    if (bool(AdhanPlaying) === false) {
+
+        let audioAdhan = new Audio(fileAdhan);
+        audioAdhan.id = 'audioAdhan';
+        audioAdhan.loop = false;
+        audioAdhan.preload = 'none';
+        audioAdhan.autoplay = false;
+
+        storage.setItem('AdhanPlaying', "true");
+
+        await audioAdhan.play();
+
+        audioAdhan.addEventListener('ended', () => {
+            audioAdhan.pause();
+            audioAdhan.currentTime = 0;
+            storage.setItem('AdhanPlaying', "false");
+        });
+
+        navigator.notification.confirm(
+            `حان الآن وقت صلاة ${name}`,
+            (e) => {
+                if (e === 1) {
+                    audioAdhan.pause();
+                    audioAdhan.currentTime = 0;
+                }
+            },
+            'تنبيه بوقت الصلاة',
+            ['إيقاف الأذان', 'خروج']
+        );
+
+        audioAdhan.addEventListener("pause", async () => {
+            if (audioAdhan.currentTime !== 0) {
+                await audioAdhan.play();
+            }
+        });
+
+    }
+
+    else {
+
+        setTimeout(() => {
+
+            if (bool(AdhanPlaying)) {
+                storage.setItem('AdhanPlaying', "false");
+            }
+
+        }, 70000);
+    }
+
 }
