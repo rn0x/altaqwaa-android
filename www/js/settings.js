@@ -8,6 +8,8 @@ export default async () => {
         let Calculation = storage.getItem('Calculation');
         let Shafaq = storage.getItem('Shafaq');
         let Madhab = storage.getItem('Madhab');
+        let latitude = storage.getItem('latitude');
+        let longitude = storage.getItem('longitude');
         let notification = storage.getItem('notification');
         let Setfajr = storage.getItem('fajr');
         let Setdhuhr = storage.getItem('dhuhr');
@@ -16,6 +18,7 @@ export default async () => {
         let Setisha = storage.getItem('isha');
         let back = document.getElementById('back');
         let alert_el = document.getElementById('alert');
+        let text_alert = document.getElementById('text_alert');
         let settings_save = document.getElementById('settings_save');
         let refresh_location = document.getElementById("refresh_location");
         let Calculation_settings = document.getElementById('Calculation_settings');
@@ -30,6 +33,9 @@ export default async () => {
         let settings_asr = document.getElementById("settings_asr");
         let settings_maghrib = document.getElementById("settings_maghrib");
         let settings_isha = document.getElementById("settings_isha");
+        let settings_longitude = document.getElementById("settings_longitude");
+        let settings_latitude = document.getElementById("settings_latitude");
+        let statusPERM = await permission_status();
 
         // default value ( checked or selected or input )
 
@@ -42,6 +48,8 @@ export default async () => {
         settings_asr.value = Setfajr ? Number(Setasr) : 0;
         settings_maghrib.value = Setfajr ? Number(Setmaghrib) : 0;
         settings_isha.value = Setfajr ? Number(Setisha) : 0;
+        settings_longitude.value = longitude ? longitude : null;
+        settings_latitude.value = latitude ? latitude : null;
 
         back.addEventListener("click", e => {
             window.location.href = "/more.html";
@@ -49,36 +57,46 @@ export default async () => {
 
         refresh_location.addEventListener('click', async (e) => {
 
-            let GPS = await getGPS();
-            let latitude = GPS.latitude;
-            let longitude = GPS.longitude;
+            if (statusPERM) {
 
-            storage.setItem("latitude", latitude);
-            storage.setItem("longitude", longitude);
-            alert_el.style.display = "block"
+                let GPS = await getGPS();
+                let latitude = GPS.latitude;
+                let longitude = GPS.longitude;
 
-            setTimeout(() => {
-                alert_el.style.display = 'none';
-                window.location.href = "/pages/settings.html";
-            }, 1000);
+                storage.setItem("latitude", latitude);
+                storage.setItem("longitude", longitude);
+                alert_el.style.display = "block"
+
+                setTimeout(() => {
+                    alert_el.style.display = 'none';
+                    window.location.href = "/pages/settings.html";
+                }, 1000);
+
+            }
+
+            else {
+
+                text_alert.innerText = "الرجاء السماح بالوصول الى الموقع الجغرافي او قم بإدخال الإحداثيات بشكل يدوي";
+                alert_el.style.display = 'block';
+
+                setTimeout(() => {
+                    alert_el.style.display = 'none';
+                    window.location.href = "/pages/settings.html";
+                }, 3000);
+
+            }
 
         });
 
 
         settings_save.addEventListener("click", async e => {
 
-
-
-            let GPS = await getGPS();
-            let latitude = GPS.latitude;
-            let longitude = GPS.longitude;
-
-            storage.setItem("latitude", latitude);
-            storage.setItem("longitude", longitude);
             storage.setItem("Calculation", Calculation_settings.value);
             storage.setItem("Shafaq", Shafaq_settings.value);
             storage.setItem("Madhab", madhab_settings.value);
             storage.setItem("notification", notifications_adhan.checked);
+            storage.setItem("latitude", settings_latitude.value);
+            storage.setItem("longitude", settings_longitude.value);
 
             if (settings_fajr.value.length !== 0) {
                 storage.setItem("fajr", settings_fajr.value);
@@ -115,4 +133,23 @@ export default async () => {
 
 function bool(v) {
     return v === "false" || v === "null" || v === "NaN" || v === "undefined" || v === "0" ? false : !!v;
+}
+
+async function permission_status() {
+
+    return new Promise((resolve, reject) => {
+        let permissions = cordova.plugins.permissions;
+        permissions.hasPermission(permissions.ACCESS_COARSE_LOCATION, (status) => {
+
+            if (status.hasPermission) {
+
+                resolve(true)
+            }
+
+            else {
+                resolve(false)
+            }
+
+        });
+    });
 }
