@@ -35,6 +35,12 @@
 
 # تنزيل التطبيق
 
+<div align="center">
+
+[![altaqwaa](/screenshots/google-play.png)](https://play.google.com/store/apps/details?id=com.rn0x.altaqwaa)
+
+</div>
+
 - **Android**: [Apk](https://github.com/Alsarmad/altaqwaa_android/releases/latest)
 
 <br>
