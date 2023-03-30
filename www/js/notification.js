@@ -1,92 +1,101 @@
 import adhanModule from './modules/adhanModule.js';
+import error_handling from './modules/error_handling.js';
 import getGPS from './modules/getGPS.js';
 import moment from './modules/moment/moment.js';
 
 export default async () => {
 
-    // LocalStorage 
+    try {
 
-    let storage = window.localStorage;
-    let Calculation = storage.getItem('Calculation');
-    let Madhab = storage.getItem('Madhab');
-    let Shafaq = storage.getItem('Shafaq');
-    let Setfajr = storage.getItem('fajr');
-    let Setdhuhr = storage.getItem('dhuhr');
-    let Setasr = storage.getItem('asr');
-    let Setmaghrib = storage.getItem('maghrib');
-    let Setisha = storage.getItem('isha');
-    let Getlatitude = storage.getItem('latitude');
-    let Getlongitude = storage.getItem('longitude');
-    let notification = storage.getItem('notification');
+        // LocalStorage 
 
-    if (Getlongitude === null || Getlatitude === null) {
+        let storage = window.localStorage;
+        let Calculation = storage.getItem('Calculation');
+        let Madhab = storage.getItem('Madhab');
+        let Shafaq = storage.getItem('Shafaq');
+        let Setfajr = storage.getItem('fajr');
+        let Setdhuhr = storage.getItem('dhuhr');
+        let Setasr = storage.getItem('asr');
+        let Setmaghrib = storage.getItem('maghrib');
+        let Setisha = storage.getItem('isha');
+        let Getlatitude = storage.getItem('latitude');
+        let Getlongitude = storage.getItem('longitude');
+        let notification = storage.getItem('notification');
 
-        let GPS = await getGPS();
-        Getlatitude = GPS.latitude;
-        Getlongitude = GPS.longitude;
-        storage.setItem("latitude", Getlatitude);
-        storage.setItem("longitude", Getlongitude);
+        if (Getlongitude === null || Getlatitude === null) {
 
-    }
+            let GPS = await getGPS();
+            Getlatitude = GPS.latitude;
+            Getlongitude = GPS.longitude;
+            storage.setItem("latitude", Getlatitude);
+            storage.setItem("longitude", Getlongitude);
 
-    while (notification ? bool(notification) : true) {
-
-
-        let timenow = moment().format('h:mm A');
-        let adhan = adhanModule({
-            Calculation: Calculation ? Calculation : "UmmAlQura",
-            latitude: Number(Getlatitude),
-            longitude: Number(Getlongitude),
-            Madhab: Madhab ? Madhab : "Shafi",
-            Shafaq: Shafaq ? Shafaq : "General",
-            fajr: Setfajr ? Number(Setfajr) : 0,
-            dhuhr: Setdhuhr ? Number(Setdhuhr) : 0,
-            asr: Setasr ? Number(Setasr) : 0,
-            maghrib: Setmaghrib ? Number(Setmaghrib) : 0,
-            isha: Setisha ? Number(Setisha) : 0,
-        });
-        // let slah = adhan.nextPrayer === "fajr" ? "الفجر" : adhan.nextPrayer === "dhuhr" ? "الظهر" : adhan.nextPrayer === "asr" ? "العصر" : adhan.nextPrayer === "maghrib" ? "المغرب" : adhan.nextPrayer === "isha" ? "العشاء" : "لايوجد";
-        let fileAdhan = adhan.nextPrayer === "fajr" ? "/mp3/002.mp3" : "/mp3/001.mp3"
-
-        switch (timenow) {
-            case adhan?.fajr:
-
-                await notification_adhan("الفجر", fileAdhan, storage);
-
-                break;
-
-            case adhan?.dhuhr:
-
-                await notification_adhan("الظهر", fileAdhan, storage);
-
-                break;
-
-            case adhan?.asr:
-
-                await notification_adhan("العصر", fileAdhan, storage);
-
-                break;
-
-            case adhan?.maghrib:
-
-                await notification_adhan("المغرب", fileAdhan, storage);
-
-                break;
-
-            case adhan?.isha:
-
-                await notification_adhan("العشاء", fileAdhan, storage);
-
-                break;
-
-            default:
-                break;
         }
 
-        // sleep 
-        await new Promise(r => setTimeout(r, 6000));
+        while (notification ? bool(notification) : true) {
 
-    };
+
+            let timenow = moment().format('h:mm A');
+            let adhan = adhanModule({
+                Calculation: Calculation ? Calculation : "UmmAlQura",
+                latitude: Number(Getlatitude),
+                longitude: Number(Getlongitude),
+                Madhab: Madhab ? Madhab : "Shafi",
+                Shafaq: Shafaq ? Shafaq : "General",
+                fajr: Setfajr ? Number(Setfajr) : 0,
+                dhuhr: Setdhuhr ? Number(Setdhuhr) : 0,
+                asr: Setasr ? Number(Setasr) : 0,
+                maghrib: Setmaghrib ? Number(Setmaghrib) : 0,
+                isha: Setisha ? Number(Setisha) : 0,
+            });
+            // let slah = adhan.nextPrayer === "fajr" ? "الفجر" : adhan.nextPrayer === "dhuhr" ? "الظهر" : adhan.nextPrayer === "asr" ? "العصر" : adhan.nextPrayer === "maghrib" ? "المغرب" : adhan.nextPrayer === "isha" ? "العشاء" : "لايوجد";
+            let fileAdhan = adhan.nextPrayer === "fajr" ? "/mp3/002.mp3" : "/mp3/001.mp3"
+
+            switch (timenow) {
+                case adhan?.fajr:
+
+                    await notification_adhan("الفجر", fileAdhan, storage);
+
+                    break;
+
+                case adhan?.dhuhr:
+
+                    await notification_adhan("الظهر", fileAdhan, storage);
+
+                    break;
+
+                case adhan?.asr:
+
+                    await notification_adhan("العصر", fileAdhan, storage);
+
+                    break;
+
+                case adhan?.maghrib:
+
+                    await notification_adhan("المغرب", fileAdhan, storage);
+
+                    break;
+
+                case adhan?.isha:
+
+                    await notification_adhan("العشاء", fileAdhan, storage);
+
+                    break;
+
+                default:
+                    break;
+            }
+
+            // sleep 
+            await new Promise(r => setTimeout(r, 6000));
+
+        };
+
+    } catch (error) {
+
+        error_handling(error);
+
+    }
 
 }
 
