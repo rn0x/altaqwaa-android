@@ -1,7 +1,7 @@
 {
   "name": "com.rn0x.altaqwaa",
   "displayName": "التقوى",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "تطبيق إسلامي سهل الإستخدام و جامع للكثير من الميزات التي يحتاجها المسلم في يومه",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
     "build": "cordova build android --release",
     "bundle": "cordova build android --release -- --packageTypjetifiere=bundle",
     "android": "cordova platform add android@latest",
-    "clear": "cordova platforms rm android && npm cache clean --force && cordova platform add android@latest",
+    "clear": "rm -rf ./node_modules && cordova platforms rm android && npm cache clean --force && npm i && cordova platform add android@latest",
     "keytool": "keytool -genkey -v -keystore ./debug.keystore -alias 'rn0x' -storepass '11223344' -keypass '11223344' -keyalg RSA -keysize 2048 -dname 'CN=rn0x, OU=altaqwaa, O=altaqwaa, L=makkah, ST=makkah, C=sa'"
   },
   "author": {

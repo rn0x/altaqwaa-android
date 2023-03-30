@@ -1,7 +1,7 @@
 #adhkar {
     background-color: var(--background_div_hover) !important;
     transition: 0.5s ease-in-out;
-    box-shadow: 5px 0px 15px 0px #00000048;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 
@@ -33,7 +33,7 @@
     /* width: 110px; */
     background-color: var(--background_div_hover);
     transition: 0.5s ease-in-out;
-    box-shadow: 5px 0px 15px 0px #00000048;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 #adhkar_ul img {
@@ -62,7 +62,6 @@
     margin-left: auto;
     margin-bottom: 20px;
     /* user-select: text; */
-    box-shadow: #32325d40 0px 6px 12px -2px, #0000004d 0px 3px 7px -3px;
 }
 
 #adhkar_random_title {
@@ -137,15 +136,15 @@
     border-radius: 15px;
     margin-right: auto;
     margin-left: auto;
-    box-shadow: #32325d40 0px 6px 12px -2px, #0000004d 0px 3px 7px -3px;
 }
 
 .adhkar:nth-child(1) {
     margin-top: 50px;
 }
 
-.adhkar:hover {
+/* .adhkar:hover {
     background-color: var(--background_div_hover);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 
@@ -154,7 +153,6 @@
 }
 
 .adhkar:hover .repetition {
-    /* background-color: var(--background_div_hover); */
     color: var(--green);
 }
 
@@ -164,7 +162,7 @@
 
 .adhkar:hover .text_bottom {
     color: var(--green);
-}
+} */
 
 .text_bottom {
     margin-bottom: 8px;
@@ -243,6 +241,31 @@
     position: absolute;
     margin-right: 15px;
     z-index: -1;
+}
+
+#adhkar_database {
+
+    display: block;
+    align-items: center;
+    list-style: none;
+    padding: 0px;
+
+}
+
+#adhkar_database li {
+    width: 80%;
+    background-color: var(--background_div_hover);
+    padding: 5px;
+    border-radius: 10px;
+    color: var(--green);
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 500;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+#adhkar_database span {
+    font-weight:900;
 }
 
 /* @media (max-width: 330px) {

@@ -29,6 +29,7 @@
 #radio_quran li:hover {
     transition: 0.5s ease-in-out;
     background-color: var(--background_div_hover);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 #radio_quran li:hover .radio_quran_number{
     transition: 0.5s ease-in-out;

@@ -11,50 +11,56 @@ import images from './images.js';
 import allah from './allah.js';
 import settings from './settings.js';
 import notification from './notification.js';
+import error_handling from './modules/error_handling.js';
 
 document.documentElement.style.setProperty('--animate-duration', '1.5s');
-
-
-
-
 document.addEventListener('deviceready', async (e) => {
 
-    let permissions = cordova.plugins.permissions;
+    try {
 
-    // الصلاحيات
+        let permissions = cordova.plugins.permissions;
 
-    let list = [
-        permissions.ACCESS_COARSE_LOCATION,
-        permissions.WRITE_EXTERNAL_STORAGE
-    ];
+        // الصلاحيات
 
-    permissions.hasPermission(list, (status) => {
+        let list = [
+            permissions.ACCESS_COARSE_LOCATION,
+            permissions.WRITE_EXTERNAL_STORAGE
+        ];
 
-        if (!status.hasPermission) {
+        permissions.hasPermission(list, (status) => {
 
-            permissions.requestPermissions(list);
+            if (!status.hasPermission) {
+
+                permissions.requestPermissions(list);
+            }
+
+        });
+
+        // ignore the system font preferences
+
+        if (window.MobileAccessibility) {
+            window.MobileAccessibility.usePreferredTextZoom(false);
         }
 
-    });
 
-    // ignore the system font preferences
+    } catch (error) {
 
-    if (window.MobileAccessibility) {
-        window.MobileAccessibility.usePreferredTextZoom(false);
+        error_handling(error);
+
     }
 
-}, false);
+    await footer();
+    await adhkar();
+    await prayer();
+    await quran();
+    await more();
+    await albitaqat();
+    await hisnmuslim();
+    await radio();
+    await tfs();
+    await images();
+    await allah();
+    await settings();
+    await notification();
 
-await footer();
-await adhkar();
-await prayer()
-await quran();
-await more();
-await albitaqat();
-await hisnmuslim();
-await radio();
-await tfs();
-await images();
-await allah();
-await settings();
-await notification();
+}, false);

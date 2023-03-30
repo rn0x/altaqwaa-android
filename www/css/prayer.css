@@ -1,7 +1,7 @@
 #prayer {
     background-color: var(--background_div_hover) !important;
     transition: 0.5s ease-in-out;
-    box-shadow: 5px 0px 15px 0px #00000048;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 #content {
@@ -108,7 +108,7 @@
     background-color: var(--background_div_hover);
     padding: 5px;
     transition: 0.5s ease-in-out;
-    box-shadow: 5px 15px 15px 0px #00000048;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 #prayer_ul li:hover .slah {
@@ -139,7 +139,7 @@
     margin-top: auto;
     margin-left: auto;
     margin-right: auto;
-    box-shadow: 5px 15px 15px 0px #0000001c;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     transition: 0.5s ease-in-out;
 }
 
