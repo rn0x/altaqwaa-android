@@ -49,18 +49,32 @@ document.addEventListener('deviceready', async (e) => {
 
     }
 
-    await footer();
-    await adhkar();
-    await prayer();
-    await quran();
-    await more();
-    await albitaqat();
-    await hisnmuslim();
-    await radio();
-    await tfs();
-    await images();
-    await allah();
-    await settings();
-    await notification();
+    // await footer();
+    // await adhkar();
+    // await prayer();
+    // await quran();
+    // await more();
+    // await albitaqat();
+    // await hisnmuslim();
+    // await radio();
+    // await tfs();
+    // await images();
+    // await allah();
+    // await settings();
+    // await notification();
 
 }, false);
+
+await footer();
+await adhkar();
+await prayer();
+await quran();
+await more();
+await albitaqat();
+await hisnmuslim();
+await radio();
+await tfs();
+await images();
+await allah();
+await settings();
+await notification();

@@ -201,8 +201,9 @@
 }
 
 .repetition_number {
-    color: var(--color_font_grey);
+    color: var(--background_div_hover_2);
     margin-right: 10px;
+    font-size: 20px;
 }
 
 #header {
