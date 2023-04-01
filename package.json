@@ -32,6 +32,7 @@
     "cordova-plugin-navigationbar-color": "^0.1.0",
     "cordova-plugin-network-information": "github:apache/cordova-plugin-network-information",
     "cordova-plugin-statusbar": "^3.0.0",
+    "cordova-plugin-vibration": "^3.1.1",
     "phonegap-plugin-mobile-accessibility": "github:phonegap/phonegap-mobile-accessibility"
   },
   "cordova": {
@@ -46,7 +47,8 @@
       "cordova-plugin-dialogs": {},
       "cordova-plugin-downloader": {},
       "cordova-plugin-android-permissions": {},
-      "phonegap-plugin-mobile-accessibility": {}
+      "phonegap-plugin-mobile-accessibility": {},
+      "cordova-plugin-vibration": {}
     },
     "platforms": [
       "android"

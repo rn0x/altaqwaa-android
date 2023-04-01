@@ -126,6 +126,8 @@ export default async () => {
                 let numberEl = document.querySelector(`[id='${item.id}'] > .copy_and_paste > .repetition > .repetition_number`)
                 if (Number(numberEl.textContent) > 0) {
 
+                    navigator?.vibrate(0);
+                    navigator?.vibrate(100);
                     numberEl.innerText = Number(numberEl.textContent) - 1;
                     storage.setItem("adhkar_database", Number(adhkar_database ? adhkar_database : 0) + 1);
 
