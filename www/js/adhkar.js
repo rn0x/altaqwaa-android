@@ -127,7 +127,7 @@ export default async () => {
                 if (Number(numberEl.textContent) > 0) {
 
                     navigator?.vibrate(0);
-                    navigator?.vibrate(100);
+                    navigator?.vibrate(50);
                     numberEl.innerText = Number(numberEl.textContent) - 1;
                     storage.setItem("adhkar_database", Number(adhkar_database ? adhkar_database : 0) + 1);
 
