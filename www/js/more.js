@@ -14,6 +14,7 @@ export default async () => {
             let more_images = document.getElementById("more_images");
             let more_settings = document.getElementById("more_settings");
             let more_info = document.getElementById("more_info");
+            let more_sabha = document.getElementById("more_sabha");
 
 
             more_albitaqat.addEventListener("click", e => {
@@ -54,6 +55,11 @@ export default async () => {
             more_info.addEventListener("click", e => {
 
                 window.location.href = "/pages/info.html"
+            });
+
+            more_sabha.addEventListener("click", e => {
+
+                window.location.href = "/pages/sabha.html"
             });
 
         } catch (error) {

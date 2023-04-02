@@ -123,11 +123,11 @@ cordova requirements
 | الأيقونات                  | https://www.flaticon.com                  |
 | خط Noto Sans Arabic   | https://fonts.google.com/noto/specimen/Noto+Sans+Arabic    |
 | خط Amiri                   | https://fonts.google.com/specimen/Amiri  |
+| خط digital-7                | https://www.dafont.com/digital-7.font  |
 | بطاقات القرآن              | https://github.com/rn0x/albitaqat_quran  |
 | التفسير الميسر             | https://qurancomplex.gov.sa/techquran/dev  |
 | حصن المسلم                 | https://hisnmuslim.com  |
 | اسماء الله الحسنى          | https://github.com/rn0x/Names_Of_Allah_Json  |
-| حصن المسلم                 | https://hisnmuslim.com  |
 
 <br>
 
