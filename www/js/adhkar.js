@@ -121,11 +121,15 @@ export default async () => {
             let adhkarEl = document.getElementById(item.id);
             let numEl = document.querySelector(`[id='${item.id}'] > .copy_and_paste > .repetition > .repetition_number`).textContent
             numbers.push(numEl);
-            adhkarEl.addEventListener("click", (e) => {
+            adhkarEl.addEventListener("click", async (e) => {
+
                 let adhkar_database = storage.getItem('adhkar_database');
                 let numberEl = document.querySelector(`[id='${item.id}'] > .copy_and_paste > .repetition > .repetition_number`)
+
                 if (Number(numberEl.textContent) > 0) {
 
+                    navigator?.vibrate(0);
+                    navigator?.vibrate(50);
                     numberEl.innerText = Number(numberEl.textContent) - 1;
                     storage.setItem("adhkar_database", Number(adhkar_database ? adhkar_database : 0) + 1);
 

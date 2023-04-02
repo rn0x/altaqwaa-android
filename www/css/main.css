@@ -4,6 +4,11 @@
 }
 
 @font-face {
+    font-family: "digital_7";
+    src: url(../font/digital-7.ttf)
+}
+
+@font-face {
     font-family: 'Amiri';
     font-style: normal;
     font-weight: 400;

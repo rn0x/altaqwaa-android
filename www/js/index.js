@@ -10,6 +10,7 @@ import tfs from './tfs.js';
 import images from './images.js';
 import allah from './allah.js';
 import settings from './settings.js';
+import sabha from './sabha.js';
 import notification from './notification.js';
 import error_handling from './modules/error_handling.js';
 
@@ -61,6 +62,7 @@ document.addEventListener('deviceready', async (e) => {
     await images();
     await allah();
     await settings();
+    await sabha();
     await notification();
 
 }, false);

@@ -22,6 +22,7 @@
 - حصن المسلم
 - بطاقات القرآن الكريم
 - التفسير الميسر 
+- المسبحة الإلكترونية
 - إذاعات قرآن ورقية  شرعية واذكار الخ...
 - صور متنوعة لأحاديث وأذكار وأدعية بشكل عشوائي 
 
@@ -36,6 +37,7 @@
 |  ![altaqwaa](/screenshots/7.jpg)   |  ![altaqwaa](/screenshots/8.jpg)   |
 |  ![altaqwaa](/screenshots/9.jpg)   |  ![altaqwaa](/screenshots/10.jpg)  |
 |  ![altaqwaa](/screenshots/11.jpg)  |  ![altaqwaa](/screenshots/12.jpg)  |
+|  ![altaqwaa](/screenshots/13.jpg)  |                                    |
 
 <br>
 
@@ -123,11 +125,11 @@ cordova requirements
 | الأيقونات                  | https://www.flaticon.com                  |
 | خط Noto Sans Arabic   | https://fonts.google.com/noto/specimen/Noto+Sans+Arabic    |
 | خط Amiri                   | https://fonts.google.com/specimen/Amiri  |
+| خط digital-7                | https://www.dafont.com/digital-7.font  |
 | بطاقات القرآن              | https://github.com/rn0x/albitaqat_quran  |
 | التفسير الميسر             | https://qurancomplex.gov.sa/techquran/dev  |
 | حصن المسلم                 | https://hisnmuslim.com  |
 | اسماء الله الحسنى          | https://github.com/rn0x/Names_Of_Allah_Json  |
-| حصن المسلم                 | https://hisnmuslim.com  |
 
 <br>
 
