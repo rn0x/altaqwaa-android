@@ -22,6 +22,7 @@
 - حصن المسلم
 - بطاقات القرآن الكريم
 - التفسير الميسر 
+- المسبحة الإلكترونية
 - إذاعات قرآن ورقية  شرعية واذكار الخ...
 - صور متنوعة لأحاديث وأذكار وأدعية بشكل عشوائي 
 
@@ -36,6 +37,7 @@
 |  ![altaqwaa](/screenshots/7.jpg)   |  ![altaqwaa](/screenshots/8.jpg)   |
 |  ![altaqwaa](/screenshots/9.jpg)   |  ![altaqwaa](/screenshots/10.jpg)  |
 |  ![altaqwaa](/screenshots/11.jpg)  |  ![altaqwaa](/screenshots/12.jpg)  |
+|  ![altaqwaa](/screenshots/13.jpg)  |                                    |
 
 <br>
 
