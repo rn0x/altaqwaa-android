@@ -136,6 +136,7 @@
     border-radius: 15px;
     margin-right: auto;
     margin-left: auto;
+    position: relative;
 }
 
 .adhkar:nth-child(1) {
@@ -164,16 +165,26 @@
     color: var(--green);
 } */
 
-.text_bottom {
+.text_description {
     margin-bottom: 8px;
     margin-top: 10px;
     font-family: var(--NotoSansArabic);
     font-weight: 500;
-    color: var(--color_font_grey);
+    color: #1fa05d;
     font-size: 14px;
     text-align: center;
+    word-break: break-all;
+}
 
-
+.text_source {
+    display: block;
+    margin-bottom: 8px;
+    margin-top: 10px;
+    font-family: var(--NotoSansArabic);
+    color: #819953;
+    font-size: 12px;
+    text-align: center;
+    word-break: break-all;
 }
 
 .text {
@@ -183,6 +194,7 @@
     text-align: center;
     margin-bottom: 0px;
     font-size: 23px;
+    word-break: break-all;
 }
 
 .repetition {
@@ -269,6 +281,29 @@
     font-weight:900;
 }
 
+.icon_copy_adhkar {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    cursor: pointer;
+}
+
+.icon_repetition_adhkar {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    cursor: pointer;
+}
 /* @media (max-width: 330px) {
     #adhkar_ul li {
         width: 85%;

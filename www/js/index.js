@@ -14,42 +14,42 @@ import sabha from './sabha.js';
 import notification from './notification.js';
 import error_handling from './modules/error_handling.js';
 
+// أفحص إذا كانت البيئة تعمل في Cordova
+const isCordova = !!window.cordova;
+
 document.documentElement.style.setProperty('--animate-duration', '1.5s');
-document.addEventListener('deviceready', async (e) => {
 
-    try {
+// أضف شرطًا للتحقق مما إذا كان التطبيق يعمل في Cordova أم لا
+if (isCordova) {
+    document.addEventListener('deviceready', async (e) => {
+        try {
+            let permissions = cordova.plugins.permissions;
 
-        let permissions = cordova.plugins.permissions;
+            let list = [
+                permissions.ACCESS_COARSE_LOCATION,
+                permissions.WRITE_EXTERNAL_STORAGE
+            ];
 
-        // الصلاحيات
+            permissions.hasPermission(list, (status) => {
+                if (!status.hasPermission) {
+                    permissions.requestPermissions(list);
+                }
+            });
 
-        let list = [
-            permissions.ACCESS_COARSE_LOCATION,
-            permissions.WRITE_EXTERNAL_STORAGE
-        ];
-
-        permissions.hasPermission(list, (status) => {
-
-            if (!status.hasPermission) {
-
-                permissions.requestPermissions(list);
+            if (window.MobileAccessibility) {
+                window.MobileAccessibility.usePreferredTextZoom(false);
             }
-
-        });
-
-        // ignore the system font preferences
-
-        if (window.MobileAccessibility) {
-            window.MobileAccessibility.usePreferredTextZoom(false);
+        } catch (error) {
+            error_handling(error);
         }
+        await setupApplication();
+    }, false);
+} else {
+    await setupApplication();
+}
 
 
-    } catch (error) {
-
-        error_handling(error);
-
-    }
-
+async function setupApplication() {
     await footer();
     await adhkar();
     await prayer();
@@ -65,4 +65,13 @@ document.addEventListener('deviceready', async (e) => {
     await sabha();
     await notification();
 
-}, false);
+    // احصل على جميع عناصر img
+    const imagesAll = document.querySelectorAll('img');
+
+    // تعيين خاصية loading="lazy" لكل عنصر img
+    imagesAll.forEach(img => {
+
+        console.log("kkkkkkkk");
+        img.setAttribute('loading', 'lazy');
+    });
+}

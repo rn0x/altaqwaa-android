@@ -7,7 +7,7 @@ export default (error) => {
 
     if (arr.every(e => error?.message !== e)) {
 
-        navigator.notification.confirm(
+        navigator?.notification?.confirm(
             `message: ${error?.message}\ncode: ${error?.code ? error?.code : "null"}\npath: ${window.location.pathname}`,
             (e) => {
 

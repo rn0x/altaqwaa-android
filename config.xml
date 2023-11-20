@@ -1,37 +1,44 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.rn0x.altaqwaa" version="1.2.0"
-    xmlns="http://www.w3.org/ns/widgets"
-    xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.rn0x.altaqwaa" version="1.2.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>التقوى</name>
     <description>تطبيق إسلامي سهل الإستخدام و جامع للكثير من الميزات التي يحتاجها المسلم في يومه</description>
-    <author email="rn0x.me@gmail.com" href="https://altaqwaa.org">
-        Altaqwaa
-    </author>
+    <author email="rn0x.me@gmail.com" href="https://altaqwaa.org">Altaqwaa</author>
     <content src="index.html" />
+
+    <!-- Allow-intent settings -->
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
+
+    <!-- Preferences -->
     <preference name="AndroidXEnabled" value="true" />
     <preference name="KeepRunning" value="true" />
     <preference name="loglevel" value="DEBUG" />
     <preference name="ErrorUrl" value="error.html" />
     <preference name="Fullscreen" value="false" />
     <preference name="DisallowOverscroll" value="true" />
-    <preference name="StatusBarOverlaysWebView" value="false" />
-    <preference name="StatusBarBackgroundColor" value="#2e3338" />
     <preference name="NavigationBarLight" value="true" />
     <preference name="Orientation" value="portrait" />
     <preference name="BackgroundColor" value="#2e3338" />
     <preference name="HideKeyboardFormAccessoryBar" value="true" />
     <preference name="NavigationBarBackgroundColor" value="#232527" />
-    <preference name="android-compileSdkVersion" value="32" />
+    <preference name="android-compileSdkVersion" value="33" />
     <preference name="SplashScreenBackgroundColor" value="#2e3338" />
+    <!-- StatusBar settings -->
+    <preference name="StatusBarBackgroundColor" value="#2e3338" />
+    <preference name="StatusBarOverlaysWebView" value="false" />
+
+    <!-- Android platform settings -->
     <platform name="android">
+
+        <!-- Icons -->
         <icon density="ldpi" src="resources/android/icon/drawable-ldpi-icon.png" />
         <icon density="mdpi" src="resources/android/icon/drawable-mdpi-icon.png" />
         <icon density="hdpi" src="resources/android/icon/drawable-hdpi-icon.png" />
         <icon density="xhdpi" src="resources/android/icon/drawable-xhdpi-icon.png" />
         <icon density="xxhdpi" src="resources/android/icon/drawable-xxhdpi-icon.png" />
         <icon density="xxxhdpi" src="resources/android/icon/drawable-xxxhdpi-icon.png" />
+
+        <!-- Splash Screen settings -->
         <preference name="AndroidWindowSplashScreenAnimatedIcon" value="resources/splash.png" />
         <preference name="AndroidWindowSplashScreenBackground" value="#2e3338" />
     </platform>

@@ -3,3 +3,4 @@ plugins
 platforms
 .idea
 package-lock.json
+tqw.keystore

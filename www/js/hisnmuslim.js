@@ -7,6 +7,8 @@ export default async () => {
 
         try {
 
+            let loading = document.getElementById('loading');
+            loading.style.display = "block";
             let hisnmuslimJson = await loadJson("/data/hisnmuslim.json");
             let back = document.getElementById('back');
             let more_header_title = document.getElementById('more_header_title');
@@ -100,6 +102,8 @@ export default async () => {
                     }
                 }
             });
+
+            loading.style.display = "none";
 
         } catch (error) {
 

@@ -108,7 +108,7 @@ async function notification_adhan(name, fileAdhan, storage) {
     let AdhanPlaying = storage.getItem('AdhanPlaying');
     AdhanPlaying === null ? storage.setItem('AdhanPlaying', "false") : false;
 
-    if (bool(AdhanPlaying) === false) {
+    if (!bool(AdhanPlaying)) {
 
         let audioAdhan = new Audio(fileAdhan);
         audioAdhan.id = 'audioAdhan';
@@ -126,12 +126,14 @@ async function notification_adhan(name, fileAdhan, storage) {
             storage.setItem('AdhanPlaying', "false");
         });
 
-        navigator.notification.confirm(
+        navigator?.notification?.confirm(
             `حان الآن وقت صلاة ${name}`,
             (e) => {
                 if (e === 1) {
                     audioAdhan.pause();
                     audioAdhan.currentTime = 0;
+                } else if (e === 2) { // 2 corresponds to the index of the 'خروج' option
+                    // Do nothing on exit for now
                 }
             },
             'تنبيه بوقت الصلاة',

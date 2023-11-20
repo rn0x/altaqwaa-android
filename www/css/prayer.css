@@ -118,8 +118,10 @@
 #remaining {
     display: none;
     color: var(--color_font_grey);
-    font-size: 15px;
+    font-size: 13px;
     text-align: center;
+    margin-top: 0px;
+    margin-bottom: 5px;
 }
 
 #remaining_name {
@@ -130,13 +132,14 @@
 #remaining_time {
     display: none;
     color: var(--white-div);
-    font-size: 20px;
+    font-size: 14px;
     text-align: center;
     background-color: var(--background_div_hover);
-    width: 60%;
+    width: 70%;
+    max-width: 150px;
     border-radius: 8px;
-    margin-bottom: auto;
-    margin-top: auto;
+    margin-bottom: 20px;
+    margin-top: 0pc;
     margin-left: auto;
     margin-right: auto;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;

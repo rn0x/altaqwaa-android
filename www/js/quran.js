@@ -8,8 +8,11 @@ export default async () => {
 
         try {
 
+            let loading = document.getElementById('loading');
+            loading.style.display = "block";
             let mp3quran = await loadJson('/data/mp3quran.json');
             let quran_reader = document.getElementById("quran_reader");
+            let search_reader = document.getElementById("search_reader");
 
             for (let item of mp3quran) {
 
@@ -34,13 +37,17 @@ export default async () => {
 
             }
 
+            search_reader.addEventListener("keyup", (e) => {
+                searchAndDisplayLi("quran_reader", search_reader?.value)
+            });
+
             let quran_reader_li = document.getElementsByClassName("quran_reader_li");
 
             for (let item of Array.from(quran_reader_li)) {
 
                 let li = document.getElementById(item.id);
                 li.addEventListener("click", e => {
-
+                    search_reader.style.display = "none";
                     window.scrollTo(0, 0);
                     let Eid = Number(item?.id?.split("reader_id_")[1]);
                     mp3quran = mp3quran?.[Eid - 1];
@@ -168,6 +175,56 @@ export default async () => {
 
             }
 
+
+            function searchAndDisplayLi(ulId, searchText) {
+                // العثور على عنصر UL بواسطة معرفه
+                const ulElement = document.getElementById(ulId);
+
+                // الحصول على قائمة بجميع عناصر LI داخل عنصر UL
+                const liElements = ulElement.getElementsByTagName("li");
+
+                // عرض عناصر LI التي تطابق النص المبحوث عنه
+                for (let i = 0; i < liElements.length; i++) {
+                    const liText = liElements[i].textContent;
+                    if (liText.includes(searchText)) {
+                        liElements[i].style.display = "block";
+                    } else {
+                        liElements[i].style.display = "none";
+                    }
+                }
+            }
+
+            function removeArabicDiacritics(sentence, itemWords) {
+                const diacriticsMap = {
+                    'آ': 'ا',
+                    'أ': 'ا',
+                    'إ': 'ا',
+                    'اً': 'ا',
+                    'ٱ': 'ا',
+                    'ٲ': 'ا',
+                    'ٳ': 'ا',
+                    'ٵ': 'ا',
+                    'ٷ': 'ؤ',
+                    'ٹ': 'ت',
+                    // Add more Arabic characters and their replacements as needed
+                };
+                return sentence?.replace(/[\u064B-\u065F\u0670]/g, '')
+                    .split(" ")?.slice(0, parseInt(itemWords))?.join(' ')
+                    .replace(/\)/g, "")
+                    .replace(/\(/g, "")
+                    .replace(/\[/g, "")
+                    .replace(/\]/g, "")
+                    .replace(/\﴿/g, "")
+                    .replace(/\﴾/g, "")
+                    .replace(/\ /g, "_")
+                    .replace(/\,/g, "")
+                    .replace(/\،/g, "")
+                    .replace(/\:/g, "")
+                    .replace(/\./g, "")
+                    .replace(/./g, char => diacriticsMap[char] || char);
+            }
+
+            loading.style.display = "none";
         } catch (error) {
 
             error_handling(error);

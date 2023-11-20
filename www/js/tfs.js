@@ -7,6 +7,8 @@ export default async () => {
 
         try {
 
+            let loading = document.getElementById('loading');
+            loading.style.display = "block";
             let tfsJson = await loadJson("/data/tafseerMouaser.json");
             let quranJson = await loadJson("/data/quran.json");
             let back = document.getElementById('back');
@@ -68,6 +70,8 @@ export default async () => {
                 });
 
             }
+
+            loading.style.display = "none";
 
         } catch (error) {
 

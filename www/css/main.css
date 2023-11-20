@@ -150,6 +150,24 @@ html {
     /* For some Androids */
 }
 
+input:focus,
+textarea:focus,
+select:focus,
+a:focus {
+    outline: none;
+}
+
+
+#loading {
+    display: none;
+    width: 80px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+}
+
 @media (min-width: 500px) {
     .text_alert {
         margin-top: 30% !important;

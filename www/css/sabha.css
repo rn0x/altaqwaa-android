@@ -24,3 +24,10 @@
         0px 24px 2px rgba(0, 0, 0, 0.1),
         0px 34px 30px rgba(0, 0, 0, 0.1);
 }
+
+#repetition_bt {
+    position: absolute;
+    width: 30px;
+    top: 100px;
+    cursor: pointer;
+}
