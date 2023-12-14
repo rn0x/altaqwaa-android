@@ -17,10 +17,10 @@ export default async () => {
             let alert = document.getElementById('alert');
             let adhkar_random = adhkarJson[Math.floor(Math.random() * adhkarJson.length)];
             let storage = window.localStorage;
-            let adhkar_database = storage.getItem('adhkar_database');
+            let adhkarRepeat = storage.getItem('adhkarRepeat');
             let adhkar_database_number = document.getElementById("adhkar_database_number");
 
-            adhkar_database_number.innerText = adhkar_database ? adhkar_database : 0;
+            adhkar_database_number.innerText = adhkarRepeat ? adhkarRepeat : 0;
             adhkar_random_text.innerText = adhkar_random?.zekr;
             adhkar_random_description.innerText = adhkar_random?.description;
             adhkar_random_reference.innerText = adhkar_random?.reference;

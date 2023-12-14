@@ -20,8 +20,8 @@ export default async () => {
 
                 let number = Number(sabha_number.innerText) + 1;
                 sabha_number.innerText = number;
-                let adhkar_database = storage.getItem('adhkar_database');
-                storage.setItem("adhkar_database", Number(adhkar_database ? adhkar_database : 0) + 1);
+                let adhkarRepeat = storage.getItem('adhkarRepeat');
+                storage.setItem("adhkarRepeat", Number(adhkarRepeat ? adhkarRepeat : 0) + 1);
 
             });
 

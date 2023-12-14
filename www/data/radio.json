@@ -37,7 +37,7 @@
     {
         "id": 8,
         "name": "إذاعة سورة البقرة - لعدد من القراء",
-        "link": "https://qurango.net/radio/albaqarah"
+        "link": "https://backup.qurango.net/radio/albaqarah"
     },
     {
         "id": 9,
@@ -63,5 +63,55 @@
         "id": 13,
         "name": "إذاعة آيات السكينة",
         "link": "https://qurango.net/radio/sakeenah"
+    },
+    {
+        "id": 14,
+        "name": "كتاب الاختيارات الفقهية في مسائل العبادات والمعاملات من فتاوى الشيخ الإمام ابن باز - رحمه الله",
+        "link": "https://backup.qurango.net/radio/alaikhtiarat_alfiqhayh_bin_baz"
+    },
+    {
+        "id": 15,
+        "name": "إذاعة محمد أيوب",
+        "link": "https://backup.qurango.net/radio/ayyoub2"
+    },
+    {
+        "id": 16,
+        "name": "إذاعة محمد أيوب",
+        "link": "https://backup.qurango.net/radio/ayyoub2"
+    },
+    {
+        "id": 17,
+        "name": "إذاعة زكي داغستاني",
+        "link": "https://backup.qurango.net/radio/zaki_daghistani"
+    },
+    {
+        "id": 18,
+        "name": "إذاعة خالد الجليل",
+        "link": "https://backup.qurango.net/radio/khalid_aljileel"
+    },
+    {
+        "id": 19,
+        "name": "إذاعة تكبيرات العيد",
+        "link": "https://backup.qurango.net/radio/eid"
+    },
+    {
+        "id": 20,
+        "name": "أذكار الصباح",
+        "link": "https://backup.qurango.net/radio/athkar_sabah"
+    },
+    {
+        "id": 21,
+        "name": "أذكار المساء",
+        "link": "https://backup.qurango.net/radio/athkar_masa"
+    },
+    {
+        "id": 22,
+        "name": "إذاعة علي جابر",
+        "link": "https://backup.qurango.net/radio/ali_jaber"
+    },
+    {
+        "id": 23,
+        "name": "إذاعة محمد رشاد الشريف",
+        "link": "https://backup.qurango.net/radio/mohammad_rashad_alshareef"
     }
 ]

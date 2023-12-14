@@ -173,7 +173,7 @@
     color: #1fa05d;
     font-size: 14px;
     text-align: center;
-    word-break: break-all;
+    word-wrap: break-word;
 }
 
 .text_source {
@@ -184,7 +184,7 @@
     color: #819953;
     font-size: 12px;
     text-align: center;
-    word-break: break-all;
+    word-wrap: break-word;
 }
 
 .text {
@@ -194,7 +194,7 @@
     text-align: center;
     margin-bottom: 0px;
     font-size: 23px;
-    word-break: break-all;
+    word-wrap: break-word;
 }
 
 .repetition {

@@ -50,7 +50,7 @@
     justify-content: space-between;
     width: calc(75% / 2);
     background-color: var(--background_div);
-    word-break: break-all;
+    word-wrap: break-word;
     padding: 10px;
     margin: 7px 7px 7px 7px;
     border-radius: 12px;

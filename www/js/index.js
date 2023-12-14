@@ -70,8 +70,6 @@ async function setupApplication() {
 
     // تعيين خاصية loading="lazy" لكل عنصر img
     imagesAll.forEach(img => {
-
-        console.log("kkkkkkkk");
         img.setAttribute('loading', 'lazy');
     });
 }
