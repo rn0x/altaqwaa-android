@@ -1,117 +1,147 @@
 [
     {
         "id": 1,
-        "name": "إذاعة تفسير القران الكريم",
-        "link": "https://qurango.net/radio/tafseer"
-    },
-    {
-        "id": 2,
-        "name": "إذاعة الرقية الشرعية",
-        "link": "https://qurango.net/radio/roqiah"
-    },
-    {
-        "id": 3,
-        "name": "إذاعة الفتاوى العامة",
+        "name": "إذاعة القرآن الكريم من مكة المكرمة",
         "link": "https://qurango.net/radio/fatwa"
     },
     {
-        "id": 4,
-        "name": "إذاعة عبدالله الموسى",
-        "link": "https://Qurango.net/radio/abdullah_almousa"
+        "id": 2,
+        "name": "إذاعة المجد للقرآن الكريم",
+        "link": "http://r1.tarat.com:8196/stream?type=http&nocache=836"
     },
     {
-        "id": 5,
+        "id": 3,
+        "name": "إذاعة القرآن الكريم من القاهرة",
+        "link": "https://stream.radiojar.com/8s5u5tpdtwzuv"
+    },
+    {
+        "id": 4,
         "name": "إذاعة القرآن الكريم من الجزائر",
         "link": "https://webradio.tda.dz/Coran_64K.mp3"
     },
     {
+        "id": 5,
+        "name": "إذاعة الشيخ عبد الباسط عبد الصمد",
+        "link": "https://qurango.net/radio/abdulbasit_abdulsamad_mojawwad"
+    },
+    {
         "id": 6,
+        "name": "اذاعة الشيخ محمود على البنا",
+        "link": "https://qurango.net/radio/mahmoud_ali__albanna_mojawwad"
+    },
+    {
+        "id": 7,
+        "name": "إذاعة الشيخ محمود خليل الحصري",
+        "link": "https://qurango.net/radio/mahmoud_khalil_alhussary"
+    },
+    {
+        "id": 8,
+        "name": "إذاعة ناصر القطامي",
+        "link": "https://qurango.net/radio/nasser_alqatami"
+    },
+    {
+        "id": 9,
         "name": "إذاعة سعود الشريم",
         "link": "https://Qurango.net/radio/saud_alshuraim"
     },
     {
-        "id": 7,
+        "id": 10,
         "name": "إذاعة إدريس أبكر",
         "link": "https://Qurango.net/radio/idrees_abkr"
     },
     {
-        "id": 8,
+        "id": 11,
         "name": "إذاعة سورة البقرة - لعدد من القراء",
         "link": "https://backup.qurango.net/radio/albaqarah"
     },
     {
-        "id": 9,
+        "id": 12,
         "name": "اذاعة متنوعة لمختلف القراء",
         "link": "https://Qurango.net/radio/mix"
     },
     {
-        "id": 10,
+        "id": 13,
         "name": "المختصر في تفسير القرآن الكريم",
         "link": "https://qurango.net/radio/mukhtasartafsir"
     },
     {
-        "id": 11,
+        "id": 14,
         "name": "سيرة نبينا محمد صلى الله عليه وسلم",
         "link": "https://Qurango.net/radio/fi_zilal_alsiyra"
     },
     {
-        "id": 12,
+        "id": 15,
         "name": "صور من حياة الصحابة رضوان الله عليهم",
         "link": "https://qurango.net/radio/sahabah"
     },
     {
-        "id": 13,
+        "id": 16,
         "name": "إذاعة آيات السكينة",
         "link": "https://qurango.net/radio/sakeenah"
     },
     {
-        "id": 14,
+        "id": 17,
         "name": "كتاب الاختيارات الفقهية في مسائل العبادات والمعاملات من فتاوى الشيخ الإمام ابن باز - رحمه الله",
         "link": "https://backup.qurango.net/radio/alaikhtiarat_alfiqhayh_bin_baz"
     },
     {
-        "id": 15,
+        "id": 18,
         "name": "إذاعة محمد أيوب",
         "link": "https://backup.qurango.net/radio/ayyoub2"
     },
     {
-        "id": 16,
+        "id": 19,
         "name": "إذاعة محمد أيوب",
         "link": "https://backup.qurango.net/radio/ayyoub2"
     },
     {
-        "id": 17,
+        "id": 20,
         "name": "إذاعة زكي داغستاني",
         "link": "https://backup.qurango.net/radio/zaki_daghistani"
     },
     {
-        "id": 18,
+        "id": 21,
         "name": "إذاعة خالد الجليل",
         "link": "https://backup.qurango.net/radio/khalid_aljileel"
     },
     {
-        "id": 19,
+        "id": 22,
         "name": "إذاعة تكبيرات العيد",
         "link": "https://backup.qurango.net/radio/eid"
     },
     {
-        "id": 20,
+        "id": 23,
         "name": "أذكار الصباح",
         "link": "https://backup.qurango.net/radio/athkar_sabah"
     },
     {
-        "id": 21,
+        "id": 24,
         "name": "أذكار المساء",
         "link": "https://backup.qurango.net/radio/athkar_masa"
     },
     {
-        "id": 22,
+        "id": 25,
         "name": "إذاعة علي جابر",
         "link": "https://backup.qurango.net/radio/ali_jaber"
     },
     {
-        "id": 23,
+        "id": 26,
         "name": "إذاعة محمد رشاد الشريف",
         "link": "https://backup.qurango.net/radio/mohammad_rashad_alshareef"
+    },
+    {
+        "id": 27,
+        "name": "إذاعة الرقية الشرعية",
+        "link": "https://qurango.net/radio/roqiah"
+    },
+    {
+        "id": 28,
+        "name": "إذاعة الفتاوى العامة",
+        "link": "https://qurango.net/radio/fatwa"
+    },
+    {
+        "id": 29,
+        "name": "إذاعة تفسير القران الكريم",
+        "link": "https://qurango.net/radio/tafseer"
     }
 ]
