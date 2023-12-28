@@ -35,6 +35,26 @@
     transition: 0.5s ease-in-out;
     background-color: var(--background_div);
 }
+#radioSearch {
+    display: block;
+    width: 80%;
+    max-width: 300px;
+    background-image: url(/img/searchicon.png);
+    background-position: 5px 10px;
+    background-repeat: no-repeat;
+    padding: 7px;
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: var(--NotoSansArabic);
+    font-weight: 700;
+    font-size: 12px;
+    border-radius: 5px;
+}
 
 .radio_quran_number {
     color: var(--white-div);
