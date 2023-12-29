@@ -56,19 +56,20 @@
     border-radius: 5px;
 }
 
-.radio_quran_number {
+
+/* .radio_quran_number {
     color: var(--white-div);
-    font-size: 16px;
+    font-size: 12px;
     position: absolute;
     margin-top: -17px;
     top: 0;
     background-color: var(--background_div_hover);
-    width: 35px;
+    width: 25px;
     border-radius: 50%;
     transition: 0.5s ease-in-out;
     font-weight: 600;
     box-shadow: 0px 3px 10px 0px #0000002f;
-}
+} */
 
 .radio_quran_title {
     color: var(--white-div);
@@ -80,6 +81,14 @@
     width: 30px;
     margin-left: 10px;
 }
+
+#radio_logo {
+    width: 65px;
+    height: 65px;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
 
 @media (max-width: 350px) {
     .radio_quran_title {

@@ -36,16 +36,23 @@ export default async () => {
                     let li = document.createElement("li");
                     let radio_quran_number = document.createElement("p");
                     let radio_quran_title = document.createElement("h3");
+                    let radioLogo = document.createElement("img");
+                    radioLogo.src = item?.image || "default_image_url"; // Use the image attribute or provide a default image URL
+                    radioLogo.id = "radio_logo";
+                    radioLogo.width = 50;
+                    radioLogo.height = 50;
                     let radio_quran_play = document.createElement("img");
                     let audio = new Audio(item?.link);
                     audio.id = `radio_quran_audio_id_${item?.id}`;
                     audio.preload = 'none';
                     audio.autoplay = false;
+                    audio.crossOrigin = 'anonymous'; // Add this line to handle CORS
 
                     radio_quran.appendChild(li);
+                    li.appendChild(radioLogo);
                     li.appendChild(radio_quran_number);
                     radio_quran_number.className = "radio_quran_number";
-                    radio_quran_number.innerText = item?.id;
+                    // radio_quran_number.innerText = item?.id;
                     li.appendChild(radio_quran_title);
                     radio_quran_title.className = "radio_quran_title";
                     radio_quran_title.innerText = item?.name;
@@ -67,9 +74,20 @@ export default async () => {
                                 }
                                 await audio.play();
                                 setStopIcon(radio_quran_play);
+
+                                // Start background audio
+                                if (typeof cordova !== 'undefined' && cordova.plugins && cordova.plugins.backgroundaudio) {
+                                    cordova.plugins.backgroundaudio.unmute(); // Unmute to allow background playback
+                                    cordova.plugins.backgroundaudio.play();
+                                }
                             } else {
                                 audio.pause();
                                 setPlayIcon(radio_quran_play);
+
+                                // Stop background audio
+                                if (typeof cordova !== 'undefined' && cordova.plugins && cordova.plugins.backgroundaudio) {
+                                    cordova.plugins.backgroundaudio.stop();
+                                }
                             }
 
                             currentAudio = audio;

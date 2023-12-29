@@ -44,7 +44,8 @@
       "cordova-plugin-downloader": {},
       "cordova-plugin-android-permissions": {},
       "phonegap-plugin-mobile-accessibility": {},
-      "cordova-plugin-vibration": {}
+      "cordova-plugin-vibration": {},
+      "cordova-plugin-background-audio": {}
     },
     "platforms": [
       "android"
@@ -52,6 +53,7 @@
   },
   "devDependencies": {
     "cordova-android": "^12.0.1",
+    "cordova-plugin-background-audio": "^1.1.0",
     "cordova-plugin-downloader": "github:asadaries/cordova-plugin-downloader",
     "cordova-plugin-network-information": "github:apache/cordova-plugin-network-information",
     "phonegap-plugin-mobile-accessibility": "github:phonegap/phonegap-mobile-accessibility"
