@@ -30,8 +30,8 @@ export default async () => {
                 asr: Setasr = 0,
                 maghrib: Setmaghrib = 0,
                 isha: Setisha = 0,
-                latitude: Getlatitude,
-                longitude: Getlongitude
+                latitude_settings: Getlatitude,
+                longitude_settings: Getlongitude
             } = storage;
 
             if (statusPERM || (Getlongitude && Getlatitude)) {
@@ -39,8 +39,8 @@ export default async () => {
 
                 if (!Getlongitude || !Getlatitude) {
                     const { latitude, longitude } = await getGPS();
-                    storage.setItem("latitude", latitude);
-                    storage.setItem("longitude", longitude);
+                    storage.setItem("latitude_settings", latitude);
+                    storage.setItem("longitude_settings", longitude);
                 }
 
                 setInterval(() => {
@@ -61,8 +61,8 @@ export default async () => {
                 }, 1000);
 
                 setInterval(() => {
-                    const { latitude, longitude } = storage;
-                    if (statusPERM || (longitude && latitude)) {
+                    const { latitude_settings, longitude_settings } = storage;
+                    if (statusPERM || (longitude_settings && latitude_settings)) {
                         prayerTimeContainer.style.display = "block";
                         alertElm.style.display = "none";
                     } else {
