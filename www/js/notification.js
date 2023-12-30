@@ -18,8 +18,8 @@ export default async () => {
         let Setasr = storage.getItem('asr');
         let Setmaghrib = storage.getItem('maghrib');
         let Setisha = storage.getItem('isha');
-        let Getlatitude = storage.getItem('latitude');
-        let Getlongitude = storage.getItem('longitude');
+        let Getlatitude = storage.getItem('latitude_settings');
+        let Getlongitude = storage.getItem('longitude_settings');
         let notification = storage.getItem('notification');
 
         if (Getlongitude === null || Getlatitude === null) {
@@ -27,8 +27,8 @@ export default async () => {
             let GPS = await getGPS();
             Getlatitude = GPS.latitude;
             Getlongitude = GPS.longitude;
-            storage.setItem("latitude", Getlatitude);
-            storage.setItem("longitude", Getlongitude);
+            storage.setItem("latitude_settings", Getlatitude);
+            storage.setItem("longitude_settings", Getlongitude);
 
         }
 

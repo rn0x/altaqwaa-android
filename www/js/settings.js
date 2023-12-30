@@ -43,6 +43,7 @@ const setDefaultValues = () => {
 
     Object.entries(DEFAULT_VALUES).forEach(([key, value]) => {
         const element = getElementById(key);
+
         if (element) {
             const storedValue = storage.getItem(key);
 
@@ -55,8 +56,8 @@ const setDefaultValues = () => {
             } else if (key === 'notifications_adhan') {
                 element.checked = storedValue !== null && storedValue !== undefined ? bool(storedValue) : true;
             } else if (key === 'longitude_settings' || key === 'latitude_settings') {
-                const longitudeValue = storage.getItem('longitude');
-                const latitudeValue = storage.getItem('latitude');
+                const longitudeValue = storage.getItem('longitude_settings');
+                const latitudeValue = storage.getItem('latitude_settings');
                 if (longitudeValue && latitudeValue) {
                     element.value = key === 'longitude_settings' ? longitudeValue : latitudeValue;
                 }
@@ -79,8 +80,8 @@ const handleRefreshLocation = async () => {
             const { latitude, longitude } = await getGPS();
             const storage = window.localStorage;
 
-            storage.setItem('latitude', latitude);
-            storage.setItem('longitude', longitude);
+            storage.setItem('latitude_settings', latitude);
+            storage.setItem('longitude_settings', longitude);
 
             const alertEl = getElementById('alert');
             if (alertEl) {
