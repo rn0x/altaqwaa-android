@@ -28,7 +28,7 @@ export default async () => {
                 displayRadioItems(filteredData);
             }
 
-            function displayRadioItems(data) {
+            async function displayRadioItems(data) {
                 // Clear existing items
                 radio_quran.innerHTML = '';
 
