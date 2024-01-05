@@ -72,6 +72,7 @@
 } */
 
 .radio_quran_title {
+    width: 100%;
     color: var(--white-div);
     margin-left: 10px;
     margin-right: 10px;
