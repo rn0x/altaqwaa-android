@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.rn0x.altaqwaa" version="1.2.3" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.rn0x.altaqwaa" version="1.2.3" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
     <name>التقوى</name>
     <description>تطبيق إسلامي سهل الإستخدام و جامع للكثير من الميزات التي يحتاجها المسلم في يومه</description>
     <author email="rn0x.me@gmail.com" href="https://altaqwaa.org">Altaqwaa</author>
@@ -26,6 +26,7 @@
     <!-- StatusBar settings -->
     <preference name="StatusBarBackgroundColor" value="#2e3338" />
     <preference name="StatusBarOverlaysWebView" value="false" />
+    <preference name="StatusBarStyle" value="lightcontent" />
 
     <!-- Android platform settings -->
     <platform name="android">
@@ -39,6 +40,9 @@
         <icon density="xxxhdpi" src="resources/android/icon/drawable-xxxhdpi-icon.png" />
 
         <!-- Splash Screen settings -->
+        <preference name="AutoHideSplashScreen" value="true" />
+        <preference name="FadeSplashScreen" value="false"/>
+        <preference name="SplashScreenDelay" value="3000" />
         <preference name="AndroidWindowSplashScreenAnimatedIcon" value="resources/splash.png" />
         <preference name="AndroidWindowSplashScreenBackground" value="#2e3338" />
          <config-file target="res/xml/config.xml" parent="/*">
