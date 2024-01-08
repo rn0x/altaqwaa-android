@@ -16,7 +16,7 @@
     <preference name="ErrorUrl" value="error.html" />
     <preference name="Fullscreen" value="false" />
     <preference name="DisallowOverscroll" value="true" />
-    <preference name="NavigationBarLight" value="true" />
+    <preference name="NavigationBarLight" value="false" />
     <preference name="Orientation" value="portrait" />
     <preference name="BackgroundColor" value="#2e3338" />
     <preference name="HideKeyboardFormAccessoryBar" value="true" />
