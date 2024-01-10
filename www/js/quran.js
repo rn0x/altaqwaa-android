@@ -1,235 +1,232 @@
+/**
+ * @fileoverview
+ * كود JavaScript لعرض القرآن الكريم بتنسيق معين.
+ * يتم استخدامه في صفحة 'quran.html'.
+ * @author rn0x
+ */
+
 import Downloader from './modules/Downloader.js';
 import loadJson from './modules/loadJson.js';
-import error_handling from './modules/error_handling.js';
+import errorHandling from './modules/error_handling.js';
 
+
+let isAudioPlaying = false;
+let currentAudio = null;
+let currentPlayButton = null;
+
+/**
+ * الدالة الرئيسية التي تقوم بتحميل وعرض القرآن الكريم على الصفحة.
+ * @async
+ */
 export default async () => {
-
-    if (window.location.pathname === '/quran.html') {
-
-        try {
-
+    try {
+        // التحقق من أننا في صفحة 'quran.html'
+        if (window.location.pathname === '/quran.html') {
+            // عرض رمز التحميل أثناء جلب البيانات
             let loading = document.getElementById('loading');
             loading.style.display = "block";
+
+            // جلب بيانات القرآن من ملف JSON
             let mp3quran = await loadJson('/data/mp3quran.json');
-            let quran_reader = document.getElementById("quran_reader");
-            let search_reader = document.getElementById("search_reader");
 
+            // العناصر الرئيسية في الصفحة
+            let quranReader = document.getElementById("quran_reader");
+            let searchReader = document.getElementById("search_reader");
+
+            // عرض القراء
             for (let item of mp3quran) {
-
                 let li = document.createElement("li");
-                let quran_reader_title = document.createElement("p");
-                let quran_reader_div = document.createElement("div");
+                let quranReaderTitle = document.createElement("p");
+                let quranReaderDiv = document.createElement("div");
                 let h3 = document.createElement("h3");
                 let p = document.createElement("p");
 
-                quran_reader.appendChild(li);
+                quranReader.appendChild(li);
                 li.className = 'quran_reader_li';
                 li.id = `reader_id_${item?.id}`;
-                li.appendChild(quran_reader_title);
-                quran_reader_title.innerText = "القارئ";
-                quran_reader_title.className = "quran_reader_title";
-                li.appendChild(quran_reader_div);
-                quran_reader_div.className = "quran_reader_div";
-                quran_reader_div.appendChild(h3);
+                li.appendChild(quranReaderTitle);
+                quranReaderTitle.innerText = "القارئ";
+                quranReaderTitle.className = "quran_reader_title";
+                li.appendChild(quranReaderDiv);
+                quranReaderDiv.className = "quran_reader_div";
+                quranReaderDiv.appendChild(h3);
                 h3.innerText = item?.name;
-                quran_reader_div.appendChild(p);
+                quranReaderDiv.appendChild(p);
                 p.innerText = item?.rewaya;
-
             }
 
-            search_reader.addEventListener("keyup", (e) => {
-                searchAndDisplayLi("quran_reader", search_reader?.value)
+            // إضافة حدث البحث على القراء
+            searchReader.addEventListener("keyup", (e) => {
+                searchAndDisplayLi("quran_reader", searchReader?.value);
             });
 
-            let quran_reader_li = document.getElementsByClassName("quran_reader_li");
+            // إضافة حدث النقر على كل قارئ
+            let quranReaderLi = document.getElementsByClassName("quran_reader_li");
 
-            for (let item of Array.from(quran_reader_li)) {
-
+            for (let item of Array.from(quranReaderLi)) {
                 let li = document.getElementById(item.id);
                 li.addEventListener("click", e => {
-                    search_reader.style.display = "none";
-                    window.scrollTo(0, 0);
-                    let Eid = Number(item?.id?.split("reader_id_")[1]);
-                    mp3quran = mp3quran?.[Eid - 1];
-                    let quran_mp3_h3 = document.getElementById("quran_mp3_h3");
-                    let quran_reader = document.getElementById("quran_reader");
-                    let quran_reader_surah_header = document.getElementById("quran_reader_surah_header");
-                    let quran_reader_surah_header_back = document.getElementById("quran_reader_surah_header_back");
-                    let quran_reader_surah_header_title = document.getElementById("quran_reader_surah_header_title");
-
-                    quran_mp3_h3.style.display = "none";
-                    quran_reader.style.display = "none";
-                    quran_reader_surah_header.style.display = "flex";
-                    quran_reader_surah_header_title.innerText = mp3quran?.name;
-
-                    // return Quran Page
-
-                    quran_reader_surah_header_back.addEventListener("click", e => {
-                        window.location.href = "/quran.html";
-                    });
-
-                    // SURAH 
-
-                    let quran_reader_surah = document.getElementById("quran_reader_surah");
-                    quran_reader_surah.style.display = "block";
-
-                    let audioPlaying = false;
-
-                    for (let iterator of mp3quran?.audio) {
-
-                        let li = document.createElement("li");
-                        let h3 = document.createElement("h3");
-                        let quran_reader_surah_img = document.createElement("div");
-                        let play = document.createElement("img");
-                        let download = document.createElement("img");
-
-                        quran_reader_surah.appendChild(li);
-                        li.appendChild(h3);
-                        h3.innerHTML = `<span>${iterator?.id}</span> ${iterator?.name}`;
-                        li.appendChild(quran_reader_surah_img);
-                        quran_reader_surah_img.appendChild(play);
-                        play.id = `quran_reader_surah_img_play_${iterator?.id}`;
-                        play.src = "/img/play.png";
-                        play.className = "quran_reader_surah_img_play";
-                        quran_reader_surah_img.appendChild(download);
-                        download.id = `quran_reader_surah_img_download_${iterator?.id}`;
-                        download.src = "/img/download.png";
-                        download.className = "quran_reader_surah_img_download";
-
-                        // icon play
-
-                        let quran_reader_surah_img_play = document.getElementById(`quran_reader_surah_img_play_${iterator?.id}`);
-                        let audioStart = true;
-                        let audio = new Audio(iterator?.link);
-                        quran_reader_surah_img.appendChild(audio);
-                        audio.id = `quran_reader_audio_id_${iterator?.id}`;
-                        audio.preload = 'none';
-                        audio.autoplay = false;
-
-                        quran_reader_surah_img_play.addEventListener("click", async e => {
-
-                            e.preventDefault();
-
-                            let storage = window.localStorage;
-                            let audioPlayingId = storage.getItem('audioPlayingId');
-                            let icon_audio = storage.getItem('icon_audio');
-
-                            if (icon_audio && icon_audio !== `quran_reader_surah_img_play_${iterator?.id}`) {
-
-                                let oldPlaying = document.getElementById(audioPlayingId);
-                                let oldIconPlay = document.getElementById(icon_audio);
-
-                                oldPlaying.pause();
-                                oldIconPlay.src = "/img/play.png";
-                                audioPlaying = false;
-                                audioStart = true;
-
-                            }
-
-
-                            if (audioStart && audioPlaying === false) {
-
-                                audioPlaying = true;
-                                audioStart = false;
-
-                                storage.setItem('audioPlayingId', `quran_reader_audio_id_${iterator?.id}`);
-                                storage.setItem('icon_audio', `quran_reader_surah_img_play_${iterator?.id}`);
-
-                                if (audio.buffered.length === 0) {
-
-                                    quran_reader_surah_img_play.src = "/img/loading.svg";
-                                }
-
-                                await audio.play();
-                                quran_reader_surah_img_play.src = "/img/stop.png";
-                            }
-
-                            else {
-
-                                audioPlaying = false;
-                                audioStart = true;
-                                audio.pause();
-                                quran_reader_surah_img_play.src = "/img/play.png";
-                            }
-
-                        });
-
-                        // icon download
-
-                        let quran_reader_surah_img_download = document.getElementById(`quran_reader_surah_img_download_${iterator?.id}`);
-
-                        quran_reader_surah_img_download.addEventListener("click", async e => {
-
-                            Downloader(iterator?.link, `${iterator?.name} - ${mp3quran?.name}.mp3`);
-
-                            // let link = document.createElement('a');
-                            // link.href = iterator?.link;
-                            // link.download = `${iterator?.name}-${item?.name}.mp3`;
-                            // link.hidden = true
-                            // link.click();
-
-                        });
-                    }
-
+                    // تنفيذ عمليات النقر على القارئ
+                    const Eid = Number(item?.id?.split("reader_id_")[1]);
+                    const itemMp3 = mp3quran?.[Eid - 1];
+                    handleReaderClick(itemMp3, mp3quran);
                 });
-
             }
 
+            // إخفاء رمز التحميل بعد اكتمال التحميل
+            loading.style.display = "none";
+        }
+    } catch (error) {
+        // معالجة الأخطاء إذا حدثت
+        errorHandling(error);
+    }
+}
 
-            function searchAndDisplayLi(ulId, searchText) {
-                // العثور على عنصر UL بواسطة معرفه
-                const ulElement = document.getElementById(ulId);
+/**
+ * الدالة للبحث وعرض عناصر LI بناءً على النص المدخل.
+ * @param {string} ulId - معرف عنصر القائمة الذي سنقوم بالبحث فيه.
+ * @param {string} searchText - النص الذي نقوم بالبحث عنه.
+ */
+function searchAndDisplayLi(ulId, searchText) {
+    const ulElement = document.getElementById(ulId);
+    const liElements = ulElement.getElementsByTagName("li");
 
-                // الحصول على قائمة بجميع عناصر LI داخل عنصر UL
-                const liElements = ulElement.getElementsByTagName("li");
+    for (let i = 0; i < liElements.length; i++) {
+        const liText = liElements[i].textContent;
+        const shouldDisplay = liText.includes(searchText);
+        liElements[i].style.display = shouldDisplay ? "block" : "none";
+    }
+}
 
-                // عرض عناصر LI التي تطابق النص المبحوث عنه
-                for (let i = 0; i < liElements.length; i++) {
-                    const liText = liElements[i].textContent;
-                    if (liText.includes(searchText)) {
-                        liElements[i].style.display = "block";
-                    } else {
-                        liElements[i].style.display = "none";
+/**
+ * الدالة لمعالجة النقر على عنصر LI الخاص بالقراء.
+ * @param {HTMLElement} item - عنصر القارئ الذي تم النقر عليه.
+ * @param {Array} mp3quran - مصفوفة تحتوي على بيانات القرآن الكريم.
+ */
+function handleReaderClick(item, mp3quran) {
+    try {
+        // إخفاء حقل البحث
+        let searchReader = document.getElementById("search_reader");
+        searchReader.style.display = "none";
+
+        // العودة إلى صفحة القرآن
+        let quranReader = document.getElementById("quran_reader");
+        let quranMp3H3 = document.getElementById("quran_mp3_h3");
+        let quranReaderSurahHeader = document.getElementById("quran_reader_surah_header");
+        let quranReaderSurahHeaderBack = document.getElementById("quran_reader_surah_header_back");
+        let quranReaderSurahHeaderTitle = document.getElementById("quran_reader_surah_header_title");
+
+        quranMp3H3.style.display = "none";
+        quranReader.style.display = "none";
+        quranReaderSurahHeader.style.display = "flex";
+        quranReaderSurahHeaderTitle.innerText = item?.name;
+
+        // إضافة حدث العودة إلى صفحة القرآن
+        quranReaderSurahHeaderBack.addEventListener("click", e => {
+            window.location.href = "/quran.html";
+        });
+
+        // عرض صفحة السور
+        let quranReaderSurah = document.getElementById("quran_reader_surah");
+        quranReaderSurah.style.display = "block";
+
+
+        for (let iterator of item?.audio) {
+            let li = document.createElement("li");
+            let h3 = document.createElement("h3");
+            let quranReaderSurahImg = document.createElement("div");
+            let playButton = document.createElement("img");
+            let download = document.createElement("img");
+
+            quranReaderSurah.appendChild(li);
+            li.appendChild(h3);
+            h3.innerHTML = `<span>${iterator?.id}</span> ${iterator?.name}`;
+            li.appendChild(quranReaderSurahImg);
+            quranReaderSurahImg.appendChild(playButton);
+            playButton.id = `quran_reader_surah_img_play_${iterator?.id}`;
+            playButton.src = "/img/play.png";
+            playButton.className = "quran_reader_surah_img_play";
+            quranReaderSurahImg.appendChild(download);
+            download.id = `quran_reader_surah_img_download_${iterator?.id}`;
+            download.src = "/img/download.png";
+            download.className = "quran_reader_surah_img_download";
+            let audio = new Audio(iterator?.link);
+            let audioId = `quran_reader_audio_id_${iterator?.id}`;
+            audio.preload = 'none';
+            audio.autoplay = false;
+            audio.id = audioId;
+
+            // إضافة حدث انتهاء التشغيل
+            audio.addEventListener("ended", () => {
+                console.log("تم الإنتهاء من الصوت وإيقافه");
+                isAudioPlaying = false;
+                playButton.src = "/img/play.png";
+            });
+
+            // حدث زر التشغيل والإيقاف الخاص بالصوت 
+            playButton.addEventListener("click", () => {
+                if (!isAudioPlaying) {
+                    playAudio(audio, playButton);
+                    currentAudio = audio;
+                    currentPlayButton = playButton;
+                } else {
+
+                    if (currentAudio && currentAudio !== audio) {
+                        stopAudio(currentAudio, currentPlayButton);
+                        playAudio(audio, playButton);
+                        currentAudio = audio;
+                        currentPlayButton = playButton;
+                    }
+                    else {
+                        stopAudio(audio, playButton);
                     }
                 }
-            }
+            });
 
-            function removeArabicDiacritics(sentence, itemWords) {
-                const diacriticsMap = {
-                    'آ': 'ا',
-                    'أ': 'ا',
-                    'إ': 'ا',
-                    'اً': 'ا',
-                    'ٱ': 'ا',
-                    'ٲ': 'ا',
-                    'ٳ': 'ا',
-                    'ٵ': 'ا',
-                    'ٷ': 'ؤ',
-                    'ٹ': 'ت',
-                    // Add more Arabic characters and their replacements as needed
-                };
-                return sentence?.replace(/[\u064B-\u065F\u0670]/g, '')
-                    .split(" ")?.slice(0, parseInt(itemWords))?.join(' ')
-                    .replace(/\)/g, "")
-                    .replace(/\(/g, "")
-                    .replace(/\[/g, "")
-                    .replace(/\]/g, "")
-                    .replace(/\﴿/g, "")
-                    .replace(/\﴾/g, "")
-                    .replace(/\ /g, "_")
-                    .replace(/\,/g, "")
-                    .replace(/\،/g, "")
-                    .replace(/\:/g, "")
-                    .replace(/\./g, "")
-                    .replace(/./g, char => diacriticsMap[char] || char);
-            }
-
-            loading.style.display = "none";
-        } catch (error) {
-
-            error_handling(error);
-
+            // إضافة حدث النقر لتحميل الملف الصوتي
+            download.addEventListener("click", async e => {
+                Downloader(iterator?.link, `${iterator?.name} - ${item?.name}.mp3`);
+            });
         }
-
+    } catch (error) {
+        // معالجة الأخطاء إذا حدثت
+        errorHandling(error);
     }
+}
+
+
+/**
+ * الدالة لتشغيل الصوت.
+ * @param {HTMLAudioElement} audio - عنصر الصوت الذي سيتم تشغيله.
+ * @param {HTMLElement} playButton - زر التشغيل الذي يتم النقر عليه.
+ */
+function playAudio(audio, playButton) {
+
+    playButton.src = "/img/loading.svg";
+    audio.play().then(() => {
+        console.log("تم تشغيل الصوت");
+        isAudioPlaying = true;
+        playButton.src = "/img/stop.png";
+    }).catch((error) => {
+        console.error("Error playing audio:", error);
+        isAudioPlaying = false;
+        playButton.src = "/img/play.png";
+    });
+
+    // تحديث الصوت الحالي
+    currentAudio = audio;
+}
+
+
+/**
+ * الدالة لإيقاف الصوت.
+ * @param {HTMLAudioElement} audio - عنصر الصوت الذي سيتم إيقافه.
+ * @param {HTMLElement} playButton - زر الإيقاف الذي يتم النقر عليه.
+ */
+function stopAudio(audio, playButton) {
+    console.log("تم إيقاف الصوت");
+    audio.pause();
+    audio.currentTime = 0;
+    playButton.src = "/img/play.png";
+    isAudioPlaying = false;
 }

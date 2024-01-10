@@ -46,9 +46,6 @@
         <preference name="AndroidWindowSplashScreenAnimatedIcon" value="resources/splash.png" />
         <preference name="AndroidWindowSplashScreenBackground" value="#2e3338" />
          <config-file target="res/xml/config.xml" parent="/*">
-        <feature name="BackgroundAudio">
-            <param name="android-package" value="com.rjfun.cordova.plugin.BackgroundAudio"/>
-        </feature>
     </config-file>
     </platform>
 </widget>
