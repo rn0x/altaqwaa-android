@@ -1,0 +1,154 @@
+{
+  "id": 3,
+  "category": "الحديث",
+  "description": "يقول الله تعالى (وما آتاكم الرسول فخذوه وما نهاكم عنه فانتهوا) تعلم الحديث النبوي ومعرفة أحكامه من الأمور المهمة لكل مسلم",
+  "DataArray": [
+    {
+      "englishName": "hadith01",
+      "arabicName": "الاختبار الأول",
+      "files": [
+        {
+          "level": 1,
+          "filename": "level-1.json",
+          "path": "data/quiz/hadith/hadith01/level-1.json"
+        },
+        {
+          "level": 2,
+          "filename": "level-2.json",
+          "path": "data/quiz/hadith/hadith01/level-2.json"
+        },
+        {
+          "level": 3,
+          "filename": "level-3.json",
+          "path": "data/quiz/hadith/hadith01/level-3.json"
+        }
+      ]
+    },
+    {
+      "englishName": "hadith02",
+      "arabicName": "الاختبار الثاني",
+      "files": [
+        {
+          "level": 1,
+          "filename": "level-1.json",
+          "path": "data/quiz/hadith/hadith02/level-1.json"
+        },
+        {
+          "level": 2,
+          "filename": "level-2.json",
+          "path": "data/quiz/hadith/hadith02/level-2.json"
+        },
+        {
+          "level": 3,
+          "filename": "level-3.json",
+          "path": "data/quiz/hadith/hadith02/level-3.json"
+        }
+      ]
+    },
+    {
+      "englishName": "hadith03",
+      "arabicName": "الاختبار الثالث",
+      "files": [
+        {
+          "level": 1,
+          "filename": "level-1.json",
+          "path": "data/quiz/hadith/hadith03/level-1.json"
+        },
+        {
+          "level": 2,
+          "filename": "level-2.json",
+          "path": "data/quiz/hadith/hadith03/level-2.json"
+        },
+        {
+          "level": 3,
+          "filename": "level-3.json",
+          "path": "data/quiz/hadith/hadith03/level-3.json"
+        }
+      ]
+    },
+    {
+      "englishName": "hadith04",
+      "arabicName": "الاختبار الرابع",
+      "files": [
+        {
+          "level": 1,
+          "filename": "level-1.json",
+          "path": "data/quiz/hadith/hadith04/level-1.json"
+        },
+        {
+          "level": 2,
+          "filename": "level-2.json",
+          "path": "data/quiz/hadith/hadith04/level-2.json"
+        },
+        {
+          "level": 3,
+          "filename": "level-3.json",
+          "path": "data/quiz/hadith/hadith04/level-3.json"
+        }
+      ]
+    },
+    {
+      "englishName": "hadith05",
+      "arabicName": "الاختبار الخامس",
+      "files": [
+        {
+          "level": 1,
+          "filename": "level-1.json",
+          "path": "data/quiz/hadith/hadith05/level-1.json"
+        },
+        {
+          "level": 2,
+          "filename": "level-2.json",
+          "path": "data/quiz/hadith/hadith05/level-2.json"
+        },
+        {
+          "level": 3,
+          "filename": "level-3.json",
+          "path": "data/quiz/hadith/hadith05/level-3.json"
+        }
+      ]
+    },
+    {
+      "englishName": "hadith06",
+      "arabicName": "الاختبار السادس",
+      "files": [
+        {
+          "level": 1,
+          "filename": "level-1.json",
+          "path": "data/quiz/hadith/hadith06/level-1.json"
+        },
+        {
+          "level": 2,
+          "filename": "level-2.json",
+          "path": "data/quiz/hadith/hadith06/level-2.json"
+        },
+        {
+          "level": 3,
+          "filename": "level-3.json",
+          "path": "data/quiz/hadith/hadith06/level-3.json"
+        }
+      ]
+    },
+    {
+      "englishName": "hadith07",
+      "arabicName": "الاختبار السابع",
+      "files": [
+        {
+          "level": 1,
+          "filename": "level-1.json",
+          "path": "data/quiz/hadith/hadith07/level-1.json"
+        },
+        {
+          "level": 2,
+          "filename": "level-2.json",
+          "path": "data/quiz/hadith/hadith07/level-2.json"
+        },
+        {
+          "level": 3,
+          "filename": "level-3.json",
+          "path": "data/quiz/hadith/hadith07/level-3.json"
+        }
+      ]
+    }
+  ]
+}

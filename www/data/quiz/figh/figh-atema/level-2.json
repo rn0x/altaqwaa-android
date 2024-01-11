@@ -1,0 +1,422 @@
+[
+  {
+    "id": 1824,
+    "q": "المضطَرُّ إذا وَجَد طَعامَ غَيرِه والمَيْتةَ",
+    "level": 2,
+    "link": "https://www.dorar.net/feqhia/3588",
+    "section": "figh-atema",
+    "answers": [
+      {
+        "answer": "يَأكُل أيَّهُما شاء",
+        "t": 0
+      },
+      {
+        "answer": "يَأكُلُ المَيْتةَ دونَ مالِ غَيرِه",
+        "t": 1
+      },
+      {
+        "answer": "يأكُل طَعامَ غَيْرِه",
+        "t": 0
+      }
+    ]
+  },
+  {
+    "id": 1834,
+    "q": "إمساكُ الخَمرِ للتَّخليلِ",
+    "level": 2,
+    "link": "https://www.dorar.net/feqhia/3383",
+    "section": "figh-atema",
+    "answers": [
+      {
+        "answer": "واجِبٌ كِفائيٌّ",
+        "t": 0
+      },
+      {
+        "answer": "مَكروهٌ",
+        "t": 0
+      },
+      {
+        "answer": "مُحرَّمٌ",
+        "t": 1
+      }
+    ]
+  },
+  {
+    "id": 1828,
+    "q": "أكلُ الحِمارِ الوَحْشيِّ",
+    "level": 2,
+    "link": "https://www.dorar.net/feqhia/3443",
+    "section": "figh-atema",
+    "answers": [
+      {
+        "answer": "يُباحُ أكلُه بالإجْماعِ",
+        "t": 1
+      },
+      {
+        "answer": "لا يَجوزُ",
+        "t": 0
+      },
+      {
+        "answer": "مَكروهٌ بالإجْماعِ",
+        "t": 0
+      }
+    ]
+  },
+  {
+    "id": 1827,
+    "q": "أكلُ لُحومِ الخَيلِ",
+    "level": 2,
+    "link": "https://www.dorar.net/feqhia/3438",
+    "section": "figh-atema",
+    "answers": [
+      {
+        "answer": "يَجوزُ أكلُه",
+        "t": 1
+      },
+      {
+        "answer": "يُتوَقَّفُ فيه",
+        "t": 0
+      },
+      {
+        "answer": "يُكرَهُ أكلُه",
+        "t": 0
+      }
+    ]
+  },
+  {
+    "id": 1833,
+    "q": "المُكرَهُ على شُربِ الخَمرِ",
+    "level": 2,
+    "link": "https://www.dorar.net/feqhia/3370",
+    "section": "figh-atema",
+    "answers": [
+      {
+        "answer": "يُكرَهُ له شُربُها",
+        "t": 0
+      },
+      {
+        "answer": "يَحرُمُ",
+        "t": 0
+      },
+      {
+        "answer": "يُباحُ له شُربُها",
+        "t": 1
+      }
+    ]
+  },
+  {
+    "id": 1821,
+    "q": "حدُّ الاضطِرارِ الذي يَجوزُ معَه أكْلُ المَيْتةِ",
+    "level": 2,
+    "link": "https://www.dorar.net/feqhia/3576",
+    "section": "figh-atema",
+    "answers": [
+      {
+        "answer": "الضَّرَرُ النَّفسيُّ",
+        "t": 0
+      },
+      {
+        "answer": "الألَم النَّاتِجُ عنِ الجُوعِ",
+        "t": 0
+      },
+      {
+        "answer": "المَوتُ، أوِ المَرَضُ المُفْضي إلى المَوتِ",
+        "t": 1
+      }
+    ]
+  },
+  {
+    "id": 1837,
+    "q": "التزَوُّدُ للمُضطَرِّ منَ المَيتةِ",
+    "level": 2,
+    "link": "https://www.dorar.net/feqhia/3583",
+    "section": "figh-atema",
+    "answers": [
+      {
+        "answer": "يُكرَهُ",
+        "t": 0
+      },
+      {
+        "answer": "يَجوزُ له ذلك",
+        "t": 1
+      },
+      {
+        "answer": "لا يَجوزُ",
+        "t": 0
+      }
+    ]
+  },
+  {
+    "id": 1832,
+    "q": "أكلُ الضَّبُعِ",
+    "level": 2,
+    "link": "https://www.dorar.net/feqhia/3457",
+    "section": "figh-atema",
+    "answers": [
+      {
+        "answer": "مَكروهٌ",
+        "t": 0
+      },
+      {
+        "answer": "جائزٌ",
+        "t": 1
+      },
+      {
+        "answer": "مُحرَّمٌ",
+        "t": 0
+      }
+    ]
+  },
+  {
+    "id": 1836,
+    "q": "ما له رائِحةٌ كَريهةٌ مِنَ الطَّعامِ وهو طاهِرٌ غَيرُ مُضِرٍّ",
+    "level": 2,
+    "link": "https://www.dorar.net/feqhia/3565",
+    "section": "figh-atema",
+    "answers": [
+      {
+        "answer": "مُحرَّمٌ",
+        "t": 0
+      },
+      {
+        "answer": "مُباحٌ",
+        "t": 0
+      },
+      {
+        "answer": "مَكروهٌ",
+        "t": 1
+      }
+    ]
+  },
+  {
+    "id": 1825,
+    "q": "أكْلُ المضطَرِّ إذا وَجَد مَيتةَ الآدَميِّ",
+    "level": 2,
+    "link": "https://www.dorar.net/feqhia/3591",
+    "section": "figh-atema",
+    "answers": [
+      {
+        "answer": "يُكرَهُ أكْلُها",
+        "t": 0
+      },
+      {
+        "answer": "يَجوزُ أكْلُها للضَّرورةِ",
+        "t": 0
+      },
+      {
+        "answer": "يَحرُمُ",
+        "t": 1
+      }
+    ]
+  },
+  {
+    "id": 1829,
+    "q": "أكْلُ السَّرَطانِ",
+    "level": 2,
+    "link": "https://www.dorar.net/feqhia/3550",
+    "section": "figh-atema",
+    "answers": [
+      {
+        "answer": "يَجوزُ",
+        "t": 1
+      },
+      {
+        "answer": "يُكرَهُ",
+        "t": 0
+      },
+      {
+        "answer": "يَحرُمُ",
+        "t": 0
+      }
+    ]
+  },
+  {
+    "id": 1822,
+    "q": "إذا أُكرِه المُسلِمُ على أكْلِ المُحرَّمِ",
+    "level": 2,
+    "link": "https://www.dorar.net/feqhia/3579",
+    "section": "figh-atema",
+    "answers": [
+      {
+        "answer": "يَجوزُ أكْلُ المَيْتةِ دُون غَيرِها",
+        "t": 0
+      },
+      {
+        "answer": "يُكرَهُ له أكْلُ المُحرَّمِ مُطلَقًا",
+        "t": 0
+      },
+      {
+        "answer": "يَجوزُ له للإكْراهِ",
+        "t": 1
+      }
+    ]
+  },
+  {
+    "id": 1835,
+    "q": "خَلطُ الخَمرِ بغَيرِها منَ الأطعِمةِ ولم تُستَهلَكْ ويَذهَبْ أثَرُها",
+    "level": 2,
+    "link": "https://www.dorar.net/feqhia/3385",
+    "section": "figh-atema",
+    "answers": [
+      {
+        "answer": "مَكروهٌ",
+        "t": 0
+      },
+      {
+        "answer": "مُحرَّمٌ",
+        "t": 1
+      },
+      {
+        "answer": "جائزٌ",
+        "t": 0
+      }
+    ]
+  },
+  {
+    "id": 1823,
+    "q": "المُحرِمُ بالحَجِّ إذا اضطُرَّ وهو مُخيَّرٌ بَينَ المَيتةِ أو صَيدِ الحَرَمِ",
+    "level": 2,
+    "link": "https://www.dorar.net/feqhia/3586",
+    "section": "figh-atema",
+    "answers": [
+      {
+        "answer": "يَأكُل أيَّهُما شاء",
+        "t": 0
+      },
+      {
+        "answer": "صَيدُ الحَرَمِ مُقدَّمٌ على المَيتةِ",
+        "t": 0
+      },
+      {
+        "answer": "المَيتةُ مُقدَّمةٌ على صَيدِ الحَرَمِ",
+        "t": 1
+      }
+    ]
+  },
+  {
+    "id": 1838,
+    "q": "لبَنُ الأَتانِ الوَحشيَّةِ",
+    "level": 2,
+    "link": "https://www.dorar.net/feqhia/3445",
+    "section": "figh-atema",
+    "answers": [
+      {
+        "answer": "يَحرُمُ شُربُه",
+        "t": 0
+      },
+      {
+        "answer": "يُباحُ شُربُه",
+        "t": 1
+      },
+      {
+        "answer": "يُكرَهُ شُربُه",
+        "t": 0
+      }
+    ]
+  },
+  {
+    "id": 1840,
+    "q": "أكلُ مَيتةِ السَّمَكِ الطَّافي",
+    "level": 2,
+    "link": "https://www.dorar.net/feqhia/3537",
+    "section": "figh-atema",
+    "answers": [
+      {
+        "answer": "مُباحٌ",
+        "t": 1
+      },
+      {
+        "answer": "مَكروهٌ",
+        "t": 0
+      },
+      {
+        "answer": "حَرامٌ",
+        "t": 0
+      }
+    ]
+  },
+  {
+    "id": 1826,
+    "q": "شُربُ لبَنِ الخَيْلِ",
+    "level": 2,
+    "link": "https://www.dorar.net/feqhia/3440",
+    "section": "figh-atema",
+    "answers": [
+      {
+        "answer": "لا يَجوزُ",
+        "t": 0
+      },
+      {
+        "answer": "مُباحٌ",
+        "t": 1
+      },
+      {
+        "answer": "يَجوزُ للضَّرورةِ",
+        "t": 0
+      }
+    ]
+  },
+  {
+    "id": 1831,
+    "q": "أكلُ القُنفُذِ",
+    "level": 2,
+    "link": "https://www.dorar.net/feqhia/3455",
+    "section": "figh-atema",
+    "answers": [
+      {
+        "answer": "يُباحُ أكلُه",
+        "t": 1
+      },
+      {
+        "answer": "يَحرُمُ أكلُه",
+        "t": 0
+      },
+      {
+        "answer": "يُكرَهُ أكلُه",
+        "t": 0
+      }
+    ]
+  },
+  {
+    "id": 1839,
+    "q": "أكلُ المَيتةِ منَ الحَيَوانِ",
+    "level": 2,
+    "link": "https://www.dorar.net/feqhia/3523",
+    "section": "figh-atema",
+    "answers": [
+      {
+        "answer": "يَحرُمُ",
+        "t": 1
+      },
+      {
+        "answer": "يُكرَهُ",
+        "t": 0
+      },
+      {
+        "answer": "يَجوزُ",
+        "t": 0
+      }
+    ]
+  },
+  {
+    "id": 1830,
+    "q": "أكلُ الضَّبِّ",
+    "level": 2,
+    "link": "https://www.dorar.net/feqhia/3453",
+    "section": "figh-atema",
+    "answers": [
+      {
+        "answer": "حَرامٌ",
+        "t": 0
+      },
+      {
+        "answer": "حَلالٌ",
+        "t": 1
+      },
+      {
+        "answer": "مَكروهٌ",
+        "t": 0
+      }
+    ]
+  }
+]

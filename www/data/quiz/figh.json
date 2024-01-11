@@ -1,0 +1,364 @@
+{
+  "id": 4,
+  "category": "الفقه",
+  "description": "يقول الرسول عليه الصلاة والسلام (من يرد الله به خيرا يفقه في الدين)، احرص على الخير والتفقه في الدين",
+  "DataArray": [
+    {
+      "englishName": "tahara",
+      "arabicName": "الطهارة",
+      "files": [
+        {
+          "level": 1,
+          "filename": "level-1.json",
+          "path": "data/quiz/figh/tahara/level-1.json"
+        },
+        {
+          "level": 2,
+          "filename": "level-2.json",
+          "path": "data/quiz/figh/tahara/level-2.json"
+        },
+        {
+          "level": 3,
+          "filename": "level-3.json",
+          "path": "data/quiz/figh/tahara/level-3.json"
+        }
+      ]
+    },
+    {
+      "englishName": "salah",
+      "arabicName": "الصلاة",
+      "files": [
+        {
+          "level": 1,
+          "filename": "level-1.json",
+          "path": "data/quiz/figh/salah/level-1.json"
+        },
+        {
+          "level": 2,
+          "filename": "level-2.json",
+          "path": "data/quiz/figh/salah/level-2.json"
+        },
+        {
+          "level": 3,
+          "filename": "level-3.json",
+          "path": "data/quiz/figh/salah/level-3.json"
+        }
+      ]
+    },
+    {
+      "englishName": "zakah",
+      "arabicName": "الزكاة",
+      "files": [
+        {
+          "level": 1,
+          "filename": "level-1.json",
+          "path": "data/quiz/figh/zakah/level-1.json"
+        },
+        {
+          "level": 2,
+          "filename": "level-2.json",
+          "path": "data/quiz/figh/zakah/level-2.json"
+        },
+        {
+          "level": 3,
+          "filename": "level-3.json",
+          "path": "data/quiz/figh/zakah/level-3.json"
+        }
+      ]
+    },
+    {
+      "englishName": "siam",
+      "arabicName": "الصيام",
+      "files": [
+        {
+          "level": 1,
+          "filename": "level-1.json",
+          "path": "data/quiz/figh/siam/level-1.json"
+        },
+        {
+          "level": 2,
+          "filename": "level-2.json",
+          "path": "data/quiz/figh/siam/level-2.json"
+        },
+        {
+          "level": 3,
+          "filename": "level-3.json",
+          "path": "data/quiz/figh/siam/level-3.json"
+        }
+      ]
+    },
+    {
+      "englishName": "hajj",
+      "arabicName": "الحج",
+      "files": [
+        {
+          "level": 1,
+          "filename": "level-1.json",
+          "path": "data/quiz/figh/hajj/level-1.json"
+        },
+        {
+          "level": 2,
+          "filename": "level-2.json",
+          "path": "data/quiz/figh/hajj/level-2.json"
+        },
+        {
+          "level": 3,
+          "filename": "level-3.json",
+          "path": "data/quiz/figh/hajj/level-3.json"
+        }
+      ]
+    },
+    {
+      "englishName": "figh-zina",
+      "arabicName": "اللباس والزينة",
+      "files": [
+        {
+          "level": 1,
+          "filename": "level-1.json",
+          "path": "data/quiz/figh/figh-zina/level-1.json"
+        },
+        {
+          "level": 2,
+          "filename": "level-2.json",
+          "path": "data/quiz/figh/figh-zina/level-2.json"
+        },
+        {
+          "level": 3,
+          "filename": "level-3.json",
+          "path": "data/quiz/figh/figh-zina/level-3.json"
+        }
+      ]
+    },
+    {
+      "englishName": "figh-atema",
+      "arabicName": "الأطعمة والأشربة",
+      "files": [
+        {
+          "level": 1,
+          "filename": "level-1.json",
+          "path": "data/quiz/figh/figh-atema/level-1.json"
+        },
+        {
+          "level": 2,
+          "filename": "level-2.json",
+          "path": "data/quiz/figh/figh-atema/level-2.json"
+        },
+        {
+          "level": 3,
+          "filename": "level-3.json",
+          "path": "data/quiz/figh/figh-atema/level-3.json"
+        }
+      ]
+    },
+    {
+      "englishName": "figh-said",
+      "arabicName": "التذكية والعقيقة والصيد",
+      "files": [
+        {
+          "level": 1,
+          "filename": "level-1.json",
+          "path": "data/quiz/figh/figh-said/level-1.json"
+        },
+        {
+          "level": 2,
+          "filename": "level-2.json",
+          "path": "data/quiz/figh/figh-said/level-2.json"
+        },
+        {
+          "level": 3,
+          "filename": "level-3.json",
+          "path": "data/quiz/figh/figh-said/level-3.json"
+        }
+      ]
+    },
+    {
+      "englishName": "figh-nikah",
+      "arabicName": "النكاح",
+      "files": [
+        {
+          "level": 1,
+          "filename": "level-1.json",
+          "path": "data/quiz/figh/figh-nikah/level-1.json"
+        },
+        {
+          "level": 2,
+          "filename": "level-2.json",
+          "path": "data/quiz/figh/figh-nikah/level-2.json"
+        },
+        {
+          "level": 3,
+          "filename": "level-3.json",
+          "path": "data/quiz/figh/figh-nikah/level-3.json"
+        }
+      ]
+    },
+    {
+      "englishName": "figh-talag",
+      "arabicName": "الطلاق",
+      "files": [
+        {
+          "level": 1,
+          "filename": "level-1.json",
+          "path": "data/quiz/figh/figh-talag/level-1.json"
+        },
+        {
+          "level": 2,
+          "filename": "level-2.json",
+          "path": "data/quiz/figh/figh-talag/level-2.json"
+        },
+        {
+          "level": 3,
+          "filename": "level-3.json",
+          "path": "data/quiz/figh/figh-talag/level-3.json"
+        }
+      ]
+    },
+    {
+      "englishName": "figh-iela",
+      "arabicName": "الخلع والإيلاء",
+      "files": [
+        {
+          "level": 1,
+          "filename": "level-1.json",
+          "path": "data/quiz/figh/figh-iela/level-1.json"
+        },
+        {
+          "level": 2,
+          "filename": "level-2.json",
+          "path": "data/quiz/figh/figh-iela/level-2.json"
+        },
+        {
+          "level": 3,
+          "filename": "level-3.json",
+          "path": "data/quiz/figh/figh-iela/level-3.json"
+        }
+      ]
+    },
+    {
+      "englishName": "ridaa",
+      "arabicName": "الرضاع والحضانة والنفقات",
+      "files": [
+        {
+          "level": 1,
+          "filename": "level-1.json",
+          "path": "data/quiz/figh/ridaa/level-1.json"
+        },
+        {
+          "level": 2,
+          "filename": "level-2.json",
+          "path": "data/quiz/figh/ridaa/level-2.json"
+        },
+        {
+          "level": 3,
+          "filename": "level-3.json",
+          "path": "data/quiz/figh/ridaa/level-3.json"
+        }
+      ]
+    },
+    {
+      "englishName": "idah",
+      "arabicName": "اللعان والعدة",
+      "files": [
+        {
+          "level": 1,
+          "filename": "level-1.json",
+          "path": "data/quiz/figh/idah/level-1.json"
+        },
+        {
+          "level": 2,
+          "filename": "level-2.json",
+          "path": "data/quiz/figh/idah/level-2.json"
+        },
+        {
+          "level": 3,
+          "filename": "level-3.json",
+          "path": "data/quiz/figh/idah/level-3.json"
+        }
+      ]
+    },
+    {
+      "englishName": "e-nozor",
+      "arabicName": "الأيمان والنذور",
+      "files": [
+        {
+          "level": 1,
+          "filename": "level-1.json",
+          "path": "data/quiz/figh/e-nozor/level-1.json"
+        },
+        {
+          "level": 2,
+          "filename": "level-2.json",
+          "path": "data/quiz/figh/e-nozor/level-2.json"
+        },
+        {
+          "level": 3,
+          "filename": "level-3.json",
+          "path": "data/quiz/figh/e-nozor/level-3.json"
+        }
+      ]
+    },
+    {
+      "englishName": "wagf",
+      "arabicName": "الوقف",
+      "files": [
+        {
+          "level": 1,
+          "filename": "level-1.json",
+          "path": "data/quiz/figh/wagf/level-1.json"
+        },
+        {
+          "level": 2,
+          "filename": "level-2.json",
+          "path": "data/quiz/figh/wagf/level-2.json"
+        },
+        {
+          "level": 3,
+          "filename": "level-3.json",
+          "path": "data/quiz/figh/wagf/level-3.json"
+        }
+      ]
+    },
+    {
+      "englishName": "wasaya",
+      "arabicName": "الوصايا",
+      "files": [
+        {
+          "level": 1,
+          "filename": "level-1.json",
+          "path": "data/quiz/figh/wasaya/level-1.json"
+        },
+        {
+          "level": 2,
+          "filename": "level-2.json",
+          "path": "data/quiz/figh/wasaya/level-2.json"
+        },
+        {
+          "level": 3,
+          "filename": "level-3.json",
+          "path": "data/quiz/figh/wasaya/level-3.json"
+        }
+      ]
+    },
+    {
+      "englishName": "hibat",
+      "arabicName": "الهبات",
+      "files": [
+        {
+          "level": 1,
+          "filename": "level-1.json",
+          "path": "data/quiz/figh/hibat/level-1.json"
+        },
+        {
+          "level": 2,
+          "filename": "level-2.json",
+          "path": "data/quiz/figh/hibat/level-2.json"
+        },
+        {
+          "level": 3,
+          "filename": "level-3.json",
+          "path": "data/quiz/figh/hibat/level-3.json"
+        }
+      ]
+    }
+  ]
+}

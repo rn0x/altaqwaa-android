@@ -1,0 +1,422 @@
+[
+  {
+    "id": 3183,
+    "q": "متى أُحدِثَ ديوانُ المَواريثِ؟",
+    "level": 1,
+    "link": "https://www.dorar.net/history/?page=45",
+    "section": "abasi",
+    "answers": [
+      {
+        "answer": "255 هـ في عهدِ المُهْتَدي",
+        "t": 0
+      },
+      {
+        "answer": "260 هـ في عهدِ المُعتَمِدِ",
+        "t": 0
+      },
+      {
+        "answer": "265 هـ في عَهدِ المُعتَمِدِ",
+        "t": 1
+      }
+    ]
+  },
+  {
+    "id": 3179,
+    "q": "متى بَنى أحمدُ بنُ طولونَ مدينةَ القطائعِ؟",
+    "level": 1,
+    "link": "https://www.dorar.net/history/?page=43",
+    "section": "abasi",
+    "answers": [
+      {
+        "answer": "260 هـ",
+        "t": 0
+      },
+      {
+        "answer": "254 هـ",
+        "t": 0
+      },
+      {
+        "answer": "256 هـ",
+        "t": 1
+      }
+    ]
+  },
+  {
+    "id": 3177,
+    "q": "متى بدأَتِ الدولةُ الطُّولونيَّةُ بمصرَ؟",
+    "level": 1,
+    "link": "https://www.dorar.net/history/?page=42",
+    "section": "abasi",
+    "answers": [
+      {
+        "answer": "260 هـ",
+        "t": 0
+      },
+      {
+        "answer": "250 هـ",
+        "t": 0
+      },
+      {
+        "answer": "254 هـ",
+        "t": 1
+      }
+    ]
+  },
+  {
+    "id": 3166,
+    "q": "متى تُوُفِّيَ المأْمونُ؟",
+    "level": 1,
+    "link": "https://www.dorar.net/history/?page=36",
+    "section": "abasi",
+    "answers": [
+      {
+        "answer": "210 هـ",
+        "t": 0
+      },
+      {
+        "answer": "198 هـ\n ",
+        "t": 0
+      },
+      {
+        "answer": "218 هـ",
+        "t": 1
+      }
+    ]
+  },
+  {
+    "id": 3181,
+    "q": "متى بَنى أحمدُ بنُ طولونَ جامعَه المشهورَ؟",
+    "level": 1,
+    "link": "https://www.dorar.net/history/?page=45",
+    "section": "abasi",
+    "answers": [
+      {
+        "answer": "265 هـ",
+        "t": 0
+      },
+      {
+        "answer": "260 هـ",
+        "t": 0
+      },
+      {
+        "answer": "263 هـ",
+        "t": 1
+      }
+    ]
+  },
+  {
+    "id": 3184,
+    "q": "مَن أولُ مَنِ ابتدَعَ لعْنَ معاويةَ بنِ أبي سُفيانَ على المَنابرِ؟",
+    "level": 1,
+    "link": "https://www.dorar.net/history/?page=49",
+    "section": "abasi",
+    "answers": [
+      {
+        "answer": "المُعتَضِدُ",
+        "t": 1
+      },
+      {
+        "answer": "المُهتَدي",
+        "t": 0
+      },
+      {
+        "answer": "المُعتَمِدُ",
+        "t": 0
+      }
+    ]
+  },
+  {
+    "id": 3170,
+    "q": "مَنِ الذي رشَّحَه الإمامُ أحمدُ للقضاءِ للمتوكِّلِ بدلَ ابنِ أبي دؤادَ؟",
+    "level": 1,
+    "link": "https://www.dorar.net/history/?page=39",
+    "section": "abasi",
+    "answers": [
+      {
+        "answer": "يَحْيى بنُ أكثَمَ",
+        "t": 1
+      },
+      {
+        "answer": "يَحْيى بنُ مَعينٍ",
+        "t": 0
+      },
+      {
+        "answer": "عليُّ بنُ المَدينيِّ",
+        "t": 0
+      }
+    ]
+  },
+  {
+    "id": 3171,
+    "q": "متى تُوُفِّيَ أبو جَعفرٍ المَنصورُ؟\n ",
+    "level": 1,
+    "link": "https://www.dorar.net/history/?page=27\n",
+    "section": "abasi",
+    "answers": [
+      {
+        "answer": "150 هـ",
+        "t": 0
+      },
+      {
+        "answer": "160 هـ",
+        "t": 0
+      },
+      {
+        "answer": "158 هـ",
+        "t": 1
+      }
+    ]
+  },
+  {
+    "id": 3182,
+    "q": "كم أنفَقَ ابنُ طولونَ في بناءِ جامعِه؟",
+    "level": 1,
+    "link": "https://www.dorar.net/history/?page=45",
+    "section": "abasi",
+    "answers": [
+      {
+        "answer": "500 ألفِ درهمٍ",
+        "t": 0
+      },
+      {
+        "answer": "120 ألفَ دينارٍ",
+        "t": 1
+      },
+      {
+        "answer": "100 ألفِ دينارٍ",
+        "t": 0
+      }
+    ]
+  },
+  {
+    "id": 3174,
+    "q": "مَن أولُ الخُلفاءِ العباسيِّينَ؟",
+    "level": 1,
+    "link": "https://www.dorar.net/history/?page=24",
+    "section": "abasi",
+    "answers": [
+      {
+        "answer": "عبدُ اللهِ بنُ عليِّ بنِ عبدِ اللهِ بنِ عباسٍ",
+        "t": 0
+      },
+      {
+        "answer": "أبو العباسِ السفَّاحُ",
+        "t": 1
+      },
+      {
+        "answer": "إبراهيمُ بنُ محمدِ بنِ عليِّ بنِ عبدِ اللهِ بنِ عباسٍ",
+        "t": 0
+      }
+    ]
+  },
+  {
+    "id": 3180,
+    "q": "متى ابْتَنى أبو أحمَدَ الموفَّقُ بنُ المتوكِّلِ مدينةَ (الموفَّقيَّةِ)؟ ولمَ؟",
+    "level": 1,
+    "link": "https://www.dorar.net/history/?page=45",
+    "section": "abasi",
+    "answers": [
+      {
+        "answer": "270 هـ ليتَّخِذَها عاصمةً خاصةً به",
+        "t": 0
+      },
+      {
+        "answer": "267 هـ ليَستَعينَ بها على قتالِ صاحبِ الزَّنجِ",
+        "t": 1
+      },
+      {
+        "answer": "265 هـ ليَستَعينَ بها على قتالِ صاحبِ الزَّنجِ",
+        "t": 0
+      }
+    ]
+  },
+  {
+    "id": 3169,
+    "q": "متى توفِّيَ أبو العباسِ السفَّاحُ؟\n ",
+    "level": 1,
+    "link": "https://www.dorar.net/history/?page=25\n",
+    "section": "abasi",
+    "answers": [
+      {
+        "answer": "136 هـ",
+        "t": 1
+      },
+      {
+        "answer": "133",
+        "t": 0
+      },
+      {
+        "answer": "140 هـ",
+        "t": 0
+      }
+    ]
+  },
+  {
+    "id": 3172,
+    "q": "مَن بَنى مدينةَ فاسَ؟ \n ",
+    "level": 1,
+    "link": "https://www.dorar.net/history/?page=29",
+    "section": "abasi",
+    "answers": [
+      {
+        "answer": "إدْريسُ بنُ عبدِ اللهِ بنِ حسنٍ",
+        "t": 1
+      },
+      {
+        "answer": "إدْريسُ بنُ عبدِ اللهِ الأوْديُّ ",
+        "t": 0
+      },
+      {
+        "answer": "إدْريسُ بنُ محمَّد",
+        "t": 0
+      }
+    ]
+  },
+  {
+    "id": 3173,
+    "q": "متى توَلَّى المأْمونُ الخلافةَ؟",
+    "level": 1,
+    "link": "https://www.dorar.net/history/?page=33",
+    "section": "abasi",
+    "answers": [
+      {
+        "answer": "195 هـ",
+        "t": 0
+      },
+      {
+        "answer": "200 هـ",
+        "t": 0
+      },
+      {
+        "answer": "198 هـ",
+        "t": 1
+      }
+    ]
+  },
+  {
+    "id": 3185,
+    "q": "متى توفِّيَ أحمدُ بنُ طولونَ؟",
+    "level": 1,
+    "link": "https://www.dorar.net/history/?page=46",
+    "section": "abasi",
+    "answers": [
+      {
+        "answer": "ذي الحِجَّةِ 270 هـ",
+        "t": 0
+      },
+      {
+        "answer": "شعبانَ 271 هـ",
+        "t": 0
+      },
+      {
+        "answer": "ذي القَعدةِ 270 هـ",
+        "t": 1
+      }
+    ]
+  },
+  {
+    "id": 3178,
+    "q": "بمَن بدأَ العَصرُ العباسيُّ الثاني (عصرُ الضعفِ)؟",
+    "level": 1,
+    "link": "https://www.dorar.net/history/?page=41",
+    "section": "abasi",
+    "answers": [
+      {
+        "answer": "المتوكِّلُ على اللهِ",
+        "t": 0
+      },
+      {
+        "answer": "المُعتزُّ باللهِ",
+        "t": 0
+      },
+      {
+        "answer": "المُنتصرُ باللهِ",
+        "t": 1
+      }
+    ]
+  },
+  {
+    "id": 3167,
+    "q": "متى وقَعَت معركةُ نهرِ الزابِ؟",
+    "level": 1,
+    "link": "https://www.dorar.net/history/?page=24",
+    "section": "abasi",
+    "answers": [
+      {
+        "answer": "128 هـ",
+        "t": 0
+      },
+      {
+        "answer": "132 هـ",
+        "t": 1
+      },
+      {
+        "answer": "130 هـ",
+        "t": 0
+      }
+    ]
+  },
+  {
+    "id": 3168,
+    "q": "ما المدينةُ التي بَناها العباسيونَ عاصمةً لمصرَ؟",
+    "level": 1,
+    "link": "https://www.dorar.net/history/?page=25",
+    "section": "abasi",
+    "answers": [
+      {
+        "answer": "العَسكرُ",
+        "t": 1
+      },
+      {
+        "answer": "القاهرةُ",
+        "t": 0
+      },
+      {
+        "answer": "القطائعُ",
+        "t": 0
+      }
+    ]
+  },
+  {
+    "id": 3176,
+    "q": "مَنِ الذي رفَع مِحنةَ خَلْقِ القرآنِ عن أهلِ السُّنةِ؟",
+    "level": 1,
+    "link": "https://www.dorar.net/history/?page=38",
+    "section": "abasi",
+    "answers": [
+      {
+        "answer": "المعتصمُ",
+        "t": 0
+      },
+      {
+        "answer": "الواثقُ",
+        "t": 0
+      },
+      {
+        "answer": "المتوكِّلُ",
+        "t": 1
+      }
+    ]
+  },
+  {
+    "id": 3175,
+    "q": "متى بَنى المُعتَصِمُ مدينةَ (سامَرَّاءَ)؟",
+    "level": 1,
+    "link": "https://www.dorar.net/history/?page=37",
+    "section": "abasi",
+    "answers": [
+      {
+        "answer": "219 هـ",
+        "t": 0
+      },
+      {
+        "answer": "220 هـ",
+        "t": 0
+      },
+      {
+        "answer": "221 هـ",
+        "t": 1
+      }
+    ]
+  }
+]

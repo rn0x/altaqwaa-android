@@ -1,0 +1,422 @@
+[
+  {
+    "id": 2111,
+    "q": "نِكاحُ ذاتِ الدِّينِ",
+    "level": 1,
+    "link": "https://www.dorar.net/feqhia/3981",
+    "section": "figh-nikah",
+    "answers": [
+      {
+        "answer": "واجبٌ",
+        "t": 0
+      },
+      {
+        "answer": "مُستحَبٌّ",
+        "t": 1
+      },
+      {
+        "answer": "مُباحٌ",
+        "t": 0
+      }
+    ]
+  },
+  {
+    "id": 2113,
+    "q": "النِّكاحُ بغيرِ وَليٍّ",
+    "level": 1,
+    "link": "https://www.dorar.net/feqhia/4098",
+    "section": "figh-nikah",
+    "answers": [
+      {
+        "answer": "يجوزُ إذا كانت ثيِّبًا",
+        "t": 0
+      },
+      {
+        "answer": "يجوزُ مطلقًا",
+        "t": 0
+      },
+      {
+        "answer": "لا يصِحُّ",
+        "t": 1
+      }
+    ]
+  },
+  {
+    "id": 2106,
+    "q": "الخَلوةُ بالمخطوبةِ",
+    "level": 1,
+    "link": "https://www.dorar.net/feqhia/4028",
+    "section": "figh-nikah",
+    "answers": [
+      {
+        "answer": "يُكرَهُ",
+        "t": 0
+      },
+      {
+        "answer": "يحرُمُ",
+        "t": 1
+      },
+      {
+        "answer": "يجوزُ",
+        "t": 0
+      }
+    ]
+  },
+  {
+    "id": 2110,
+    "q": "عَقدُ المسلمِ نِكاحَه على الكِتابيَّةِ في الكَنيسةِ",
+    "level": 1,
+    "link": "https://www.dorar.net/feqhia/4176",
+    "section": "figh-nikah",
+    "answers": [
+      {
+        "answer": "يجوزُ",
+        "t": 0
+      },
+      {
+        "answer": "يجوزُ بعدَ عقدِهِ في المَسجِدِ",
+        "t": 0
+      },
+      {
+        "answer": "لا يجوزُ",
+        "t": 1
+      }
+    ]
+  },
+  {
+    "id": 2117,
+    "q": "يحرُمُ مِنَ الرَّضاعِ:",
+    "level": 1,
+    "link": "https://www.dorar.net/feqhia/4196",
+    "section": "figh-nikah",
+    "answers": [
+      {
+        "answer": "ما يحرُمُ مِنَ النَّسَبِ",
+        "t": 1
+      },
+      {
+        "answer": "الأمُّ مِنَ الرَّضاعِ والبِنتُ فقط",
+        "t": 0
+      },
+      {
+        "answer": "الأمُّ مِنَ الرَّضاعِ والأختُ فقط",
+        "t": 0
+      }
+    ]
+  },
+  {
+    "id": 2108,
+    "q": "إعلانُ النِّكاحِ",
+    "level": 1,
+    "link": "https://www.dorar.net/feqhia/4142",
+    "section": "figh-nikah",
+    "answers": [
+      {
+        "answer": "مُباحٌ",
+        "t": 0
+      },
+      {
+        "answer": "واجبٌ",
+        "t": 0
+      },
+      {
+        "answer": "مُستحَبٌّ",
+        "t": 1
+      }
+    ]
+  },
+  {
+    "id": 2104,
+    "q": "النَّظرُ للمَخطوبةِ بغيرِ إذنِها",
+    "level": 1,
+    "link": "https://www.dorar.net/feqhia/4022",
+    "section": "figh-nikah",
+    "answers": [
+      {
+        "answer": "يُكرَهُ",
+        "t": 0
+      },
+      {
+        "answer": "لا يجوزُ",
+        "t": 0
+      },
+      {
+        "answer": "يجوزُ",
+        "t": 1
+      }
+    ]
+  },
+  {
+    "id": 2112,
+    "q": "اختيارُ الزَّوجَةِ الوَلودِ",
+    "level": 1,
+    "link": "https://www.dorar.net/feqhia/3983",
+    "section": "figh-nikah",
+    "answers": [
+      {
+        "answer": "مُستحَبٌّ",
+        "t": 1
+      },
+      {
+        "answer": "واجبٌ",
+        "t": 0
+      },
+      {
+        "answer": "مُباحٌ",
+        "t": 0
+      }
+    ]
+  },
+  {
+    "id": 2122,
+    "q": "الأكلُ مِنَ الوَليمةِ",
+    "level": 1,
+    "link": "https://www.dorar.net/feqhia/4420",
+    "section": "figh-nikah",
+    "answers": [
+      {
+        "answer": "مُباحٌ",
+        "t": 0
+      },
+      {
+        "answer": "مُستحَبٌّ",
+        "t": 1
+      },
+      {
+        "answer": "واجبٌ",
+        "t": 0
+      }
+    ]
+  },
+  {
+    "id": 2120,
+    "q": "يُستحَبُّ في طَعامِ الوَليمةِ أن يكونَ:",
+    "level": 1,
+    "link": "https://www.dorar.net/feqhia/4390",
+    "section": "figh-nikah",
+    "answers": [
+      {
+        "answer": "قَبلَ الدُّخولِ",
+        "t": 0
+      },
+      {
+        "answer": "يومَ العَقدَ",
+        "t": 0
+      },
+      {
+        "answer": "بعدَ الدُّخولِ",
+        "t": 1
+      }
+    ]
+  },
+  {
+    "id": 2103,
+    "q": "الخِطْبةُ قبلَ النِّكاحِ",
+    "level": 1,
+    "link": "https://www.dorar.net/feqhia/3969",
+    "section": "figh-nikah",
+    "answers": [
+      {
+        "answer": "مُباحةٌ",
+        "t": 1
+      },
+      {
+        "answer": "واجبةٌ",
+        "t": 0
+      },
+      {
+        "answer": "مَكروهةٌ",
+        "t": 0
+      }
+    ]
+  },
+  {
+    "id": 2105,
+    "q": "نَظرُ المَخطوبَةِ إلى الخاطِبِ",
+    "level": 1,
+    "link": "https://www.dorar.net/feqhia/4032",
+    "section": "figh-nikah",
+    "answers": [
+      {
+        "answer": "لا يجوزُ",
+        "t": 0
+      },
+      {
+        "answer": "يُكرَهُ",
+        "t": 0
+      },
+      {
+        "answer": "يجوزُ",
+        "t": 1
+      }
+    ]
+  },
+  {
+    "id": 2107,
+    "q": "العُدولُ عنِ الخِطبةِ",
+    "level": 1,
+    "link": "https://www.dorar.net/feqhia/4037",
+    "section": "figh-nikah",
+    "answers": [
+      {
+        "answer": "يُكرَهُ",
+        "t": 0
+      },
+      {
+        "answer": "يجوزُ",
+        "t": 1
+      },
+      {
+        "answer": "لا يجوزُ",
+        "t": 0
+      }
+    ]
+  },
+  {
+    "id": 2118,
+    "q": "الصَّداقُ للمَرأةِ",
+    "level": 1,
+    "link": "https://www.dorar.net/feqhia/4301",
+    "section": "figh-nikah",
+    "answers": [
+      {
+        "answer": "جائزٌ",
+        "t": 0
+      },
+      {
+        "answer": "مُستحَبٌّ",
+        "t": 0
+      },
+      {
+        "answer": "واجبٌ",
+        "t": 1
+      }
+    ]
+  },
+  {
+    "id": 2115,
+    "q": "نِكاحُ المُتعَةِ",
+    "level": 1,
+    "link": "https://www.dorar.net/feqhia/4230",
+    "section": "figh-nikah",
+    "answers": [
+      {
+        "answer": "حرامٌ",
+        "t": 1
+      },
+      {
+        "answer": "رُخصةٌ لغيرِ القادرِ",
+        "t": 0
+      },
+      {
+        "answer": "حَلالٌ",
+        "t": 0
+      }
+    ]
+  },
+  {
+    "id": 2121,
+    "q": "إجابَةُ الدَّعوةِ إلى وليمةِ النِّكاحِ",
+    "level": 1,
+    "link": "https://www.dorar.net/feqhia/4395",
+    "section": "figh-nikah",
+    "answers": [
+      {
+        "answer": "جائزةٌ",
+        "t": 0
+      },
+      {
+        "answer": "سُنَّةٌ",
+        "t": 0
+      },
+      {
+        "answer": "واجبةٌ",
+        "t": 1
+      }
+    ]
+  },
+  {
+    "id": 2119,
+    "q": "الوَليمةُ في الشَّرعِ",
+    "level": 1,
+    "link": "https://www.dorar.net/feqhia/4386",
+    "section": "figh-nikah",
+    "answers": [
+      {
+        "answer": "اسمٌ لطعامِ العُرسِ",
+        "t": 1
+      },
+      {
+        "answer": "ما يَجتمِعُ له النَّاسُ",
+        "t": 0
+      },
+      {
+        "answer": "اسمٌ لِما يأكُلُه النَّاسُ في العَقيقَةِ",
+        "t": 0
+      }
+    ]
+  },
+  {
+    "id": 2114,
+    "q": "عقدُ النِّكاحِ بغيرِ شُهودٍ",
+    "level": 1,
+    "link": "https://www.dorar.net/feqhia/4149",
+    "section": "figh-nikah",
+    "answers": [
+      {
+        "answer": "لا يصِحُّ",
+        "t": 1
+      },
+      {
+        "answer": "صَحيحٌ",
+        "t": 0
+      },
+      {
+        "answer": "صحيحٌ معَ الكَراهةِ",
+        "t": 0
+      }
+    ]
+  },
+  {
+    "id": 2109,
+    "q": "عَقدُ النِّكاحِ في المسجِدِ",
+    "level": 1,
+    "link": "https://www.dorar.net/feqhia/4174",
+    "section": "figh-nikah",
+    "answers": [
+      {
+        "answer": "بِدعَةٌ",
+        "t": 0
+      },
+      {
+        "answer": "مَكروهٌ",
+        "t": 0
+      },
+      {
+        "answer": "جائزٌ",
+        "t": 1
+      }
+    ]
+  },
+  {
+    "id": 2116,
+    "q": "تَزويجُ المُسلِمةِ مِنَ الكافِرِ",
+    "level": 1,
+    "link": "https://www.dorar.net/feqhia/4274",
+    "section": "figh-nikah",
+    "answers": [
+      {
+        "answer": "يجوزُ منَ الكِتابيِّ فقط",
+        "t": 0
+      },
+      {
+        "answer": "لا يجوزُ",
+        "t": 1
+      },
+      {
+        "answer": "يجوزُ",
+        "t": 0
+      }
+    ]
+  }
+]

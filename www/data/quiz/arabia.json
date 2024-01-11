@@ -1,0 +1,280 @@
+{
+  "id": 6,
+  "category": "اللغة العربية",
+  "description": "قال الله تعالى: {إنا أنزلناه قرآنا عربيا لعلكم تعقلون} يوسف:2 , تعلُّم اللغة العربية ومعرفة قواعدها من أهم السُّبل التي تُعين على فهم كتاب الله عز وجل وسُنَّة نبِّيه صلى الله عليه وسلم",
+  "DataArray": [
+    {
+      "englishName": "al-nhw",
+      "arabicName": "النحو",
+      "files": [
+        {
+          "level": 1,
+          "filename": "level-1.json",
+          "path": "data/quiz/arabia/al-nhw/level-1.json"
+        },
+        {
+          "level": 2,
+          "filename": "level-2.json",
+          "path": "data/quiz/arabia/al-nhw/level-2.json"
+        },
+        {
+          "level": 3,
+          "filename": "level-3.json",
+          "path": "data/quiz/arabia/al-nhw/level-3.json"
+        }
+      ]
+    },
+    {
+      "englishName": "al-srf",
+      "arabicName": "الصرف",
+      "files": [
+        {
+          "level": 1,
+          "filename": "level-1.json",
+          "path": "data/quiz/arabia/al-srf/level-1.json"
+        },
+        {
+          "level": 2,
+          "filename": "level-2.json",
+          "path": "data/quiz/arabia/al-srf/level-2.json"
+        },
+        {
+          "level": 3,
+          "filename": "level-3.json",
+          "path": "data/quiz/arabia/al-srf/level-3.json"
+        }
+      ]
+    },
+    {
+      "englishName": "horoof",
+      "arabicName": "حروف المعاني",
+      "files": [
+        {
+          "level": 1,
+          "filename": "level-1.json",
+          "path": "data/quiz/arabia/horoof/level-1.json"
+        },
+        {
+          "level": 2,
+          "filename": "level-2.json",
+          "path": "data/quiz/arabia/horoof/level-2.json"
+        },
+        {
+          "level": 3,
+          "filename": "level-3.json",
+          "path": "data/quiz/arabia/horoof/level-3.json"
+        }
+      ]
+    },
+    {
+      "englishName": "al-blaga",
+      "arabicName": "البلاغة",
+      "files": [
+        {
+          "level": 1,
+          "filename": "level-1.json",
+          "path": "data/quiz/arabia/al-blaga/level-1.json"
+        },
+        {
+          "level": 2,
+          "filename": "level-2.json",
+          "path": "data/quiz/arabia/al-blaga/level-2.json"
+        },
+        {
+          "level": 3,
+          "filename": "level-3.json",
+          "path": "data/quiz/arabia/al-blaga/level-3.json"
+        }
+      ]
+    },
+    {
+      "englishName": "fiqh-allgh",
+      "arabicName": "فقة اللغة",
+      "files": [
+        {
+          "level": 1,
+          "filename": "level-1.json",
+          "path": "data/quiz/arabia/fiqh-allgh/level-1.json"
+        },
+        {
+          "level": 2,
+          "filename": "level-2.json",
+          "path": "data/quiz/arabia/fiqh-allgh/level-2.json"
+        },
+        {
+          "level": 3,
+          "filename": "level-3.json",
+          "path": "data/quiz/arabia/fiqh-allgh/level-3.json"
+        }
+      ]
+    },
+    {
+      "englishName": "al-logh",
+      "arabicName": "علم اللغة",
+      "files": [
+        {
+          "level": 1,
+          "filename": "level-1.json",
+          "path": "data/quiz/arabia/al-logh/level-1.json"
+        },
+        {
+          "level": 2,
+          "filename": "level-2.json",
+          "path": "data/quiz/arabia/al-logh/level-2.json"
+        },
+        {
+          "level": 3,
+          "filename": "level-3.json",
+          "path": "data/quiz/arabia/al-logh/level-3.json"
+        }
+      ]
+    },
+    {
+      "englishName": "al-imla",
+      "arabicName": "الإملاء والترقيم والأخطاء الشائعة",
+      "files": [
+        {
+          "level": 1,
+          "filename": "level-1.json",
+          "path": "data/quiz/arabia/al-imla/level-1.json"
+        },
+        {
+          "level": 2,
+          "filename": "level-2.json",
+          "path": "data/quiz/arabia/al-imla/level-2.json"
+        },
+        {
+          "level": 3,
+          "filename": "level-3.json",
+          "path": "data/quiz/arabia/al-imla/level-3.json"
+        }
+      ]
+    },
+    {
+      "englishName": "al-insha",
+      "arabicName": "الإنشاء والتعبير والكتابة",
+      "files": [
+        {
+          "level": 1,
+          "filename": "level-1.json",
+          "path": "data/quiz/arabia/al-insha/level-1.json"
+        },
+        {
+          "level": 2,
+          "filename": "level-2.json",
+          "path": "data/quiz/arabia/al-insha/level-2.json"
+        },
+        {
+          "level": 3,
+          "filename": "level-3.json",
+          "path": "data/quiz/arabia/al-insha/level-3.json"
+        }
+      ]
+    },
+    {
+      "englishName": "al-majm",
+      "arabicName": "المعاجم وكتب اللغة",
+      "files": [
+        {
+          "level": 1,
+          "filename": "level-1.json",
+          "path": "data/quiz/arabia/al-majm/level-1.json"
+        },
+        {
+          "level": 2,
+          "filename": "level-2.json",
+          "path": "data/quiz/arabia/al-majm/level-2.json"
+        },
+        {
+          "level": 3,
+          "filename": "level-3.json",
+          "path": "data/quiz/arabia/al-majm/level-3.json"
+        }
+      ]
+    },
+    {
+      "englishName": "al-mstlhat",
+      "arabicName": "المصطلحات",
+      "files": [
+        {
+          "level": 1,
+          "filename": "level-1.json",
+          "path": "data/quiz/arabia/al-mstlhat/level-1.json"
+        },
+        {
+          "level": 2,
+          "filename": "level-2.json",
+          "path": "data/quiz/arabia/al-mstlhat/level-2.json"
+        },
+        {
+          "level": 3,
+          "filename": "level-3.json",
+          "path": "data/quiz/arabia/al-mstlhat/level-3.json"
+        }
+      ]
+    },
+    {
+      "englishName": "al-tareeb",
+      "arabicName": "التعريب",
+      "files": [
+        {
+          "level": 1,
+          "filename": "level-1.json",
+          "path": "data/quiz/arabia/al-tareeb/level-1.json"
+        },
+        {
+          "level": 2,
+          "filename": "level-2.json",
+          "path": "data/quiz/arabia/al-tareeb/level-2.json"
+        },
+        {
+          "level": 3,
+          "filename": "level-3.json",
+          "path": "data/quiz/arabia/al-tareeb/level-3.json"
+        }
+      ]
+    },
+    {
+      "englishName": "trajm",
+      "arabicName": "تراجم اللغويين",
+      "files": [
+        {
+          "level": 1,
+          "filename": "level-1.json",
+          "path": "data/quiz/arabia/trajm/level-1.json"
+        },
+        {
+          "level": 2,
+          "filename": "level-2.json",
+          "path": "data/quiz/arabia/trajm/level-2.json"
+        },
+        {
+          "level": 3,
+          "filename": "level-3.json",
+          "path": "data/quiz/arabia/trajm/level-3.json"
+        }
+      ]
+    },
+    {
+      "englishName": "al-adab",
+      "arabicName": "الأدب العربي",
+      "files": [
+        {
+          "level": 1,
+          "filename": "level-1.json",
+          "path": "data/quiz/arabia/al-adab/level-1.json"
+        },
+        {
+          "level": 2,
+          "filename": "level-2.json",
+          "path": "data/quiz/arabia/al-adab/level-2.json"
+        },
+        {
+          "level": 3,
+          "filename": "level-3.json",
+          "path": "data/quiz/arabia/al-adab/level-3.json"
+        }
+      ]
+    }
+  ]
+}

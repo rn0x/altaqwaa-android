@@ -1,0 +1,53 @@
+{
+    "description": "اسئلة تستطيع من خلالها تقويم مستواك في العلوم الشرعية وتطوير حصيلتك العلمية في مجالات متنوعة. يحتوي على 3 اختبارات علمية تتفاوت في الصعوبة، وكل اختبار يتألف من 20 سؤالا، وجميع الإجابات مصدرها موقع الدرر السنية.",
+    "categories": [
+        {
+            "id": 1,
+            "arabicName": "التفسير",
+            "englishName": "tafseer",
+            "description": "فهم القرآن الكريم ومعرفة مقصوده من أسمى المقاصد, يقول الله تعالى {كِتَابٌ أَنزَلْنَاهُ إِلَيْكَ مُبَارَكٌ لِّيَدَّبَّرُوا آيَاتِهِ وَلِيَتَذَكَّرَ أُولُو الْأَلْبَابِ} ص:29",
+            "path": "data/quiz/tafseer.json",
+            "icons": "data/quiz/icons/1.svg"
+        },
+        {
+            "id": 2,
+            "arabicName": "العقيدة",
+            "englishName": "akida",
+            "description": "الاعتِقادُ الصَّحِيحُ هو الأَساسُ الذي يُبنَى عليه العَملُ الصَّالِحُ، وهو الـمَخرَجُ مِن كُلِّ فِتنَة",
+            "path": "data/quiz/akida.json",
+            "icons": "data/quiz/icons/2.svg"
+        },
+        {
+            "id": 3,
+            "arabicName": "الحديث",
+            "englishName": "hadith",
+            "description": "يقول الله تعالى (وما آتاكم الرسول فخذوه وما نهاكم عنه فانتهوا) تعلم الحديث النبوي ومعرفة أحكامه من الأمور المهمة لكل مسلم",
+            "path": "data/quiz/hadith.json",
+            "icons": "data/quiz/icons/3.svg"
+        },
+        {
+            "id": 4,
+            "arabicName": "الفقه",
+            "englishName": "figh",
+            "description": "يقول الرسول عليه الصلاة والسلام (من يرد الله به خيرا يفقه في الدين)، احرص على الخير والتفقه في الدين",
+            "path": "data/quiz/figh.json",
+            "icons": "data/quiz/icons/4.svg"
+        },
+        {
+            "id": 5,
+            "arabicName": "التاريخ",
+            "englishName": "history",
+            "description": "تاريخ أمتنا مليء بالعبر والعظات والنماذج المبهرة",
+            "path": "data/quiz/history.json",
+            "icons": "data/quiz/icons/5.svg"
+        },
+        {
+            "id": 6,
+            "arabicName": "اللغة العربية",
+            "englishName": "arabia",
+            "description": "قال الله تعالى: {إنا أنزلناه قرآنا عربيا لعلكم تعقلون} يوسف:2 , تعلُّم اللغة العربية ومعرفة قواعدها من أهم السُّبل التي تُعين على فهم كتاب الله عز وجل وسُنَّة نبِّيه صلى الله عليه وسلم",
+            "path": "data/quiz/arabia.json",
+            "icons": "data/quiz/icons/6.svg"
+        }
+    ]
+}

@@ -1,0 +1,154 @@
+{
+  "id": 5,
+  "category": "التاريخ",
+  "description": "تاريخ أمتنا مليء بالعبر والعظات والنماذج المبهرة",
+  "DataArray": [
+    {
+      "englishName": "sirah",
+      "arabicName": "العهد النبوي",
+      "files": [
+        {
+          "level": 1,
+          "filename": "level-1.json",
+          "path": "data/quiz/history/sirah/level-1.json"
+        },
+        {
+          "level": 2,
+          "filename": "level-2.json",
+          "path": "data/quiz/history/sirah/level-2.json"
+        },
+        {
+          "level": 3,
+          "filename": "level-3.json",
+          "path": "data/quiz/history/sirah/level-3.json"
+        }
+      ]
+    },
+    {
+      "englishName": "kholfa",
+      "arabicName": "الخلفاء الراشدون",
+      "files": [
+        {
+          "level": 1,
+          "filename": "level-1.json",
+          "path": "data/quiz/history/kholfa/level-1.json"
+        },
+        {
+          "level": 2,
+          "filename": "level-2.json",
+          "path": "data/quiz/history/kholfa/level-2.json"
+        },
+        {
+          "level": 3,
+          "filename": "level-3.json",
+          "path": "data/quiz/history/kholfa/level-3.json"
+        }
+      ]
+    },
+    {
+      "englishName": "abasi",
+      "arabicName": "العهد العباسي",
+      "files": [
+        {
+          "level": 1,
+          "filename": "level-1.json",
+          "path": "data/quiz/history/abasi/level-1.json"
+        },
+        {
+          "level": 2,
+          "filename": "level-2.json",
+          "path": "data/quiz/history/abasi/level-2.json"
+        },
+        {
+          "level": 3,
+          "filename": "level-3.json",
+          "path": "data/quiz/history/abasi/level-3.json"
+        }
+      ]
+    },
+    {
+      "englishName": "amwi",
+      "arabicName": "العهد الأموي",
+      "files": [
+        {
+          "level": 1,
+          "filename": "level-1.json",
+          "path": "data/quiz/history/amwi/level-1.json"
+        },
+        {
+          "level": 2,
+          "filename": "level-2.json",
+          "path": "data/quiz/history/amwi/level-2.json"
+        },
+        {
+          "level": 3,
+          "filename": "level-3.json",
+          "path": "data/quiz/history/amwi/level-3.json"
+        }
+      ]
+    },
+    {
+      "englishName": "osmany",
+      "arabicName": "العهد العثماني",
+      "files": [
+        {
+          "level": 1,
+          "filename": "level-1.json",
+          "path": "data/quiz/history/osmany/level-1.json"
+        },
+        {
+          "level": 2,
+          "filename": "level-2.json",
+          "path": "data/quiz/history/osmany/level-2.json"
+        },
+        {
+          "level": 3,
+          "filename": "level-3.json",
+          "path": "data/quiz/history/osmany/level-3.json"
+        }
+      ]
+    },
+    {
+      "englishName": "mamalik",
+      "arabicName": "عهد المماليك",
+      "files": [
+        {
+          "level": 1,
+          "filename": "level-1.json",
+          "path": "data/quiz/history/mamalik/level-1.json"
+        },
+        {
+          "level": 2,
+          "filename": "level-2.json",
+          "path": "data/quiz/history/mamalik/level-2.json"
+        },
+        {
+          "level": 3,
+          "filename": "level-3.json",
+          "path": "data/quiz/history/mamalik/level-3.json"
+        }
+      ]
+    },
+    {
+      "englishName": "moasir",
+      "arabicName": "التاريخ المعاصر",
+      "files": [
+        {
+          "level": 1,
+          "filename": "level-1.json",
+          "path": "data/quiz/history/moasir/level-1.json"
+        },
+        {
+          "level": 2,
+          "filename": "level-2.json",
+          "path": "data/quiz/history/moasir/level-2.json"
+        },
+        {
+          "level": 3,
+          "filename": "level-3.json",
+          "path": "data/quiz/history/moasir/level-3.json"
+        }
+      ]
+    }
+  ]
+}
