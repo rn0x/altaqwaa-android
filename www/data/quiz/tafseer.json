@@ -2,6 +2,7 @@
   "id": 1,
   "category": "التفسير",
   "description": "فهم القرآن الكريم ومعرفة مقصوده من أسمى المقاصد, يقول الله تعالى {كِتَابٌ أَنزَلْنَاهُ إِلَيْكَ مُبَارَكٌ لِّيَدَّبَّرُوا آيَاتِهِ وَلِيَتَذَكَّرَ أُولُو الْأَلْبَابِ} ص:29",
+  "icons": "/data/quiz/icons/tafseer.svg",
   "DataArray": [
     {
       "englishName": "al-faatihah",
@@ -10,17 +11,17 @@
         {
           "level": 1,
           "filename": "level-1.json",
-          "path": "data/quiz/tafseer/al-faatihah/level-1.json"
+          "path": "/data/quiz/tafseer/al-faatihah/level-1.json"
         },
         {
           "level": 2,
           "filename": "level-2.json",
-          "path": "data/quiz/tafseer/al-faatihah/level-2.json"
+          "path": "/data/quiz/tafseer/al-faatihah/level-2.json"
         },
         {
           "level": 3,
           "filename": "level-3.json",
-          "path": "data/quiz/tafseer/al-faatihah/level-3.json"
+          "path": "/data/quiz/tafseer/al-faatihah/level-3.json"
         }
       ]
     },
@@ -31,17 +32,17 @@
         {
           "level": 1,
           "filename": "level-1.json",
-          "path": "data/quiz/tafseer/al-baqarah/level-1.json"
+          "path": "/data/quiz/tafseer/al-baqarah/level-1.json"
         },
         {
           "level": 2,
           "filename": "level-2.json",
-          "path": "data/quiz/tafseer/al-baqarah/level-2.json"
+          "path": "/data/quiz/tafseer/al-baqarah/level-2.json"
         },
         {
           "level": 3,
           "filename": "level-3.json",
-          "path": "data/quiz/tafseer/al-baqarah/level-3.json"
+          "path": "/data/quiz/tafseer/al-baqarah/level-3.json"
         }
       ]
     },
@@ -52,17 +53,17 @@
         {
           "level": 1,
           "filename": "level-1.json",
-          "path": "data/quiz/tafseer/aali-imraan/level-1.json"
+          "path": "/data/quiz/tafseer/aali-imraan/level-1.json"
         },
         {
           "level": 2,
           "filename": "level-2.json",
-          "path": "data/quiz/tafseer/aali-imraan/level-2.json"
+          "path": "/data/quiz/tafseer/aali-imraan/level-2.json"
         },
         {
           "level": 3,
           "filename": "level-3.json",
-          "path": "data/quiz/tafseer/aali-imraan/level-3.json"
+          "path": "/data/quiz/tafseer/aali-imraan/level-3.json"
         }
       ]
     },
@@ -73,17 +74,17 @@
         {
           "level": 1,
           "filename": "level-1.json",
-          "path": "data/quiz/tafseer/an-nisaa/level-1.json"
+          "path": "/data/quiz/tafseer/an-nisaa/level-1.json"
         },
         {
           "level": 2,
           "filename": "level-2.json",
-          "path": "data/quiz/tafseer/an-nisaa/level-2.json"
+          "path": "/data/quiz/tafseer/an-nisaa/level-2.json"
         },
         {
           "level": 3,
           "filename": "level-3.json",
-          "path": "data/quiz/tafseer/an-nisaa/level-3.json"
+          "path": "/data/quiz/tafseer/an-nisaa/level-3.json"
         }
       ]
     },
@@ -94,17 +95,17 @@
         {
           "level": 1,
           "filename": "level-1.json",
-          "path": "data/quiz/tafseer/al-maaidah/level-1.json"
+          "path": "/data/quiz/tafseer/al-maaidah/level-1.json"
         },
         {
           "level": 2,
           "filename": "level-2.json",
-          "path": "data/quiz/tafseer/al-maaidah/level-2.json"
+          "path": "/data/quiz/tafseer/al-maaidah/level-2.json"
         },
         {
           "level": 3,
           "filename": "level-3.json",
-          "path": "data/quiz/tafseer/al-maaidah/level-3.json"
+          "path": "/data/quiz/tafseer/al-maaidah/level-3.json"
         }
       ]
     },
@@ -115,17 +116,17 @@
         {
           "level": 1,
           "filename": "level-1.json",
-          "path": "data/quiz/tafseer/al-anaam/level-1.json"
+          "path": "/data/quiz/tafseer/al-anaam/level-1.json"
         },
         {
           "level": 2,
           "filename": "level-2.json",
-          "path": "data/quiz/tafseer/al-anaam/level-2.json"
+          "path": "/data/quiz/tafseer/al-anaam/level-2.json"
         },
         {
           "level": 3,
           "filename": "level-3.json",
-          "path": "data/quiz/tafseer/al-anaam/level-3.json"
+          "path": "/data/quiz/tafseer/al-anaam/level-3.json"
         }
       ]
     },
@@ -136,17 +137,17 @@
         {
           "level": 1,
           "filename": "level-1.json",
-          "path": "data/quiz/tafseer/al-araaf/level-1.json"
+          "path": "/data/quiz/tafseer/al-araaf/level-1.json"
         },
         {
           "level": 2,
           "filename": "level-2.json",
-          "path": "data/quiz/tafseer/al-araaf/level-2.json"
+          "path": "/data/quiz/tafseer/al-araaf/level-2.json"
         },
         {
           "level": 3,
           "filename": "level-3.json",
-          "path": "data/quiz/tafseer/al-araaf/level-3.json"
+          "path": "/data/quiz/tafseer/al-araaf/level-3.json"
         }
       ]
     },
@@ -157,17 +158,17 @@
         {
           "level": 1,
           "filename": "level-1.json",
-          "path": "data/quiz/tafseer/al-anfaal/level-1.json"
+          "path": "/data/quiz/tafseer/al-anfaal/level-1.json"
         },
         {
           "level": 2,
           "filename": "level-2.json",
-          "path": "data/quiz/tafseer/al-anfaal/level-2.json"
+          "path": "/data/quiz/tafseer/al-anfaal/level-2.json"
         },
         {
           "level": 3,
           "filename": "level-3.json",
-          "path": "data/quiz/tafseer/al-anfaal/level-3.json"
+          "path": "/data/quiz/tafseer/al-anfaal/level-3.json"
         }
       ]
     },
@@ -178,17 +179,17 @@
         {
           "level": 1,
           "filename": "level-1.json",
-          "path": "data/quiz/tafseer/at-tawbah/level-1.json"
+          "path": "/data/quiz/tafseer/at-tawbah/level-1.json"
         },
         {
           "level": 2,
           "filename": "level-2.json",
-          "path": "data/quiz/tafseer/at-tawbah/level-2.json"
+          "path": "/data/quiz/tafseer/at-tawbah/level-2.json"
         },
         {
           "level": 3,
           "filename": "level-3.json",
-          "path": "data/quiz/tafseer/at-tawbah/level-3.json"
+          "path": "/data/quiz/tafseer/at-tawbah/level-3.json"
         }
       ]
     },
@@ -199,17 +200,17 @@
         {
           "level": 1,
           "filename": "level-1.json",
-          "path": "data/quiz/tafseer/yoonus/level-1.json"
+          "path": "/data/quiz/tafseer/yoonus/level-1.json"
         },
         {
           "level": 2,
           "filename": "level-2.json",
-          "path": "data/quiz/tafseer/yoonus/level-2.json"
+          "path": "/data/quiz/tafseer/yoonus/level-2.json"
         },
         {
           "level": 3,
           "filename": "level-3.json",
-          "path": "data/quiz/tafseer/yoonus/level-3.json"
+          "path": "/data/quiz/tafseer/yoonus/level-3.json"
         }
       ]
     },
@@ -220,17 +221,17 @@
         {
           "level": 1,
           "filename": "level-1.json",
-          "path": "data/quiz/tafseer/hood/level-1.json"
+          "path": "/data/quiz/tafseer/hood/level-1.json"
         },
         {
           "level": 2,
           "filename": "level-2.json",
-          "path": "data/quiz/tafseer/hood/level-2.json"
+          "path": "/data/quiz/tafseer/hood/level-2.json"
         },
         {
           "level": 3,
           "filename": "level-3.json",
-          "path": "data/quiz/tafseer/hood/level-3.json"
+          "path": "/data/quiz/tafseer/hood/level-3.json"
         }
       ]
     },
@@ -241,17 +242,17 @@
         {
           "level": 1,
           "filename": "level-1.json",
-          "path": "data/quiz/tafseer/yoosuf/level-1.json"
+          "path": "/data/quiz/tafseer/yoosuf/level-1.json"
         },
         {
           "level": 2,
           "filename": "level-2.json",
-          "path": "data/quiz/tafseer/yoosuf/level-2.json"
+          "path": "/data/quiz/tafseer/yoosuf/level-2.json"
         },
         {
           "level": 3,
           "filename": "level-3.json",
-          "path": "data/quiz/tafseer/yoosuf/level-3.json"
+          "path": "/data/quiz/tafseer/yoosuf/level-3.json"
         }
       ]
     },
@@ -262,17 +263,17 @@
         {
           "level": 1,
           "filename": "level-1.json",
-          "path": "data/quiz/tafseer/ar-rad/level-1.json"
+          "path": "/data/quiz/tafseer/ar-rad/level-1.json"
         },
         {
           "level": 2,
           "filename": "level-2.json",
-          "path": "data/quiz/tafseer/ar-rad/level-2.json"
+          "path": "/data/quiz/tafseer/ar-rad/level-2.json"
         },
         {
           "level": 3,
           "filename": "level-3.json",
-          "path": "data/quiz/tafseer/ar-rad/level-3.json"
+          "path": "/data/quiz/tafseer/ar-rad/level-3.json"
         }
       ]
     },
@@ -283,17 +284,17 @@
         {
           "level": 1,
           "filename": "level-1.json",
-          "path": "data/quiz/tafseer/ibraheem/level-1.json"
+          "path": "/data/quiz/tafseer/ibraheem/level-1.json"
         },
         {
           "level": 2,
           "filename": "level-2.json",
-          "path": "data/quiz/tafseer/ibraheem/level-2.json"
+          "path": "/data/quiz/tafseer/ibraheem/level-2.json"
         },
         {
           "level": 3,
           "filename": "level-3.json",
-          "path": "data/quiz/tafseer/ibraheem/level-3.json"
+          "path": "/data/quiz/tafseer/ibraheem/level-3.json"
         }
       ]
     },
@@ -304,17 +305,17 @@
         {
           "level": 1,
           "filename": "level-1.json",
-          "path": "data/quiz/tafseer/al-hijr/level-1.json"
+          "path": "/data/quiz/tafseer/al-hijr/level-1.json"
         },
         {
           "level": 2,
           "filename": "level-2.json",
-          "path": "data/quiz/tafseer/al-hijr/level-2.json"
+          "path": "/data/quiz/tafseer/al-hijr/level-2.json"
         },
         {
           "level": 3,
           "filename": "level-3.json",
-          "path": "data/quiz/tafseer/al-hijr/level-3.json"
+          "path": "/data/quiz/tafseer/al-hijr/level-3.json"
         }
       ]
     },
@@ -325,17 +326,17 @@
         {
           "level": 1,
           "filename": "level-1.json",
-          "path": "data/quiz/tafseer/an-nahl/level-1.json"
+          "path": "/data/quiz/tafseer/an-nahl/level-1.json"
         },
         {
           "level": 2,
           "filename": "level-2.json",
-          "path": "data/quiz/tafseer/an-nahl/level-2.json"
+          "path": "/data/quiz/tafseer/an-nahl/level-2.json"
         },
         {
           "level": 3,
           "filename": "level-3.json",
-          "path": "data/quiz/tafseer/an-nahl/level-3.json"
+          "path": "/data/quiz/tafseer/an-nahl/level-3.json"
         }
       ]
     },
@@ -346,17 +347,17 @@
         {
           "level": 1,
           "filename": "level-1.json",
-          "path": "data/quiz/tafseer/al-isra/level-1.json"
+          "path": "/data/quiz/tafseer/al-isra/level-1.json"
         },
         {
           "level": 2,
           "filename": "level-2.json",
-          "path": "data/quiz/tafseer/al-isra/level-2.json"
+          "path": "/data/quiz/tafseer/al-isra/level-2.json"
         },
         {
           "level": 3,
           "filename": "level-3.json",
-          "path": "data/quiz/tafseer/al-isra/level-3.json"
+          "path": "/data/quiz/tafseer/al-isra/level-3.json"
         }
       ]
     },
@@ -367,17 +368,17 @@
         {
           "level": 1,
           "filename": "level-1.json",
-          "path": "data/quiz/tafseer/al-kahf/level-1.json"
+          "path": "/data/quiz/tafseer/al-kahf/level-1.json"
         },
         {
           "level": 2,
           "filename": "level-2.json",
-          "path": "data/quiz/tafseer/al-kahf/level-2.json"
+          "path": "/data/quiz/tafseer/al-kahf/level-2.json"
         },
         {
           "level": 3,
           "filename": "level-3.json",
-          "path": "data/quiz/tafseer/al-kahf/level-3.json"
+          "path": "/data/quiz/tafseer/al-kahf/level-3.json"
         }
       ]
     },
@@ -388,17 +389,17 @@
         {
           "level": 1,
           "filename": "level-1.json",
-          "path": "data/quiz/tafseer/maryam/level-1.json"
+          "path": "/data/quiz/tafseer/maryam/level-1.json"
         },
         {
           "level": 2,
           "filename": "level-2.json",
-          "path": "data/quiz/tafseer/maryam/level-2.json"
+          "path": "/data/quiz/tafseer/maryam/level-2.json"
         },
         {
           "level": 3,
           "filename": "level-3.json",
-          "path": "data/quiz/tafseer/maryam/level-3.json"
+          "path": "/data/quiz/tafseer/maryam/level-3.json"
         }
       ]
     },
@@ -409,17 +410,17 @@
         {
           "level": 1,
           "filename": "level-1.json",
-          "path": "data/quiz/tafseer/taahaa/level-1.json"
+          "path": "/data/quiz/tafseer/taahaa/level-1.json"
         },
         {
           "level": 2,
           "filename": "level-2.json",
-          "path": "data/quiz/tafseer/taahaa/level-2.json"
+          "path": "/data/quiz/tafseer/taahaa/level-2.json"
         },
         {
           "level": 3,
           "filename": "level-3.json",
-          "path": "data/quiz/tafseer/taahaa/level-3.json"
+          "path": "/data/quiz/tafseer/taahaa/level-3.json"
         }
       ]
     },
@@ -430,17 +431,17 @@
         {
           "level": 1,
           "filename": "level-1.json",
-          "path": "data/quiz/tafseer/al-anbiya/level-1.json"
+          "path": "/data/quiz/tafseer/al-anbiya/level-1.json"
         },
         {
           "level": 2,
           "filename": "level-2.json",
-          "path": "data/quiz/tafseer/al-anbiya/level-2.json"
+          "path": "/data/quiz/tafseer/al-anbiya/level-2.json"
         },
         {
           "level": 3,
           "filename": "level-3.json",
-          "path": "data/quiz/tafseer/al-anbiya/level-3.json"
+          "path": "/data/quiz/tafseer/al-anbiya/level-3.json"
         }
       ]
     },
@@ -451,17 +452,17 @@
         {
           "level": 1,
           "filename": "level-1.json",
-          "path": "data/quiz/tafseer/al-hajj/level-1.json"
+          "path": "/data/quiz/tafseer/al-hajj/level-1.json"
         },
         {
           "level": 2,
           "filename": "level-2.json",
-          "path": "data/quiz/tafseer/al-hajj/level-2.json"
+          "path": "/data/quiz/tafseer/al-hajj/level-2.json"
         },
         {
           "level": 3,
           "filename": "level-3.json",
-          "path": "data/quiz/tafseer/al-hajj/level-3.json"
+          "path": "/data/quiz/tafseer/al-hajj/level-3.json"
         }
       ]
     },
@@ -472,17 +473,17 @@
         {
           "level": 1,
           "filename": "level-1.json",
-          "path": "data/quiz/tafseer/al-muminun/level-1.json"
+          "path": "/data/quiz/tafseer/al-muminun/level-1.json"
         },
         {
           "level": 2,
           "filename": "level-2.json",
-          "path": "data/quiz/tafseer/al-muminun/level-2.json"
+          "path": "/data/quiz/tafseer/al-muminun/level-2.json"
         },
         {
           "level": 3,
           "filename": "level-3.json",
-          "path": "data/quiz/tafseer/al-muminun/level-3.json"
+          "path": "/data/quiz/tafseer/al-muminun/level-3.json"
         }
       ]
     },
@@ -493,17 +494,17 @@
         {
           "level": 1,
           "filename": "level-1.json",
-          "path": "data/quiz/tafseer/an-nur/level-1.json"
+          "path": "/data/quiz/tafseer/an-nur/level-1.json"
         },
         {
           "level": 2,
           "filename": "level-2.json",
-          "path": "data/quiz/tafseer/an-nur/level-2.json"
+          "path": "/data/quiz/tafseer/an-nur/level-2.json"
         },
         {
           "level": 3,
           "filename": "level-3.json",
-          "path": "data/quiz/tafseer/an-nur/level-3.json"
+          "path": "/data/quiz/tafseer/an-nur/level-3.json"
         }
       ]
     },
@@ -514,17 +515,17 @@
         {
           "level": 1,
           "filename": "level-1.json",
-          "path": "data/quiz/tafseer/al-furqan/level-1.json"
+          "path": "/data/quiz/tafseer/al-furqan/level-1.json"
         },
         {
           "level": 2,
           "filename": "level-2.json",
-          "path": "data/quiz/tafseer/al-furqan/level-2.json"
+          "path": "/data/quiz/tafseer/al-furqan/level-2.json"
         },
         {
           "level": 3,
           "filename": "level-3.json",
-          "path": "data/quiz/tafseer/al-furqan/level-3.json"
+          "path": "/data/quiz/tafseer/al-furqan/level-3.json"
         }
       ]
     },
@@ -535,17 +536,17 @@
         {
           "level": 1,
           "filename": "level-1.json",
-          "path": "data/quiz/tafseer/ash-shuara/level-1.json"
+          "path": "/data/quiz/tafseer/ash-shuara/level-1.json"
         },
         {
           "level": 2,
           "filename": "level-2.json",
-          "path": "data/quiz/tafseer/ash-shuara/level-2.json"
+          "path": "/data/quiz/tafseer/ash-shuara/level-2.json"
         },
         {
           "level": 3,
           "filename": "level-3.json",
-          "path": "data/quiz/tafseer/ash-shuara/level-3.json"
+          "path": "/data/quiz/tafseer/ash-shuara/level-3.json"
         }
       ]
     },
@@ -556,17 +557,17 @@
         {
           "level": 1,
           "filename": "level-1.json",
-          "path": "data/quiz/tafseer/an-naml/level-1.json"
+          "path": "/data/quiz/tafseer/an-naml/level-1.json"
         },
         {
           "level": 2,
           "filename": "level-2.json",
-          "path": "data/quiz/tafseer/an-naml/level-2.json"
+          "path": "/data/quiz/tafseer/an-naml/level-2.json"
         },
         {
           "level": 3,
           "filename": "level-3.json",
-          "path": "data/quiz/tafseer/an-naml/level-3.json"
+          "path": "/data/quiz/tafseer/an-naml/level-3.json"
         }
       ]
     },
@@ -577,17 +578,17 @@
         {
           "level": 1,
           "filename": "level-1.json",
-          "path": "data/quiz/tafseer/al-qasas/level-1.json"
+          "path": "/data/quiz/tafseer/al-qasas/level-1.json"
         },
         {
           "level": 2,
           "filename": "level-2.json",
-          "path": "data/quiz/tafseer/al-qasas/level-2.json"
+          "path": "/data/quiz/tafseer/al-qasas/level-2.json"
         },
         {
           "level": 3,
           "filename": "level-3.json",
-          "path": "data/quiz/tafseer/al-qasas/level-3.json"
+          "path": "/data/quiz/tafseer/al-qasas/level-3.json"
         }
       ]
     },
@@ -598,17 +599,17 @@
         {
           "level": 1,
           "filename": "level-1.json",
-          "path": "data/quiz/tafseer/al-ankabut/level-1.json"
+          "path": "/data/quiz/tafseer/al-ankabut/level-1.json"
         },
         {
           "level": 2,
           "filename": "level-2.json",
-          "path": "data/quiz/tafseer/al-ankabut/level-2.json"
+          "path": "/data/quiz/tafseer/al-ankabut/level-2.json"
         },
         {
           "level": 3,
           "filename": "level-3.json",
-          "path": "data/quiz/tafseer/al-ankabut/level-3.json"
+          "path": "/data/quiz/tafseer/al-ankabut/level-3.json"
         }
       ]
     },
@@ -619,17 +620,17 @@
         {
           "level": 1,
           "filename": "level-1.json",
-          "path": "data/quiz/tafseer/ar-rum/level-1.json"
+          "path": "/data/quiz/tafseer/ar-rum/level-1.json"
         },
         {
           "level": 2,
           "filename": "level-2.json",
-          "path": "data/quiz/tafseer/ar-rum/level-2.json"
+          "path": "/data/quiz/tafseer/ar-rum/level-2.json"
         },
         {
           "level": 3,
           "filename": "level-3.json",
-          "path": "data/quiz/tafseer/ar-rum/level-3.json"
+          "path": "/data/quiz/tafseer/ar-rum/level-3.json"
         }
       ]
     },
@@ -640,17 +641,17 @@
         {
           "level": 1,
           "filename": "level-1.json",
-          "path": "data/quiz/tafseer/luqman/level-1.json"
+          "path": "/data/quiz/tafseer/luqman/level-1.json"
         },
         {
           "level": 2,
           "filename": "level-2.json",
-          "path": "data/quiz/tafseer/luqman/level-2.json"
+          "path": "/data/quiz/tafseer/luqman/level-2.json"
         },
         {
           "level": 3,
           "filename": "level-3.json",
-          "path": "data/quiz/tafseer/luqman/level-3.json"
+          "path": "/data/quiz/tafseer/luqman/level-3.json"
         }
       ]
     },
@@ -661,17 +662,17 @@
         {
           "level": 1,
           "filename": "level-1.json",
-          "path": "data/quiz/tafseer/as-sajdah/level-1.json"
+          "path": "/data/quiz/tafseer/as-sajdah/level-1.json"
         },
         {
           "level": 2,
           "filename": "level-2.json",
-          "path": "data/quiz/tafseer/as-sajdah/level-2.json"
+          "path": "/data/quiz/tafseer/as-sajdah/level-2.json"
         },
         {
           "level": 3,
           "filename": "level-3.json",
-          "path": "data/quiz/tafseer/as-sajdah/level-3.json"
+          "path": "/data/quiz/tafseer/as-sajdah/level-3.json"
         }
       ]
     },
@@ -682,17 +683,17 @@
         {
           "level": 1,
           "filename": "level-1.json",
-          "path": "data/quiz/tafseer/al-ahzab/level-1.json"
+          "path": "/data/quiz/tafseer/al-ahzab/level-1.json"
         },
         {
           "level": 2,
           "filename": "level-2.json",
-          "path": "data/quiz/tafseer/al-ahzab/level-2.json"
+          "path": "/data/quiz/tafseer/al-ahzab/level-2.json"
         },
         {
           "level": 3,
           "filename": "level-3.json",
-          "path": "data/quiz/tafseer/al-ahzab/level-3.json"
+          "path": "/data/quiz/tafseer/al-ahzab/level-3.json"
         }
       ]
     },
@@ -703,17 +704,17 @@
         {
           "level": 1,
           "filename": "level-1.json",
-          "path": "data/quiz/tafseer/saba/level-1.json"
+          "path": "/data/quiz/tafseer/saba/level-1.json"
         },
         {
           "level": 2,
           "filename": "level-2.json",
-          "path": "data/quiz/tafseer/saba/level-2.json"
+          "path": "/data/quiz/tafseer/saba/level-2.json"
         },
         {
           "level": 3,
           "filename": "level-3.json",
-          "path": "data/quiz/tafseer/saba/level-3.json"
+          "path": "/data/quiz/tafseer/saba/level-3.json"
         }
       ]
     },
@@ -724,17 +725,17 @@
         {
           "level": 1,
           "filename": "level-1.json",
-          "path": "data/quiz/tafseer/fatir/level-1.json"
+          "path": "/data/quiz/tafseer/fatir/level-1.json"
         },
         {
           "level": 2,
           "filename": "level-2.json",
-          "path": "data/quiz/tafseer/fatir/level-2.json"
+          "path": "/data/quiz/tafseer/fatir/level-2.json"
         },
         {
           "level": 3,
           "filename": "level-3.json",
-          "path": "data/quiz/tafseer/fatir/level-3.json"
+          "path": "/data/quiz/tafseer/fatir/level-3.json"
         }
       ]
     },
@@ -745,17 +746,17 @@
         {
           "level": 1,
           "filename": "level-1.json",
-          "path": "data/quiz/tafseer/Yasin/level-1.json"
+          "path": "/data/quiz/tafseer/Yasin/level-1.json"
         },
         {
           "level": 2,
           "filename": "level-2.json",
-          "path": "data/quiz/tafseer/Yasin/level-2.json"
+          "path": "/data/quiz/tafseer/Yasin/level-2.json"
         },
         {
           "level": 3,
           "filename": "level-3.json",
-          "path": "data/quiz/tafseer/Yasin/level-3.json"
+          "path": "/data/quiz/tafseer/Yasin/level-3.json"
         }
       ]
     },
@@ -766,17 +767,17 @@
         {
           "level": 1,
           "filename": "level-1.json",
-          "path": "data/quiz/tafseer/as-Saffat/level-1.json"
+          "path": "/data/quiz/tafseer/as-Saffat/level-1.json"
         },
         {
           "level": 2,
           "filename": "level-2.json",
-          "path": "data/quiz/tafseer/as-Saffat/level-2.json"
+          "path": "/data/quiz/tafseer/as-Saffat/level-2.json"
         },
         {
           "level": 3,
           "filename": "level-3.json",
-          "path": "data/quiz/tafseer/as-Saffat/level-3.json"
+          "path": "/data/quiz/tafseer/as-Saffat/level-3.json"
         }
       ]
     },
@@ -787,17 +788,17 @@
         {
           "level": 1,
           "filename": "level-1.json",
-          "path": "data/quiz/tafseer/sad/level-1.json"
+          "path": "/data/quiz/tafseer/sad/level-1.json"
         },
         {
           "level": 2,
           "filename": "level-2.json",
-          "path": "data/quiz/tafseer/sad/level-2.json"
+          "path": "/data/quiz/tafseer/sad/level-2.json"
         },
         {
           "level": 3,
           "filename": "level-3.json",
-          "path": "data/quiz/tafseer/sad/level-3.json"
+          "path": "/data/quiz/tafseer/sad/level-3.json"
         }
       ]
     },
@@ -808,17 +809,17 @@
         {
           "level": 1,
           "filename": "level-1.json",
-          "path": "data/quiz/tafseer/az-Zumar/level-1.json"
+          "path": "/data/quiz/tafseer/az-Zumar/level-1.json"
         },
         {
           "level": 2,
           "filename": "level-2.json",
-          "path": "data/quiz/tafseer/az-Zumar/level-2.json"
+          "path": "/data/quiz/tafseer/az-Zumar/level-2.json"
         },
         {
           "level": 3,
           "filename": "level-3.json",
-          "path": "data/quiz/tafseer/az-Zumar/level-3.json"
+          "path": "/data/quiz/tafseer/az-Zumar/level-3.json"
         }
       ]
     },
@@ -829,17 +830,17 @@
         {
           "level": 1,
           "filename": "level-1.json",
-          "path": "data/quiz/tafseer/Ghafir/level-1.json"
+          "path": "/data/quiz/tafseer/Ghafir/level-1.json"
         },
         {
           "level": 2,
           "filename": "level-2.json",
-          "path": "data/quiz/tafseer/Ghafir/level-2.json"
+          "path": "/data/quiz/tafseer/Ghafir/level-2.json"
         },
         {
           "level": 3,
           "filename": "level-3.json",
-          "path": "data/quiz/tafseer/Ghafir/level-3.json"
+          "path": "/data/quiz/tafseer/Ghafir/level-3.json"
         }
       ]
     }

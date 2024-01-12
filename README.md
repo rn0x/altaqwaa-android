@@ -25,6 +25,7 @@
 - المسبحة الإلكترونية
 - إذاعات قرآن ورقية  شرعية واذكار الخ...
 - صور متنوعة لأحاديث وأذكار وأدعية بشكل عشوائي 
+- معلمة الدرر |  دليلك لمعرفة وتحسين مستواك في العلوم الشرعية 
 
 # صور الشاشة
 
@@ -130,6 +131,7 @@ cordova requirements
 | التفسير الميسر             | https://qurancomplex.gov.sa/techquran/dev  |
 | حصن المسلم                 | https://hisnmuslim.com  |
 | اسماء الله الحسنى          | https://github.com/rn0x/Names_Of_Allah_Json  |
+| اسئلة دينية (معلمة الدرر)         | https://dorar.net/m3lama  |
 
 <br>
 

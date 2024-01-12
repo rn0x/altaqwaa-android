@@ -15,7 +15,13 @@ export default async () => {
             let more_settings = document.getElementById("more_settings");
             let more_info = document.getElementById("more_info");
             let more_sabha = document.getElementById("more_sabha");
+            let more_questions = document.getElementById("more_questions");
 
+
+            more_questions.addEventListener("click", e => {
+
+                window.location.href = "/pages/questions.html"
+            });
 
             more_albitaqat.addEventListener("click", e => {
 

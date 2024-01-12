@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+    <meta name="color-scheme" content="light dark">
+    <link rel="stylesheet" href="/css/var.css"> <!-- المتغيرات -->
+    <link rel="stylesheet" href="/css/main.css"> <!-- ملف الإستايل الأساسي -->
+    <link rel="stylesheet" href="/css/footer.css"> <!-- ملف css الفوتر -->
+    <link rel="stylesheet" href="/css/questions.css">
+    <link rel="stylesheet" href="/css/more.css">
+    <link rel="stylesheet" href="/css/animate.min.css"> <!-- مؤثرات الإنتقال -->
+    <title>التقوى</title>
+</head>
+
+<body>
+
+    <div id="content" class="animate__animated animate__fadeIn">
+
+        <img src="/img/loading.svg" alt="loading" id="loading">
+
+        <div id="more_header" class="animate__animated animate__fadeIn">
+
+            <img src="/img/back.png" id="back">
+
+            <p id="more_header_title">
+                -
+            </p>
+
+        </div>
+        <!-- ================ ضع هنا محتوى الصفحة =============== -->
+
+        <div id="box_alert">
+
+            <div id="questions_alert">
+
+                <p id="timer">
+                    122
+                </p>
+
+                <img alt="emoji" id="main_alert_icon">
+
+                <h4 id="questions_alert_text">
+                </h4>
+
+                <p id="score">
+                    نسبة الإجابات الصحيحة <span id="score_percentage"></span>
+                </p>
+
+                <ul id="box_alert_ul">
+                    <li>
+                        <p>
+                         صحيح <span id="correct"></span>
+                        </p>
+
+                        <img src="/img/correct.png" alt="correct" class="icons_alert">
+                    </li>
+
+                    <li>
+                        <p>
+                            غير صحيح <span id="mistake"></span>
+                        </p>
+
+                        <img src="/img/mistake.png" alt="mistake" class="icons_alert">
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div id="questions">
+
+
+        </div>
+
+        <p id="question_result">
+            اطلع على النتيجة
+        </p>
+
+        <!-- ================ ضع هنا محتوى الصفحة =============== -->
+    </div>
+
+
+
+    <footer id="footer">
+        <!-- الفوتر مربوط بالجافاسكربت -->
+    </footer>
+
+    <script src="/cordova.js"></script>
+    <script src="/js/index.js" type="module"></script>
+</body>
+
+</html>

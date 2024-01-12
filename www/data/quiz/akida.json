@@ -2,6 +2,7 @@
   "id": 2,
   "category": "العقيدة",
   "description": "الاعتِقادُ الصَّحِيحُ هو الأَساسُ الذي يُبنَى عليه العَملُ الصَّالِحُ، وهو الـمَخرَجُ مِن كُلِّ فِتنَة",
+  "icons": "/data/quiz/icons/akida.svg",
   "DataArray": [
     {
       "englishName": "e-anbya",
@@ -10,17 +11,17 @@
         {
           "level": 1,
           "filename": "level-1.json",
-          "path": "data/quiz/akida/e-anbya/level-1.json"
+          "path": "/data/quiz/akida/e-anbya/level-1.json"
         },
         {
           "level": 2,
           "filename": "level-2.json",
-          "path": "data/quiz/akida/e-anbya/level-2.json"
+          "path": "/data/quiz/akida/e-anbya/level-2.json"
         },
         {
           "level": 3,
           "filename": "level-3.json",
-          "path": "data/quiz/akida/e-anbya/level-3.json"
+          "path": "/data/quiz/akida/e-anbya/level-3.json"
         }
       ]
     },
@@ -31,17 +32,17 @@
         {
           "level": 1,
           "filename": "level-1.json",
-          "path": "data/quiz/akida/e-book/level-1.json"
+          "path": "/data/quiz/akida/e-book/level-1.json"
         },
         {
           "level": 2,
           "filename": "level-2.json",
-          "path": "data/quiz/akida/e-book/level-2.json"
+          "path": "/data/quiz/akida/e-book/level-2.json"
         },
         {
           "level": 3,
           "filename": "level-3.json",
-          "path": "data/quiz/akida/e-book/level-3.json"
+          "path": "/data/quiz/akida/e-book/level-3.json"
         }
       ]
     },
@@ -52,17 +53,17 @@
         {
           "level": 1,
           "filename": "level-1.json",
-          "path": "data/quiz/akida/e-kader/level-1.json"
+          "path": "/data/quiz/akida/e-kader/level-1.json"
         },
         {
           "level": 2,
           "filename": "level-2.json",
-          "path": "data/quiz/akida/e-kader/level-2.json"
+          "path": "/data/quiz/akida/e-kader/level-2.json"
         },
         {
           "level": 3,
           "filename": "level-3.json",
-          "path": "data/quiz/akida/e-kader/level-3.json"
+          "path": "/data/quiz/akida/e-kader/level-3.json"
         }
       ]
     },
@@ -73,17 +74,17 @@
         {
           "level": 1,
           "filename": "level-1.json",
-          "path": "data/quiz/akida/e-mlaeka/level-1.json"
+          "path": "/data/quiz/akida/e-mlaeka/level-1.json"
         },
         {
           "level": 2,
           "filename": "level-2.json",
-          "path": "data/quiz/akida/e-mlaeka/level-2.json"
+          "path": "/data/quiz/akida/e-mlaeka/level-2.json"
         },
         {
           "level": 3,
           "filename": "level-3.json",
-          "path": "data/quiz/akida/e-mlaeka/level-3.json"
+          "path": "/data/quiz/akida/e-mlaeka/level-3.json"
         }
       ]
     },
@@ -94,17 +95,17 @@
         {
           "level": 1,
           "filename": "level-1.json",
-          "path": "data/quiz/akida/e-nawagid/level-1.json"
+          "path": "/data/quiz/akida/e-nawagid/level-1.json"
         },
         {
           "level": 2,
           "filename": "level-2.json",
-          "path": "data/quiz/akida/e-nawagid/level-2.json"
+          "path": "/data/quiz/akida/e-nawagid/level-2.json"
         },
         {
           "level": 3,
           "filename": "level-3.json",
-          "path": "data/quiz/akida/e-nawagid/level-3.json"
+          "path": "/data/quiz/akida/e-nawagid/level-3.json"
         }
       ]
     },
@@ -115,17 +116,17 @@
         {
           "level": 1,
           "filename": "level-1.json",
-          "path": "data/quiz/akida/eman/level-1.json"
+          "path": "/data/quiz/akida/eman/level-1.json"
         },
         {
           "level": 2,
           "filename": "level-2.json",
-          "path": "data/quiz/akida/eman/level-2.json"
+          "path": "/data/quiz/akida/eman/level-2.json"
         },
         {
           "level": 3,
           "filename": "level-3.json",
-          "path": "data/quiz/akida/eman/level-3.json"
+          "path": "/data/quiz/akida/eman/level-3.json"
         }
       ]
     },
@@ -136,17 +137,17 @@
         {
           "level": 1,
           "filename": "level-1.json",
-          "path": "data/quiz/akida/shirk/level-1.json"
+          "path": "/data/quiz/akida/shirk/level-1.json"
         },
         {
           "level": 2,
           "filename": "level-2.json",
-          "path": "data/quiz/akida/shirk/level-2.json"
+          "path": "/data/quiz/akida/shirk/level-2.json"
         },
         {
           "level": 3,
           "filename": "level-3.json",
-          "path": "data/quiz/akida/shirk/level-3.json"
+          "path": "/data/quiz/akida/shirk/level-3.json"
         }
       ]
     },
@@ -157,17 +158,17 @@
         {
           "level": 1,
           "filename": "level-1.json",
-          "path": "data/quiz/akida/t-name/level-1.json"
+          "path": "/data/quiz/akida/t-name/level-1.json"
         },
         {
           "level": 2,
           "filename": "level-2.json",
-          "path": "data/quiz/akida/t-name/level-2.json"
+          "path": "/data/quiz/akida/t-name/level-2.json"
         },
         {
           "level": 3,
           "filename": "level-3.json",
-          "path": "data/quiz/akida/t-name/level-3.json"
+          "path": "/data/quiz/akida/t-name/level-3.json"
         }
       ]
     },
@@ -178,17 +179,17 @@
         {
           "level": 1,
           "filename": "level-1.json",
-          "path": "data/quiz/akida/t-olhia/level-1.json"
+          "path": "/data/quiz/akida/t-olhia/level-1.json"
         },
         {
           "level": 2,
           "filename": "level-2.json",
-          "path": "data/quiz/akida/t-olhia/level-2.json"
+          "path": "/data/quiz/akida/t-olhia/level-2.json"
         },
         {
           "level": 3,
           "filename": "level-3.json",
-          "path": "data/quiz/akida/t-olhia/level-3.json"
+          "path": "/data/quiz/akida/t-olhia/level-3.json"
         }
       ]
     },
@@ -199,17 +200,17 @@
         {
           "level": 1,
           "filename": "level-1.json",
-          "path": "data/quiz/akida/t-rab/level-1.json"
+          "path": "/data/quiz/akida/t-rab/level-1.json"
         },
         {
           "level": 2,
           "filename": "level-2.json",
-          "path": "data/quiz/akida/t-rab/level-2.json"
+          "path": "/data/quiz/akida/t-rab/level-2.json"
         },
         {
           "level": 3,
           "filename": "level-3.json",
-          "path": "data/quiz/akida/t-rab/level-3.json"
+          "path": "/data/quiz/akida/t-rab/level-3.json"
         }
       ]
     },
@@ -220,17 +221,17 @@
         {
           "level": 1,
           "filename": "level-1.json",
-          "path": "data/quiz/akida/akhir/level-1.json"
+          "path": "/data/quiz/akida/akhir/level-1.json"
         },
         {
           "level": 2,
           "filename": "level-2.json",
-          "path": "data/quiz/akida/akhir/level-2.json"
+          "path": "/data/quiz/akida/akhir/level-2.json"
         },
         {
           "level": 3,
           "filename": "level-3.json",
-          "path": "data/quiz/akida/akhir/level-3.json"
+          "path": "/data/quiz/akida/akhir/level-3.json"
         }
       ]
     },
@@ -241,17 +242,17 @@
         {
           "level": 1,
           "filename": "level-1.json",
-          "path": "data/quiz/akida/sonah/level-1.json"
+          "path": "/data/quiz/akida/sonah/level-1.json"
         },
         {
           "level": 2,
           "filename": "level-2.json",
-          "path": "data/quiz/akida/sonah/level-2.json"
+          "path": "/data/quiz/akida/sonah/level-2.json"
         },
         {
           "level": 3,
           "filename": "level-3.json",
-          "path": "data/quiz/akida/sonah/level-3.json"
+          "path": "/data/quiz/akida/sonah/level-3.json"
         }
       ]
     },
@@ -262,17 +263,17 @@
         {
           "level": 1,
           "filename": "level-1.json",
-          "path": "data/quiz/akida/bida/level-1.json"
+          "path": "/data/quiz/akida/bida/level-1.json"
         },
         {
           "level": 2,
           "filename": "level-2.json",
-          "path": "data/quiz/akida/bida/level-2.json"
+          "path": "/data/quiz/akida/bida/level-2.json"
         },
         {
           "level": 3,
           "filename": "level-3.json",
-          "path": "data/quiz/akida/bida/level-3.json"
+          "path": "/data/quiz/akida/bida/level-3.json"
         }
       ]
     }

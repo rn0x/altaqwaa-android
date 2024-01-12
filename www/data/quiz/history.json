@@ -2,6 +2,7 @@
   "id": 5,
   "category": "التاريخ",
   "description": "تاريخ أمتنا مليء بالعبر والعظات والنماذج المبهرة",
+  "icons": "/data/quiz/icons/history.svg",
   "DataArray": [
     {
       "englishName": "sirah",
@@ -10,17 +11,17 @@
         {
           "level": 1,
           "filename": "level-1.json",
-          "path": "data/quiz/history/sirah/level-1.json"
+          "path": "/data/quiz/history/sirah/level-1.json"
         },
         {
           "level": 2,
           "filename": "level-2.json",
-          "path": "data/quiz/history/sirah/level-2.json"
+          "path": "/data/quiz/history/sirah/level-2.json"
         },
         {
           "level": 3,
           "filename": "level-3.json",
-          "path": "data/quiz/history/sirah/level-3.json"
+          "path": "/data/quiz/history/sirah/level-3.json"
         }
       ]
     },
@@ -31,17 +32,17 @@
         {
           "level": 1,
           "filename": "level-1.json",
-          "path": "data/quiz/history/kholfa/level-1.json"
+          "path": "/data/quiz/history/kholfa/level-1.json"
         },
         {
           "level": 2,
           "filename": "level-2.json",
-          "path": "data/quiz/history/kholfa/level-2.json"
+          "path": "/data/quiz/history/kholfa/level-2.json"
         },
         {
           "level": 3,
           "filename": "level-3.json",
-          "path": "data/quiz/history/kholfa/level-3.json"
+          "path": "/data/quiz/history/kholfa/level-3.json"
         }
       ]
     },
@@ -52,17 +53,17 @@
         {
           "level": 1,
           "filename": "level-1.json",
-          "path": "data/quiz/history/abasi/level-1.json"
+          "path": "/data/quiz/history/abasi/level-1.json"
         },
         {
           "level": 2,
           "filename": "level-2.json",
-          "path": "data/quiz/history/abasi/level-2.json"
+          "path": "/data/quiz/history/abasi/level-2.json"
         },
         {
           "level": 3,
           "filename": "level-3.json",
-          "path": "data/quiz/history/abasi/level-3.json"
+          "path": "/data/quiz/history/abasi/level-3.json"
         }
       ]
     },
@@ -73,17 +74,17 @@
         {
           "level": 1,
           "filename": "level-1.json",
-          "path": "data/quiz/history/amwi/level-1.json"
+          "path": "/data/quiz/history/amwi/level-1.json"
         },
         {
           "level": 2,
           "filename": "level-2.json",
-          "path": "data/quiz/history/amwi/level-2.json"
+          "path": "/data/quiz/history/amwi/level-2.json"
         },
         {
           "level": 3,
           "filename": "level-3.json",
-          "path": "data/quiz/history/amwi/level-3.json"
+          "path": "/data/quiz/history/amwi/level-3.json"
         }
       ]
     },
@@ -94,17 +95,17 @@
         {
           "level": 1,
           "filename": "level-1.json",
-          "path": "data/quiz/history/osmany/level-1.json"
+          "path": "/data/quiz/history/osmany/level-1.json"
         },
         {
           "level": 2,
           "filename": "level-2.json",
-          "path": "data/quiz/history/osmany/level-2.json"
+          "path": "/data/quiz/history/osmany/level-2.json"
         },
         {
           "level": 3,
           "filename": "level-3.json",
-          "path": "data/quiz/history/osmany/level-3.json"
+          "path": "/data/quiz/history/osmany/level-3.json"
         }
       ]
     },
@@ -115,17 +116,17 @@
         {
           "level": 1,
           "filename": "level-1.json",
-          "path": "data/quiz/history/mamalik/level-1.json"
+          "path": "/data/quiz/history/mamalik/level-1.json"
         },
         {
           "level": 2,
           "filename": "level-2.json",
-          "path": "data/quiz/history/mamalik/level-2.json"
+          "path": "/data/quiz/history/mamalik/level-2.json"
         },
         {
           "level": 3,
           "filename": "level-3.json",
-          "path": "data/quiz/history/mamalik/level-3.json"
+          "path": "/data/quiz/history/mamalik/level-3.json"
         }
       ]
     },
@@ -136,17 +137,17 @@
         {
           "level": 1,
           "filename": "level-1.json",
-          "path": "data/quiz/history/moasir/level-1.json"
+          "path": "/data/quiz/history/moasir/level-1.json"
         },
         {
           "level": 2,
           "filename": "level-2.json",
-          "path": "data/quiz/history/moasir/level-2.json"
+          "path": "/data/quiz/history/moasir/level-2.json"
         },
         {
           "level": 3,
           "filename": "level-3.json",
-          "path": "data/quiz/history/moasir/level-3.json"
+          "path": "/data/quiz/history/moasir/level-3.json"
         }
       ]
     }

@@ -3,6 +3,7 @@ import adhkar from './adhkar.js';
 import prayer from './prayer.js';
 import quran from './quran.js';
 import more from './more.js';
+import questions from './questions.js';
 import albitaqat from './albitaqat.js';
 import hisnmuslim from './hisnmuslim.js';
 import radio from './radio.js';
@@ -55,6 +56,7 @@ async function setupApplication() {
     await prayer();
     await quran();
     await more();
+    await questions();
     await albitaqat();
     await hisnmuslim();
     await radio();
