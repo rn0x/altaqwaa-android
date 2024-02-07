@@ -64,13 +64,16 @@ export default async () => {
             prayers.addEventListener('click', e => window.location.href = '/pages/adhkar/prayer.html');
             tasbih.addEventListener('click', e => window.location.href = '/pages/adhkar/tasbih.html');
 
-
             // حدث زر الرجوع للخلف 
             document.addEventListener("backbutton", async function (e) {
                 e.preventDefault(); // منع السلوك الافتراضي لزر الرجوع
                 storage.removeItem('audioPlayingId');
                 storage.removeItem('icon_audio');
                 storage.removeItem('AdhanPlaying');
+                storage.removeItem('isMediaPlay');
+                storage.removeItem('isPaused');
+                storage.removeItem('AudioName');
+                storage.removeItem('linkAudio');
 
                 navigator?.notification?.confirm(
                     'هل بالفعل تريد الخروج من التطبيق ؟',  // message

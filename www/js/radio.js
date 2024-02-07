@@ -61,33 +61,42 @@ export default async () => {
                     radio_quran_play.id = `radio_quran_play_id_${item?.id}`;
                     radio_quran_play.src = "/img/play.png";
 
+                    const isMediaPlayStorage = (value) => { localStorage.setItem('isMediaPlay', `${value}`) };
+                    const isPausedStorage = (value) => { localStorage.setItem('isPaused', `${value}`) };
+                    const AudioNameStoarge = (value) => { localStorage.setItem('AudioName', `${value}`) };
+                    const linkAudioStoarge = (value) => { localStorage.setItem('linkAudio', `${value}`) };
+
+
                     radio_quran_play.addEventListener("click", async () => {
                         try {
+
+                            linkAudioStoarge(item?.link);
+
                             if (currentAudio && currentAudio !== audio) {
                                 currentAudio.pause();
                                 setPlayIcon(currentIcon);
+                                isMediaPlayStorage(false);
+                                isPausedStorage(true);
                             }
 
                             if (audio.paused) {
                                 if (audio.buffered.length === 0) {
                                     radio_quran_play.src = "/img/loading.svg";
                                 }
+                                radio_quran_play.src = "/img/loading.svg";
+                                isMediaPlayStorage(false);
+                                isPausedStorage(true);
+                                await new Promise(r => setTimeout(r, 2000));
                                 await audio.play();
+                                AudioNameStoarge(`${item?.name}`);
+                                isMediaPlayStorage(true);
+                                isPausedStorage(false);
                                 setStopIcon(radio_quran_play);
-
-                                // Start background audio
-                                if (typeof cordova !== 'undefined' && cordova.plugins && cordova.plugins.backgroundaudio) {
-                                    cordova.plugins.backgroundaudio.unmute(); // Unmute to allow background playback
-                                    cordova.plugins.backgroundaudio.play();
-                                }
                             } else {
                                 audio.pause();
                                 setPlayIcon(radio_quran_play);
-
-                                // Stop background audio
-                                if (typeof cordova !== 'undefined' && cordova.plugins && cordova.plugins.backgroundaudio) {
-                                    cordova.plugins.backgroundaudio.stop();
-                                }
+                                isMediaPlayStorage(false);
+                                isPausedStorage(true);
                             }
 
                             currentAudio = audio;

@@ -1,7 +1,16 @@
 import adhanModule from './modules/adhanModule.js';
-import error_handling from './modules/error_handling.js';
+import errorHandling from './modules/error_handling.js';
 import getGPS from './modules/getGPS.js';
+import {
+    scheduleLocalNotification,
+    updateLocalNotification,
+    cancelLocalNotification,
+    isLocalNotificationExists,
+    ClickEvent
+} from "./modules/LocalNotification.js";
 import moment from './modules/moment/moment.js';
+import moment_timezone from './modules/moment/moment-timezone.js';
+moment_timezone(moment);
 
 export default async () => {
 
@@ -9,106 +18,99 @@ export default async () => {
 
         // LocalStorage 
 
-        let storage = window.localStorage;
-        let Calculation = storage.getItem('Calculation');
-        let Madhab = storage.getItem('Madhab');
-        let Shafaq = storage.getItem('Shafaq');
-        let Setfajr = storage.getItem('fajr');
-        let Setdhuhr = storage.getItem('dhuhr');
-        let Setasr = storage.getItem('asr');
-        let Setmaghrib = storage.getItem('maghrib');
-        let Setisha = storage.getItem('isha');
-        let Getlatitude = storage.getItem('latitude_settings');
-        let Getlongitude = storage.getItem('longitude_settings');
-        let notification = storage.getItem('notification');
+        let localStorageData = window.localStorage;
+        let calculationMethod = localStorageData.getItem('Calculation_settings');
+        let madhab = localStorageData.getItem('madhab_settings');
+        let shafaqMethod = localStorageData.getItem('Shafaq_settings');
+        let fajrAngle = localStorageData.getItem('fajr_settings');
+        let sunriseAngle = localStorageData.getItem('sunrise_settings');
+        let dhuhrAngle = localStorageData.getItem('dhuhr_settings');
+        let asrAngle = localStorageData.getItem('asr_settings');
+        let maghribAngle = localStorageData.getItem('maghrib_settings');
+        let ishaAngle = localStorageData.getItem('isha_settings');
+        let latitude = localStorageData.getItem('latitude_settings');
+        let longitude = localStorageData.getItem('longitude_settings');
+        let timezone = localStorageData.getItem('timezone_settings');
+        let notificationEnabled = localStorageData.getItem('notifications_adhan');
 
-        if (Getlongitude === null || Getlatitude === null) {
+
+        if (longitude === null || latitude === null || timezone === null) {
 
             let GPS = await getGPS();
-            Getlatitude = GPS.latitude;
-            Getlongitude = GPS.longitude;
-            storage.setItem("latitude_settings", Getlatitude);
-            storage.setItem("longitude_settings", Getlongitude);
+            latitude = GPS.latitude;
+            longitude = GPS.longitude;
+            timezone = GPS.timezone;
+            localStorageData.setItem("latitude_settings", latitude);
+            localStorageData.setItem("longitude_settings", longitude);
+            localStorageData.setItem("timezone_settings", timezone);
 
         }
 
-        while (notification ? bool(notification) : true) {
+        setInterval(async () => {
+            if (notificationEnabled ? bool(notificationEnabled) : true) {
+                const timeNow = moment().tz(timezone).format('h:mm A');
+                let prayerTimes = adhanModule({
+                    Calculation: calculationMethod ? calculationMethod : "UmmAlQura",
+                    latitude: Number(latitude),
+                    longitude: Number(longitude),
+                    timezone: timezone,
+                    madhab: madhab ? madhab : "Shafi",
+                    Shafaq: shafaqMethod ? shafaqMethod : "General",
+                    fajr: fajrAngle ? Number(fajrAngle) : 0,
+                    sunrise: sunriseAngle ? Number(sunriseAngle) : 0,
+                    dhuhr: dhuhrAngle ? Number(dhuhrAngle) : 0,
+                    asr: asrAngle ? Number(asrAngle) : 0,
+                    maghrib: maghribAngle ? Number(maghribAngle) : 0,
+                    isha: ishaAngle ? Number(ishaAngle) : 0,
+                });
 
+                const fileAdhan = prayerTimes.nextPrayer === "fajr" ? "/mp3/002.mp3" : "/mp3/001.mp3"
 
-            let timenow = moment().format('h:mm A');
-            let adhan = adhanModule({
-                Calculation: Calculation ? Calculation : "UmmAlQura",
-                latitude: Number(Getlatitude),
-                longitude: Number(Getlongitude),
-                Madhab: Madhab ? Madhab : "Shafi",
-                Shafaq: Shafaq ? Shafaq : "General",
-                fajr: Setfajr ? Number(Setfajr) : 0,
-                dhuhr: Setdhuhr ? Number(Setdhuhr) : 0,
-                asr: Setasr ? Number(Setasr) : 0,
-                maghrib: Setmaghrib ? Number(Setmaghrib) : 0,
-                isha: Setisha ? Number(Setisha) : 0,
-            });
-            // let slah = adhan.nextPrayer === "fajr" ? "الفجر" : adhan.nextPrayer === "dhuhr" ? "الظهر" : adhan.nextPrayer === "asr" ? "العصر" : adhan.nextPrayer === "maghrib" ? "المغرب" : adhan.nextPrayer === "isha" ? "العشاء" : "لايوجد";
-            let fileAdhan = adhan.nextPrayer === "fajr" ? "/mp3/002.mp3" : "/mp3/001.mp3"
-
-            switch (timenow) {
-                case adhan?.fajr:
-
-                    await notification_adhan("الفجر", fileAdhan, storage);
-
-                    break;
-
-                case adhan?.dhuhr:
-
-                    await notification_adhan("الظهر", fileAdhan, storage);
-
-                    break;
-
-                case adhan?.asr:
-
-                    await notification_adhan("العصر", fileAdhan, storage);
-
-                    break;
-
-                case adhan?.maghrib:
-
-                    await notification_adhan("المغرب", fileAdhan, storage);
-
-                    break;
-
-                case adhan?.isha:
-
-                    await notification_adhan("العشاء", fileAdhan, storage);
-
-                    break;
-
-                default:
-                    break;
+                switch (timeNow) {
+                    case prayerTimes?.fajr:
+                        await notificationAdhan("الفجر", fileAdhan, localStorageData, prayerTimes?.fajr);
+                        await iiqamaTime("الفجر", prayerTimes?.fajr, 25);
+                        break;
+                    case prayerTimes?.dhuhr:
+                        await notificationAdhan("الظهر", fileAdhan, localStorageData, prayerTimes?.dhuhr);
+                        await iiqamaTime("الظهر", prayerTimes?.dhuhr, 20);
+                        break;
+                    case prayerTimes?.asr:
+                        await notificationAdhan("العصر", fileAdhan, localStorageData, prayerTimes?.asr);
+                        await iiqamaTime("العصر", prayerTimes?.asr, 20);
+                        break;
+                    case prayerTimes?.maghrib:
+                        await notificationAdhan("المغرب", fileAdhan, localStorageData, prayerTimes?.maghrib);
+                        await iiqamaTime("المغرب", prayerTimes?.maghrib, 10);
+                        break;
+                    case prayerTimes?.isha:
+                        await notificationAdhan("العشاء", fileAdhan, localStorageData, prayerTimes?.isha);
+                        await iiqamaTime("العشاء", prayerTimes?.isha, 20);
+                        break;
+                    default:
+                        break;
+                }
             }
-
-            // sleep 
-            await new Promise(r => setTimeout(r, 6000));
-
-        };
+        }, 6000);
 
     } catch (error) {
 
-        error_handling(error);
+        errorHandling(error);
 
     }
 
 }
 
-function bool(v) {
-    return v === "false" || v === "null" || v === "NaN" || v === "undefined" || v === "0" ? false : !!v;
+function bool(value) {
+    return value === "false" || value === "null" || value === "NaN" || value === "undefined" || value === "0" ? false : !!value;
 }
 
-async function notification_adhan(name, fileAdhan, storage) {
+async function notificationAdhan(name, fileAdhan, localStorageData, time) {
 
-    let AdhanPlaying = storage.getItem('AdhanPlaying');
-    AdhanPlaying === null ? storage.setItem('AdhanPlaying', "false") : false;
+    let adhanPlaying = localStorageData.getItem('AdhanPlaying');
+    adhanPlaying === null ? localStorageData.setItem('AdhanPlaying', "false") : false;
 
-    if (!bool(AdhanPlaying)) {
+    if (!bool(adhanPlaying)) {
 
         let audioAdhan = new Audio(fileAdhan);
         audioAdhan.id = 'audioAdhan';
@@ -116,29 +118,30 @@ async function notification_adhan(name, fileAdhan, storage) {
         audioAdhan.preload = 'none';
         audioAdhan.autoplay = false;
 
-        storage.setItem('AdhanPlaying', "true");
+        localStorageData.setItem('AdhanPlaying', "true");
 
         await audioAdhan.play();
 
         audioAdhan.addEventListener('ended', () => {
             audioAdhan.pause();
             audioAdhan.currentTime = 0;
-            storage.setItem('AdhanPlaying', "false");
+            cancelLocalNotification(5);
+            localStorageData.setItem('AdhanPlaying', "false");
         });
 
-        navigator?.notification?.confirm(
-            `حان الآن وقت صلاة ${name}`,
-            (e) => {
-                if (e === 1) {
-                    audioAdhan.pause();
-                    audioAdhan.currentTime = 0;
-                } else if (e === 2) { // 2 corresponds to the index of the 'خروج' option
-                    // Do nothing on exit for now
-                }
-            },
-            'تنبيه بوقت الصلاة',
-            ['إيقاف الأذان', 'خروج']
-        );
+        scheduleLocalNotification({
+            id: 5,
+            title: `تنبيه بدخول وقت الصلاة 🔔`,
+            text: `حان الآن وقت صلاة ${name} ⏰ ${time}`,
+            smallIcon: 'res://drawable-xxxhdpi/ic_stat_onesignal_default.png',
+            badge: 1,
+            actions: [{ id: 'closeAudio', title: 'إيقاف' }],
+        });
+
+        ClickEvent("closeAudio", () => {
+            audioAdhan.pause();
+            audioAdhan.currentTime = 0;
+        })
 
         audioAdhan.addEventListener("pause", async () => {
             if (audioAdhan.currentTime !== 0) {
@@ -152,11 +155,39 @@ async function notification_adhan(name, fileAdhan, storage) {
 
         setTimeout(() => {
 
-            if (bool(AdhanPlaying)) {
-                storage.setItem('AdhanPlaying', "false");
+            if (bool(adhanPlaying)) {
+                localStorageData.setItem('AdhanPlaying', "false");
             }
 
         }, 70000);
     }
 
+}
+
+
+
+async function iiqamaTime(name, time, minute) {
+    try {
+        const minuteInMillis = 60 * 1000;
+        const millis = minute * minuteInMillis;
+        await new Promise(r => setTimeout(r, millis));
+        const audio = new Audio("/mp3/iiqama.mp3");
+        await audio.play();
+
+        scheduleLocalNotification({
+            id: 123,
+            title: `حَانَ الانْ وَقْتُ الإِقَامَةِ 🔔`,
+            text: `حَانَ الانْ وَقْتُ الإِقَامَةِ لصلاة ${name} - ${time} ⏰`,
+            smallIcon: 'res://drawable-xxxhdpi/ic_stat_onesignal_default.png',
+            badge: 1,
+        });
+
+        audio.addEventListener('ended', () => {
+            audioAdhan.pause();
+            audioAdhan.currentTime = 0;
+            cancelLocalNotification(123);
+        });
+    } catch (error) {
+        console.error(error);
+    }
 }

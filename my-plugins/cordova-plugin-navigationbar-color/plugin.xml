@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="cordova-plugin-navigationbar-color"
+        version="0.0.8">
+
+    <name>NavigationBar</name>
+
+    <description>Cordova NavigationBar Plugin</description>
+
+    <keywords>cordova,navigationbar</keywords>
+
+    <engines>
+        <engine name="cordova" version=">=3.0.0" />
+    </engines>
+
+    <js-module src="www/navigationbar.js" name="navigationbar">
+        <clobbers target="window.NavigationBar" />
+    </js-module>
+
+    <platform name="android">
+        <source-file src="src/android/NavigationBar.java" target-dir="src/com/viniciusfagundes/cordova/plugin/navigationbar" />
+
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="NavigationBar">
+                <param name="android-package" value="com.viniciusfagundes.cordova.plugin.navigationbar.NavigationBar" />
+                <param name="onload" value="true" />
+            </feature>
+        </config-file>
+    </platform>
+</plugin>

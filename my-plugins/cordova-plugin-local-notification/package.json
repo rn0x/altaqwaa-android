@@ -1,0 +1,33 @@
+{
+  "name": "cordova-plugin-local-notification",
+  "version": "0.10.0",
+  "description": "Schedules and queries for local notifications",
+  "cordova": {
+    "id": "cordova-plugin-local-notification",
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "appplant",
+    "notification",
+    "local notification",
+    "user notification",
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.6.0"
+    },
+    {
+      "name": "cordova-android",
+      "version": ">=6.0.0"
+    },
+    {
+      "name": "android-sdk",
+      "version": ">=26"
+    }
+  ]
+}

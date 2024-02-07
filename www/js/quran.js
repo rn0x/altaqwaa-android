@@ -153,34 +153,62 @@ function handleReaderClick(item, mp3quran) {
             let audio = new Audio(iterator?.link);
             let audioId = `quran_reader_audio_id_${iterator?.id}`;
             audio.preload = 'none';
-            audio.autoplay = false;
+            audio.autoplay = false; 
             audio.id = audioId;
+            const isMediaPlayStorage = (value) => { localStorage.setItem('isMediaPlay', `${value}`) };
+            const isPausedStorage = (value) => { localStorage.setItem('isPaused', `${value}`) };
+            const AudioNameStoarge = (value) => { localStorage.setItem('AudioName', `${value}`) };
+            const linkAudioStoarge = (value) => { localStorage.setItem('linkAudio', `${value}`) };
 
             // إضافة حدث انتهاء التشغيل
             audio.addEventListener("ended", () => {
                 console.log("تم الإنتهاء من الصوت وإيقافه");
                 isAudioPlaying = false;
                 playButton.src = "/img/play.png";
+                isMediaPlayStorage(false);
+                isPausedStorage(true);
             });
 
             // حدث زر التشغيل والإيقاف الخاص بالصوت 
-            playButton.addEventListener("click", () => {
+            playButton.addEventListener("click", async () => {
+
+                linkAudioStoarge(iterator?.link);
                 if (!isAudioPlaying) {
+                    playButton.src = "/img/loading.svg";
+                    isMediaPlayStorage(false);
+                    isPausedStorage(true);
+                    await new Promise(r => setTimeout(r, 2000));
                     playAudio(audio, playButton);
+                    AudioNameStoarge(`${item?.name} - ${iterator?.name}`);
                     currentAudio = audio;
                     currentPlayButton = playButton;
+                    isMediaPlayStorage(true);
+                    isPausedStorage(false);
                 } else {
 
                     if (currentAudio && currentAudio !== audio) {
+                        playButton.src = "/img/loading.svg";
+                        isMediaPlayStorage(false);
+                        isPausedStorage(true);
+                        await new Promise(r => setTimeout(r, 2000));
                         stopAudio(currentAudio, currentPlayButton);
                         playAudio(audio, playButton);
+                        AudioNameStoarge(`${item?.name} - ${iterator?.name}`);
                         currentAudio = audio;
                         currentPlayButton = playButton;
+                        isMediaPlayStorage(true);
+                        isPausedStorage(false);
                     }
                     else {
                         stopAudio(audio, playButton);
+                        isMediaPlayStorage(false);
+                        isPausedStorage(true);
                     }
                 }
+
+                setInterval(() => {
+                    localStorage.setItem('audioCurrentTime', audio.currentTime);
+                }, 1000);
             });
 
             // إضافة حدث النقر لتحميل الملف الصوتي
@@ -201,8 +229,6 @@ function handleReaderClick(item, mp3quran) {
  * @param {HTMLElement} playButton - زر التشغيل الذي يتم النقر عليه.
  */
 function playAudio(audio, playButton) {
-
-    playButton.src = "/img/loading.svg";
     audio.play().then(() => {
         console.log("تم تشغيل الصوت");
         isAudioPlaying = true;

@@ -16,6 +16,7 @@ export default async () => {
             let more_info = document.getElementById("more_info");
             let more_sabha = document.getElementById("more_sabha");
             let more_questions = document.getElementById("more_questions");
+            let more_ramadanTime = document.getElementById("more_ramadanTime");
 
 
             more_questions.addEventListener("click", e => {
@@ -66,6 +67,11 @@ export default async () => {
             more_sabha.addEventListener("click", e => {
 
                 window.location.href = "/pages/sabha.html"
+            });
+            
+            more_ramadanTime.addEventListener("click", e => {
+
+                window.location.href = "/pages/ramadanTime.html"
             });
 
         } catch (error) {

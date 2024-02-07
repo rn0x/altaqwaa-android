@@ -1,7 +1,7 @@
 {
   "name": "com.rn0x.altaqwaa",
   "displayName": "التقوى",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "تطبيق إسلامي سهل الإستخدام و جامع للكثير من الميزات التي يحتاجها المسلم في يومه",
   "main": "index.js",
   "scripts": {
@@ -10,8 +10,9 @@
     "build": "cordova build android --release",
     "bundle": "cordova build android --release -- --packageTypjetifiere=bundle",
     "android": "cordova platform add android@latest",
-    "clear": "rm -rf ./node_modules && cordova platforms rm android && npm cache clean --force && npm i && cordova platform add android@latest",
-    "keytool": "node keytool.js"
+    "clean": "cordova clean && npm cache clean --force",
+    "keytool": "node keytool.js",
+    "rm": "rmdir /s /q node_modules platforms plugins && del package-lock.json && npm run android && npm run device"
   },
   "author": {
     "name": "Ryan Almalki",
@@ -24,11 +25,10 @@
     "cordova": "^11.1.0",
     "cordova-clipboard": "^1.3.0",
     "cordova-plugin-android-permissions": "^1.1.5",
+    "cordova-plugin-badge-fix": "^0.8.10",
     "cordova-plugin-device": "^2.1.0",
     "cordova-plugin-dialogs": "^2.0.2",
     "cordova-plugin-geolocation": "^4.1.0",
-    "cordova-plugin-navigationbar-color": "^0.1.0",
-    "cordova-plugin-statusbar": "^3.0.0",
     "cordova-plugin-vibration": "^3.1.1"
   },
   "cordova": {
@@ -39,6 +39,11 @@
       "cordova-plugin-device": {},
       "cordova-plugin-geolocation": {
         "GPS_REQUIRED": "true"
+      },
+      "cordova-plugin-local-notification": {
+        "ANDROID_SUPPORT_V4_VERSION": "26.+",
+        "ANDROIDX_VERSION": "1.2.0",
+        "ANDROIDX_APPCOMPAT_VERSION": "1.3.1"
       },
       "cordova-plugin-dialogs": {},
       "cordova-plugin-downloader": {},
@@ -53,7 +58,10 @@
   "devDependencies": {
     "cordova-android": "^12.0.1",
     "cordova-plugin-downloader": "github:asadaries/cordova-plugin-downloader",
+    "cordova-plugin-local-notification": "file:my-plugins/cordova-plugin-local-notification",
+    "cordova-plugin-navigationbar-color": "file:my-plugins/cordova-plugin-navigationbar-color",
     "cordova-plugin-network-information": "github:apache/cordova-plugin-network-information",
+    "cordova-plugin-statusbar": "file:my-plugins/cordova-plugin-statusbar",
     "phonegap-plugin-mobile-accessibility": "github:phonegap/phonegap-mobile-accessibility"
   }
 }

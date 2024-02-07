@@ -14,21 +14,28 @@ import settings from './settings.js';
 import sabha from './sabha.js';
 import notification from './notification.js';
 import error_handling from './modules/error_handling.js';
+import handleAudio from './modules/handleAudio.js';
+import ramadanTime from './ramadanTime.js';
+
 
 // أفحص إذا كانت البيئة تعمل في Cordova
 const isCordova = !!window.cordova;
-
 document.documentElement.style.setProperty('--animate-duration', '1.5s');
 
 // أضف شرطًا للتحقق مما إذا كان التطبيق يعمل في Cordova أم لا
 if (isCordova) {
-    document.addEventListener('deviceready', async (e) => {
+    document.addEventListener('deviceready', async (event) => {
+
+        event.preventDefault();
         try {
             let permissions = cordova.plugins.permissions;
 
             let list = [
                 permissions.ACCESS_COARSE_LOCATION,
-                permissions.WRITE_EXTERNAL_STORAGE
+                permissions.WRITE_EXTERNAL_STORAGE,
+                permissions.VIBRATE,
+                permissions.POST_NOTIFICATIONS,
+                permissions.FOREGROUND_SERVICE
             ];
 
             permissions.hasPermission(list, (status) => {
@@ -43,7 +50,9 @@ if (isCordova) {
         } catch (error) {
             error_handling(error);
         }
+
         await setupApplication();
+
     }, false);
 } else {
     await setupApplication();
@@ -51,6 +60,7 @@ if (isCordova) {
 
 
 async function setupApplication() {
+
     await footer();
     await adhkar();
     await prayer();
@@ -66,6 +76,7 @@ async function setupApplication() {
     await settings();
     await sabha();
     await notification();
+    await ramadanTime();
 
     // احصل على جميع عناصر img
     const imagesAll = document.querySelectorAll('img');
@@ -74,4 +85,7 @@ async function setupApplication() {
     imagesAll.forEach(img => {
         img.setAttribute('loading', 'lazy');
     });
+
+    await handleAudio(); // تشغيل الصوت في جميع الصفحات
+
 }

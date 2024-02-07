@@ -18,6 +18,7 @@ const DEFAULT_VALUES = {
     notifications_adhan: true,
     longitude_settings: null,
     latitude_settings: null,
+    timezone_settings: null,
     fajr_settings: 0,
     sunrise_settings: 0,
     dhuhr_settings: 0,
@@ -61,6 +62,12 @@ const setDefaultValues = () => {
                 if (longitudeValue && latitudeValue) {
                     element.value = key === 'longitude_settings' ? longitudeValue : latitudeValue;
                 }
+            } else if (key === 'timezone_settings') {
+                const timezoneValue = storage.getItem('timezone_settings');
+
+                if (timezoneValue) {
+                    element.value = timezoneValue;
+                }
             } else {
                 element.value = storedValue !== null && storedValue !== undefined ? Number(storedValue) : value;
             }
@@ -77,11 +84,12 @@ const handleRefreshLocation = async () => {
         const statusPERM = await permissionStatus();
 
         if (statusPERM) {
-            const { latitude, longitude } = await getGPS();
+            const { latitude, longitude, timezone } = await getGPS();
             const storage = window.localStorage;
 
             storage.setItem('latitude_settings', latitude);
             storage.setItem('longitude_settings', longitude);
+            storage.setItem('timezone_settings', timezone);
 
             const alertEl = getElementById('alert');
             if (alertEl) {
@@ -107,6 +115,7 @@ const handleRefreshLocation = async () => {
                 }, 3000);
             }
         }
+
     } catch (error) {
         error_handling(error);
     }
@@ -191,8 +200,10 @@ export default async () => {
             if (saveSettings) {
                 saveSettings.addEventListener('click', handleSaveSettings);
             }
+
         } catch (error) {
             error_handling(error);
         }
     }
+
 };

@@ -1,6 +1,6 @@
 import adhanModule from './modules/adhanModule.js';
 import getGPS from './modules/getGPS.js';
-import error_handling from './modules/error_handling.js';
+import errorHandling from './modules/error_handling.js';
 
 /**
  * الدالة الرئيسية لتحديث وعرض أوقات الصلاة
@@ -15,68 +15,99 @@ export default async () => {
 
     if (window.location.pathname === prayerPagePath) {
         try {
-            const statusPERM = await checkPermissionStatus();
+            const loadingElement = document.getElementById('loading');
+            const permissionStatus = await checkPermissionStatus();
             const prayerTimeContainer = document.getElementById('prayer_time');
-            const alertElm = document.getElementById('alert');
-            const storage = window.localStorage;
+            const alertElement = document.getElementById('alert');
+            const localStorageData = window.localStorage;
 
-            const {
-                Calculation = "UmmAlQura",
-                Madhab = "Shafi",
-                Shafaq = "General",
-                fajr: Setfajr = 0,
-                sunrise: Setsunrise = 0,
-                dhuhr: Setdhuhr = 0,
-                asr: Setasr = 0,
-                maghrib: Setmaghrib = 0,
-                isha: Setisha = 0,
-                latitude_settings: Getlatitude,
-                longitude_settings: Getlongitude
-            } = storage;
+            let {
+                latitude_settings: storedLatitude,
+                longitude_settings: storedLongitude,
+                timezone_settings: storedTimezone
+            } = localStorageData;
 
-            if (statusPERM || (Getlongitude && Getlatitude)) {
-                prayerTimeContainer.style.display = "block";
+            if (permissionStatus || (storedLongitude && storedLatitude && storedTimezone)) {
+                loadingElement.style.display = "block";
 
-                if (!Getlongitude || !Getlatitude) {
-                    const { latitude, longitude } = await getGPS();
-                    storage.setItem("latitude_settings", latitude);
-                    storage.setItem("longitude_settings", longitude);
+                if (!storedLongitude || !storedLatitude || !storedTimezone) {
+                    const { latitude, longitude, timezone } = await getGPS();
+                    localStorageData.setItem("latitude_settings", latitude);
+                    localStorageData.setItem("longitude_settings", longitude);
+                    localStorageData.setItem("timezone_settings", timezone);
                 }
 
-                setInterval(() => {
-                    const prayerTimes = adhanModule({
-                        Calculation,
-                        latitude: Number(Getlatitude),
-                        longitude: Number(Getlongitude),
-                        Madhab,
-                        Shafaq,
-                        fajr: Number(Setfajr),
-                        sunrise: Number(Setsunrise),
-                        dhuhr: Number(Setdhuhr),
-                        asr: Number(Setasr),
-                        maghrib: Number(Setmaghrib),
-                        isha: Number(Setisha),
-                    });
-                    updateUI(prayerTimes);
-                }, 1000);
+                setInterval(async () => {
+                    let {
+                        Calculation_settings: calculationMethod = "UmmAlQura",
+                        madhab_settings: madhab = "Shafi",
+                        Shafaq_settings: shafaqMethod = "General",
+                        fajr_settings: storedFajrAngle = 0,
+                        sunrise_settings: storedSunriseAngle = 0,
+                        dhuhr_settings: storedDhuhrAngle = 0,
+                        asr_settings: storedAsrAngle = 0,
+                        maghrib_settings: storedMaghribAngle = 0,
+                        isha_settings: storedIshaAngle = 0,
+                        latitude_settings: storedLatitude,
+                        longitude_settings: storedLongitude,
+                        timezone_settings: storedTimezone
+                    } = localStorageData;
 
-                setInterval(() => {
-                    const { latitude_settings, longitude_settings } = storage;
-                    if (statusPERM || (longitude_settings && latitude_settings)) {
+                    const prayerTimes = adhanModule({
+                        Calculation: calculationMethod,
+                        latitude: Number(storedLatitude),
+                        longitude: Number(storedLongitude),
+                        timezone: storedTimezone,
+                        madhab,
+                        Shafaq: shafaqMethod,
+                        fajr: Number(storedFajrAngle),
+                        sunrise: Number(storedSunriseAngle),
+                        dhuhr: Number(storedDhuhrAngle),
+                        asr: Number(storedAsrAngle),
+                        maghrib: Number(storedMaghribAngle),
+                        isha: Number(storedIshaAngle),
+                    });
+
+                    if (permissionStatus || (storedLongitude && storedLatitude && storedTimezone)) {
+                        if (!storedLongitude || !storedLatitude || !storedTimezone) {
+                            const { latitude, longitude, timezone } = await getGPS();
+                            localStorageData.setItem("latitude_settings", latitude);
+                            localStorageData.setItem("longitude_settings", longitude);
+                            localStorageData.setItem("timezone_settings", timezone);
+                        }
                         prayerTimeContainer.style.display = "block";
-                        alertElm.style.display = "none";
+                        alertElement.style.display = "none";
+                        loadingElement.style.display = "none";
+
+                        const {
+                            timezone,
+                            fajr,
+                            sunrise,
+                            dhuhr,
+                            asr,
+                            maghrib,
+                            isha,
+                        } = prayerTimes;
+
+                        if (fajr && sunrise && dhuhr && asr && maghrib && isha && timezone) {
+                            updateUI(prayerTimes);
+                        }
+
                     } else {
+                        loadingElement.style.display = "none";
                         prayerTimeContainer.style.display = "none";
-                        alertElm.style.display = "block";
+                        alertElement.style.display = "block";
                     }
-                }, 2000);
+
+                }, 1000);
             } else {
                 // Handle the case when permission is not granted
                 prayerTimeContainer.style.display = "none";
-                alertElm.style.display = "block";
+                alertElement.style.display = "block";
             }
+
         } catch (error) {
-            error_handling(error);
+            errorHandling(error);
         }
     }
 };
@@ -90,12 +121,19 @@ export default async () => {
  */
 
 async function checkPermissionStatus() {
-    return new Promise((resolve) => {
-        const permissions = cordova.plugins.permissions;
-        permissions.hasPermission(permissions.ACCESS_COARSE_LOCATION, (status) => {
-            resolve(status.hasPermission);
+
+    if (typeof cordova === 'undefined' || !cordova.plugins || !cordova.plugins.permissions) {
+        return true;
+    }
+
+    else {
+        return new Promise((resolve) => {
+            const permissions = cordova.plugins.permissions;
+            permissions.hasPermission(permissions.ACCESS_COARSE_LOCATION, async (status) => {
+                resolve(status.hasPermission);
+            });
         });
-    });
+    }
 }
 
 /**
@@ -139,22 +177,26 @@ function updateUI(prayerTimes) {
     document.getElementById('time_isha').innerText = isha;
 
     const prayerList = ['fajr', 'sunrise', 'dhuhr', 'asr', 'maghrib', 'isha'];
-    for (const prayer of prayerList) {
-        const li = document.getElementById(`${prayer}_li`);
-        const span = document.getElementById(prayer);
-        if (prayer === nextPrayer) {
-            document.getElementById('remaining_name').innerText = getPrayerName(prayer);
-            document.getElementById('remaining').style.display = 'block';
-            document.getElementById('remaining_time').style.display = 'block';
-            li.style.background = 'var(--background_div_hover)';
-            li.style.boxShadow = 'rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset';
-            span.style.color = 'var(--white-div)';
-        } else {
-            li.style.background = null;
-            li.style.boxShadow = null;
-            span.style.color = null;
-        }
+    const foundPrayer = prayerList.find(item => item === nextPrayer);
+
+    const liElements = document.getElementById(`${foundPrayer}_li`);
+    const span = document.getElementById(foundPrayer);
+    if (foundPrayer) {
+        document.getElementById('remaining_name').innerText = getPrayerName(foundPrayer);
+        document.getElementById('remaining').style.display = 'block';
+        document.getElementById('remaining_time').style.display = 'block';
+        liElements.style.background = 'var(--background_div_hover)';
+        liElements.style.boxShadow = 'rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset';
+        span.style.color = 'var(--white-div)';
+    } else {
+        document.getElementById('remaining_name').innerText = getPrayerName(foundPrayer);
+        document.getElementById('remaining').style.display = 'none';
+        document.getElementById('remaining_time').style.display = 'none';
+        liElements.style.background = null;
+        liElements.style.boxShadow = null;
+        span.style.color = null;
     }
+
 }
 
 /**
