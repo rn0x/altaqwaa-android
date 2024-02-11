@@ -2,6 +2,10 @@
 
 ![altaqwaa](/screenshots/preview.png)
 
+![Badge](https://img.shields.io/github/v/release/Alsarmad/altaqwaa_android)
+![GitHub all releases](https://img.shields.io/github/downloads/Alsarmad/altaqwaa_android/total?color=blue&label=Total%20Downloads)
+[![Downloads](https://playbadges.pavi2410.me/badge/downloads?id=com.rn0x.altaqwaa)](https://play.google.com/store/apps/details?id=com.rn0x.altaqwaa)
+
 </div>
 
 <br>
