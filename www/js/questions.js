@@ -324,7 +324,7 @@ export default async () => {
                 const percentage = (correctAnswers / totalQuestions) * 100;
 
                 for (const iterator of quizResults.wrongAnswers) {
-                    applyStylesToElement(iterator.element, "#4c7fc7");
+                    applyStylesToElement(iterator.element, "var(--background_div_hover)");
                 }
 
                 const main_alert_icon = document.getElementById("main_alert_icon");

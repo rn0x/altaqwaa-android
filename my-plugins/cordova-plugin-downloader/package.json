@@ -1,0 +1,13 @@
+{
+  "name": "cordova-plugin-downloader",
+  "version": "1.3",
+  "description": "Android/IOS downloaded",
+  "cordova": {
+    "id": "cordova-plugin-downloader",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "license": "Apache 2.0"
+}

@@ -1,3 +1,8 @@
+/**
+ * 
+ * معالج الأخطاء
+ */
+
 export default (error) => {
 
     let arr = [
@@ -5,7 +10,7 @@ export default (error) => {
         "Illegal Access"
     ]
 
-    if (arr.every(e => error?.message !== e)) {
+    if (arr?.every(e => error?.message !== e)) {
 
         navigator?.notification?.confirm(
             `message: ${error?.message}\ncode: ${error?.code ? error?.code : "null"}\npath: ${window.location.pathname}`,
@@ -14,11 +19,11 @@ export default (error) => {
                 if (e === 2) {
 
                     if (navigator.app) {
-                        navigator.app.exitApp();
+                        navigator?.app?.exitApp();
                     }
 
                     else if (navigator.device) {
-                        navigator.device.exitApp();
+                        navigator?.device?.exitApp();
                     }
 
                     else {
@@ -33,9 +38,9 @@ export default (error) => {
                     let message = `message: ${error?.message}\n`;
                     message += `code: ${error?.code ? error?.code : "null"}\n`;
                     message += `path: ${window.location.pathname}\n`;
-                    message += `platform: ${device.platform}\n`;
-                    message += `version: ${device.version}\n`;
-                    message += `model: ${device.model}`;
+                    message += `platform: ${device?.platform}\n`;
+                    message += `version: ${device?.version}\n`;
+                    message += `model: ${device?.model}`;
 
                     let url = new URL(`${repoUrl}/issues/new`);
                     url.searchParams.set("title", error?.message);

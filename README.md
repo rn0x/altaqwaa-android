@@ -96,8 +96,8 @@
 
 - nodejs 
 - git 
-- Java JDK
-- Android SDK Platform 32
+- Java JDK 11
+- Android SDK Platform 33
 - Gradle 7.4.2
 
 ```bash

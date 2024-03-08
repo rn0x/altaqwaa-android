@@ -128,8 +128,8 @@ async function checkPermissionStatus() {
 
     else {
         return new Promise((resolve) => {
-            const permissions = cordova.plugins.permissions;
-            permissions.hasPermission(permissions.ACCESS_COARSE_LOCATION, async (status) => {
+            const permissions = cordova?.plugins?.permissions;
+            permissions?.hasPermission(permissions?.ACCESS_COARSE_LOCATION, async (status) => {
                 resolve(status.hasPermission);
             });
         });

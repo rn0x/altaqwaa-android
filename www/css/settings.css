@@ -150,16 +150,58 @@ input:checked+.slider:before {
 
 #refresh_location:hover {
     width: 35px;
-    animation: rotation 0.5s  linear;
+    animation: rotation 0.5s linear;
     transition: 0.5s ease-in-out;
 }
 
+#themes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+#themes>p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
+    cursor: pointer;
+    /* border-style: solid;
+    border-width: 1px;
+    border-color: var(--background_div_hover); */
+}
+
+#theme_1 {
+    background-color: #2e3338;
+}
+
+#theme_2 {
+    background-color: #141e46;
+}
+
+#theme_3 {
+    background-color: #38382e;
+}
+
+#theme_4 {
+    background-color: #acc2fd;
+}
+
+#theme_5 {
+    background-color: #0b3f43;
+}
 
 @keyframes rotation {
     from {
-            -webkit-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
     }
+
     to {
-            -webkit-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
     }
 }

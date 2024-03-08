@@ -14,5 +14,74 @@
     --color_font_grey: #727272;
     --red: #f34949;
     --white: #ffffff;
+    --white-div: #ffffff;   
+}
+
+[data-theme="theme_1"] {
+    --background_body: #2e3338;
+    --background_div: #232527;
+    --background_div_2: #252829;
+    --background_menu: #1b1d1f;
+    --background_div_hover: #6bc077;
+    --background_div_hover_2: #53925b;
+    --green: #335e39;
+    --color_font_grey: #727272;
+    --red: #f34949;
+    --white: #ffffff;
     --white-div: #ffffff;
+}
+
+[data-theme="theme_2"] {
+    --background_body: #141e46;
+    --background_div: #0c1128;
+    --background_div_2: #1a275a;
+    --background_menu: #1a275a;
+    --background_div_hover: #192f6b;
+    --background_div_hover_2: #1d2b64;
+    --green: #3e497c;
+    --color_font_grey: #8e92b2;
+    --red: #f34949;
+    --white: #495584;
+    --white-div: #3e476c;
+}
+
+[data-theme="theme_3"] {
+    --background_body: #38382e;
+    --background_div: #262723;
+    --background_div_2: #292925;
+    --background_menu: #1e1f1b;
+    --background_div_hover: #afc06b;
+    --background_div_hover_2: #928d53;
+    --green: #555e33;
+    --color_font_grey: #727272;
+    --red: #f34949;
+    --white: #ffffff;
+    --white-div: #ffffff;
+}
+
+[data-theme="theme_4"] {
+    --background_body: #acc2fd;
+    --background_div: #94b0ff;
+    --background_div_2: #a1baff;
+    --background_menu: #839ee9;
+    --background_div_hover: #415aa1;
+    --background_div_hover_2: #3656b4;
+    --green: #1a3c6f;
+    --color_font_grey: #34399d;
+    --red: #f34949;
+    --white: #223875;
+    --white-div: #1c2d5c;
+}
+[data-theme="theme_5"] {
+    --background_body: #0b3f43;
+    --background_div: #062a2d;
+    --background_div_2: #083336;
+    --background_menu: #0e3a3d;
+    --background_div_hover: #0b666c;
+    --background_div_hover_2: #076e76;
+    --green: #108d96;
+    --color_font_grey: #0097a2;
+    --red: #813434;
+    --white: #0b8c96;
+    --white-div: #0e98a1;
 }

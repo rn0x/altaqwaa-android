@@ -39,7 +39,7 @@ export default async () => {
                 let text = `${adhkar_random_text.innerText}`
                 text += adhkar_random_description.innerText !== '' ? `\n\n${adhkar_random_description.innerText}` : adhkar_random_description.innerText;
                 text += adhkar_random_reference.innerText !== '' ? `\n\n${adhkar_random_reference.innerText}` : adhkar_random_description.innerText;
-                cordova.plugins.clipboard.copy(text);
+                cordova?.plugins?.clipboard?.copy(text);
 
                 alert.style.display = "block"
                 setTimeout(() => {
@@ -82,11 +82,11 @@ export default async () => {
                         if (e === 2) {
 
                             if (navigator?.app) {
-                                navigator.app.exitApp();
+                                navigator?.app?.exitApp();
                             }
 
                             else if (navigator?.device) {
-                                navigator.device.exitApp();
+                                navigator?.device?.exitApp();
                             }
 
                             else {
@@ -200,7 +200,7 @@ export default async () => {
                     text += `・ التكرار: ${iterator?.repetition}\n\n\n`
                     text += `#تطبيق_التقوى`
 
-                    cordova.plugins.clipboard.copy(text);
+                    cordova?.plugins?.clipboard?.copy(text);
 
                     alert.style.display = "block"
                     setTimeout(() => {

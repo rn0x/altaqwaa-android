@@ -27,6 +27,8 @@ const DEFAULT_VALUES = {
     isha_settings: 0,
 };
 
+let themes
+
 /**
  * الحصول على عنصر DOM باستخدام معرف العنصر
  * @function
@@ -127,6 +129,7 @@ const handleRefreshLocation = async () => {
  */
 const handleSaveSettings = () => {
     const storage = window.localStorage;
+    const themeStorage = storage.getItem("themeStorage");
 
     Object.entries(DEFAULT_VALUES).forEach(([key]) => {
         const element = getElementById(key);
@@ -149,6 +152,20 @@ const handleSaveSettings = () => {
             window.location.href = '/pages/settings.html';
         }, 1000);
     }
+
+    if (themes) {
+        storage.setItem("themeStorage", themes);
+    }
+
+    if (!themes && !themeStorage) {
+        storage.setItem("themeStorage", "theme_1");
+    }
+
+    if (!themes && themeStorage) {
+        storage.setItem("themeStorage", themeStorage);
+    }
+
+
 };
 
 /**
@@ -168,8 +185,8 @@ function bool(v = '') {
  */
 async function permissionStatus() {
     return new Promise((resolve) => {
-        const permissions = cordova.plugins.permissions;
-        permissions.hasPermission(permissions.ACCESS_COARSE_LOCATION, (status) => {
+        const permissions = cordova?.plugins?.permissions;
+        permissions?.hasPermission(permissions?.ACCESS_COARSE_LOCATION, (status) => {
             resolve(status.hasPermission);
         });
     });
@@ -184,8 +201,11 @@ export default async () => {
             setDefaultValues();
 
             const back = getElementById('back');
+            const storage = window.localStorage;
+            const themeStorage = storage.getItem("themeStorage");
             const refreshLocation = getElementById('refresh_location');
             const saveSettings = getElementById('settings_save');
+
 
             if (back) {
                 back.addEventListener('click', () => {
@@ -199,6 +219,22 @@ export default async () => {
 
             if (saveSettings) {
                 saveSettings.addEventListener('click', handleSaveSettings);
+            }
+
+            const themeParagraphs = document.querySelectorAll('#themes p');
+            themeParagraphs.forEach(paragraph => {
+                paragraph.addEventListener('click', () => {
+                    themeParagraphs.forEach(p => {
+                        p.style.border = 'none';
+                    });
+                    console.log(paragraph.id);
+                    themes = paragraph.id
+                    document.getElementById(paragraph.id).style = "border-style: solid;  border-width: 1px; border-color: var(--background_div_hover);"
+                });
+            });
+
+            if (themeStorage) {
+                document.getElementById(themeStorage).style = "border-style: solid;  border-width: 1px; border-color: var(--background_div_hover);"
             }
 
         } catch (error) {

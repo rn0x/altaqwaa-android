@@ -38,7 +38,7 @@ export function scheduleLocalNotification(options) {
 
         // options.actions = [{ id: 'dummyAction', title: 'close', type: 'button' }];
 
-        cordova.plugins.notification.local.schedule(options);
+        cordova?.plugins?.notification?.local?.schedule(options);
     } catch (error) {
         console.error('حدث خطأ في جدولة الإشعار:', error.message);
         throw error;
@@ -78,7 +78,7 @@ export function updateLocalNotification(notificationId, options) {
             throw new Error('الخيارات المقدمة غير صالحة لتحديث الإشعار.');
         }
 
-        cordova.plugins.notification.local.update({
+        cordova?.plugins?.notification?.local?.update({
             id: notificationId,
             ...options,
         });
@@ -96,7 +96,7 @@ export function updateLocalNotification(notificationId, options) {
  */
 export function cancelLocalNotification(notificationId, callback = () => { }) {
     if (typeof cordova !== 'undefined' && cordova.plugins && cordova.plugins.notification) {
-        cordova.plugins.notification.local.cancel(notificationId, callback);
+        cordova?.plugins?.notification?.local?.cancel(notificationId, callback);
     }
 }
 
@@ -109,7 +109,7 @@ export function cancelLocalNotification(notificationId, callback = () => { }) {
  */
 export function isLocalNotificationExists(notificationId) {
     if (typeof cordova !== 'undefined' && cordova.plugins && cordova.plugins.notification) {
-        return cordova.plugins.notification.local.isPresent(notificationId);
+        return cordova?.plugins?.notification?.local?.isPresent(notificationId);
     }
     return false;
 }
@@ -125,7 +125,7 @@ export function registerLocalNotificationClickEvent(callback) {
             throw new Error('يجب تشغيل هذا الكود داخل تطبيق Cordova وبعد استعراض الأجهزة.');
         }
 
-        cordova.plugins.notification.local.on('click', function (notification) {
+        cordova?.plugins?.notification?.local?.on('click', function (notification) {
             // التحقق من أن النقر تم على الإجراء المطلوب
             if (notification.action === 'closeAudio') {
                 callback(notification);
@@ -146,7 +146,7 @@ export function registerLocalNotificationClickEvent(callback) {
  */
 export function ClickEvent(actionID, callback) {
     if (typeof cordova !== 'undefined' && cordova.plugins && cordova.plugins.notification) {
-        cordova.plugins.notification.local.on(actionID, callback);
+        cordova?.plugins?.notification?.local?.on(actionID, callback);
     }
     return false;
 }

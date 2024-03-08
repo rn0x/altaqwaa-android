@@ -4,10 +4,10 @@ export default (url, filename) => {
 
     try {
 
-        let Downloader = window.plugins.Downloader;
+        let Downloader = window?.plugins?.Downloader;
         let downloadSuccessCallback = (result) => {
             // result is an object
-            console.log(result.file);
+            console.log(result?.file);
         };
 
         let downloadErrorCallback = (error) => {
@@ -24,7 +24,7 @@ export default (url, filename) => {
             folder: "Download" // Folder to save the downloaded file, if not exist it will be created
         }
 
-        Downloader.download(options, downloadSuccessCallback, downloadErrorCallback);
+        Downloader?.download(options, downloadSuccessCallback, downloadErrorCallback);
 
     } catch (error) {
 
