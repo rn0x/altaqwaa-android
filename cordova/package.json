@@ -1,0 +1,20 @@
+{
+    "name": "cordova-project",
+    "version": "1.0.0",
+    "description": "A Cordova project for Altaqwaa",
+    "scripts": {
+      "build": "cordova build",
+      "clean": "cordova clean",
+      "prepare": "cordova prepare"
+    },
+    "dependencies": {
+      "cordova-plugin-camera": "^6.0.0",
+      "cordova-plugin-geolocation": "^5.1.0",
+      "cordova-plugin-device": "^2.0.4"
+    },
+    "devDependencies": {
+      "cordova": "^11.0.0",
+      "cordova-lib": "^11.0.0"
+    }
+  }
+  

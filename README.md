@@ -68,3 +68,58 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+هيكل مجلد المشروع 
+
+```
+Altaqwaa/
+├── frontend/                # يحتوي على تطبيق React
+│   ├── public/              # ملفات HTML و assets العامة
+│   ├── src/                 # ملفات المصدر
+│   │   ├── components/      # مكونات React القابلة لإعادة الاستخدام
+│   │   ├── pages/           # صفحات التطبيق
+│   │   ├── hooks/           # هوكات React مخصصة
+│   │   ├── context/         # سياقات React لتشارك البيانات
+│   │   ├── utils/           # دوال وأدوات مساعدة عامة
+│   │   ├── services/        # طبقة التواصل مع الباك اند (API calls)
+│   │   ├── styles/          # ملفات CSS/SCSS
+│   │   ├── App.js           # نقطة الدخول الرئيسية لتطبيق React
+│   │   └── index.js         # الملف الرئيسي الذي يربط React بصفحة HTML
+│   ├── package.json         # اعتماديات المشروع في frontend
+│   ├── .env                 # متغيرات البيئة الخاصة بالـ React
+│   └── README.md            # معلومات المشروع، طريقة الاستخدام، التوثيق الأساسي
+├── cordova/                 # يحتوي على ملفات وتكوينات Cordova
+│   ├── config.xml           # إعدادات Cordova
+│   ├── package.json         # اعتماديات المشروع في cordova
+│   └── www/                 # ملفات الإنتاج (مخرجات البناء لـ Cordova)
+├── server/                  # يحتوي على تطبيق الباك اند (Express.js أو أي فريم ورك آخر)
+│   ├── src/
+│   │   ├── controllers/     # التحكم في منطق التطبيق
+│   │   ├── models/          # نماذج البيانات (مثل Mongoose للـ MongoDB)
+│   │   ├── routes/          # تعريف مسارات الـ API
+│   │   ├── middleware/      # الميدل وير المشترك (مثل المصادقة والتحقق)
+│   │   ├── services/        # خدمات الطبقة المنطقية (مثل التعامل مع قواعد البيانات)
+│   │   ├── utils/           # دوال وأدوات مساعدة مشتركة
+│   │   ├── config/          # إعدادات مثل الاتصال بقاعدة البيانات
+│   │   ├── app.js           # نقطة دخول سيرفر Express
+│   │   └── index.js         # الملف الرئيسي لتشغيل السيرفر
+│   ├── package.json         # اعتماديات الباك اند
+│   ├── .env                 # متغيرات البيئة الخاصة بالسيرفر
+│   └── .gitignore           # استثناءات Git الخاصة بالسيرفر
+├── scripts/                 # سكربتات الأتمتة مثل بناء المشروع وتشغيل الاختبارات
+│   ├── build-frontend.sh     # سكربت لبناء التطبيق الأمامي
+│   ├── start-server.sh      # سكربت لتشغيل الواجهة الخلفية
+│   └── deploy.sh            # سكربت لنشر المشروع (الإنتاج)
+├── config.cjs                # ملف التكوين المركزي الذي يدمج إعدادات .env 
+├── .env                     # متغيرات البيئة الخاصة بالمشروع
+├── package.json             # معلومات المشروع واعتمادياته المشتركة
+├── LICENSE                  # ملف يحتوي على نص الرخصة للمشروع
+├── README.md                # معلومات المشروع، طريقة الاستخدام، التوثيق الأساسي
+├── doc/                     # وثائق المشروع التفصيلية
+│   ├── architecture.md      # توثيق بنية المشروع
+│   ├── design.md            # توثيق تصميم واجهة المستخدم وتجربة المستخدم
+│   ├── api.md               # توثيق API
+│   └── installation.md      # دليل التثبيت والإعداد
+└── .gitignore               # استثناءات Git
+  ```

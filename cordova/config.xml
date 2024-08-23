@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="org.i8xnet.afitik" version="1.0.4" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>عافيتك | Afitik</name>
+    <description>Afitik is a fitness app offering diverse workouts, balanced nutrition plans, and valuable tips for enhancing health and fitness.</description>
+    <author email="rn0x.me@gmail.com" href="https://i8x.net">i8xnetTeam</author>
+    <content src="index.html" />
+    
+    <!-- Allow-intent settings -->
+    <access origin="*"/>
+    <allow-navigation href="*"/>
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+
+    <!-- Preferences -->
+    <preference name="KeepRunning" value="true" />
+    <preference name="loglevel" value="DEBUG" />
+    <preference name="ErrorUrl" value="error.html" />
+    <preference name="Fullscreen" value="false" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="NavigationBarLight" value="true" />
+    <preference name="Orientation" value="portrait" />
+    <preference name="BackgroundColor" value="#eceff4" />
+    <preference name="HideKeyboardFormAccessoryBar" value="true" />
+    <preference name="NavigationBarBackgroundColor" value="#ffffff" />
+    <preference name="SplashScreenBackgroundColor" value="#eceff4" />
+    <preference name="StatusBarBackgroundColor" value="#eceff4" />
+    <preference name="StatusBarOverlaysWebView" value="false" />
+    <preference name="StatusBarStyle" value="default" />
+    
+    
+    <platform name="android">
+        <!-- Preferences (Android) -->
+        <preference name="AndroidPersistentFileLocation" value="Compatibility" />
+        <preference name="android-compileSdkVersion" value="34" />
+        <preference name="AndroidLaunchMode" value="singleInstance"/>
+        <preference name="AndroidXEnabled" value="true" />
+        <preference name="GradleVersion" value="8.4" />
+        <preference name="AndroidGradlePluginVersion" value="8.1.1" />
+        <preference name="android-minSdkVersion" value="26" />
+        <preference name="android-targetSdkVersion" value="34" />
+
+        <allow-intent href="market:*" />
+        <allow-intent href="geo:*" />
+        
+        <!-- Permissions -->
+        <config-file parent="/*" target="AndroidManifest.xml">
+            <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+            <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+            <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="29" />
+            <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+            <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+            <uses-permission android:name="android.permission.WAKE_LOCK" />
+            <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+            <!-- <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" /> -->
+            <!-- <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" /> -->
+            <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+            <uses-permission android:name="android.permission.INTERNET"/>
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+            <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
+            <!-- <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" /> -->
+        </config-file>
+
+        <edit-config file="AndroidManifest.xml" mode="merge" target="/manifest/application">
+            <application android:usesCleartextTraffic="true"/> 
+            <application android:requestLegacyExternalStorage="true" />
+        </edit-config>
+
+        <!-- <config-file parent="./application" target="AndroidManifest.xml">
+            <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" android:excludeFromRecents="true" android:name="com.google.android.gms.ads.AdActivity" android:noHistory="true" />
+            <meta-data android:name="com.google.android.gms.ads.APPLICATION_ID" android:value="ca-app-pub-7565296297970041~4347751886" />
+            <meta-data android:name="com.google.android.gms.ads.DELAY_APP_MEASUREMENT_INIT" android:value="true" />
+            <meta-data android:name="com.google.android.gms.ads.flag.OPTIMIZE_INITIALIZATION" android:value="true" />
+            <meta-data android:name="com.google.android.gms.ads.flag.OPTIMIZE_AD_LOADING" android:value="true" />
+            <meta-data android:name="com.google.android.gms.ads.flag.INTEGRATION_MANAGER" android:value="webview" />
+        </config-file> -->
+
+        <!-- Splash Screen settings -->
+        <preference name="AutoHideSplashScreen" value="true" />
+        <preference name="FadeSplashScreen" value="false"/>
+        <preference name="SplashScreenDelay" value="2000" />
+        <preference name="AndroidWindowSplashScreenBackground" value="#ffffff" />
+        <preference name="AndroidWindowSplashScreenAnimatedIcon" value="resources/splash.png" />
+
+
+        <!-- Icons -->
+        <icon density="ldpi" src="resources/mipmap-hdpi/Icon-72.png" />
+        <icon density="mdpi" src="resources/mipmap-mdpi/Icon-48.png" />
+        <icon density="xhdpi" src="resources/mipmap-xhdpi/Icon-96.png" />
+        <icon density="xxhdpi" src="resources/mipmap-xxhdpi/Icon-144.png" />
+        <icon density="xxxhdpi" src="resources/mipmap-xxxhdpi/Icon-192.png" />
+
+        <resource-file src="resources/mipmap-xxhdpi/ic_stat_onesignal_default.png" target="app/src/main/res/drawable/ic_stat_onesignal_default.png" />
+        <resource-file src="resources/mipmap-hdpi/ic_stat_onesignal_default.png" target="app/src/main/res/mipmap-hdpi/ic_stat_onesignal_default.png" />
+        <resource-file src="resources/mipmap-mdpi/ic_stat_onesignal_default.png" target="app/src/main/res/mipmap-mdpi/ic_stat_onesignal_default.png" />
+        <resource-file src="resources/mipmap-xhdpi/ic_stat_onesignal_default.png" target="app/src/main/res/mipmap-xhdpi/ic_stat_onesignal_default.png" />
+        <resource-file src="resources/mipmap-xxhdpi/ic_stat_onesignal_default.png" target="app/src/main/res/mipmap-xxhdpi/ic_stat_onesignal_default.png" />
+        <resource-file src="resources/mipmap-xxxhdpi/ic_stat_onesignal_default.png" target="app/src/main/res/mipmap-xxxhdpi/ic_stat_onesignal_default.png" />
+
+        <plugin name="cordova-plugin-health">
+            <variable name="HEALTH_READ_PERMISSION" value="التطبيق يحتاج إلى إذن قراءة البيانات الصحية" />
+            <variable name="HEALTH_WRITE_PERMISSION" value="التطبيق يحتاج إلى إذن كتابة البيانات الصحية" />
+        </plugin>
+    </platform>
+    
+</widget>

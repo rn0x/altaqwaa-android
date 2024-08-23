@@ -1,0 +1,26 @@
+{
+    "name": "altaqwaa-backend",
+    "version": "1.0.0",
+    "description": "Server application for Altaqwaa",
+    "main": "src/index.js",
+    "scripts": {
+      "start": "node src/index.js",
+      "dev": "nodemon src/index.js",
+      "test": "jest"
+    },
+    "dependencies": {
+      "express": "^4.17.1",
+      "mongoose": "^6.0.0",
+      "dotenv": "^16.0.0",
+      "cors": "^2.8.5"
+    },
+    "devDependencies": {
+      "nodemon": "^2.0.0",
+      "jest": "^29.0.0",
+      "supertest": "^6.0.0"
+    },
+    "engines": {
+      "node": ">=14.0.0"
+    }
+  }
+  
