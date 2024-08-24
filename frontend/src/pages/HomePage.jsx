@@ -1,12 +1,15 @@
 // src/pages/HomePage.js
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { useTranslationContext } from '../contexts/TranslationContext';
 import styles from '../styles/HomePage.module.css';
 
 export default function HomePage() {
+  const { translate } = useTranslationContext();
+
   return (
     <>
       <div className={styles.container}>
-        <div className={styles.content}>HomePage</div>
+        <div className={styles.content}>{translate('homePageTitle')}</div>
       </div>
       <p>rayan almalki</p>
     </>

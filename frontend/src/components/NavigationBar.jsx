@@ -1,44 +1,50 @@
 import React from 'react';
-import styles from '../styles/NavigationBar.module.css'; // استيراد الأنماط
-import { FaQuran, FaBroadcastTower, FaBookOpen, FaMicrophone, FaDharmachakra, FaEllipsisH, FaUsers } from 'react-icons/fa';
-import useScreen from '../hooks/useScreen'; 
+import { Link } from 'react-router-dom';
+import { useNavigation } from '../hooks/useNavigation';
+import styles from '../styles/NavigationBar.module.css';
+import { FaQuran, FaBroadcastTower, FaBookOpen, FaMicrophone, FaEllipsisH, FaUsers, FaPrayingHands } from 'react-icons/fa';
+
+import useScreen from '../hooks/useScreen';
 
 export default function NavigationBar() {
-    // الحصول على حالة حجم الشاشة من الـ Context
+    const { activePage } = useNavigation();
     const isDesktop = useScreen();
 
-    // قائمة الأيقونات التي سيتم عرضها بناءً على حجم الشاشة
+    // Convert /index.html to /
+    const normalizedActivePage = activePage === '/index.html' ? '/' : activePage;
+
     const desktopIcons = [
-        { id: 'quran', icon: <FaQuran title="القرآن الكريم" aria-label="الذهاب إلى القرآن الكريم" />, className: styles.quranIcon },
-        { id: 'radios', icon: <FaBroadcastTower title="الإذاعات" aria-label="الذهاب إلى الإذاعات" />, className: styles.radiosIcon },
-        { id: 'tafseer', icon: <FaBookOpen title="التفسير" aria-label="الذهاب إلى التفسير" />, className: styles.tafseerIcon },
-        { id: 'more', icon: <FaEllipsisH title="المزيد" aria-label="الذهاب إلى صفحة المزيد" />, className: styles.moreIcon }, // أيقونة المزيد
-        { id: 'hadith', icon: <FaMicrophone title="الأحاديث" aria-label="الذهاب إلى الأحاديث" />, className: styles.hadithIcon },
-        { id: 'azkar', icon: <FaDharmachakra title="الأذكار" aria-label="الذهاب إلى الأذكار" />, className: styles.azkarIcon },
-        { id: 'community', icon: <FaUsers title="المنشورات" aria-label="الذهاب إلى المنشورات" />, className: styles.communityIcon }
+        { label: "القرآن الكريم", id: 'quran', icon: <FaQuran title="القرآن الكريم" aria-label="الذهاب إلى القرآن الكريم" />, path: '/quran' },
+        { label: "الإذاعات", id: 'radios', icon: <FaBroadcastTower title="الإذاعات" aria-label="الذهاب إلى الإذاعات" />, path: '/radios' },
+        { label: "التفسير", id: 'tafseer', icon: <FaBookOpen title="التفسير" aria-label="الذهاب إلى التفسير" />, path: '/tafseer' },
+        { label: "الرئيسية", id: 'home', icon: <FaEllipsisH title="الرئيسية" aria-label="الذهاب إلى الصفحة الرئيسية" />, path: '/' },
+        { label: "الأحاديث", id: 'hadith', icon: <FaMicrophone title="الأحاديث" aria-label="الذهاب إلى الأحاديث" />, path: '/hadith' },
+        { label: "الأذكار", id: 'azkar', icon: <FaPrayingHands title="الأذكار" aria-label="الذهاب إلى الأذكار" />, path: '/azkar' },
+        { label: 'المجتمع', id: 'community', icon: <FaUsers title="المجتمع" aria-label="الذهاب إلى المجتمع" />, path: '/community' }
     ];
 
     const mobileIcons = [
-        { id: 'quran', icon: <FaQuran title="القرآن الكريم" aria-label="الذهاب إلى القرآن الكريم" />, className: styles.quranIcon },
-        { id: 'radios', icon: <FaBroadcastTower title="الإذاعات" aria-label="الذهاب إلى الإذاعات" />, className: styles.radiosIcon },
-        { id: 'more', icon: <FaEllipsisH title="المزيد" aria-label="الذهاب إلى صفحة المزيد" />, className: styles.moreIcon }, // أيقونة المزيد
-        { id: 'azkar', icon: <FaDharmachakra title="الأذكار" aria-label="الذهاب إلى الأذكار" />, className: styles.azkarIcon },
-        { id: 'community', icon: <FaUsers title="المنشورات" aria-label="الذهاب إلى المنشورات" />, className: styles.communityIcon }
+        { label: "القرآن الكريم", id: 'quran', icon: <FaQuran title="القرآن الكريم" aria-label="الذهاب إلى القرآن الكريم" />, path: '/quran' },
+        { label: "الإذاعات", id: 'radios', icon: <FaBroadcastTower title="الإذاعات" aria-label="الذهاب إلى الإذاعات" />, path: '/radios' },
+        { label: "الرئيسية", id: 'home', icon: <FaEllipsisH title="الرئيسية" aria-label="الذهاب إلى الصفحة الرئيسية" />, path: '/' },
+        { label: "الأذكار", id: 'azkar', icon: <FaPrayingHands title="الأذكار" aria-label="الذهاب إلى الأذكار" />, path: '/azkar' },
+        { label: "المجتمع", id: 'community', icon: <FaUsers title="المجتمع" aria-label="الذهاب إلى المجتمع" />, path: '/community' }
     ];
 
-    // عرض شريط التنقل بناءً على حجم الشاشة
+
     return (
-        <nav className={styles.navbar} aria-label="Primary Navigation">
+        <nav className={`${styles.navbar} no-cop`} aria-label="Primary Navigation">
             <ul>
                 {(isDesktop ? desktopIcons : mobileIcons).map((item, index) => (
-                    <li 
-                        key={item.id} 
-                        id={item.id} 
-                        className={`${item.className} ${index === Math.floor((isDesktop ? desktopIcons.length : mobileIcons.length) / 2) ? styles.mainButton : ''}`}
+                    <li
+                        key={item.id}
+                        id={item.id}
+                        className={`${item.path === normalizedActivePage ? styles.active : ''} ${index === Math.floor((isDesktop ? desktopIcons.length : mobileIcons.length) / 2) ? styles.mainButton : ''}`}
                     >
-                        <a href={`#${item.id}`} title={item.icon.props.title} aria-label={item.icon.props['aria-label']}>
+                        <Link to={item.path} title={item.icon.props.title} aria-label={item.icon.props['aria-label']}>
                             {item.icon}
-                        </a>
+                            <span className={styles.iconLabel}>{item.label}</span>
+                        </Link>
                     </li>
                 ))}
             </ul>

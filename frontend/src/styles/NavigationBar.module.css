@@ -2,7 +2,7 @@
 .navbar {
   height: 48px; /* ارتفاع الشريط السفلي */
   background: var(--primary-color);
-  color: white;
+  color: var(--text-white);
   position: fixed;
   z-index: 1000;
   display: flex;
@@ -26,22 +26,36 @@
   background-color: var(--primary-hover-color);
 }
 
+.navbar li.active {
+  background-color: var(--primary-active-color);
+}
+
 .navbar a {
-  color: white;
+  color: var(--text-white);
   text-decoration: none;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
+  align-content: center;
   justify-content: center;
   width: 48px; /* عرض الأيقونة */
   height: 48px; /* ارتفاع الأيقونة */
 }
 
-.moreIcon {
-  background-color: var(--primary-hover-color);
+.navbar svg {
+  display: block;
+  width: 100%;
+  margin: 0px auto;
 }
-.moreIcon:hover {
-  background-color: var(--primary-active-color) !important;
+
+.iconLabel {
+  width: 100%;
+  display: block;
+  font-size: 8px;
+  margin-top: 5px;
+  text-align: center;
 }
+
 
 /* الأنماط الخاصة بالشاشات الكبيرة (سطح المكتب) */
 @media (min-width: 601px) {
@@ -77,6 +91,7 @@
     left: 0;
     flex-direction: row;
     justify-content: space-between; /* توزيع الأيقونات بشكل متساوي */
+    overflow-x: auto; 
   }
 
   .navbar ul {

@@ -9,6 +9,10 @@ import { exec } from 'node:child_process';
 
 /**
  * Generate a timestamp in 'YYYY-MM-DD HH:mm' format.
+ * @example
+ * npm run commit -- "Your comment here"
+ * or
+ * node scripts/autoCommit.mjs "Your comment here"
  * @returns {string} Formatted timestamp
  */
 const getFormattedTimestamp = () => {

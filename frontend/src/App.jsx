@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
 import MainRoutes from './routes/MainRoutes';
 import NavigationBar from './components/NavigationBar';
 import ThemeSwitcher from './components/ThemeSwitcher.jsx'
+import LanguageSelector from './components/LanguageSelector.jsx'
 import useTheme from './hooks/useTheme.jsx';
 
 export default function App() {
@@ -10,20 +10,20 @@ export default function App() {
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
+    document.documentElement.setAttribute('dir', "rtl");
     return () => {
 
     };
   }, []);
 
   return (
-    <Router>
-      <div id="App">
-        <ThemeSwitcher />
-        <main>
-          <MainRoutes />
-        </main>
-        <NavigationBar />
-      </div>
-    </Router>
+    <div id="App">
+      <ThemeSwitcher />
+      <LanguageSelector />
+      <main>
+        <MainRoutes />
+      </main>
+      <NavigationBar />
+    </div>
   );
 }

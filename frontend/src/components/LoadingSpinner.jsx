@@ -1,4 +1,3 @@
-// src/components/LoadingSpinner.jsx
 import React from 'react';
 import styles from '../styles/LoadingSpinner.module.css';
 import logo from '../assets/logo.webp';
@@ -23,13 +22,15 @@ export default function LoadingSpinner({
     spinnerSize = Math.max(Number(spinnerSize), 0);
 
     return (
-        <div className={styles.loadingContainer}>
+        <div className={`${styles.loadingContainer} no-cop`}>
             {showLogo && (
                 <img
                     src={logo}
                     alt="Loading Logo"
                     className={styles.logo}
                     style={{ width: logoSize, height: 'auto' }}
+                    onContextMenu={(event) => event.preventDefault()}
+                    onMouseDown={(event) => event.preventDefault()}
                 />
             )}
             {showSpinner && (

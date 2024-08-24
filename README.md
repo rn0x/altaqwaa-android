@@ -69,12 +69,14 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
-
-هيكل مجلد المشروع 
+هيكل مجلد المشروع
 
 ```
 Altaqwaa/
 ├── frontend/                # يحتوي على تطبيق React
+│   ├── translations/          # يحتوي على ملفات الترجمة
+│   │   ├── en.json            # الترجمات للغة الإنجليزية
+│   │   ├── ar.json            # الترجمات للغة العربية
 │   ├── public/              # ملفات HTML و assets العامة
 │   ├── src/                 # ملفات المصدر
 │   │   ├── components/      # مكونات React القابلة لإعادة الاستخدام
@@ -111,7 +113,7 @@ Altaqwaa/
 │   ├── build-frontend.sh     # سكربت لبناء التطبيق الأمامي
 │   ├── start-server.sh      # سكربت لتشغيل الواجهة الخلفية
 │   └── deploy.sh            # سكربت لنشر المشروع (الإنتاج)
-├── config.cjs                # ملف التكوين المركزي الذي يدمج إعدادات .env 
+├── config.cjs                # ملف التكوين المركزي الذي يدمج إعدادات .env
 ├── .env                     # متغيرات البيئة الخاصة بالمشروع
 ├── package.json             # معلومات المشروع واعتمادياته المشتركة
 ├── LICENSE                  # ملف يحتوي على نص الرخصة للمشروع
@@ -122,4 +124,4 @@ Altaqwaa/
 │   ├── api.md               # توثيق API
 │   └── installation.md      # دليل التثبيت والإعداد
 └── .gitignore               # استثناءات Git
-  ```
+```

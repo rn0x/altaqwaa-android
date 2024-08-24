@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "Cairo";
+  src: url("../../public/fonts/Cairo-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* إعدادات أساسية للتطبيق */
 body,
 html {
@@ -9,9 +16,29 @@ html {
   color: #333;
 }
 
+* {
+  font-family: "Cairo", Arial, sans-serif;
+  -webkit-tap-highlight-color: #00000000;
+}
+
 #App {
   padding-right: 48px;
   padding-left: 48px;
+}
+
+/* حماية النسخ */
+.no-cop {
+  user-select: none;
+  /* Safari */
+  -webkit-user-select: none;
+  /* Firefox */
+  -moz-user-select: none; 
+  /* Internet Explorer/Edge */
+  -ms-user-select: none; 
+  /* Prevents callout on iOS */
+  -webkit-touch-callout: none; 
+   /* Prevents touch actions */
+  /* touch-action: none; */
 }
 
 a {
@@ -209,4 +236,11 @@ header h1 {
     padding-left: 0px;
     padding-bottom: 48px;
   }
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+a:focus {
+  outline: none;
 }
