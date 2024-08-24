@@ -1,13 +1,11 @@
 /* src/styles/HomePage.module.css */
 .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: #fff;
-  }
-  
-  .content {
-    font-size: 24px;
-  }
-  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.content {
+  font-size: 24px;
+}

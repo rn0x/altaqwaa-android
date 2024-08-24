@@ -1,0 +1,32 @@
+/* src/styles/LoadingSpinner.module.css */
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #ffffff00; 
+}
+
+.logo {
+  animation: spin 2s linear infinite;
+  margin-bottom: 20px;
+}
+
+.spinner {
+  border: 8px solid #0000001a;
+  border-left: 8px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px; 
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.text {
+  font-size: 18px;
+  color: #333; 
+}

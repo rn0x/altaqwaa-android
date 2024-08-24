@@ -3,10 +3,20 @@
   "version": "1.0.0",
   "description": "Main project configuration for Altaqwaa",
   "scripts": {
-    "build-client": "cd client && npm install && npm run build",
-    "start-server": "cd server && npm install && npm start",
-    "deploy": "./scripts/deploy.sh",
-    "start": "npm run build-client && npm run start-server"
+    "commit":"node scripts/autoCommit.mjs",
+    "frontend:install": "cd frontend && npm install",
+    "frontend:build": "cd frontend && npm run build",
+    "frontend:start": "cd frontend && npm start",
+    "server:install": "cd server && npm install",
+    "server:build": "cd server && npm run build",
+    "server:start": "cd server && npm start",
+    "server:test": "cd server && npm test",
+    "build": "npm run frontend:build && npm run server:build",
+    "start": "npm run frontend:start & npm run server:start",
+    "start:dev": "concurrently \"npm run frontend:start\" \"npm run server:start\"",
+    "test": "npm run frontend:test && npm run server:test",
+    "clean": "rm -rf frontend/node_modules server/node_modules",
+    "deploy": "./scripts/deploy.sh"
   },
   "engines": {
     "node": ">=14.0.0"

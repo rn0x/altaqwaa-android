@@ -1,14 +1,212 @@
-body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-      sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+/* إعدادات أساسية للتطبيق */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: var(--background-color);
+  color: #333;
+}
+
+#App {
+  padding-right: 48px;
+  padding-left: 48px;
+}
+
+a {
+  color: #0070f3;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* إعدادات الحاويات والصفوف */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -10px;
+}
+
+.col {
+  flex: 1;
+  padding: 10px;
+}
+
+/* الأنماط للأزرار */
+button {
+  background-color: #0070f3;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+button:hover {
+  background-color: #005bb5;
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* الأنماط للبطاقات */
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+.card-content {
+  padding: 15px;
+}
+
+/* الأنماط للرؤوس والنصوص */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.75em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+h4 {
+  font-size: 1.25em;
+}
+
+h5 {
+  font-size: 1em;
+}
+
+h6 {
+  font-size: 0.875em;
+}
+
+p {
+  margin: 0 0 10px;
+}
+
+/* إعدادات نمط التكوين */
+input,
+select,
+textarea {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 1em;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* النماذج والإدخالات */
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #0070f3;
+  outline: none;
+}
+
+/* الأنماط الخاصة بالهيدر */
+header {
+  background-color: #0070f3;
+  color: #fff;
+  padding: 15px 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+/* الأنماط الخاصة بالنافبار */
+.navbar {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  display: inline-block;
+}
+
+.navbar a:hover {
+  background-color: #555;
+}
+
+/* تحسينات للتجاوب */
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
   }
-  
-  code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-      monospace;
+
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-  
+
+  .navbar a {
+    padding: 10px 0;
+  }
+}
+
+/* تحسينات للهاتف المحمول */
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  button {
+    padding: 8px 16px;
+    font-size: 0.9em;
+  }
+
+  .card {
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  #App {
+    padding-right: 0%;
+    padding-left: 0px;
+    padding-bottom: 48px;
+  }
+}

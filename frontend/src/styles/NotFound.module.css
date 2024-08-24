@@ -1,0 +1,23 @@
+/* styles/NotFound.module.css */
+
+.container {
+    text-align: center;
+    margin: 100px auto;
+  }
+  
+  .heading {
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+  
+  .text {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  .homeLink {
+    font-size: 18px;
+    color: #0070f3;
+    text-decoration: underline;
+  }
+  

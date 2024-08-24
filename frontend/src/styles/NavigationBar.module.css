@@ -1,0 +1,94 @@
+/* الأنماط العامة للـ NavigationBar */
+.navbar {
+  height: 48px; /* ارتفاع الشريط السفلي */
+  background: var(--primary-color);
+  color: white;
+  position: fixed;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar ul {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.navbar li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navbar li:hover {
+  background-color: var(--primary-hover-color);
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px; /* عرض الأيقونة */
+  height: 48px; /* ارتفاع الأيقونة */
+}
+
+.moreIcon {
+  background-color: var(--primary-hover-color);
+}
+.moreIcon:hover {
+  background-color: var(--primary-active-color) !important;
+}
+
+/* الأنماط الخاصة بالشاشات الكبيرة (سطح المكتب) */
+@media (min-width: 601px) {
+  .navbar {
+    height: 100%; /* ملء ارتفاع الشاشة */
+    top: 0;
+    right: 0;
+    align-items: center;
+    align-content: center;
+    overflow-y: auto; /* إضافة شريط تمرير رأسي إذا لزم الأمر */
+  }
+
+  .navbar ul {
+    height: 100%;
+    width: 48px;
+    flex-wrap: wrap;
+  }
+
+  .navbar li {
+    height: 80px;
+  }
+
+  .navbar a {
+    font-size: 24px; /* حجم الأيقونات على سطح المكتب */
+  }
+}
+
+/* الأنماط الخاصة بالشاشات الصغيرة (الجوال) */
+@media (max-width: 600px) {
+  .navbar {
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    flex-direction: row;
+    justify-content: space-between; /* توزيع الأيقونات بشكل متساوي */
+  }
+
+  .navbar ul {
+    width: 100%;
+  }
+
+  .navbar li {
+    margin: 0;
+    flex: 1; /* يسمح بتوزيع الأيقونات بشكل متساوي */
+  }
+
+  .navbar a {
+    font-size: 20px; /* حجم الأيقونات على الجوال */
+  }
+}

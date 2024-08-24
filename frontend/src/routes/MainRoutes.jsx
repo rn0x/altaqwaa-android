@@ -1,17 +1,19 @@
-import React from "react";
-import { Route, Routes } from "react-router-dom";
-import TokenPage from "../pages/TokenPage";
-import HomePage from "../pages/HomePage";
-// import NotFound from "../pages/NotFound.jsx";
+import React, { Suspense, lazy } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import LoadingSpinner from '../components/LoadingSpinner'
 
+const HomePage = lazy(() => import('../pages/HomePage'));
+const NotFoundPage = lazy(() => import('../pages/NotFoundPage'));
 
 export default function MainRoutes() {
   return (
-    <Routes>
-      <Route path="/index.html" element={<TokenPage />} />
-      <Route path="/" element={<TokenPage />} />
-      <Route path="/home" element={<HomePage />} />
-      {/* <Route path="*" element={<NotFound />} /> */}
-    </Routes>
+    <Suspense fallback={<LoadingSpinner />}>
+      <Routes>
+        <Route path="/index.html" element={<HomePage />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/loading" element={<LoadingSpinner />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+    </Suspense>
   );
 }
