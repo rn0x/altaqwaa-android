@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="org.i8xnet.afitik" version="1.0.4" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
-    <name>عافيتك | Afitik</name>
-    <description>Afitik is a fitness app offering diverse workouts, balanced nutrition plans, and valuable tips for enhancing health and fitness.</description>
-    <author email="rn0x.me@gmail.com" href="https://i8x.net">i8xnetTeam</author>
+<widget id="com.rn0x.altaqwaa.test" version="2.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>التقوى</name>
+    <description>تطبيق إسلامي سهل الإستخدام و جامع للكثير من المميزات التي يحتاجها المسلم في يومه</description>
+    <author email="rn0x.me@gmail.com" href="https://altaqwaa.org">i8xTeam</author>
     <content src="index.html" />
     
     <!-- Allow-intent settings -->
@@ -18,7 +18,8 @@
     <preference name="Fullscreen" value="false" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="NavigationBarLight" value="true" />
-    <preference name="Orientation" value="portrait" />
+    <!-- default, landscape, or portrait -->
+    <preference name="Orientation" value="default" />
     <preference name="BackgroundColor" value="#eceff4" />
     <preference name="HideKeyboardFormAccessoryBar" value="true" />
     <preference name="NavigationBarBackgroundColor" value="#ffffff" />
@@ -52,13 +53,8 @@
             <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
             <uses-permission android:name="android.permission.WAKE_LOCK" />
             <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-            <!-- <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" /> -->
-            <!-- <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" /> -->
-            <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-            <uses-permission android:name="android.permission.INTERNET"/>
-            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-            <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
-            <!-- <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" /> -->
+            <!-- <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" /> الغاء-->
+            <!-- <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK"الغاء  /> -->
         </config-file>
 
         <edit-config file="AndroidManifest.xml" mode="merge" target="/manifest/application">
@@ -80,11 +76,11 @@
         <preference name="FadeSplashScreen" value="false"/>
         <preference name="SplashScreenDelay" value="2000" />
         <preference name="AndroidWindowSplashScreenBackground" value="#ffffff" />
-        <preference name="AndroidWindowSplashScreenAnimatedIcon" value="resources/splash.png" />
+        <!-- <preference name="AndroidWindowSplashScreenAnimatedIcon" value="resources/splash.png" /> -->
 
 
         <!-- Icons -->
-        <icon density="ldpi" src="resources/mipmap-hdpi/Icon-72.png" />
+        <!-- <icon density="ldpi" src="resources/mipmap-hdpi/Icon-72.png" />
         <icon density="mdpi" src="resources/mipmap-mdpi/Icon-48.png" />
         <icon density="xhdpi" src="resources/mipmap-xhdpi/Icon-96.png" />
         <icon density="xxhdpi" src="resources/mipmap-xxhdpi/Icon-144.png" />
@@ -95,12 +91,8 @@
         <resource-file src="resources/mipmap-mdpi/ic_stat_onesignal_default.png" target="app/src/main/res/mipmap-mdpi/ic_stat_onesignal_default.png" />
         <resource-file src="resources/mipmap-xhdpi/ic_stat_onesignal_default.png" target="app/src/main/res/mipmap-xhdpi/ic_stat_onesignal_default.png" />
         <resource-file src="resources/mipmap-xxhdpi/ic_stat_onesignal_default.png" target="app/src/main/res/mipmap-xxhdpi/ic_stat_onesignal_default.png" />
-        <resource-file src="resources/mipmap-xxxhdpi/ic_stat_onesignal_default.png" target="app/src/main/res/mipmap-xxxhdpi/ic_stat_onesignal_default.png" />
+        <resource-file src="resources/mipmap-xxxhdpi/ic_stat_onesignal_default.png" target="app/src/main/res/mipmap-xxxhdpi/ic_stat_onesignal_default.png" /> -->
 
-        <plugin name="cordova-plugin-health">
-            <variable name="HEALTH_READ_PERMISSION" value="التطبيق يحتاج إلى إذن قراءة البيانات الصحية" />
-            <variable name="HEALTH_WRITE_PERMISSION" value="التطبيق يحتاج إلى إذن كتابة البيانات الصحية" />
-        </plugin>
     </platform>
     
 </widget>

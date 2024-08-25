@@ -3,13 +3,15 @@ yarn-debug.log*
 yarn-error.log*
 
 node_modules
-cordova/node_modules
-frontend/node_modules
-server/node_modules
 
 build
 package-lock.json
 
 .env
-server/.env
-frontend/.env
+
+cordova/plugins/
+cordova/platforms/
+cordova/www/*
+!cordova/www/.gitkeep
+cordova/build.json
+cordova/release.keystore

@@ -1,20 +1,34 @@
 {
-    "name": "cordova-project",
-    "version": "1.0.0",
-    "description": "A Cordova project for Altaqwaa",
-    "scripts": {
-      "build": "cordova build",
-      "clean": "cordova clean",
-      "prepare": "cordova prepare"
-    },
-    "dependencies": {
-      "cordova-plugin-camera": "^6.0.0",
-      "cordova-plugin-geolocation": "^5.1.0",
-      "cordova-plugin-device": "^2.0.4"
-    },
-    "devDependencies": {
-      "cordova": "^11.0.0",
-      "cordova-lib": "^11.0.0"
+  "name": "com.rn0x.altaqwaa.test",
+  "version": "1.0.0",
+  "description": "A Cordova project for Altaqwaa",
+  "scripts": {
+    "frontend:build": "cd ../frontend && npm run build",
+    "cordova:www": "npm run frontend:build && node cordova/scripts/moveBuildToCordova.mjs",
+    "android": "cordova platform add android@latest",
+    "keytool": "node scripts/keytool.mjs",
+    "re-android": "cordova platform rm android && cordova platform add android@latest",
+    "build-apk": "npm run build && cordova build android --release -- --packageType=apk",
+    "build-aab": "npm run build && cordova build android --release -- --packageType=bundle",
+    "device": "cordova run android --device",
+    "bu-device": "npm run build && cordova run android --device",
+    "logcat": "adb logcat",
+    "log": "adb logcat | Select-String INFO:CONSOLE",
+    "clean": "cordova clean && npm cache clean --force",
+    "prepare": "cordova prepare"
+  },
+  "devDependencies": {
+    "cordova-android": "^13.0.0",
+    "cordova-plugin-device": "github:apache/cordova-plugin-device",
+    "cordova-plugin-network-information": "github:apache/cordova-plugin-network-information",
+    "phonegap-plugin-mobile-accessibility": "github:phonegap/phonegap-mobile-accessibility"
+  },
+  "cordova": {
+    "platforms": [
+      "android"
+    ],
+    "plugins": {
+      "phonegap-plugin-mobile-accessibility": {}
     }
   }
-  
+}

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Main project configuration for Altaqwaa",
   "scripts": {
-    "commit":"node scripts/autoCommit.mjs",
+    "commit": "node scripts/autoCommit.mjs",
     "frontend:install": "cd frontend && npm install",
     "frontend:build": "cd frontend && npm run build",
     "frontend:start": "cd frontend && npm start",
@@ -11,6 +11,7 @@
     "server:build": "cd server && npm run build",
     "server:start": "cd server && npm start",
     "server:test": "cd server && npm test",
+    "cordova:www": "npm run frontend:build && node cordova/scripts/moveBuildToCordova.mjs",
     "build": "npm run frontend:build && npm run server:build",
     "start": "npm run frontend:start & npm run server:start",
     "start:dev": "concurrently \"npm run frontend:start\" \"npm run server:start\"",
@@ -22,6 +23,7 @@
     "node": ">=14.0.0"
   },
   "dependencies": {
-    "dotenv": "^16.4.5"
+    "dotenv": "^16.4.5",
+    "fs-extra": "^11.2.0"
   }
 }
