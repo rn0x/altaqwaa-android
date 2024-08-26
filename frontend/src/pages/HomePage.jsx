@@ -12,6 +12,7 @@ export default function HomePage() {
         <div className={styles.content}>{translate('homePageTitle')}</div>
       </div>
       <p>rayan almalki</p>
+      <h2>kkkkkkkkkkkk</h2>
     </>
   );
 }

@@ -91,6 +91,7 @@
     left: 0;
     flex-direction: row;
     justify-content: space-between; /* توزيع الأيقونات بشكل متساوي */
+    overflow-y: hidden;
     overflow-x: auto; 
   }
 
