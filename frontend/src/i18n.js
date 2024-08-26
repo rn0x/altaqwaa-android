@@ -48,6 +48,11 @@ export function getCurrentLanguage() {
   return currentLanguage;
 }
 
+export function getCurrentLanguageDir() {
+  return translations[currentLanguage]?.dir || 'rtl'
+}
+
+
 // قراءة اللغة من التخزين المحلي عند تحميل التطبيق
 const savedLanguage = localStorage.getItem('language');
 if (savedLanguage && translations[savedLanguage]) {

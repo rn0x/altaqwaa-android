@@ -4,7 +4,7 @@ import { useTranslationContext } from '../contexts/TranslationContext';
 import styles from '../styles/HomePage.module.css';
 
 export default function HomePage() {
-  const { translate } = useTranslationContext();
+  const { translate, language } = useTranslationContext();
 
   return (
     <>

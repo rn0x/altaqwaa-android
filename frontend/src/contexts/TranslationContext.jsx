@@ -1,6 +1,6 @@
 // TranslationProvider.jsx
 import React, { createContext, useState, useContext, useEffect } from 'react';
-import { setLanguage, translate as i18nTranslate, getCurrentLanguage } from '../i18n';
+import { setLanguage, translate as i18nTranslate, getCurrentLanguage, getCurrentLanguageDir } from '../i18n';
 
 const TranslationContext = createContext();
 
@@ -12,11 +12,11 @@ const TranslationContext = createContext();
  */
 export const TranslationProvider = ({ children }) => {
   const [language, setLanguageState] = useState(getCurrentLanguage());
+  const [direction, setDirection] = useState(getCurrentLanguageDir());
 
-  // استخدام useEffect لتحديث اللغة وتحديث الترجمة في كل مرة تتغير فيها اللغة
   useEffect(() => {
-    setLanguage(language);
-    console.log('Language changed to:', language);
+    setLanguage(language); 
+    setDirection(getCurrentLanguageDir()); // تحديث الاتجاه بناءً على اللغة الحالية
   }, [language]);
 
   /**
@@ -24,10 +24,7 @@ export const TranslationProvider = ({ children }) => {
    * @param {string} key - مفتاح الترجمة.
    * @returns {string} - النص المترجم أو المفتاح نفسه إذا لم يتم العثور على الترجمة.
    */
-  const translate = (key) => {
-    console.log('Translating key:', key);
-    return i18nTranslate(key); // استخدم الترجمة بناءً على اللغة الحالية
-  };
+  const translate = (key) => i18nTranslate(key); // استخدم الترجمة بناءً على اللغة الحالية
 
   /**
    * دالة لتغيير اللغة.
@@ -38,7 +35,7 @@ export const TranslationProvider = ({ children }) => {
   };
 
   return (
-    <TranslationContext.Provider value={{ language, changeLanguage, translate }}>
+    <TranslationContext.Provider value={{ language, changeLanguage, translate, direction }}>
       {children}
     </TranslationContext.Provider>
   );

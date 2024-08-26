@@ -4,6 +4,12 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: "QCF_P440";
+  src: url("../../public/fonts/QCF_P440.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 
 /* إعدادات أساسية للتطبيق */
 body,
@@ -21,10 +27,10 @@ html {
   -webkit-tap-highlight-color: #00000000;
 }
 
-#App {
+/* #App {
   padding-right: 48px;
   padding-left: 48px;
-}
+} */
 
 /* حماية النسخ */
 .no-cop {

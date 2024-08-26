@@ -1,16 +1,32 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigation } from '../hooks/useNavigation';
+import useTranslation from '../hooks/useTranslation.jsx';
+import useScreen from '../hooks/useScreen';
 import styles from '../styles/NavigationBar.module.css';
 import { FaQuran, FaClock, FaQuestionCircle, FaEllipsisH, FaUsers, FaPrayingHands } from 'react-icons/fa';
 import { ImBooks } from "react-icons/im";
 
-
-import useScreen from '../hooks/useScreen';
-
 export default function NavigationBar() {
+    const { direction } = useTranslation();
     const { activePage } = useNavigation();
-    const isDesktop = useScreen();
+    const { isDesktop } = useScreen();
+
+    useEffect(() => {
+
+        const NavigationBarElement = document.getElementById('NavigationBarElement');
+        if (NavigationBarElement) {
+            if (isDesktop) {
+                if (direction === "rtl") {
+                    NavigationBarElement.style.right = "0"
+                    NavigationBarElement.style.left = "auto"
+                } else {
+                    NavigationBarElement.style.right = "auto"
+                    NavigationBarElement.style.left = "0"
+                }
+            }
+        }
+    }, [direction, isDesktop]);
 
     // Convert /index.html to /
     const normalizedActivePage = activePage === '/index.html' ? '/' : activePage;
@@ -35,7 +51,7 @@ export default function NavigationBar() {
 
 
     return (
-        <nav className={`${styles.navbar} no-cop`} aria-label="Primary Navigation">
+        <nav className={`${styles.navbar} no-cop`} aria-label="Primary Navigation" id='NavigationBarElement'>
             <ul>
                 {(isDesktop ? desktopIcons : mobileIcons).map((item, index) => (
                     <li
