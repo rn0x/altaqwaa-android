@@ -51,12 +51,12 @@ html {
   /* Safari */
   -webkit-user-select: none;
   /* Firefox */
-  -moz-user-select: none; 
+  -moz-user-select: none;
   /* Internet Explorer/Edge */
-  -ms-user-select: none; 
+  -ms-user-select: none;
   /* Prevents callout on iOS */
-  -webkit-touch-callout: none; 
-   /* Prevents touch actions */
+  -webkit-touch-callout: none;
+  /* Prevents touch actions */
   /* touch-action: none; */
 }
 
@@ -262,4 +262,10 @@ textarea:focus,
 select:focus,
 a:focus {
   outline: none;
+}
+
+.no-wrap {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

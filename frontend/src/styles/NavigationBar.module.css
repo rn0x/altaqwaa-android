@@ -1,7 +1,7 @@
 /* الأنماط العامة للـ NavigationBar */
 .navbar {
   height: 48px; /* ارتفاع الشريط السفلي */
-  background: var(--primary-color);
+  background: var(--gradient);
   color: var(--text-white);
   position: fixed;
   z-index: 1000;
@@ -38,10 +38,10 @@
 }
 
 .navbar a:hover {
-  background-color: var(--primary-hover-color);
+  background: var(--secondary-gradient);
 }
 .navbar a.active {
-  background-color: var(--primary-active-color);
+  background: var(--secondary-gradient);
 }
 
 .navbar svg {
@@ -77,7 +77,15 @@
 
   .navbar a {
     min-width: 48px;
+    min-height: 60px;
     font-size: 24px; /* حجم الأيقونات على سطح المكتب */
+  }
+
+  .navbar a:hover {
+    background: var(--primary-gradient);
+  }
+  .navbar a.active {
+    background: var(--primary-gradient);
   }
 }
 

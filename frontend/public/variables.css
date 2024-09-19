@@ -1,15 +1,15 @@
 /* متغيرات الثيم النهاري */
 [data-theme="light"] {
   --background-color: #ffffff;
-  --gradient: linear-gradient(45deg, #12A4DC, #6A3DE8);
+  --gradient: linear-gradient(180deg, #12A4DC, #1266dc);
+  --primary-gradient: linear-gradient(300deg, #12A4DC, #6cd5fe);
+  --secondary-gradient: linear-gradient(180deg, #51ceff, #1266dc);
   --text-color: #333333;
   --text-white: #ffffff;
   --primary-color: #12A4DC;
   --primary-hover-color: #0f8dc8;
   --primary-active-color: #0d7fb4;
-  --primary-gradient: linear-gradient(45deg, #12A4DC, #0f8dc8);
   --secondary-color: #6A3DE8;
-  --secondary-gradient: linear-gradient(45deg, #6A3DE8, #5a2cbb);
   --border-color: #dddddd;
   --button-bg-color: #12A4DC;
   --button-text-color: #ffffff;
@@ -28,15 +28,15 @@
 /* متغيرات الثيم الليلي */
 [data-theme="dark"] {
   --background-color: #121212;
-  --gradient: linear-gradient(45deg, #1e88e5, #90a4ae);
+  --gradient: linear-gradient(180deg, #12A4DC, #1266dc);
+  --secondary-gradient: linear-gradient(180deg, #12A4DC, #1266dc);
+  --primary-gradient: linear-gradient(45deg, #12A4DC, #0f8dc8);
   --text-color: #e0e0e0;
   --text-white: #ffffff;
   --primary-color: #1e88e5;
   --primary-hover-color: #1565c0;
   --primary-active-color: #1156a5;
-  --primary-gradient: linear-gradient(45deg, #1e88e5, #1565c0);
   --secondary-color: #90a4ae;
-  --secondary-gradient: linear-gradient(45deg, #90a4ae, #78909c);
   --border-color: #333333;
   --button-bg-color: #1e88e5;
   --button-text-color: #ffffff;
