@@ -21,6 +21,25 @@ html {
   -webkit-tap-highlight-color: #00000000;
 }
 
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary-hover-color);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--background-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--primary-active-color);
+}
+
 /* #App {
   padding-right: 48px;
   padding-left: 48px;

@@ -22,15 +22,9 @@
   align-items: center;
   justify-content: center;
 }
-.navbar li:hover {
-  background-color: var(--primary-hover-color);
-}
-
-.navbar li.active {
-  background-color: var(--primary-active-color);
-}
 
 .navbar a {
+  display: block;
   color: var(--text-white);
   text-decoration: none;
   display: flex;
@@ -38,8 +32,16 @@
   align-items: center;
   align-content: center;
   justify-content: center;
-  width: 48px; /* عرض الأيقونة */
-  height: 48px; /* ارتفاع الأيقونة */
+  width: 100%;
+  padding: 5px 0px;
+  margin: 0px auto;
+}
+
+.navbar a:hover {
+  background-color: var(--primary-hover-color);
+}
+.navbar a.active {
+  background-color: var(--primary-active-color);
 }
 
 .navbar svg {
@@ -54,8 +56,8 @@
   font-size: 8px;
   margin-top: 5px;
   text-align: center;
+  white-space: nowrap;
 }
-
 
 /* الأنماط الخاصة بالشاشات الكبيرة (سطح المكتب) */
 @media (min-width: 601px) {
@@ -63,8 +65,6 @@
     height: 100%; /* ملء ارتفاع الشاشة */
     top: 0;
     right: 0;
-    align-items: center;
-    align-content: center;
     overflow-y: auto; /* إضافة شريط تمرير رأسي إذا لزم الأمر */
   }
 
@@ -72,13 +72,11 @@
     height: 100%;
     width: 48px;
     flex-wrap: wrap;
-  }
-
-  .navbar li {
-    height: 80px;
+    align-content: space-between;
   }
 
   .navbar a {
+    min-width: 48px;
     font-size: 24px; /* حجم الأيقونات على سطح المكتب */
   }
 }
@@ -92,7 +90,7 @@
     flex-direction: row;
     justify-content: space-between; /* توزيع الأيقونات بشكل متساوي */
     overflow-y: hidden;
-    overflow-x: auto; 
+    overflow-x: auto;
   }
 
   .navbar ul {
