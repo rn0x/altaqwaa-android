@@ -4,13 +4,18 @@ import { useNavigation } from '../hooks/useNavigation';
 import useTranslation from '../hooks/useTranslation.jsx';
 import useScreen from '../hooks/useScreen';
 import styles from '../styles/NavigationBar.module.css';
-import { FaQuran, FaClock, FaQuestionCircle, FaEllipsisH, FaUsers, FaPrayingHands } from 'react-icons/fa';
+import { FaQuran, FaClock, FaQuestionCircle, FaEllipsisH, FaPrayingHands } from 'react-icons/fa';
+import { BsFillPostcardFill } from "react-icons/bs";
 import { ImBooks } from "react-icons/im";
+import { useTranslationContext } from '../contexts/TranslationContext';
+
 
 export default function NavigationBar() {
     const { direction } = useTranslation();
     const { activePage } = useNavigation();
     const { isDesktop } = useScreen();
+    const { translate } = useTranslationContext();
+
 
     useEffect(() => {
 
@@ -32,23 +37,22 @@ export default function NavigationBar() {
     const normalizedActivePage = activePage === '/index.html' ? '/' : activePage;
 
     const desktopIcons = [
-        { label: "القرآن الكريم", id: 'quran', icon: <FaQuran title="القرآن الكريم" aria-label="الذهاب إلى القرآن الكريم" />, path: '/quran' },
-        { label: "المكتبة", id: 'library', icon: <ImBooks title="المكتبة" aria-label="الذهاب إلى المكتبة" />, path: '/library' },
-        { label: "أوقات الصلاة", id: 'prayer-times', icon: <FaClock title="أوقات الصلاة" aria-label="الذهاب إلى أوقات الصلاة" />, path: '/prayer-times' },
-        { label: "الرئيسية", id: 'home', icon: <FaEllipsisH title="الرئيسية" aria-label="الذهاب إلى الصفحة الرئيسية" />, path: '/' },
-        { label: "الفتاوى", id: 'fatwas', icon: <FaQuestionCircle title="الفتاوى" aria-label="الذهاب إلى الفتاوى" />, path: '/fatwas' },
-        { label: "الأذكار", id: 'azkar', icon: <FaPrayingHands title="الأذكار" aria-label="الذهاب إلى الأذكار" />, path: '/azkar' },
-        { label: 'المجتمع', id: 'community', icon: <FaUsers title="المجتمع" aria-label="الذهاب إلى المجتمع" />, path: '/community' }
+        { label: translate('quran'), id: 'quran', icon: <FaQuran title={translate('quran')} aria-label={translate('quran')} />, path: '/quran' },
+        { label: translate('library'), id: 'library', icon: <ImBooks title={translate('library')} aria-label={translate('library')} />, path: '/library' },
+        { label: translate('prayerTimes'), id: 'prayer-times', icon: <FaClock title={translate('prayerTimes')} aria-label={translate('prayerTimes')} />, path: '/prayer-times' },
+        { label: translate('homePageTitle'), id: 'home', icon: <FaEllipsisH title={translate('homePageTitle')} aria-label={translate('homePageTitle')} />, path: '/' },
+        { label: translate('fatwas'), id: 'fatwas', icon: <FaQuestionCircle title={translate('fatwas')} aria-label={translate('fatwas')} />, path: '/fatwas' },
+        { label: translate('azkar'), id: 'azkar', icon: <FaPrayingHands title={translate('azkar')} aria-label={translate('azkar')} />, path: '/azkar' },
+        { label: translate('blog'), id: 'blog', icon: <BsFillPostcardFill title={translate('blog')} aria-label={translate('blog')} />, path: '/blog' }
     ];
 
     const mobileIcons = [
-        { label: "القرآن الكريم", id: 'quran', icon: <FaQuran title="القرآن الكريم" aria-label="الذهاب إلى القرآن الكريم" />, path: '/quran' },
-        { label: "المكتبة", id: 'library', icon: <ImBooks title="المكتبة" aria-label="الذهاب إلى المكتبة" />, path: '/library' },
-        { label: "الرئيسية", id: 'home', icon: <FaEllipsisH title="الرئيسية" aria-label="الذهاب إلى الصفحة الرئيسية" />, path: '/' },
-        { label: "الأذكار", id: 'azkar', icon: <FaPrayingHands title="الأذكار" aria-label="الذهاب إلى الأذكار" />, path: '/azkar' },
-        { label: "المجتمع", id: 'community', icon: <FaUsers title="المجتمع" aria-label="الذهاب إلى المجتمع" />, path: '/community' }
+        { label: translate('quran'), id: 'quran', icon: <FaQuran title={translate('quran')} aria-label={translate('quran')} />, path: '/quran' },
+        { label: translate('library'), id: 'library', icon: <ImBooks title={translate('library')} aria-label={translate('library')} />, path: '/library' },
+        { label: translate('homePageTitle'), id: 'home', icon: <FaEllipsisH title={translate('homePageTitle')} aria-label={translate('homePageTitle')} />, path: '/' },
+        { label: translate('azkar'), id: 'azkar', icon: <FaPrayingHands title={translate('azkar')} aria-label={translate('azkar')} />, path: '/azkar' },
+        { label: translate('blog'), id: 'blog', icon: <BsFillPostcardFill title={translate('blog')} aria-label={translate('blog')} />, path: '/blog' }
     ];
-
 
     return (
         <nav className={`${styles.navbar} no-cop`} aria-label="Primary Navigation" id='NavigationBarElement'>

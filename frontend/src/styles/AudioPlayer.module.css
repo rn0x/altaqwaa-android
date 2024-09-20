@@ -1,0 +1,66 @@
+.audioPlayer {
+  width: 100%;
+  max-width: 250px;
+  position: fixed;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffffff97; 
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.7rem;
+  padding: 2px 10px;
+  color: #333; 
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+}
+
+.controlButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.7rem;
+  margin: 0 5px;
+  color: #333;
+  transition: color 0.3s; 
+  padding: 2px 10px;
+}
+
+.controlButton:hover {
+  color: var(--primary-color);
+}
+
+.controlButton:hover svg {
+  color: #ffffff !important;
+}
+.closeButton:hover {
+  background-color: #ff2727;
+  color: #ffffff !important;
+}
+
+
+.trackInfo {
+  flex-grow: 1;
+  text-align: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.timeInfo {
+  font-weight: 300;
+  font-size: 0.7rem;
+  color: #666;
+}
