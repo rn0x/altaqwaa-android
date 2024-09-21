@@ -65,7 +65,7 @@ const AudioPlayer = ({ track }) => {
         </button>
       </div>
       <div className={styles.trackInfo}>
-        <span>{track.title}</span>
+        <span className='no-wrap'>{track.title}</span>
         <div className={styles.timeInfo}>
           <span>{Math.floor(currentTime)} / {Math.floor(duration)} seconds</span>
         </div>

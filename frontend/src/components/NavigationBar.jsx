@@ -63,7 +63,14 @@ export default function NavigationBar() {
                         id={item.id}
                         className={`${item.path === normalizedActivePage ? styles.active : ''} ${index === Math.floor((isDesktop ? desktopIcons.length : mobileIcons.length) / 2) ? styles.mainButton : ''}`}
                     >
-                        <Link to={item.path} title={item.icon.props.title} aria-label={item.icon.props['aria-label']} className={`${item.path === normalizedActivePage ? styles.active : ''}`}>
+                        <Link
+                            to={item.path}
+                            title={item.icon.props.title}
+                            aria-label={item.icon.props['aria-label']}
+                            className={`${item.path === normalizedActivePage ? styles.active : ''}`}
+                            onMouseDown={(e) => e.preventDefault()}
+                            draggable="false"
+                        >
                             {item.icon}
                             <span className={styles.iconLabel}>{item.label}</span>
                         </Link>

@@ -27,14 +27,22 @@ export default function HomePage() {
     { label: translate('khutbah'), icon: <FaMosque />, path: '/khutbah' }, // خطب
     { label: translate('settings'), icon: <FaCog />, path: '/settings' }, // الإعدادات
     { label: translate('aboutApp'), icon: <FaInfoCircle />, path: '/about-app' }, // عن التطبيق
-];
+  ];
 
 
   return (
     <div className={styles.homePage}>
       <div className={styles.quickLinks}>
         {navLinks.map((link, index) => (
-          <Link to={link.path} className={styles.linkItem} key={index} title={link.label} aria-label={link.label}>
+          <Link
+            to={link.path}
+            className={styles.linkItem}
+            key={index}
+            title={link.label}
+            aria-label={link.label}
+            onMouseDown={(e) => e.preventDefault()}
+            draggable="false"
+          >
             <div className={styles.icon}>{link.icon}</div>
             <span title={link.label} aria-label={link.label}>{link.label}</span>
           </Link>

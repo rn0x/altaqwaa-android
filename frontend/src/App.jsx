@@ -16,7 +16,7 @@ export default function App() {
   const { isDesktop } = useScreen();
 
   const tracks = [
-    { title: 'Track 1', url: 'https://server14.mp3quran.net/swlim/Rewayat-Hafs-A-n-Assem//001.mp3' },
+    { title: 'Track 1', url: 'https://qurango.net/radio/tafseer' },
     { title: 'Track 2', url: 'https://server14.mp3quran.net/swlim/Rewayat-Hafs-A-n-Assem//002.mp3' },
     { title: 'Track 3', url: 'https://server14.mp3quran.net/swlim/Rewayat-Hafs-A-n-Assem//003.mp3' },
   ];
@@ -44,7 +44,6 @@ export default function App() {
     }
     document.documentElement.setAttribute('data-theme', theme);
     document.documentElement.setAttribute('dir', direction);
-
 
   }, [isDesktop, direction, theme]);
 
