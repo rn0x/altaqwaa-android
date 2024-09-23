@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.rn0x.altaqwaa" version="1.2.6" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+<widget id="com.rn0x.altaqwaa" version="1.2.7" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
     <name>التقوى</name>
     <description>تطبيق إسلامي سهل الإستخدام و جامع للكثير من الميزات التي يحتاجها المسلم في يومه</description>
-    <author email="rn0x.me@gmail.com" href="https://altaqwaa.org">Altaqwaa</author>
+    <author email="rn0x.me@gmail.com" href="https://altaqwaa.org">i8xteam</author>
     <content src="index.html" />
 
     <!-- Allow-intent settings -->
@@ -22,7 +22,8 @@
     <preference name="BackgroundColor" value="#2e3338" />
     <preference name="HideKeyboardFormAccessoryBar" value="true" />
     <preference name="NavigationBarBackgroundColor" value="#232527" />
-    <preference name="android-compileSdkVersion" value="33" />
+    <preference name="android-compileSdkVersion" value="34" />
+    <preference name="android-minSdkVersion" value="26" />
     <preference name="SplashScreenBackgroundColor" value="#2e3338" />
     <!-- StatusBar settings -->
     <preference name="StatusBarBackgroundColor" value="#2e3338" />

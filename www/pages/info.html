@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
-    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width, viewport-fit=cover">
+    <meta name="viewport"
+        content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width, viewport-fit=cover">
     <meta name="color-scheme" content="light dark">
     <link rel="stylesheet" href="/css/var.css"> <!-- المتغيرات -->
     <link rel="stylesheet" href="/css/main.css"> <!-- ملف الإستايل الأساسي -->
@@ -42,7 +43,17 @@
             </span>
         </p>
 
+        <!-- الإعلان عن الإصدار القادم -->
+        <div id="upcoming_release" class="animate__animated animate__fadeIn">
+            <h2>قريباً: الإصدار الجديد</h2>
+            <img src="../img/new_logo.png" id="new_logo" alt="شعار الإصدار الجديد">
+            <p id="release_details">
+                ترقبوا الإصدار الجديد من تطبيق التقوى، الذي سيأتي بمزايا جديدة وتحسينات شاملة لتجربة أفضل للمستخدم.
+            </p>
 
+            <a href="https://paypal.me/i8xTeam" id="paypal" target="_blank" rel="noopener noreferrer">إدعمنا</a>
+            <a href="https://github.com/rn0x/altaqwaa-android" id="codegit" target="_blank" rel="noopener noreferrer">او ساعدنا في تطوير الإصدار الجديد</a>
+        </div>
 
         <ul id="Box_LINK">
 
@@ -57,7 +68,7 @@
                 <img src="../img/version.png" alt="version" class="icons">
                 <p>
                     الإصدار: <span id="version_number">
-                        v1.2.6
+                        v1.2.7
                     </span>
                 </p>
             </li>
@@ -84,11 +95,9 @@
         <ul id="altaqwaa_ul">
 
             <li>
-
-                <a href="https://github.com/Alsarmad/altaqwaa_android" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/rn0x/altaqwaa_android" target="_blank" rel="noopener noreferrer">
                     <img src="/img/github.svg" class="icon_tqw">
                 </a>
-
             </li>
 
         </ul>
@@ -103,15 +112,11 @@
     </footer>
 
     <script>
-
-
-
         let back = document.getElementById('back');
 
         back.addEventListener("click", e => {
             window.location.href = "/more.html";
         });
-
     </script>
     <script src="/cordova.js"></script>
     <script src="/js/index.js" type="module"></script>

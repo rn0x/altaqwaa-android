@@ -63,6 +63,7 @@
     font-size: 15px;
     border: none;
     transition: 0.5s ease-in-out;
+    cursor: pointer;
 }
 
 #images_more_button:hover {

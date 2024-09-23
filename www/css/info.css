@@ -1,135 +1,169 @@
 #content {
-    margin-top: 60px !important;
+  margin-top: 60px !important;
 }
 
 #logo_altaqwaa {
-    margin-top: 30px;
-    max-width: 70%;
+  margin-top: 30px;
+  max-width: 70%;
 }
-
 
 #app_description {
-    display: block;
-    font-size: 12px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 15px;
-    margin-right: 15px;
-    padding: 10px;
-    color: var(--white);
-    border-radius: 10px;
-    border-style: solid;
-    border-width: 1px;
-    border-color: var(--background_div_hover_2);
-    position: relative;
+  display: block;
+  font-size: 12px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 15px;
+  margin-right: 15px;
+  padding: 10px;
+  color: var(--white);
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--background_div_hover_2);
+  position: relative;
 }
 
-
 #free {
-    display: block;
-    font-size: 11px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    color: var(--white);
-    position: absolute;
-    top: 0;
-    left: 50%;
-    margin-top: -20px;
-    transform: translateX(-50%);
-    background-color: var(--background_div_hover_2);
-    border-radius: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    white-space: nowrap;
-    /* تحديد أن النص لا ينفصل إلى سطر جديد */
+  display: block;
+  font-size: 11px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: var(--white);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-top: -20px;
+  transform: translateX(-50%);
+  background-color: var(--background_div_hover_2);
+  border-radius: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  white-space: nowrap;
+  /* تحديد أن النص لا ينفصل إلى سطر جديد */
 }
 
 #Box_LINK {
-    list-style: none;
-    padding: 0px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-items: center;
-    align-content: center;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-top: 20px;
-    margin-bottom: 10px;
+  list-style: none;
+  padding: 0px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 #Box_LINK li {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    margin-left: 10px;
-    margin-right: 10px;
-    color: var(--white);
-    font-size: 11px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: var(--white);
+  font-size: 11px;
 }
 
 #Box_LINK li p a {
-    color: var(--background_div_hover_2);
-    text-decoration: none;
+  color: var(--background_div_hover_2);
+  text-decoration: none;
 }
 
-#version_number, #license_content {
-    color: var(--background_div_hover_2);
+#version_number,
+#license_content {
+  color: var(--background_div_hover_2);
 }
 
 .icons {
-    display: block;
-    width: 30px;
-    margin-left: 10px;
+  display: block;
+  width: 30px;
+  margin-left: 10px;
 }
 
-
 #url_altaqwaa {
-    margin-top: 3px;
-    margin-bottom: 20px;
-    color: var(--background_div_hover_2);
-    text-decoration: none;
-    font-size: 11px;
+  margin-top: 3px;
+  margin-bottom: 20px;
+  color: var(--background_div_hover_2);
+  text-decoration: none;
+  font-size: 11px;
 }
 
 #Do_not_forget {
-    width: 80%;
-    max-width: 300px;
-    margin-top: 25px;
-    margin-bottom: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    color: var(--background_div_hover_2);
-    border-radius: 10px;
-    border-style: solid;
-    border-width: 1px;
-    border-color: var(--background_div_hover_2);
-    font-size: 13px;
+  width: 80%;
+  max-width: 300px;
+  margin-top: 25px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--background_div_hover_2);
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--background_div_hover_2);
+  font-size: 13px;
 }
 
 #altaqwaa_ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    padding: 0px;
-    list-style: none;
-    text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  list-style: none;
+  text-align: center;
 }
 
 #altaqwaa_ul li {
-    display: block;
-    padding: 10px;
+  display: block;
+  padding: 10px;
 }
 
 #altaqwaa_ul li a {
-    margin-left: 20px;
-    margin-right: 20px;
-    text-decoration: none;
+  margin-left: 20px;
+  margin-right: 20px;
+  text-decoration: none;
 }
 
 .icon_tqw {
-    width: 50px;
+  width: 50px;
+}
 
+#upcoming_release {
+  width: 90%;
+  text-align: center;
+  margin: 30px auto;
+  padding: 10px;
+  background-color: var(--background_div);
+  color: var(--white);
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--background_div_hover_2);
+}
+
+#new_logo {
+  width: 100%;
+  max-width: 100px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+#release_details {
+  font-size: 1.2em;
+  color: var(--color_font_grey);
+}
+
+#paypal,
+#codegit {
+  display: block;
+  font-size: 11px;
+  color: var(--background_div_hover_2);
+  text-decoration: none;
+}
+
+#codegit {
+  color: #ff3131;
 }

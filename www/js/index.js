@@ -82,34 +82,20 @@ async function setupApplication() {
 
 }
 
-
 function setTheme() {
     const storage = window.localStorage;
-    const getTheme = storage.getItem("themeStorage");
+    const getTheme = storage.getItem("themeStorage") || "theme_1";
+    
+    const themes = {
+        theme_1: { navColor: "#232527", statusColor: '#2e3338' },
+        theme_2: { navColor: "#0c1128", statusColor: '#141e46' },
+        theme_3: { navColor: "#262723", statusColor: '#38382e' },
+        theme_4: { navColor: "#94b0ff", statusColor: '#acc2fd' },
+        theme_5: { navColor: "#0b3f43", statusColor: '#0b3f43' },
+    };
 
-    if (getTheme === "theme_1" || getTheme === undefined) {
-        NavigationBar.backgroundColorByHexString("#232527", false);
-        StatusBar.backgroundColorByHexString('#2e3338');
-        document.querySelector("html").setAttribute("data-theme", "theme_1");
-    }
-    if (getTheme === "theme_2") {
-        NavigationBar.backgroundColorByHexString("#0c1128", false);
-        StatusBar.backgroundColorByHexString('#141e46');
-        document.querySelector("html").setAttribute("data-theme", "theme_2");
-    }
-    if (getTheme === "theme_3") {
-        NavigationBar.backgroundColorByHexString("#262723", false);
-        StatusBar.backgroundColorByHexString('#38382e');
-        document.querySelector("html").setAttribute("data-theme", "theme_3");
-    }
-    if (getTheme === "theme_4") {
-        NavigationBar.backgroundColorByHexString("#94b0ff", false);
-        StatusBar.backgroundColorByHexString('#acc2fd');
-        document.querySelector("html").setAttribute("data-theme", "theme_4");
-    }
-    if (getTheme === "theme_5") {
-        NavigationBar.backgroundColorByHexString("#0b3f43", false);
-        StatusBar.backgroundColorByHexString('#0b3f43');
-        document.querySelector("html").setAttribute("data-theme", "theme_5");
-    }
+    const theme = themes[getTheme];
+    NavigationBar.backgroundColorByHexString(theme.navColor, false);
+    StatusBar.backgroundColorByHexString(theme.statusColor);
+    document.querySelector("html").setAttribute("data-theme", getTheme);
 }
