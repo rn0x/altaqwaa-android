@@ -1,3 +1,7 @@
+> [!IMPORTANT]  
+> جار العمل على الإصدار الجديد من البرنامج [(v2)](https://github.com/rn0x/altaqwaa-android/commits/version-2.0)
+<br>
+
 <div align="center">
 
 ![altaqwaa](/screenshots/preview.png)
