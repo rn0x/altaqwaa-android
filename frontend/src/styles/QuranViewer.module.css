@@ -1,0 +1,152 @@
+/* QuranViewer.module.css */
+.container {
+  position: relative;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.quranPage {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.quranImage {
+  max-width: 100%;
+  height: auto;
+  user-select: none;
+}
+
+.quranImage.invert {
+  filter: invert(1);
+}
+
+.pageNumber {
+  width: 120px;
+  color: var(--text-color);
+  border: 1px solid var(--primary-color);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  margin: 10px auto;
+}
+
+.navigation {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+}
+
+.navButton {
+  background-color: #12a3dc61;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 10px 15px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
+  margin: 0px 10px;
+}
+
+.navButton:hover {
+  background-color: #12a3dcb9;
+}
+
+.skeleton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+.skeletonPageNumber {
+  width: 60%;
+  height: 20px;
+  background-color: #e0e0e0;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+.skeletonImage {
+  width: 90%;
+  height: 400px; 
+  background-color: #e0e0e0;
+  border-radius: 8px;
+  animation: pulse 1.5s infinite; /* إضافة تأثير نبض */
+}
+
+@keyframes pulse {
+  0% {
+    background-color: #e0e0e0;
+  }
+  50% {
+    background-color: #d0d0d0;
+  }
+  100% {
+    background-color: #e0e0e0;
+  }
+}
+
+.surahSelector {
+  width: 90%;
+  max-width: 400px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.selectContainer {
+  position: relative;
+}
+
+.select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--input-border-color);
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: var(--input-bg-color);
+  cursor: pointer;
+  transition: border-color 0.3s;
+  color: var(--text-color);
+}
+
+.select:focus {
+  outline: none;
+  border: 1px solid var(--input-border-color);
+}
+
+.zoomControls {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.zoomButton {
+  background: var(--secondary-gradient);
+  color: var(--text-white);
+  border: none;
+  border-radius: 5px;
+  padding: 4px 20px;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.zoomButton:hover {
+  background: var(--primary-gradient);
+}
