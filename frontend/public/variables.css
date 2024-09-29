@@ -1,20 +1,20 @@
 /* متغيرات الثيم النهاري */
 [data-theme="light"] {
   --background-color: #f5f5f5;
-  --gradient: linear-gradient(180deg, #12A4DC, #1266dc);
-  --primary-gradient: linear-gradient(300deg, #12A4DC, #6cd5fe);
+  --gradient: linear-gradient(180deg, #12a4dc, #1266dc);
+  --primary-gradient: linear-gradient(300deg, #12a4dc, #6cd5fe);
   --secondary-gradient: linear-gradient(180deg, #51ceff, #1266dc);
   --text-color: #333333;
   --text-white: #ffffff;
-  --primary-color: #12A4DC;
+  --primary-color: #12a4dc;
   --primary-hover-color: #0f8dc8;
   --primary-active-color: #0d7fb4;
-  --secondary-color: #6A3DE8;
+  --secondary-color: #6a3de8;
   --border-color: #dddddd;
-  --button-bg-color: #12A4DC;
+  --button-bg-color: #12a4dc;
   --button-text-color: #ffffff;
   --button-hover-bg-color: #0f8dc8;
-  --link-color: #12A4DC;
+  --link-color: #12a4dc;
   --link-hover-color: #0f8dc8;
   --card-bg-color: #ffffff;
   --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -23,13 +23,15 @@
   --input-border-color: #cccccc;
   --input-bg-color: #ffffff;
   --input-placeholder-color: #999999;
+  --skeleton-bg-color: #e0e0e0;
+  --skeleton-bg-color-light: #d0d0d0;
 }
 
 /* متغيرات الثيم الليلي */
 [data-theme="dark"] {
   --background-color: #121212;
-  --gradient: linear-gradient(180deg, #12A4DC, #1266dc);
-  --primary-gradient: linear-gradient(300deg, #12A4DC, #6cd5fe);
+  --gradient: linear-gradient(180deg, #12a4dc, #1266dc);
+  --primary-gradient: linear-gradient(300deg, #12a4dc, #6cd5fe);
   --secondary-gradient: linear-gradient(180deg, #51ceff, #1266dc);
   --text-color: #e0e0e0;
   --text-white: #ffffff;
@@ -50,6 +52,8 @@
   --input-border-color: #444444;
   --input-bg-color: #333333;
   --input-placeholder-color: #777777;
+  --skeleton-bg-color: #1f1f1f;
+  --skeleton-bg-color-light: #333333;
 }
 
 /* تعليقات توضيحية:

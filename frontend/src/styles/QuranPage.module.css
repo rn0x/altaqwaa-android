@@ -77,31 +77,30 @@
 .skeletonPageNumber {
   width: 60%;
   height: 20px;
-  background-color: #e0e0e0;
+  background-color: var(--skeleton-bg-color);
   margin-bottom: 10px;
   border-radius: 4px;
 }
 
 .skeletonImage {
   width: 90%;
-  height: 400px; 
-  background-color: #e0e0e0;
+  height: 400px;
+  background-color: var(--skeleton-bg-color);
   border-radius: 8px;
   animation: pulse 1.5s infinite; /* إضافة تأثير نبض */
 }
 
 @keyframes pulse {
   0% {
-    background-color: #e0e0e0;
+    background-color: var(--skeleton-bg-color);
   }
   50% {
-    background-color: #d0d0d0;
+    background-color: var(--skeleton-bg-color-light);
   }
   100% {
-    background-color: #e0e0e0;
+    background-color: var(--skeleton-bg-color);
   }
 }
-
 .surahSelector {
   width: 90%;
   max-width: 400px;
