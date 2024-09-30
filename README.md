@@ -1,5 +1,8 @@
 > [!IMPORTANT]  
-> جار العمل على الإصدار الجديد من البرنامج [(v2)](https://github.com/rn0x/altaqwaa-android/commits/version-2.0)
+> جار العمل على الإصدار الجديد من البرنامج [(v2)](https://github.com/rn0x/altaqwaa-android/commits/version-2.0) <br> <br>
+> <img src="https://github.com/user-attachments/assets/cfb93b0a-784b-4f41-8642-b46460743e52" width="150" /> <img src="https://github.com/user-attachments/assets/7b05dca3-7bd6-4c23-8a7d-e20cc2b5643b" width="150" />
+
+
 <br>
 
 <div align="center">
