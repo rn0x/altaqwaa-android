@@ -12,6 +12,10 @@
     "server:start": "cd server && npm start",
     "server:test": "cd server && npm test",
     "cordova:www": "npm run frontend:build && node cordova/scripts/moveBuildToCordova.mjs",
+    "cordova:build-apk": "npm run cordova:www && cd cordova && cordova build android --release -- --packageType=apk",
+    "cordova:build-aab": "npm run cordova:www && cd cordova && cordova build android --release -- --packageType=bundle",
+    "cordova:device": "cd cordova && cordova run android --device",
+    "cordova:bu-device": "npm run cordova:www && cd cordova && cordova run android --device",
     "build": "npm run frontend:build && npm run server:build",
     "start": "npm run frontend:start & npm run server:start",
     "start:dev": "concurrently \"npm run frontend:start\" \"npm run server:start\"",
@@ -24,7 +28,6 @@
   },
   "dependencies": {
     "dotenv": "^16.4.5",
-    "fs-extra": "^11.2.0",
-    "react-player": "^2.16.0"
+    "fs-extra": "^11.2.0"
   }
 }

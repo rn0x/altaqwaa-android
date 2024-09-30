@@ -8,10 +8,10 @@
     "android": "cordova platform add android@latest",
     "keytool": "node scripts/keytool.mjs",
     "re-android": "cordova platform rm android && cordova platform add android@latest",
-    "build-apk": "npm run build && cordova build android --release -- --packageType=apk",
-    "build-aab": "npm run build && cordova build android --release -- --packageType=bundle",
+    "build-apk": "npm run frontend:build && cordova build android --release -- --packageType=apk",
+    "build-aab": "npm run frontend:build && cordova build android --release -- --packageType=bundle",
     "device": "cordova run android --device",
-    "bu-device": "npm run build && cordova run android --device",
+    "bu-device": "npm run frontend:build && cordova run android --device",
     "logcat": "adb logcat",
     "log": "adb logcat | Select-String INFO:CONSOLE",
     "clean": "cordova clean && npm cache clean --force",
@@ -20,7 +20,9 @@
   "devDependencies": {
     "cordova-android": "^13.0.0",
     "cordova-plugin-device": "github:apache/cordova-plugin-device",
+    "cordova-plugin-navigationbar-color": "github:accessai/cordova-plugin-navigationbar",
     "cordova-plugin-network-information": "github:apache/cordova-plugin-network-information",
+    "cordova-plugin-statusbar": "^4.0.0",
     "phonegap-plugin-mobile-accessibility": "github:phonegap/phonegap-mobile-accessibility"
   },
   "cordova": {
@@ -28,7 +30,9 @@
       "android"
     ],
     "plugins": {
-      "phonegap-plugin-mobile-accessibility": {}
+      "phonegap-plugin-mobile-accessibility": {},
+      "cordova-plugin-navigationbar-color": {},
+      "cordova-plugin-statusbar": {}
     }
   }
 }

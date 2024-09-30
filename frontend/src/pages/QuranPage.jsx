@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { FaArrowLeft, FaArrowRight, FaSearchPlus, FaSearchMinus } from 'react-icons/fa';
 import useTheme from '../hooks/useTheme';
 import styles from '../styles/QuranPage.module.css';
@@ -9,56 +9,45 @@ import useTranslation from '../hooks/useTranslation';
 export default function QuranPage() {
     const pages = pagesQuran;
     const { theme } = useTheme();
-    const { direction } = useTranslation();
+    const { direction } = useTranslation(); // هنا نحصل على اتجاه النص سواء كان rtl أو ltr
     const [currentIndex, setCurrentIndex] = useState(0);
     const [startX, setStartX] = useState(0);
     const [endX, setEndX] = useState(0);
     const [isLoading, setIsLoading] = useState(true);
     const [imageScale, setImageScale] = useState(1);
     const [showNavigation, setShowNavigation] = useState(false);
-    let hideTimeout;
-    const [isSwiping, setIsSwiping] = useState(false);
-
-    // حالة جديدة لتتبع ظهور الأزرار
     const [areButtonsVisible, setAreButtonsVisible] = useState(false);
+    const [isSwiping, setIsSwiping] = useState(false);
+    const hideTimeoutRef = useRef(null);
 
     useEffect(() => {
         const savedPage = localStorage.getItem('lastReadPage');
-
         if (savedPage) {
             setCurrentIndex(Number(savedPage));
         }
 
-        // إضافة حدث keydown
         const handleKeyDown = (event) => {
-            // إذا كان الاتجاه rtl
             if (direction === 'rtl') {
-                if (event.key === 'ArrowRight') {
-                    handlePrev();
-                } else if (event.key === 'ArrowLeft') {
-                    handleNext();
-                }
-            } else { // إذا كان الاتجاه ltr
-                if (event.key === 'ArrowLeft') {
-                    handlePrev();
-                } else if (event.key === 'ArrowRight') {
-                    handleNext();
-                }
+                if (event.key === 'ArrowRight') handlePrev();
+                else if (event.key === 'ArrowLeft') handleNext();
+            } else {
+                if (event.key === 'ArrowLeft') handlePrev();
+                else if (event.key === 'ArrowRight') handleNext();
             }
         };
 
         window.addEventListener('keydown', handleKeyDown);
 
         return () => {
-            clearTimeout(hideTimeout);
+            clearTimeout(hideTimeoutRef.current);
             window.removeEventListener('keydown', handleKeyDown);
         };
-    }, [currentIndex, hideTimeout, direction]);
+    }, [currentIndex, direction]);
 
     const handlePrev = () => {
         if (currentIndex > 0) {
-            const newIndex = currentIndex - 1;
             setIsLoading(true);
+            const newIndex = currentIndex - 1;
             setCurrentIndex(newIndex);
             localStorage.setItem('lastReadPage', newIndex);
         }
@@ -66,43 +55,53 @@ export default function QuranPage() {
 
     const handleNext = () => {
         if (currentIndex < pages.length - 1) {
-            const newIndex = currentIndex + 1;
             setIsLoading(true);
+            const newIndex = currentIndex + 1;
             setCurrentIndex(newIndex);
             localStorage.setItem('lastReadPage', newIndex);
         }
     };
 
-    const handleTouchStart = (e) => {
-        const touch = e.touches[0];
-        setStartX(touch.clientX);
+    // دمج أحداث الفأرة واللمس للسحب على الهاتف وسطح المكتب مع مراعاة اتجاه النص
+    const handleStart = (e) => {
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        setStartX(clientX);
         setIsSwiping(false);
     };
 
-    const handleTouchMove = (e) => {
-        const touch = e.touches[0];
-        setEndX(touch.clientX);
+    const handleMove = (e) => {
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        setEndX(clientX);
         setIsSwiping(true);
     };
 
-    const handleTouchEnd = () => {
+    const handleEnd = () => {
         const threshold = 50;
         const distance = startX - endX;
 
         if (isSwiping) {
-            if (distance < -threshold) {
-                handleNext();
-            } else if (distance > threshold) {
-                handlePrev();
+            if (direction === 'rtl') {
+                // في حالة RTL، السحب لليمين (distance أقل من 0) يجب أن ينقل المستخدم للصفحة التالية
+                if (distance < -threshold) {
+                    handleNext();
+                } else if (distance > threshold) {
+                    handlePrev();
+                }
+            } else {
+                // في حالة LTR، السحب لليمين (distance أقل من 0) ينقل المستخدم للصفحة السابقة
+                if (distance < -threshold) {
+                    handlePrev();
+                } else if (distance > threshold) {
+                    handleNext();
+                }
             }
         }
     };
 
     const handleSurahChange = (e) => {
         const selectedSurahNumber = Number(e.target.value);
-        const selectedPageIndex = pages.findIndex(page =>
-            page.start.surah_number <= selectedSurahNumber &&
-            page.end.surah_number >= selectedSurahNumber
+        const selectedPageIndex = pages.findIndex(
+            (page) => page.start.surah_number <= selectedSurahNumber && page.end.surah_number >= selectedSurahNumber
         );
 
         if (selectedPageIndex !== -1) {
@@ -133,9 +132,7 @@ export default function QuranPage() {
                         style={{ display: isLoading ? 'none' : 'block', transform: `scale(${imageScale})` }}
                         className={`${styles.quranImage} ${theme === 'dark' ? styles.invert : ''}`}
                         onLoad={() => setIsLoading(false)}
-                        onError={() => {
-                            setIsLoading(true);
-                        }}
+                        onError={() => setIsLoading(true)}
                         onMouseDown={(e) => e.preventDefault()}
                         draggable="false"
                     />
@@ -154,39 +151,34 @@ export default function QuranPage() {
         );
     };
 
-    const handleZoomIn = () => {
-        setImageScale(prevScale => prevScale + 0.1);
-    };
+    const handleZoomIn = () => setImageScale((prevScale) => prevScale + 0.1);
 
-    const handleZoomOut = () => {
-        setImageScale(prevScale => Math.max(prevScale - 0.1, 0.1));
-    };
+    const handleZoomOut = () => setImageScale((prevScale) => Math.max(prevScale - 0.1, 0.1));
 
     const showButtons = () => {
         if (!areButtonsVisible) {
             setShowNavigation(true);
-            setAreButtonsVisible(true); // ضبط حالة الأزرار على مرئية
-            clearTimeout(hideTimeout);
-            hideTimeout = setTimeout(() => {
-                hideButtons();
-            }, 5000);
+            setAreButtonsVisible(true);
+            clearTimeout(hideTimeoutRef.current);
+            hideTimeoutRef.current = setTimeout(() => hideButtons(), 5000);
         }
     };
 
     const hideButtons = () => {
         setShowNavigation(false);
-        setAreButtonsVisible(false); // ضبط حالة الأزرار على مخفية
+        setAreButtonsVisible(false);
     };
 
     return (
         <div
             className={styles.container}
-            onTouchStart={handleTouchStart}
-            onTouchMove={handleTouchMove}
-            onTouchEnd={handleTouchEnd}
+            onTouchStart={handleStart}
+            onTouchMove={handleMove}
+            onTouchEnd={handleEnd}
+            onMouseDown={handleStart}
+            onMouseMove={handleMove}
+            onMouseUp={handleEnd}
             onMouseEnter={showButtons}
-            onMouseLeave={hideButtons}
-            // onMouseMove={showButtons}
             onFocus={showButtons}
             onBlur={hideButtons}
             tabIndex={0}
@@ -194,13 +186,8 @@ export default function QuranPage() {
             {renderPage(pages[currentIndex])}
 
             <div className={styles.surahSelector}>
-
                 <div className={styles.selectContainer}>
-                    <select
-                        id="surahSelect"
-                        onChange={handleSurahChange}
-                        className={styles.select}
-                    >
+                    <select id="surahSelect" onChange={handleSurahChange} className={styles.select}>
                         <option value="">اختر سورة</option>
                         {metadataQuran.map((surah, index) => (
                             <option key={index} value={surah.number}>

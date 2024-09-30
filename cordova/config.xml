@@ -17,14 +17,14 @@
     <preference name="ErrorUrl" value="error.html" />
     <preference name="Fullscreen" value="false" />
     <preference name="DisallowOverscroll" value="true" />
-    <preference name="NavigationBarLight" value="true" />
+    <preference name="NavigationBarLight" value="false" />
     <!-- default, landscape, or portrait -->
     <preference name="Orientation" value="default" />
-    <preference name="BackgroundColor" value="#eceff4" />
+    <preference name="BackgroundColor" value="#f5f5f5" />
     <preference name="HideKeyboardFormAccessoryBar" value="true" />
-    <preference name="NavigationBarBackgroundColor" value="#ffffff" />
-    <preference name="SplashScreenBackgroundColor" value="#eceff4" />
-    <preference name="StatusBarBackgroundColor" value="#eceff4" />
+    <preference name="NavigationBarBackgroundColor" value="#1266dc" />
+    <preference name="SplashScreenBackgroundColor" value="#f5f5f5" />
+    <preference name="StatusBarBackgroundColor" value="#f5f5f5" />
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarStyle" value="default" />
     

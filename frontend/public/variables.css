@@ -3,7 +3,7 @@
   --background-color: #f5f5f5;
   --gradient: linear-gradient(180deg, #12a4dc, #1266dc);
   --primary-gradient: linear-gradient(300deg, #12a4dc, #6cd5fe);
-  --secondary-gradient: linear-gradient(180deg, #51ceff, #1266dc);
+  --secondary-gradient: linear-gradient(180deg, #51ceff 10%, #1266dc 90%);
   --text-color: #333333;
   --text-white: #ffffff;
   --primary-color: #12a4dc;
@@ -32,7 +32,7 @@
   --background-color: #121212;
   --gradient: linear-gradient(180deg, #12a4dc, #1266dc);
   --primary-gradient: linear-gradient(300deg, #12a4dc, #6cd5fe);
-  --secondary-gradient: linear-gradient(180deg, #51ceff, #1266dc);
+  --secondary-gradient: linear-gradient(180deg, #51ceff 10%, #1266dc 90%);
   --text-color: #e0e0e0;
   --text-white: #ffffff;
   --primary-color: #1e88e5;
