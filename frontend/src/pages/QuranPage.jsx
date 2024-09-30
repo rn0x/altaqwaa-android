@@ -139,6 +139,16 @@ export default function QuranPage() {
                         onMouseDown={(e) => e.preventDefault()}
                         draggable="false"
                     />
+                    {showNavigation && (
+                        <div className={styles.navigation}>
+                            <button onClick={handlePrev} className={styles.navButton} disabled={currentIndex === 0}>
+                                <FaArrowRight />
+                            </button>
+                            <button onClick={handleNext} className={styles.navButton} disabled={currentIndex === pages.length - 1}>
+                                <FaArrowLeft />
+                            </button>
+                        </div>
+                    )}
                 </div>
             </>
         );
@@ -176,24 +186,15 @@ export default function QuranPage() {
             onTouchEnd={handleTouchEnd}
             onMouseEnter={showButtons}
             onMouseLeave={hideButtons}
-            onMouseMove={showButtons}
+            // onMouseMove={showButtons}
             onFocus={showButtons}
             onBlur={hideButtons}
             tabIndex={0}
         >
             {renderPage(pages[currentIndex])}
-            {showNavigation && (
-                <div className={styles.navigation}>
-                    <button onClick={handlePrev} className={styles.navButton} disabled={currentIndex === 0}>
-                        <FaArrowRight />
-                    </button>
-                    <button onClick={handleNext} className={styles.navButton} disabled={currentIndex === pages.length - 1}>
-                        <FaArrowLeft />
-                    </button>
-                </div>
-            )}
 
             <div className={styles.surahSelector}>
+
                 <div className={styles.selectContainer}>
                     <select
                         id="surahSelect"

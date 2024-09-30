@@ -15,7 +15,7 @@
 }
 
 .quranImage {
-  max-width: 100%;
+  max-width: 90%;
   height: auto;
   user-select: none;
 }
@@ -38,6 +38,7 @@
 
 .navigation {
   width: 100%;
+  height: 50%;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -49,8 +50,9 @@
 }
 
 .navButton {
-  background-color: #12a3dc61;
-  color: white;
+  background-color: #12a3dc00;
+  height: 50%;
+  color: var(--text-color);
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -60,11 +62,11 @@
   align-items: center;
   justify-content: center;
   transition: background-color 0.3s;
-  margin: 0px 10px;
+  margin: 0px 0px;
 }
 
 .navButton:hover {
-  background-color: #12a3dcb9;
+  background-color: #12a3dc29;
 }
 
 .skeleton {
