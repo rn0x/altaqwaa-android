@@ -70,6 +70,11 @@
   background-color: #12a3dc29;
 }
 
+.navButton:disabled {
+  background-color: #aeaeae1d;
+  cursor: not-allowed; 
+}
+
 .skeleton {
   display: flex;
   flex-direction: column;
