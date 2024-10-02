@@ -28,8 +28,8 @@
     "test": "npm run frontend:test && npm run server:test"
   },
   "dependencies": {
+    "concurrently": "^7.0.0",
     "dotenv": "^16.4.5",
-    "fs-extra": "^11.2.0",
-    "concurrently": "^7.0.0"
+    "fs-extra": "^11.2.0"
   }
 }
