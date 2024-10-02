@@ -26,7 +26,7 @@ const __dirname = path.dirname(__filename);
  * اسم ملف keystore الذي سيتم إنشاؤه.
  * @type {string}
  */
-const keystoreName = path.join(__dirname, 'release.keystore');
+const keystoreName = path.join(__dirname, '..', 'cordova', 'release.keystore');
 
 /**
  * كلمة مرور المتجر (store password) للـ keystore.
@@ -143,7 +143,7 @@ keytoolProcess.on('close', (code) => {
         /**
          * كتابة ملف `build.json` إلى نظام الملفات.
          */
-        fs.writeFileSync('build.json', JSON.stringify(buildConfig, null, 2));
+        fs.writeFileSync(path.join(__dirname, '..', 'cordova', 'build.json'), JSON.stringify(buildConfig, null, 2));
         console.log('build.json file created successfully.');
     } else {
         // إذا كانت القيمة غير 0، فهذا يعني حدوث خطأ

@@ -43,6 +43,16 @@ export default function App() {
     document.documentElement.setAttribute('data-theme', theme);
     document.documentElement.setAttribute('dir', direction);
 
+    // التحكم في لون الشريط العلوي || StatusBar
+    if (window.StatusBar) {
+      window.StatusBar.backgroundColorByHexString(theme === 'light' ? '#f5f5f5' : '#121212');
+      if (theme === 'light') {
+        window.StatusBar.styleDefault();
+      } else {
+        window.StatusBar.styleLightContent();
+      }
+    }
+
   }, [isDesktop, direction, theme]);
 
   return (

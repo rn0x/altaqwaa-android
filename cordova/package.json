@@ -1,21 +1,19 @@
 {
-  "name": "com.rn0x.altaqwaa.test",
+  "name": "altaqwaa-cordova",
   "version": "1.0.0",
-  "description": "A Cordova project for Altaqwaa",
+  "private": true,
   "scripts": {
-    "frontend:build": "cd ../frontend && npm run build",
-    "cordova:www": "npm run frontend:build && node cordova/scripts/moveBuildToCordova.mjs",
+    "frontend:build": "cd .. && npm run cordova:www",
+    "build-apk": "cordova build android --release -- --packageType=apk",
+    "build-aab": "cordova build android --release -- --packageType=bundle",
     "android": "cordova platform add android@latest",
-    "keytool": "node scripts/keytool.mjs",
     "re-android": "cordova platform rm android && cordova platform add android@latest",
-    "build-apk": "npm run frontend:build && cordova build android --release -- --packageType=apk",
-    "build-aab": "npm run frontend:build && cordova build android --release -- --packageType=bundle",
     "device": "cordova run android --device",
     "bu-device": "npm run frontend:build && cordova run android --device",
+    "prepare": "cordova prepare",
     "logcat": "adb logcat",
     "log": "adb logcat | Select-String INFO:CONSOLE",
-    "clean": "cordova clean && npm cache clean --force",
-    "prepare": "cordova prepare"
+    "clean": "cordova clean && npm cache clean --force"
   },
   "devDependencies": {
     "cordova-android": "^13.0.0",

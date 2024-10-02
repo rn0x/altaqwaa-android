@@ -9,6 +9,16 @@ export const ThemeProvider = ({ children }) => {
         setTheme(newTheme);
         localStorage.setItem('theme', newTheme);
         document.documentElement.setAttribute('data-theme', newTheme);
+
+        // التحكم في لون الشريط العلوي || StatusBar
+        if (window.StatusBar) {
+            window.StatusBar.backgroundColorByHexString(newTheme === 'light' ? '#f5f5f5' : '#121212');
+            if (newTheme === 'light') {
+                window.StatusBar.styleDefault();
+            } else {
+                window.StatusBar.styleLightContent();
+            }
+        }
     };
 
     return (

@@ -8,8 +8,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // تعيين المسارات
-const frontendBuildPath = path.join(__dirname, '..', '..', 'frontend', 'build');
-const cordovaWwwPath = path.join(__dirname, '..', 'www');
+const frontendBuildPath = path.join(__dirname, '..', 'frontend', 'build');
+const cordovaWwwPath = path.join(__dirname, '..', 'cordova', 'www');
 const gitkeepPath = path.join(cordovaWwwPath, '.gitkeep');
 
 // دالة لنقل مجلد البناء إلى مجلد Cordova
