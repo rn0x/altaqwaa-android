@@ -56,7 +56,7 @@
     "cordova-plugin-device": "^3.0.0",
     "cordova-plugin-file": "^4.3.3",
     "cordova-plugin-file-opener2": "^4.0.0",
-    "cordova-plugin-inappbrowser": "^4.1.0",
+    "cordova-plugin-inappbrowser": "^6.0.1",
     "cordova-plugin-local-notification": "^1.2.3",
     "cordova-plugin-x-socialsharing": "^6.0.4",
     "es6-promise-plugin": "^4.2.2",
