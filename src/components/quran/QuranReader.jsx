@@ -9,6 +9,8 @@ import {
   parseSurah,
 } from '../../services/quran.mjs'
 import { Icon } from '../ui/Icon.jsx'
+import { VerseContextMenu, LONG_PRESS_DURATION } from './VerseContextMenu.jsx'
+import { Toast } from './Toast.jsx'
 
 const READING_KEY = 'quran.reading'
 const FONT_SIZE_KEY = 'quran.fontSize'
@@ -16,7 +18,7 @@ const FONT_SIZE_KEY = 'quran.fontSize'
 const FONT_MIN = 18
 const FONT_MAX = 40
 const FONT_STEP = 2
-const DOUBLE_TAP_DELAY = 350
+const DOUBLE_TAP_DELAY = 300
 
 function getScrollRoot() {
   return document.querySelector('.shell__main')
@@ -27,7 +29,8 @@ export function QuranReader({ surahIndex, initialVerse, onPrev, onNext, onTafsee
   const [fontSize, setFontSize] = useLocalStorage(FONT_SIZE_KEY, 26)
   const [reading, setReading] = useLocalStorage(READING_KEY, null)
   const [current, setCurrent] = useState(initialVerse || 1)
-  const [savedFlash, setSavedFlash] = useState(false)
+  const [contextMenu, setContextMenu] = useState(null)
+  const [toast, setToast] = useState(null)
 
   const currentRef = useRef(current)
   const verseEls = useRef(new Map())
@@ -35,54 +38,39 @@ export function QuranReader({ surahIndex, initialVerse, onPrev, onNext, onTafsee
   const scrollRaf = useRef(null)
   const lastTapRef = useRef(0)
   const doubleTapVerseRef = useRef(null)
-  // While the programmatic anchor-scroll settles, ignore scroll tracking so
-  // the centred verse keeps its highlight instead of being corrected to the
-  // one above (the 45% tracking line is not the 50% centre line).
   const suppressTrackRef = useRef(false)
 
-  const persist = useCallback(
-    (verse) => {
-      if (saveTimer.current) clearTimeout(saveTimer.current)
-      saveTimer.current = setTimeout(() => {
-        setReading((prev) => ({
-          ...(prev || {}),
-          surah: surahIndex,
-          verse,
-          at: Date.now(),
-        }))
-      }, 350)
-    },
-    [surahIndex, setReading]
-  )
+  const longPressTimer = useRef(null)
+  const longPressStartPos = useRef(null)
+  const longPressFired = useRef(false)
+  const contextOpenRef = useRef(false)
 
   const updateCurrent = useCallback(
     (verse) => {
       if (currentRef.current === verse) return
       currentRef.current = verse
       setCurrent(verse)
-      persist(verse)
     },
-    [persist]
+    []
   )
 
   const handleVerseTap = useCallback(
     (verseNumber, el) => {
+      if (contextOpenRef.current) return
+
       const now = Date.now()
       const elapsed = now - lastTapRef.current
       lastTapRef.current = now
 
       if (elapsed < DOUBLE_TAP_DELAY && doubleTapVerseRef.current === verseNumber) {
-        // Double tap detected → open tafseer
         doubleTapVerseRef.current = null
         if (onTafseer) onTafseer(verseNumber)
         return
       }
 
-      // First tap → select verse and schedule single-tap action
       doubleTapVerseRef.current = verseNumber
       updateCurrent(verseNumber)
 
-      // Visual feedback for double-tap attempt
       if (el) {
         el.classList.add('quran-ayah--tap-pending')
         setTimeout(() => el.classList.remove('quran-ayah--tap-pending'), DOUBLE_TAP_DELAY + 50)
@@ -90,6 +78,75 @@ export function QuranReader({ surahIndex, initialVerse, onPrev, onNext, onTafsee
     },
     [updateCurrent, onTafseer]
   )
+
+  const clearLongPress = useCallback(() => {
+    if (longPressTimer.current) {
+      clearTimeout(longPressTimer.current)
+      longPressTimer.current = null
+    }
+    longPressStartPos.current = null
+  }, [])
+
+  const openContextMenu = useCallback((verseNumber, x, y) => {
+    longPressFired.current = true
+    contextOpenRef.current = true
+    updateCurrent(verseNumber)
+    setContextMenu({
+      verse: verseNumber,
+      position: {
+        x: Math.min(x, window.innerWidth - 180),
+        y: Math.min(y, window.innerHeight - 220),
+      },
+    })
+  }, [updateCurrent])
+
+  const closeContextMenu = useCallback(() => {
+    contextOpenRef.current = false
+    longPressFired.current = false
+    setContextMenu(null)
+  }, [])
+
+  const handleTouchStart = useCallback((verseNumber, e) => {
+    if (contextOpenRef.current) return
+    longPressFired.current = false
+    const touch = e.touches[0]
+    longPressStartPos.current = { x: touch.clientX, y: touch.clientY }
+
+    longPressTimer.current = setTimeout(() => {
+      longPressTimer.current = null
+      openContextMenu(verseNumber, touch.clientX, touch.clientY)
+    }, LONG_PRESS_DURATION)
+  }, [openContextMenu])
+
+  const handleTouchMove = useCallback((e) => {
+    if (!longPressTimer.current || !longPressStartPos.current) return
+    const touch = e.touches[0]
+    const dx = touch.clientX - longPressStartPos.current.x
+    const dy = touch.clientY - longPressStartPos.current.y
+    if (Math.sqrt(dx * dx + dy * dy) > 10) {
+      clearLongPress()
+    }
+  }, [clearLongPress])
+
+  const handleTouchEnd = useCallback(() => {
+    clearLongPress()
+  }, [clearLongPress])
+
+  const handleContextMenu = useCallback((verseNumber, e) => {
+    e.preventDefault()
+    if (contextOpenRef.current) return
+    openContextMenu(verseNumber, e.clientX, e.clientY)
+  }, [openContextMenu])
+
+  useEffect(() => {
+    return () => {
+      clearLongPress()
+      if (contextOpenRef.current) {
+        document.body.style.overflow = ''
+        document.body.style.touchAction = ''
+      }
+    }
+  }, [clearLongPress])
 
   const trackCurrent = useCallback(() => {
     if (suppressTrackRef.current) return
@@ -135,7 +192,6 @@ export function QuranReader({ surahIndex, initialVerse, onPrev, onNext, onTafsee
   useEffect(() => {
     if (!initialVerse || !verseEls.current.has(initialVerse)) return
     const el = verseEls.current.get(initialVerse)
-    // Pin the anchor verse explicitly so the highlight matches the deep link.
     currentRef.current = initialVerse
     setCurrent(initialVerse)
     suppressTrackRef.current = true
@@ -151,11 +207,6 @@ export function QuranReader({ surahIndex, initialVerse, onPrev, onNext, onTafsee
   useEffect(() => {
     return () => {
       if (saveTimer.current) clearTimeout(saveTimer.current)
-      storage.set(READING_KEY, {
-        surah: surahIndex,
-        verse: currentRef.current,
-        at: Date.now(),
-      })
     }
   }, [surahIndex])
 
@@ -175,9 +226,34 @@ export function QuranReader({ surahIndex, initialVerse, onPrev, onNext, onTafsee
       verse: currentRef.current,
       at: Date.now(),
     }))
-    setSavedFlash(true)
-    setTimeout(() => setSavedFlash(false), 1500)
+    setToast({ message: 'تم حفظ الموضع', icon: 'bookmark-fill' })
   }, [surahIndex, setReading])
+
+  const handleSaveBookmark = useCallback((verse) => {
+    setReading((prev) => ({
+      ...(prev || {}),
+      surah: surahIndex,
+      verse,
+      at: Date.now(),
+    }))
+    setToast({ message: 'تم حفظ العلامة المرجعية', icon: 'bookmark-fill' })
+  }, [surahIndex, setReading])
+
+  const handleCopyVerse = useCallback((verse) => {
+    const verseData = surah.verses.find((v) => v.number === verse)
+    if (verseData) {
+      navigator.clipboard.writeText(verseData.text).then(() => {
+        setToast({ message: 'تم نسخ الآية', icon: 'copy' })
+      }).catch(() => {})
+    }
+  }, [surah])
+
+  const handleShareVerse = useCallback((verse) => {
+    const verseData = surah.verses.find((v) => v.number === verse)
+    if (verseData && navigator.share) {
+      navigator.share({ text: verseData.text }).catch(() => {})
+    }
+  }, [surah])
 
   const hasSavedHere = reading?.surah === surahIndex && reading?.verse === current
 
@@ -272,8 +348,6 @@ export function QuranReader({ surahIndex, initialVerse, onPrev, onNext, onTafsee
         <p className="quran-basmala">{BASMALA}</p>
       )}
 
-      {savedFlash && <p className="quran-reader__saved">تم حفظ الموضع</p>}
-
       <p className="quran-mushaf">
         {surah.verses.map((verse) => (
           <span
@@ -284,7 +358,19 @@ export function QuranReader({ surahIndex, initialVerse, onPrev, onNext, onTafsee
             }}
             className={`quran-ayah${current === verse.number ? ' quran-ayah--current' : ''}`}
             data-verse={verse.number}
-            onClick={(e) => handleVerseTap(verse.number, e.currentTarget)}
+            onClick={(e) => {
+              if (longPressFired.current) {
+                e.preventDefault()
+                e.stopPropagation()
+                return
+              }
+              handleVerseTap(verse.number, e.currentTarget)
+            }}
+            onTouchStart={(e) => handleTouchStart(verse.number, e)}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+            onTouchCancel={handleTouchEnd}
+            onContextMenu={(e) => handleContextMenu(verse.number, e)}
           >
             {verse.text}
             <span className="quran-ayah__marker">
@@ -296,6 +382,28 @@ export function QuranReader({ surahIndex, initialVerse, onPrev, onNext, onTafsee
           </span>
         ))}
       </p>
+
+      {contextMenu && (
+        <VerseContextMenu
+          verse={contextMenu.verse}
+          surahIndex={surahIndex}
+          position={contextMenu.position}
+          onClose={closeContextMenu}
+          onSaveBookmark={handleSaveBookmark}
+          onOpenTafseer={(verse) => onTafseer?.(verse)}
+          onCopy={handleCopyVerse}
+          onShare={handleShareVerse}
+          isBookmarked={reading?.surah === surahIndex && reading?.verse === contextMenu.verse}
+        />
+      )}
+
+      {toast && (
+        <Toast
+          message={toast.message}
+          icon={toast.icon}
+          onClose={() => setToast(null)}
+        />
+      )}
     </div>
   )
 }

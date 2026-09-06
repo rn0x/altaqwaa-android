@@ -54,9 +54,9 @@ export function QuranSurahList({ reading, onOpen }) {
       )}
 
       <ul className="quran-list">
-        {filtered.map((surah, i) => (
+        {filtered.map((surah) => (
           <li key={surah.Number}>
-            <button className="quran-item" onClick={() => onOpen(i)}>
+            <button className="quran-item" onClick={() => onOpen(surah.Number - 1)}>
               <span className="quran-item__number">{arabicDigits(surah.Number)}</span>
               <span className="quran-item__body">
                 <span className="quran-item__name">{surah.Name}</span>

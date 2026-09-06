@@ -1260,6 +1260,10 @@ h3 {
   cursor: pointer;
   border-radius: 8px;
   transition: background 0.2s ease;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+  touch-action: manipulation;
 }
 
 .quran-ayah--current {
@@ -11692,4 +11696,160 @@ h3 {
 .prayer__settings.qibla-shortcut span {
   position: relative;
   z-index: 1;
+}
+
+/* =====================================================
+   قائمة خيارات الآية (Verse Context Menu)
+   ===================================================== */
+.quran-verse-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  touch-action: none;
+}
+
+.quran-verse-menu__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  animation: verse-menu-fade-in 0.15s ease-out;
+  touch-action: none;
+}
+
+.quran-verse-menu__panel {
+  position: absolute;
+  width: 170px;
+  background: var(--bg-card, #fff);
+  border-radius: 14px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25), 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  animation: verse-menu-pop 0.2s cubic-bezier(0.2, 0.9, 0.3, 1);
+  transform-origin: top left;
+}
+
+.quran-verse-menu__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border, rgba(0, 0, 0, 0.08));
+  background: var(--bg-surface, rgba(0, 0, 0, 0.02));
+}
+
+.quran-verse-menu__verse-num {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--primary, #2e7d32);
+  font-family: 'Quran', 'Vazirmatn', sans-serif;
+}
+
+.quran-verse-menu__close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border: none;
+  background: transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  color: var(--text-muted, #666);
+  transition: all 0.15s ease;
+}
+
+.quran-verse-menu__close:hover {
+  background: var(--bg-hover, rgba(0, 0, 0, 0.06));
+  color: var(--text, #333);
+}
+
+.quran-verse-menu__list {
+  list-style: none;
+  padding: 6px;
+  margin: 0;
+}
+
+.quran-verse-menu__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 12px;
+  border: none;
+  background: transparent;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 13px;
+  font-family: 'Vazirmatn', sans-serif;
+  color: var(--text, #333);
+  transition: all 0.15s ease;
+  text-align: right;
+}
+
+.quran-verse-menu__item:hover {
+  background: var(--bg-hover, rgba(0, 0, 0, 0.05));
+}
+
+.quran-verse-menu__item:active {
+  transform: scale(0.97);
+}
+
+.quran-verse-menu__item--active {
+  color: var(--primary, #2e7d32);
+  background: var(--primary-soft, rgba(46, 125, 50, 0.08));
+}
+
+.quran-verse-menu__item--active:hover {
+  background: var(--primary-soft, rgba(46, 125, 50, 0.12));
+}
+
+@keyframes verse-menu-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes verse-menu-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* =====================================================
+   إشعار Toast
+   ===================================================== */
+.quran-toast {
+  position: fixed;
+  bottom: calc(var(--nav-h, 60px) + 20px);
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background: var(--bg-card, #fff);
+  border-radius: 100px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  font-size: 13px;
+  font-family: 'Vazirmatn', sans-serif;
+  color: var(--text, #333);
+  z-index: 300;
+  opacity: 0;
+  transition: all 0.25s cubic-bezier(0.2, 0.9, 0.3, 1);
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.quran-toast--show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.quran-toast .icon {
+  color: var(--primary, #2e7d32);
+  flex-shrink: 0;
 }
