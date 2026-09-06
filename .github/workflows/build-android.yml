@@ -1,0 +1,83 @@
+name: Build & Release Android
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Setup Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Decode keystore
+        run: echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 -d > tqw.keystore
+
+      - name: Create build.json
+        run: |
+          cat > build.json << 'EOF'
+          {
+            "android": {
+              "debug": {
+                "keystore": "./tqw.keystore",
+                "storePassword": "${{ secrets.KEYSTORE_PASSWORD }}",
+                "alias": "${{ secrets.KEY_ALIAS }}",
+                "password": "${{ secrets.KEY_PASSWORD }}",
+                "keystoreType": "pkcs12",
+                "packageType": "apk"
+              },
+              "release": {
+                "keystore": "./tqw.keystore",
+                "storePassword": "${{ secrets.KEYSTORE_PASSWORD }}",
+                "alias": "${{ secrets.KEY_ALIAS }}",
+                "password": "${{ secrets.KEY_PASSWORD }}",
+                "keystoreType": "pkcs12",
+                "packageType": "apk"
+              }
+            }
+          }
+          EOF
+
+      - name: Build APK (Release)
+        run: npm run build:apk:release
+
+      - name: Build AAB (Release)
+        run: npm run build:aab:release
+
+      - name: Get version
+        id: version
+        run: echo "tag=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.version.outputs.tag }}
+          name: "Altaqwaa ${{ steps.version.outputs.tag }}"
+          body: "Release ${{ steps.version.outputs.tag }}"
+          files: |
+            platforms/android/app/build/outputs/apk/release/*.apk
+            platforms/android/app/build/outputs/bundle/release/*.aab
+          generate_release_notes: true
