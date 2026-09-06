@@ -30,6 +30,9 @@ jobs:
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
 
+      - name: Install Python dependencies
+        run: pip install Pillow
+
       - name: Install dependencies
         run: npm ci
 
