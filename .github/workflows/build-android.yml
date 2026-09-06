@@ -33,15 +33,13 @@ jobs:
         run: pip install Pillow
 
       - name: Install dependencies
-        run: npm i --ignore-scripts
-
-      - name: Debug
-        run: |
-          ls -la config.xml
-          ls -la node_modules/.bin/cordova
+        run: npm i
 
       - name: Add Android platform
-        run: ./node_modules/.bin/cordova platform add android
+        run: |
+          rm -rf platforms plugins
+          mkdir -p www
+          npx cordova platform add android
 
       - name: Decode keystore
         run: echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 -d > tqw.keystore
