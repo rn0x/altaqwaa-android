@@ -19,10 +19,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm
 
       - name: Setup Java 17
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           distribution: temurin
           java-version: 17
@@ -34,7 +33,10 @@ jobs:
         run: pip install Pillow
 
       - name: Install dependencies
-        run: npm ci
+        run: npm i --ignore-scripts
+
+      - name: Add Android platform
+        run: npx cordova platform add android
 
       - name: Decode keystore
         run: echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 -d > tqw.keystore
@@ -63,11 +65,6 @@ jobs:
             }
           }
           EOF
-
-      - name: Add Android platform
-        run: |
-          rm -rf platforms plugins
-          ./node_modules/.bin/cordova platform add android
 
       - name: Build APK (Release)
         run: node scripts/build.mjs --release --skip-native
