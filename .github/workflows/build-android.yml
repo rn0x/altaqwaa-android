@@ -28,12 +28,17 @@ jobs:
 
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
+        with:
+          packages: ndk;27.2.12479018
 
       - name: Install Python dependencies
         run: pip install Pillow
 
       - name: Install dependencies
         run: npm i
+
+      - name: Build native libraries
+        run: node cordova-plugins/moonshine-stt/src/android/native/build.mjs
 
       - name: Add Android platform
         run: |
