@@ -65,7 +65,9 @@ jobs:
           EOF
 
       - name: Add Android platform
-        run: ./node_modules/.bin/cordova platform add android
+        run: |
+          rm -rf platforms plugins
+          ./node_modules/.bin/cordova platform add android
 
       - name: Build APK (Release)
         run: node scripts/build.mjs --release --skip-native
