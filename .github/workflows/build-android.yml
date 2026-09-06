@@ -64,11 +64,14 @@ jobs:
           }
           EOF
 
+      - name: Add Android platform
+        run: npx cordova platform add android
+
       - name: Build APK (Release)
-        run: npm run build:apk:release
+        run: node scripts/build.mjs --release --skip-native
 
       - name: Build AAB (Release)
-        run: npm run build:aab:release
+        run: node scripts/build.mjs --release --bundle --skip-native
 
       - name: Get version
         id: version
