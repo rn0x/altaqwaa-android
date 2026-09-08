@@ -1,0 +1,289 @@
+/* ============================================
+   أسماء الله الحسنى — أنماط الصفحة
+   ============================================ */
+
+/* --- Hero --- */
+.asma-hero {
+  text-align: center;
+  padding: 32px 16px 24px;
+  margin: 8px 0 20px;
+  background: linear-gradient(135deg, var(--bg-elevated) 0%, var(--bg-card) 50%, var(--surface) 100%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.asma-hero__bismillah {
+  font-family: 'Quran', serif;
+  font-size: 1.1rem;
+  color: var(--gold);
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+.asma-hero__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+/* --- Book Info --- */
+.asma-hero__book {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px;
+  margin-top: 12px;
+}
+
+.asma-hero__book-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 8px 0;
+  gap: 8px;
+}
+
+.asma-hero__book-row + .asma-hero__book-row {
+  border-top: 1px solid var(--border);
+}
+
+.asma-hero__book-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--gold);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.asma-hero__book-value {
+  font-size: 0.75rem;
+  color: var(--text);
+  text-align: right;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+/* --- Grid --- */
+.asma-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 0 4px 24px;
+}
+
+@media (max-width: 360px) {
+  .asma-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* --- Card --- */
+.asma-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 16px 8px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: transform 0.15s ease;
+  text-align: center;
+  min-height: 90px;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.asma-card:active {
+  transform: scale(0.95);
+}
+
+.asma-card__name {
+  font-family: 'Quran', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1.6;
+}
+
+.asma-card__meaning {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+/* --- Detail Page --- */
+.asma-detail__header {
+  text-align: center;
+  padding: 32px 16px 28px;
+  margin: 8px 0 20px;
+  background: linear-gradient(135deg, var(--bg-elevated) 0%, var(--bg-card) 50%, var(--surface) 100%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.asma-detail__name {
+  font-family: 'Quran', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 4px;
+  line-height: 1.8;
+}
+
+.asma-detail__name-en {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* --- Body --- */
+.asma-detail__body {
+  padding: 0 16px 32px;
+}
+
+.asma-detail__section {
+  margin-bottom: 20px;
+}
+
+.asma-detail__label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.asma-detail__meaning {
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.8;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px;
+}
+
+/* --- Expand Button --- */
+.asma-detail__expand {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  width: 100%;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text);
+  cursor: pointer;
+  text-align: right;
+  transition: background 0.15s ease;
+}
+
+.asma-detail__expand:active {
+  background: var(--surface);
+}
+
+.asma-detail__explanation {
+  font-size: 0.88rem;
+  color: var(--text);
+  line-height: 1.9;
+  margin-top: 10px;
+  padding: 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  white-space: pre-line;
+}
+
+/* --- Evidence --- */
+.asma-detail__evidence {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px;
+  margin-bottom: 10px;
+}
+
+.asma-detail__evidence-text {
+  font-family: 'Quran', serif;
+  font-size: 1rem;
+  color: var(--gold);
+  line-height: 2;
+  margin-bottom: 6px;
+}
+
+.asma-detail__evidence-source {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* --- Related Names --- */
+.asma-detail__related {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.asma-detail__related-chip {
+  font-size: 0.82rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+/* --- Source Link --- */
+.asma-detail__source-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  color: var(--gold);
+  text-decoration: none;
+  padding: 10px 0;
+  transition: opacity 0.15s ease;
+}
+
+.asma-detail__source-link:active {
+  opacity: 0.7;
+}
+
+/* --- Copy Button --- */
+.asma-detail__copy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text);
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.asma-detail__copy:active {
+  background: var(--surface);
+}

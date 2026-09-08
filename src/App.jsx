@@ -42,6 +42,8 @@ const KhutbahCategoryScreen = lazy(() => import('./screens/KhutbahCategoryScreen
 const KhutbahDetailScreen = lazy(() => import('./screens/KhutbahDetailScreen.jsx'))
 const QuranCardsScreen = lazy(() => import('./screens/QuranCardsScreen.jsx'))
 const QuranCardDetailScreen = lazy(() => import('./screens/QuranCardDetailScreen.jsx'))
+const AsmaScreen = lazy(() => import('./screens/AsmaScreen.jsx'))
+const AsmaDetailScreen = lazy(() => import('./screens/AsmaDetailScreen.jsx'))
 const NotFoundScreen = lazy(() => import('./screens/NotFoundScreen.jsx'))
 
 export function App() {
@@ -87,6 +89,8 @@ export function App() {
           <Route path="/khutbah" element={<KhutbahsScreen />} />
           <Route path="/khutbah/:slug" element={<KhutbahCategoryScreen />} />
           <Route path="/khutbah/:slug/:id" element={<KhutbahDetailScreen />} />
+          <Route path="/asma" element={<AsmaScreen />} />
+          <Route path="/asma/:id" element={<AsmaDetailScreen />} />
           <Route path="/quran-cards" element={<QuranCardsScreen />} />
           <Route path="/quran-cards/:number" element={<QuranCardDetailScreen />} />
           <Route path="*" element={<NotFoundScreen />} />

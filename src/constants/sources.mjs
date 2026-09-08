@@ -72,4 +72,12 @@ export const APP_SOURCES = [
     url: 'https://albitaqat.com/',
     github: 'https://github.com/rn0x/albitaqat_quran',
   },
+  {
+    id: 'asma',
+    name: 'أسماء الله الحسنى',
+    description: 'شرح أسماء الله الحسنى في ضوء الكتاب والسنة — د. سعيد القحطاني',
+    icon: 'star',
+    url: 'https://shamela.ws/book/96493',
+    github: 'https://github.com/rn0x/Names_Of_Allah_Json',
+  },
 ]

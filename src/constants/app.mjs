@@ -1,5 +1,5 @@
 export const APP_NAME = 'التقوى'
-export const APP_VERSION = '3.0.9'
+export const APP_VERSION = '3.1.0'
 
 export const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.rn0x.altaqwaa'
 export const GITHUB_REPO_URL = 'https://github.com/rn0x/altaqwaa-android/'
@@ -20,6 +20,7 @@ export const NAV_ITEMS = [
   { path: '/radio', label: 'الراديو', short: 'الراديو', icon: 'radio', accent: '#f472b6' },
   { path: '/reciters', label: 'القرّاء', short: 'القرّاء', icon: 'mic', accent: '#38bdf8' },
   { path: '/quran-cards', label: 'بطاقات القرآن', short: 'البطاقات', icon: 'bookmark', accent: '#d4af37' },
+  { path: '/asma', label: 'أسماء الله الحسنى', short: 'الأسماء', icon: 'star', accent: '#d4af37' },
   { path: '/settings', label: 'الإعدادات', short: 'الإعدادات', icon: 'sliders', accent: '#64748b' },
 ]
 
@@ -45,6 +46,7 @@ export const SCREENS_META = {
   radio: { title: 'راديو التقوى', description: 'بث مباشر وقنوات قرآنية' },
   reciters: { title: 'القرّاء', description: 'تصفح القراء والاستماع لتلاواتهم' },
   'quran-cards': { title: 'بطاقات القرآن', description: '114 بطاقة شاملة لكل سورة — معلومات، استماع، تحميل' },
+  asma: { title: 'أسماء الله الحسنى', description: '99 اسمًا من أسماء الله الحسنى مع الشرح الدليل من الكتاب والسنة' },
   quiz: { title: 'الأسئلة الإسلامية', description: 'أسئلة تفاعلية بأبواب مقفلة ونجوم وإنجازات' },
   settings: { title: 'الإعدادات', description: 'تفضيلات التطبيق والحساب' },
 }
