@@ -1,5 +1,6 @@
 import { APP_NAME, NAV_ITEMS, BOTTOM_NAV_ITEMS } from '../constants/app.mjs'
 import { SURAH_META } from '../services/surahsMeta.mjs'
+import asmaData from '../resources/data/asma_allah_alhusna_saeed_alqahtani.json' with { type: 'json' }
 import azkarData from '../resources/data/azkar.json' with { type: 'json' }
 import hisnData from '../resources/data/hisnmuslim.json' with { type: 'json' }
 import mp3quranData from '../resources/data/mp3quran.json' with { type: 'json' }
@@ -12,6 +13,7 @@ import khutbahIndex from '../resources/data/khutbah/index.json' with { type: 'js
    كي لا تُسحب ملفات ثقيلة (quran.json ~5MB، ملفات الصوت) إلى الهيدر. */
 
 const RECITER_BY_ID = new Map(mp3quranData.map((r) => [r.id, r]))
+const ASMA_BY_ID = new Map(asmaData.map((n) => [String(n.id), n]))
 const ADHKAR_BY_KEY = new Map(azkarData.map((c) => [c.key, c]))
 const HISN_BY_ID = new Map(hisnData.map((c) => [String(c.id), c]))
 const FATWA_BY_SLUG = new Map(fatwasIndex.map((c) => [c.slug, c]))
@@ -35,6 +37,8 @@ const TITLES = {
   '/history': 'الموسوعة التاريخية',
   '/khutbah': 'الخطب',
   '/settings': 'الإعدادات',
+  '/asma': 'أسماء الله الحسنى',
+  '/quran-cards': 'بطاقات القرآن',
 }
 
 const SETTINGS_TITLES = {
@@ -130,6 +134,9 @@ export function getHeaderMeta(pathname) {
     } else if (base === '/khutbah') {
       const category = KHUTBAH_BY_SLUG.get(segments[1])
       if (category?.name) title = category.name
+    } else if (base === '/asma') {
+      const name = ASMA_BY_ID.get(segments[1])
+      if (name?.name_arabic) title = name.name_arabic
     } else if (base === '/settings') {
       const sub = SETTINGS_TITLES[segments[1]]
       if (sub) title = sub
