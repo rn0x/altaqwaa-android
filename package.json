@@ -50,7 +50,7 @@
     "cordova-plugin-local-notification": "^1.2.3",
     "cordova-plugin-x-socialsharing": "^6.0.4",
     "es6-promise-plugin": "^4.2.2",
-    "vite": "^7.3.6"
+    "vite": "^7.3.7"
   },
   "cordova": {
     "platforms": [
